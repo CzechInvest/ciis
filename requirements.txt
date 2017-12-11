@@ -5,3 +5,4 @@ pyproj
 requests
 Shapely
 urllib3
+Pillow

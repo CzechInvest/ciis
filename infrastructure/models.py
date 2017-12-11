@@ -43,9 +43,9 @@ class Infrastructure(models.Model):
             blank=False
     )
 
-    twitter = models.URLField()
-    facebook = models.URLField()
-    linkedin = models.URLField()
+    twitter = models.URLField(blank=True, null=True)
+    facebook = models.URLField(blank=True, null=True)
+    linkedin = models.URLField(blank=True, null=True)
 
     mentors = models.IntegerField(
             blank=True,
@@ -56,6 +56,7 @@ class Infrastructure(models.Model):
             help_text="Maximum number of seets")
 
     in_incubation = models.IntegerField(
+            blank=True, null=True,
             help_text="Number of companies in incubation")
 
     conditions = models.TextField(
@@ -67,19 +68,28 @@ class Infrastructure(models.Model):
             help_text="Seet/Month")
 
     note = models.TextField(
+            blank=True, null=True,
             help_text="Just some note")
 
-    contact_person = models.ManyToManyField(ContactPerson)
+    contact_person = models.ManyToManyField(ContactPerson,
+            blank=True,
+            null=True)
 
     cooperation = models.ManyToManyField("Organisation",
             blank=True,
             null=True)
+
+    def __str__(self):
+        return self.name
 
 class Organisation(models.Model):
 
     name = models.CharField(
             max_length=100,
             help_text="Organisation name")
+
+    def __str__(self):
+        return self.name
 
 class Service(models.Model):
     name = models.CharField(
