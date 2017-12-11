@@ -15,7 +15,8 @@ class Address(models.Model):
             default=None,
             null=True,
             help_text = "Č.p.")
-    city = models.ForeignKey("City")
+    city = models.ForeignKey("City",
+            on_delete=models.PROTECT)
     zipcode = models.CharField(
             max_length = 200,
             help_text = "PSČ")

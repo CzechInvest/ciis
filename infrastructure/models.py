@@ -8,16 +8,24 @@ class Infrastructure(models.Model):
     name = models.CharField(
             max_length=200,
             help_text="Název",
+            null=False,
             blank=False
+    )
+
+    logo = models.ImageField(
+            help_text="Logo",
+            blank=True
     )
 
     inf_type = models.ManyToManyField("InfType")
 
-    short_description = models.TextField(
-            help_text="Stručný popis", blank=True)
+    description_cz = models.TextField(
+            help_text="Popis [cz]",
+            null=False,
+            blank=False)
 
-    description = models.TextField(
-            help_text="Popis", blank=True)
+    description_en = models.TextField(
+            help_text="Popis [en]", blank=True)
 
     address = models.ForeignKey(Address)
 
@@ -26,27 +34,35 @@ class Infrastructure(models.Model):
     services = models.ManyToManyField("Service")
 
     year = models.IntegerField(
+            blank=True,
             help_text="Foundation year")
 
-    url = models.URLField()
+    url = models.URLField(
+            null=False,
+            blank=False
+    )
 
     twitter = models.URLField()
     facebook = models.URLField()
     linkedin = models.URLField()
 
     mentors = models.IntegerField(
+            blank=True,
             help_text="Number of mentors")
 
-    seets = models.IntegerField(
+    seats = models.IntegerField(
+            blank=True,
             help_text="Maximum number of seets")
 
     in_incubation = models.IntegerField(
             help_text="Number of companies in incubation")
 
     conditions = models.TextField(
+            blank=True,
             help_text="Conditions for SUP (industry, stage etc.)")
 
     price = models.IntegerField(
+            blank=True,
             help_text="Seet/Month")
 
     note = models.TextField(
@@ -54,13 +70,9 @@ class Infrastructure(models.Model):
 
     contact_person = models.ManyToManyField(ContactPerson)
 
-    cooperation = models.ManyToManyField("Organisation")
-
-    online_database = models.BooleanField()
-    published = models.BooleanField()
-
-    evaluation = models.TextField()
-
+    cooperation = models.ManyToManyField("Organisation",
+            blank=True,
+            null=True)
 
 class Organisation(models.Model):
 
