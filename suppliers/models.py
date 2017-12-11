@@ -14,7 +14,8 @@ class Supplier(models.Model):
             blank=False
     )
 
-    address = models.ForeignKey(Address)
+    address = models.ForeignKey(Address,
+            on_delete=models.PROTECT)
 
     phone = models.CharField(
             max_length=20,
