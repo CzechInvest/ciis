@@ -27,7 +27,8 @@ class Infrastructure(models.Model):
     description_en = models.TextField(
             help_text="Popis [en]", blank=True)
 
-    address = models.ForeignKey(Address)
+    address = models.ForeignKey(Address,
+            on_delete=models.PROTECT)
 
     industry = models.ManyToManyField("Industry")
 
