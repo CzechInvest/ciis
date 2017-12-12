@@ -37,6 +37,7 @@ class Infrastructure(models.Model):
 
     year = models.IntegerField(
             blank=True,
+            null=False,
             help_text="Foundation year")
 
     url = models.URLField(
@@ -50,10 +51,12 @@ class Infrastructure(models.Model):
 
     mentors = models.IntegerField(
             blank=True,
+            null=False,
             help_text="Number of mentors")
 
     seats = models.IntegerField(
             blank=True,
+            null=False,
             help_text="Maximum number of seets")
 
     in_incubation = models.IntegerField(
@@ -66,6 +69,7 @@ class Infrastructure(models.Model):
 
     price = models.IntegerField(
             blank=True,
+            null=False,
             help_text="Seet/Month")
 
     note = models.TextField(
