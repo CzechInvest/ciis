@@ -8,7 +8,7 @@ class InfrastructureAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ("Identifikace", {
-            "fields": ["name", "inf_type", "description_cz", "description_en",
+            "fields": ["name", "logo", "inf_type", "description_cz", "description_en",
                 "address", "industry", "services",  "year"]}),
         ("On-line resources", {
             "fields": ["url", "facebook", "twitter", "linkedin"]}),

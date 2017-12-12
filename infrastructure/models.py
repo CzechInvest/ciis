@@ -14,7 +14,8 @@ class Infrastructure(models.Model):
 
     logo = models.ImageField(
             help_text="Logo",
-            blank=True
+            blank=True,
+            null=True
     )
 
     inf_type = models.ManyToManyField("InfType")

@@ -3,7 +3,8 @@ from .models import Address
 
 # Register your models here.
 class AddressAdmin(admin.ModelAdmin):
-    list_display = ("street", "number", "city", "zipcode",)
+
+    list_display = ("adm", "street", "number", "city", "zipcode",)
 
     search_fields = ("street", "city__name", "zipcode",)
 
