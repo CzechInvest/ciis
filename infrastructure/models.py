@@ -14,6 +14,7 @@ class Infrastructure(models.Model):
 
     logo = models.ImageField(
             help_text="Logo",
+            upload_to="uploads/infrastrucutre/logos",
             blank=True,
             null=True
     )
