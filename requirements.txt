@@ -6,3 +6,4 @@ requests
 Shapely
 urllib3
 Pillow
+django-leaflet
