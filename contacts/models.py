@@ -11,6 +11,7 @@ class ContactPerson(models.Model):
     middle_name = models.CharField(
             help_text="Middle name",
             null=True,
+            blank=True,
             max_length = 20)
 
 
@@ -21,6 +22,7 @@ class ContactPerson(models.Model):
     titles = models.CharField(
             help_text="Mgr., PhDr., MUDr., Ing., PhD., ...",
             null=True,
+            blank=True,
             max_length = 20)
 
     email = models.EmailField()

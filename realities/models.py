@@ -2,86 +2,213 @@ from django.db import models
 from django.contrib.gis.db import models as gismodels
 from cigeo.models import Location
 from contacts.models import ContactPerson
+from django.utils.translation import ugettext_lazy as _
+
+class MyLocation(Location):
+
+    real_estate = models.OneToOneField(
+            "RealEstate",
+            on_delete=models.CASCADE,
+            help_text="Nemovitost"
+    )
+
 
 class Agent(ContactPerson):
-    pass 
+    class Meta:
+        verbose_name = _("Agent")
+        verbose_name_plural = _("Agenti")
+
     # TODO: fix according to original model
 
 class Owner(ContactPerson):
-    pass 
+    class Meta:
+        verbose_name = _("Vlastník")
+        verbose_name_plural = _("Vlastníci")
+
     # TODO: fix according to original model
 
 class Medium(models.Model):
+
     distance = models.IntegerField(
+            verbose_name=_("Vzdálenost"),
             help_text="vzdálenost k objektu <code>[m]</code>")
 
-    comment = models.TextField(help_text="Komentář")
+    note = models.TextField(
+            verbose_name=_("Poznámka"),
+            help_text=_("Poznámka"))
 
 class Electricity(Medium):
+
+    class Meta:
+        verbose_name = _("Elektřina")
+        verbose_name_plural = _("Elektřina")
+
     current = models.IntegerField(
-            help_text="Napětí <code>[kV]</code>")
+            verbose_name=_("Napětí"),
+            help_text=_("Napětí <code>[kV]</code>"))
     capacity = models.IntegerField(
-            help_text="Kapacita <code>[kW]</code>")
+            verbose_name=_("Kapacita"),
+            help_text=_("Kapacita <code>[kW]</code>"))
+
+    real_estate = models.OneToOneField(
+            "RealEstate",
+            on_delete=models.CASCADE,
+            help_text=_("Nemovitost")
+    )
 
 class Water(Medium):
+
     diameter = models.IntegerField(
-            help_text="Velikost přípojky <code>[mm]</code>")
+            verbose_name=_("Velikost přípojky"),
+            help_text=_("Velikost přípojky <code>[mm]</code>"))
     well = models.IntegerField(
-            help_text="Studna <code>[m<sup>3</sup>]</code>")
+            verbose_name=_("Studna"),
+            help_text=_("Studna <code>[m<sup>3</sup>]</code>"))
     capacity = models.IntegerField(
-            help_text="Kapacita přípojky <code>[m<sup>3</sup>/d]</code>")
+            verbose_name=_("Kapacita přípojky"),
+            help_text=_("Kapacita přípojky <code>[m<sup>3</sup>/d]</code>"))
     well_capacity = models.IntegerField(
-            help_text="Kapacita studny <code>[m<sup>3</sup>/d]</code>")
+            verbose_name=_("Kapacita studny"),
+            help_text=_("Kapacita studny <code>[m<sup>3</sup>/d]</code>"))
 
 class DrinkingWater(Water):
-    pass
+
+    class Meta:
+        verbose_name = _("Pitná voda")
+        verbose_name_plural = _("Pitná voda")
+
+    real_estate = models.OneToOneField(
+            "RealEstate",
+            verbose_name=_("Nemovitost"),
+            on_delete=models.CASCADE,
+            help_text=_("Nemovitost")
+    )
+
 
 class NonPotableWater(Water):
-    pass
+
+    class Meta:
+        verbose_name = _("Užitková voda")
+        verbose_name_plural = _("Užitková voda")
+
+    real_estate = models.OneToOneField(
+            "RealEstate",
+            on_delete=models.CASCADE,
+            help_text=_("Nemovitost")
+    )
 
 class Gas(Medium):
+
+    class Meta:
+        verbose_name = _("Plyn")
+        verbose_name_plural = _("Plyn")
+
     pressure = models.IntegerField(
-            help_text="Tlak <code>[kPa]</code>")
+            verbose_name=_("Tlak"),
+            help_text=_("Tlak <code>[kPa]</code>"))
+
     capacity = models.IntegerField(
+            verbose_name=_("Kapacita přípojky"),
             help_text="Kapacita přípojky <code>[m<sup>3</sup>/d]</code>")
+
+    real_estate = models.OneToOneField(
+            "RealEstate",
+            on_delete=models.CASCADE,
+            help_text="Nemovitost"
+    )
 
 class WasteWater(Medium):
+
+    class Meta:
+        verbose_name = _("Kanalizace")
+        verbose_name_plural = _("Kanalizace")
+
     diameter = models.IntegerField(
+            verbose_name=_("Průměr"),
             help_text="Velikost přípojky <code>[mm]</code>")
+
     capacity = models.IntegerField(
+            verbose_name=_("Kapacita přípojky"),
             help_text="Kapacita přípojky <code>[m<sup>3</sup>/d]</code>")
 
+    real_estate = models.OneToOneField(
+            "RealEstate",
+            verbose_name=_("Nemovitost"),
+            on_delete=models.CASCADE,
+            help_text=_("Nemovitost")
+    )
+
 class Telecommunications(Medium):
-    pass
+
+    class Meta:
+        verbose_name = _("Telekomunikace")
+        verbose_name_plural = _("Telekomunikace")
+
+    real_estate = models.OneToOneField(
+            "RealEstate",
+            blank=True,
+            null=True,
+            on_delete=models.CASCADE,
+            help_text="Nemovitost"
+    )
 
 class Photo(models.Model):
 
+    class Meta:
+        verbose_name = _("Fotografie")
+        verbose_name_plural = _("Fotografie")
+
     title = models.CharField(
+        verbose_name=_("Název"),
         max_length=200,
         help_text="Nadpis fotografie")
 
+
     description = models.TextField(
+        verbose_name=_("Popis"),
         help_text="Popis fotografie",
         null=True,
         blank=True)
 
     image = models.ImageField(
+        verbose_name=_("Obrázek"),
         help_text="Soubor s obrázkem"
+    )
+
+    real_estate = models.ForeignKey(
+            "RealEstate",
+            verbose_name=_("Nemovitost"),
+            on_delete=models.CASCADE,
+            help_text="Nemovitost"
     )
 
 class Attachment(models.Model):
 
+    class Meta:
+        verbose_name = _("Přílohy")
+        verbose_name_plural = _("Přílohy")
+
     title = models.CharField(
+        verbose_name=_("Název"),
         max_length=200,
-        help_text="Nadpis dokumentu/přílohy")
+        help_text=_("Nadpis dokumentu/přílohy"))
 
     description = models.TextField(
-        help_text="Popis dokumentu/přílohy",
+        verbose_name=_("Popis"),
+        help_text=_("Popis dokumentu/přílohy"),
         null=True,
         blank=True)
 
-    image = models.FileField(
-        help_text="Soubor s dokumentem/přílohou"
+    attachment = models.FileField(
+        verbose_name=_("Příloha"),
+        help_text=_("Soubor s dokumentem/přílohou")
+    )
+
+    real_estate = models.ForeignKey(
+            "RealEstate",
+            verbose_name=_("Nemovitost"),
+            on_delete=models.CASCADE,
+            help_text=_("Nemovitost")
     )
 
 class Keyword(models.Model):
@@ -92,12 +219,14 @@ class Keyword(models.Model):
 
 class RealEstateType(models.Model):
     title = models.CharField(
+            verbose_name=_("Název"),
             max_length=50
     )
     description = models.CharField(
-            max_length=50,
-            null=True,
-            blank=True
+        verbose_name=_("Popis"),
+        max_length=50,
+        null=True,
+        blank=True
     )
 
     def __str__(self):
@@ -112,34 +241,79 @@ class OriginalUsage(models.Model):
 
 class AreaArea(models.Model):
 
+    class Meta:
+        verbose_name = _("Rozloha plochy")
+        verbose_name_plural = _("Rozloha ploch")
+
     total = models.IntegerField(
-            help_text = "Celková rozloha <code>m<sup>2</sup></code>")
+            verbose_name=_('Celková rozloha'),
+            help_text = _("Celková rozloha <code>m<sup>2</sup></code>"))
     free = models.IntegerField(
-            help_text = "Volná plocha <code>m<sup>2</sup></code>")
+            verbose_name=_('Volná plocha'),
+            help_text = _("Volná plocha <code>m<sup>2</sup></code>"))
     to_be_build = models.IntegerField(
-            help_text = "K zástavbě <code>m<sup>2</sup></code>")
+            verbose_name=_('K zástavbě'),
+            help_text = _("K zástavbě dle ÚP <code>m<sup>2</sup></code>"))
     for_expansion = models.IntegerField(
-            help_text = "K expanzi <code>m<sup>2</sup></code>")
+            verbose_name=_('K expanzi'),
+            help_text = _("K expanzi <code>m<sup>2</sup></code>"))
     available_from = models.DateField(
-            help_text = "K dispozici od")
-    available_from = models.DateField(
-            help_text = "K dispozici od")
+            verbose_name=_('K dispozici od'),
+            help_text = _("K dispozici od"))
+
+    area = models.OneToOneField(
+            "Area",
+            verbose_name=_('Plocha'),
+            on_delete=models.CASCADE)
+
 
 class Price(models.Model):
+
     total_minimum = models.IntegerField(
-            help_text="Celková minimální")
+            verbose_name=_("Celková minimální"),
+            help_text=_("Celková minimální"))
     total_maximum = models.IntegerField(
-            help_text="Celková maximální")
+            verbose_name=_("Celková maximální"),
+            help_text=_("Celková maximální"))
     per_sqm_minium = models.IntegerField(
-            help_text="Za <code>m<sup>2</sup></code> minimální")
+            verbose_name=_("Za m minimální"),
+            help_text=_("Za <code>m<sup>2</sup></code> minimální"))
     per_sqm_maxium = models.IntegerField(
-            help_text="Za <code>m<sup>2</sup></code> maximální")
+            verbose_name=_("Za m maximální"),
+            help_text=_("Za <code>m<sup>2</sup></code> maximální"))
     note = models.TextField(
             blank=True,
             null=True,
-            help_text="Poznámka")
+            verbose_name=_("Poznámka"),
+            help_text=_("Poznámka"))
+
+class SellingPrice(Price):
+
+    class Meta:
+        verbose_name = _("Prodejní cena")
+        verbose_name_plural = _("Prodejní ceny")
+
+    area = models.OneToOneField(
+            "AreaPrice",
+            on_delete=models.CASCADE)
+
+class RentalPrice(Price):
+
+    class Meta:
+        verbose_name = _("Nájemní cena")
+        verbose_name_plural = _("Nájemní ceny")
+
+    area = models.OneToOneField(
+            "AreaPrice",
+            on_delete=models.CASCADE)
+
 
 class AreaPrice(models.Model):
+
+    class Meta:
+        verbose_name = _("Cena")
+        verbose_name_plural = _("Ceny")
+
     kc = "kc"
     eur = "eur"
     currency_choices = (
@@ -149,170 +323,281 @@ class AreaPrice(models.Model):
 
     currency = models.CharField(
             max_length=3,
-            help_text="Měna",
+            verbose_name=_("Měna"),
+            help_text=_("Měna"),
             choices=currency_choices)
 
-    selling_price = models.OneToOneField(
-            Price,
-            related_name="selling",
-            on_delete=models.CASCADE)
-
-    rental_price = models.OneToOneField(
-            Price,
-            related_name="rental",
+    area = models.OneToOneField(
+            "Area",
             on_delete=models.CASCADE)
 
 class BuildingPrice(models.Model):
+
+    class Meta:
+        verbose_name = _("Cena budovy")
+        verbose_name_plural = _("Ceny bodvy")
+
     services_minium = models.IntegerField(
-            help_text="Cena za služby minimální")
+            verbose_name=_("Minimální cena za služby"),
+            help_text=_("Cena za služby minimální"))
     services_maxium = models.IntegerField(
-            help_text="Cena za služby maximální")
+            verbose_name=_("Maximální cena za služby"),
+            help_text=_("Cena za služby maximální"))
     note = models.TextField(
             blank=True,
             null=True,
-            help_text="Poznámka")
+            verbose_name=_("Poznámka"),
+            help_text=_("Poznámka"))
+
+    building = models.OneToOneField(
+            "building",
+            on_delete=models.CASCADE)
 
 class Ownership(models.Model):
+
+    class Meta:
+        verbose_name = _("Vlastnictví")
+        verbose_name_plural = _("Vlastnictví")
 
     private = 'priv'
     public = 'pub'
 
     ownership_choices = (
-        (private, 'Soukromé'),
-        (public, 'Veřejné'),
+        (private, _('Soukromé')),
+        (public, _('Veřejné')),
     )
     ownership = models.CharField(
         max_length=4,
+        verbose_name=_("Vlastnictví"),
         choices=ownership_choices,
         default=private,
     )
 
     note = models.TextField(
-            help_text = "Poznámka k vlastnictví",
             null=True,
-            blank=True
-            )
+            blank=True,
+            verbose_name=_("Poznámka"),
+            help_text=_("Poznámka"))
+
+
+class BuildingOwnership(Ownership):
+
+    class Meta:
+        verbose_name = _("Vlastnictví budovy")
+        verbose_name_plural = _("Vlastnictví budovy")
+
+    building = models.OneToOneField(
+        "Building",
+        on_delete=models.CASCADE
+    )
+
+class AreaOwnership(Ownership):
+
+    class Meta:
+        verbose_name = _("Vlastnictví plochy")
+        verbose_name_plural = _("Vlastnictví plochy")
+
+    area = models.OneToOneField(
+        "Area",
+        on_delete=models.CASCADE
+    )
 
 class Purpose(models.Model):
 
+    class Meta:
+        verbose_name = _("Účel")
+        verbose_name_plural = _("Účely")
 
     industry = 'industry'
     storage = 'storage'
     office = 'office'
     purpose_choices = (
-        (industry, 'Průmysl'),
-        (storage, 'Sklady'),
-        (office, 'Kanceláře'),
+        (industry, _('Průmysl')),
+        (storage, _('Sklady')),
+        (office, _('Kanceláře')),
     )
 
     purpose = models.CharField(
             max_length=10,
-            help_text="Určení dle ÚP",
+            verbose_name=_("Určení"),
+            help_text=_("Určení dle ÚP"),
             choices=purpose_choices,
     )
-    purpose_note = models.TextField(
-            help_text = "Poznámka k účelu",
+    note = models.TextField(
+            verbose_name = _("Poznámka"),
+            help_text = _("Poznámka"),
             null=True,
             blank=True
             )
 
+    area = models.OneToOneField(
+        "Area",
+        on_delete=models.CASCADE
+    )
 
 class BuildingArea(models.Model):
+
+    class Meta:
+        verbose_name = _("Plocha budovy")
+        verbose_name_plural = _("Plochy budovy")
+
     production = models.IntegerField(
             default=0,
-            help_text="Plocha pro výrobu <code>m<sup>2</sup></code>")
+            verbose_name=_("Plocha pro výrobu"),
+            help_text=_("Plocha pro výrobu <code>m<sup>2</sup></code>"))
     offices = models.IntegerField(
             default=0,
-            help_text="Plocha pro kanceláře <code>m<sup>2</sup></code>")
+            verbose_name=_("Plocha kancláře"),
+            help_text=_("Plocha pro kanceláře <code>m<sup>2</sup></code>"))
     storage = models.IntegerField(
             default=0,
-            help_text="Plocha pro sklady <code>m<sup>2</sup></code>")
+            verbose_name=_("Plocha sklady"),
+            help_text=_("Plocha pro sklady <code>m<sup>2</sup></code>"))
     other = models.IntegerField(
             default=0,
-            help_text="Plocha pro jiné užití <code>m<sup>2</sup></code>")
+            verbose_name=_("Plocha pro jiné využité"),
+            help_text=_("Plocha pro jiné užití <code>m<sup>2</sup></code>"))
+
+class TotalBuildingArea(BuildingArea):
+    class Meta:
+        verbose_name = _("Celková plocha budovy")
+        verbose_name_plural = _("Celkové plochy budovy")
+
+class UsedBuildingArea(BuildingArea):
+    class Meta:
+        verbose_name = _("Využitá plocha budovy")
+        verbose_name_plural = _("Využité plochy budovy")
+
+class FreeBuildingArea(BuildingArea):
+    class Meta:
+        verbose_name = _("Volné plochy budovy")
+        verbose_name_plural = _("Volné plochy budovy")
 
 class BuildingDisposal(models.Model):
+
+    class Meta:
+        verbose_name = _("Propozice budovy")
+        verbose_name_plural = _("Propozice budovy")
+
     floors = models.IntegerField(
-            help_text="Počet podlaží",
+            verbose_name=_("Počet podlaží"),
+            help_text=_("Počet podlaží"),
             null=True,
             blank=True)
 
     building_type = models.CharField(
             max_length=5,
-            help_text="Typ dispozice",
-            choices=(("wall", "Příčky"),("os","Open space")),
+            verbose_name=_("Typ dispozice"),
+            help_text=_("Typ dispozice"),
+            choices=(("wall", _("Příčky")),("os",_("Open space"))),
             null=True, blank=True
     )
 
     pole_distance = models.FloatField(
-            help_text="Rozestup sloupů <code>[m]</code>",
+            verbose_name=_("Rozestup sloupů"),
+            help_text=_("Rozestup sloupů <code>[m]</code>"),
             null=True, blank=True
     )
 
     loading_capacity = models.FloatField(
-            help_text="Nosnost <code>[kg/m<sup>2</sup>]</code>",
+            verbose_name=_("Nosnost"),
+            help_text=_("Nosnost <code>[kg/m<sup>2</sup>]</code>"),
             null=True, blank=True
     )
 
     width = models.FloatField(
-            help_text="Šířka <code>[m]</code>",
+            verbose_name=_("Šířka"),
+            help_text=_("Šířka <code>[m]</code>"),
             blank=True, null=True
     )
     height = models.FloatField(
-            help_text="Světlá výška <code>[m]</code>",
+            verbose_name=_("Světlá výška"),
+            help_text=_("Světlá výška <code>[m]</code>"),
             blank=True, null=True
     )
     length = models.FloatField(
-            help_text="Délka <code>[m]</code>",
+            verbose_name=_("Délka"),
+            help_text=_("Délka <code>[m]</code>"),
             blank=True, null=True
     )
 
     input_height = models.FloatField(
-            help_text="Výška vstupu <code>[m]</code>",
+            verbose_name=_("Výška vstupu"),
+            help_text=_("Výška vstupu <code>[m]</code>"),
             blank=True, null=True
     )
     span_width = models.FloatField(
-            help_text="Rozpětí nosné konstrukce <code>[m]</code>",
+            verbose_name=_("Rozpětí konstrukce"),
+            help_text=_("Rozpětí nosné konstrukce <code>[m]</code>"),
             blank=True, null=True
     )
     construction_material = models.CharField(
             max_length=10,
-            help_text="Konstruční materiál",
+            verbose_name=_("Konstruční materiál"),
+            help_text=_("Konstruční materiál"),
             blank=True, null=True,
             choices = (
-                ("concrete", "Beton"),
-                ("brick", "Cihla"),
-                ("steel", "Ocel"),
-                ("other","Jiná"),
+                ("concrete", _("Beton")),
+                ("brick", _("Cihla")),
+                ("steel", _("Ocel")),
+                ("other",_("Jiná")),
             )
     )
 
+    building = models.OneToOneField(
+            "Building",
+            on_delete=models.CASCADE)
+
 class Floor(models.Model):
 
+    class Meta:
+        verbose_name = _("Patro")
+        verbose_name_plural = _("Patra")
+
     floor_number = models.IntegerField(
-            help_text="Číslo podlaží")
+            verbose_name=_("Podlaží"),
+            help_text=_("Číslo podlaží"))
 
     number_of_units = models.IntegerField(
             null=True, blank=True,
-            help_text="Počet jednotek")
+            verbose_name=_("Počet jednotek"),
+            help_text=_("Počet jednotek"))
 
     total_area = models.IntegerField(
             null=True, blank=True,
-            help_text="Celková plocha <code>m<sup>2</sup></code>")
+            verbose_name=_("Celková plocha"),
+            help_text=_("Celková plocha <code>m<sup>2</sup></code>"))
 
     smallest_unit = models.IntegerField(
             null=True, blank=True,
-            help_text="Velikost nejmenší jednotky <code>m<sup>2</sup></code>")
+            verbose_name=_("Plocha nejmenší jednotky"),
+            help_text=_("Velikost nejmenší jednotky <code>m<sup>2</sup></code>"))
 
     biggest_unit = models.IntegerField(
             null=True, blank=True,
-            help_text="Velikost nevětší jednotky <code>m<sup>2</sup></code>")
+            verbose_name=_("Plocha největší jednotky"),
+            help_text=_("Velikost nevětší jednotky <code>m<sup>2</sup></code>"))
 
-    price = models.OneToOneField(BuildingPrice, on_delete=models.CASCADE,
-            help_text="Cena")
+    building = models.ForeignKey(
+            "Building",
+            verbose_name=_("Budova"),
+            on_delete=models.CASCADE,
+            help_text=_("Budova"))
+
+
 
 class Building(models.Model):
+
+    class Meta:
+        verbose_name = _("Budova")
+        verbose_name_plural = _("Budova")
+
+    class Meta:
+        verbose_name = _("Budova")
+        verbose_name_plural = _("Budovy")
+
     name = models.CharField(
+            verbose_name=_("Název"),
             max_length=50)
 
     production = "prod"
@@ -321,22 +606,25 @@ class Building(models.Model):
     multi = "multi"
 
     building_type_choices = (
-        (production, "Výrobní"),
-        (administrative, "Administrativní"),
-        (storage, "Skladová"),
-        (multi, "Multifunkční")
+        (production, _("Výrobní")),
+        (administrative, _("Administrativní")),
+        (storage, _("Skladová")),
+        (multi, _("Multifunkční"))
     )
 
     building_type = models.CharField(
             max_length=5,
             choices=building_type_choices,
-            help_text="Typ budovy")
+            verbose_name=_("Typ budovy"),
+            help_text=_("Typ budovy"))
 
     last_inspection = models.DateField(
-            help_text="Datum poslední kolaudace")
+            verbose_name=_("Poslední kolaudace"),
+            help_text=_("Datum poslední kolaudace"))
 
     date_available = models.DateField(
-            help_text="K dispozici od")
+            verbose_name=_("K dispozici od"),
+            help_text=_("K dispozici od"))
 
 
     planed = "planed"
@@ -347,114 +635,113 @@ class Building(models.Model):
     demolition = "demol"
 
     technical_state_choices = (
-        (planed, "Plánovaný projekt"),
-        (new, "Novostavba"),
-        (reconstructed, "Rekonstruovaná"),
-        (good_shape, "Zachovalá"),
-        (need_reconstruct, "Nutná rekonstrukce"),
-        (demolition, "K demolici"),
+        (planed, _("Plánovaný projekt")),
+        (new, _("Novostavba")),
+        (reconstructed, _("Rekonstruovaná")),
+        (good_shape, _("Zachovalá")),
+        (need_reconstruct, _("Nutná rekonstrukce")),
+        (demolition, _("K demolici")),
     )
 
     technical_state = models.CharField(
             max_length=10,
             choices=technical_state_choices,
-            help_text="Technický stav budovy")
+            verbose_name=_("Technický stav"),
+            help_text=_("Technický stav budovy"))
 
-    ownership = models.OneToOneField(Ownership,
-            help_text="Typ vlastnictví",
-            on_delete=models.CASCADE)
 
     last_usage = models.TextField(
-            help_text="Poslední využití")
+            verbose_name=_("Poslední využití"),
+            help_text=_("Poslední využití"))
     other_restrictions = models.TextField(
-            help_text="Jiná omezení využití")
-    total_area = models.OneToOneField(
-            BuildingArea,
-            related_name="total_area",
-            on_delete=models.CASCADE,
-            help_text="Celková plocha")
-    used_area = models.OneToOneField(
-            BuildingArea,
-            related_name="used_area",
-            on_delete=models.CASCADE,
-            help_text="Využitá plocha")
-    free_area = models.OneToOneField(
-            BuildingArea,
-            related_name="free_area",
-            on_delete=models.CASCADE,
-            help_text="Volná plocha")
-    disposal = models.OneToOneField(
-            BuildingDisposal,
-            related_name="disposal_area",
-            on_delete=models.CASCADE,
-            help_text="Dispozice")
+            verbose_name=_("Jiná omezení"),
+            help_text=_("Jiná omezení využití"))
 
-    price = models.OneToOneField(BuildingPrice, on_delete=models.CASCADE)
 
     security = models.BooleanField(
-            help_text="Bezpečnostní systém")
+            verbose_name=_("Bezpečnostní systém"),
+            help_text=_("Bezpečnostní systém"))
+
     fire_protection = models.BooleanField(
-            help_text="Protipožární ochrana")
+            verbose_name=_("Protipožární ochrana"),
+            help_text=_("Protipožární ochrana"))
+
     heating = models.BooleanField(
-            help_text="Vytápění")
+            verbose_name=_("Vytápění"),
+            help_text=_("Vytápění"))
+
     air_condition = models.BooleanField(
-            help_text="Klimatizace")
+            verbose_name=_("Klimatizace"),
+            help_text=_("Klimatizace"))
+
     crane = models.BooleanField(
-            help_text="Jeřáb")
+            verbose_name=_("Jeřáb"),
+            help_text=_("Jeřáb"))
+
     reception_desk = models.BooleanField(
-            help_text="Recepce")
+            verbose_name=_("Recepce"),
+            help_text=_("Recepce"))
 
     parking_garage = models.IntegerField(
             null=True, blank=True,
-            help_text="Parkovací místa v garáži")
+            verbose_name=_("Parkovací místa v garáži"),
+            help_text=_("Parkovací místa v garáži"
+            ))
 
     parking_openair = models.IntegerField(
             null=True, blank=True,
-            help_text="Parkovací místa volně")
+            verbose_name=_("Parkovací místa volně"),
+            help_text=_("Parkovací místa volně"))
 
     personal_lift_number = models.IntegerField(
             null=True, blank=True,
-            help_text="Počet osobních výtahů")
+            verbose_name=_("Počet osobních výtahů"),
+            help_text=_("Počet osobních výtahů"))
 
     personal_lift_capacity = models.IntegerField(
             null=True, blank=True,
-            help_text="Kapacita osobních výtahů <code>[kg]</code>")
+            verbose_name=_("Kapacita osobních výtahů"),
+            help_text=_("Kapacita osobních výtahů <code>[kg]</code>"))
 
     load_lift_number = models.IntegerField(
             null=True, blank=True,
-            help_text="Počet nákladních výtahů")
+            verbose_name=_("Počet nákladních výtahů"),
+            help_text=_("Počet nákladních výtahů"))
 
     load_lift_capacity = models.IntegerField(
             null=True, blank=True,
-            help_text="Kapacita nákladních výtahů <code>[kg]</code>")
+            verbose_name=_("Kapacita nákladních výtahů"),
+            help_text=_("Kapacita nákladních výtahů <code>[kg]</code>"))
 
     menza_capacity = models.IntegerField(
-            default=0,
-            help_text="Kapacita jídelny")
+            default=None,
+            null=True,
+            blank=True,
+            verbose_name=_("Kapacita jídelny"),
+            help_text=_("Kapacita jídelny"))
 
     notes = models.TextField(
             null=True, blank=True,
-            help_text="Poznámky")
+            verbose_name=_("Poznámky"),
+            help_text=_("Poznámky"))
 
-    floors = models.ForeignKey(
-            Floor,
+
+    area = models.ForeignKey(
+            "Area",
             on_delete=models.CASCADE,
-            help_text="Patra")
+            verbose_name=_("Plocha"),
+            help_text=_("Plocha"))
 
 
 class Area(models.Model):
+
+    class Meta:
+        verbose_name = _("Plocha")
+        verbose_name_plural = _("Plochy")
+
     name = models.CharField(
+            verbose_name=_("Název"),
             max_length=50)
-
-    ownership = models.OneToOneField( Ownership,
-        on_delete=models.CASCADE
-    )
-    purpose = models.OneToOneField( Purpose,
-        on_delete=models.CASCADE
-    )
-
-    area = models.OneToOneField(AreaArea, on_delete=models.CASCADE)
-    price = models.OneToOneField(AreaPrice, on_delete=models.CASCADE)
 
     plain = 0
     semi_slope = 10
@@ -467,10 +754,12 @@ class Area(models.Model):
     )
     slope = models.IntegerField(
                 choices=slope_choices,
-                help_text="Sklon pozemku")
+                verbose_name=_("Sklon svahu"),
+                help_text=_("Sklon pozemku"))
 
     ground_water = models.IntegerField(
-            help_text="Hladina spodní vody <code>m</code>",
+            verbose_name=_("Spodní voda"),
+            help_text=_("Hladina spodní vody <code>m</code>"),
             null=True,
             blank=True)
 
@@ -487,52 +776,50 @@ class Area(models.Model):
     )
 
     ecology = models.IntegerField(
-            help_text="Ekologická zátěž",
+            verbose_name=_("Ekologická zátěž"),
+            help_text=_("Ekologická zátěž"),
             choices=ecology_choices)
 
-    terrain_note = models.TextField(
+    note = models.TextField(
             null=True,
             blank=True,
-            help_text="Poznámka k terénu")
+            verbose_name=_("Poznámka"),
+            help_text=_("Poznámka k terénu"))
 
-    buildings = models.ManyToManyField(
-            Building,
-            help_text="Budovy na pozemku")
+
+    real_estate = models.OneToOneField(
+            "RealEstate",
+            on_delete=models.CASCADE,
+            help_text="Nemovitost"
+    )
+
 
 class RealEstate(models.Model):
 
+    class Meta:
+        verbose_name = _("Nemovitost")
+        verbose_name_plural = _("Nemovitosti")
+
     title = models.CharField(
+            verbose_name=_("Název"),
             max_length=200,
             help_text="Název",
             null=False,
             blank=False
     )
 
-    agent = Agent()
+    agent = models.ForeignKey(Agent,
+        on_delete=models.SET_NULL,
+        verbose_name=_("Agent"),
+        null=True,
+        help_text="Agent")
 
-    owner = Owner()
+    owner = models.ForeignKey(Owner,
+        on_delete=models.SET_NULL,
+        verbose_name=_("Vlastník"),
+        null=True,
+        help_text="Vlastník")
 
-    location = models.OneToOneField(
-            Location,
-            blank=True,
-            null=True,
-            on_delete=models.CASCADE,
-            help_text="Umístění"
-    )
-
-
-
-    photos = models.ManyToManyField(
-            Photo,
-            blank=True,
-            help_text="Obrázky a fotky"
-    )
-
-    documents = models.ManyToManyField(
-            Attachment,
-            blank=True,
-            help_text="Dokumenty a přílohy"
-            )
 
     #description = models.TextField(
     #        help_text="Popis",
@@ -563,20 +850,6 @@ class RealEstate(models.Model):
     #area = models.FloatField(
     #        help_text="Plocha objektu <code>[m<sup>2</sup>]</code>")
 
-    electricity = models.OneToOneField(Electricity, on_delete=models.SET_NULL, help_text="Elektřina", null=True, blank=True)
-    drinking_water = models.OneToOneField(DrinkingWater,
-            on_delete=models.SET_NULL, help_text="Pitná voda", null=True, blank=True)
-    nonpotablewater = models.OneToOneField(NonPotableWater,
-            on_delete=models.SET_NULL, help_text="Užitková voda", null=True, blank=True)
-    gas = models.OneToOneField(Gas, on_delete=models.SET_NULL, help_text="Plyn", null=True, blank=True)
-    waste_water = models.OneToOneField(WasteWater, on_delete=models.SET_NULL, help_text="Odpadní voda", null=True, blank=True)
-    telecommunications = models.OneToOneField(Telecommunications,
-            on_delete=models.SET_NULL, help_text="Telekomunikace", null=True, blank=True)
-
-    area = models.ForeignKey(
-            Area,
-            help_text="Plocha",
-            on_delete=models.CASCADE)
 
 
 

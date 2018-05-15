@@ -2,14 +2,47 @@ from django.contrib.gis.db import models
 from django.contrib.gis import geos
 from addresses.models import Address
 import shapely.wkt
+from django.utils.translation import ugettext_lazy as _
+
+class Lau1(models.Model):
+    # okresy
+
+    class meta:
+        verbose_name = _("Okres (LAU1)")
+        verbose_name_plural = _("Okresy (LAU1)")
+
+    code = models.IntegerField(
+            verbose_name=_("Kód")
+    )
+
+    name = models.CharField(
+            verbose_name=_("Název"),
+            max_length=256
+    )
+
+    geometry = models.MultiPolygonField(
+            verbose_name=_("Hranice okresů"),
+            srid=4326)
+
+    def __str__(self):
+        return self.name
+
 
 class Location(models.Model):
+
+    class Meta:
+        verbose_name=_("Umístění")
+        verbose_name_plural=_("Umístění")
+
 
     address = models.ForeignKey(Address,
             null=True,
             blank=True,
+            verbose_name=_("Adresa"),
             on_delete=models.SET_NULL)
     geometry = models.GeometryCollectionField(
+            verbose_name=_("Geometrie"),
+            help_text=_("Body, linie, polygony"),
             null=True,
             blank=True,
             srid=4326)
@@ -35,4 +68,5 @@ class Location(models.Model):
             return "{} {}, {}".format(self.address.street, self.address.number,
                     self.address.city)
         else:
-            return "Geometrická kolekce"
+            lau1s = ", ".join(Lau1.objects.filter(geometry__intersects=self.geometry))
+            return lau1s

@@ -75,6 +75,7 @@ Enumerations, address database ...
 python manage.py import_suppliers
 python manage.py import_infrastructure
 python manage.py import_addresses # will take some time
+python manage.py import_lau1
 ```
 
 ## Testing

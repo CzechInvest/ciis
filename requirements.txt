@@ -7,3 +7,4 @@ Shapely
 urllib3
 Pillow
 django-leaflet
+django-nested-admin
