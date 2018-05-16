@@ -1,4 +1,22 @@
 {% extends "admin/change_list.html" %}
+{% block extrastyle %}
+{{ block.super }}
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <style>
+      #map {width: 600px; height: 300px;}
+    </style>
+
+{% endblock %}
+
+{% block extrahead %}
+{{ block.super }}
+
+
+
+{% endblock %}
+
 {% load i18n admin_urls static admin_list %}
 
 {% block content %}
@@ -35,7 +53,14 @@
           </div>
         {% endif %}
       {% endblock %}
-      <strong>[HERE-GOES-THE-MAP]</strong>
+         <div id="map"></div>
+            <script>
+              var map = L.map('map').setView([0, 0], 1);
+              L.tileLayer('https://maps.tilehosting.com/styles/basic/{z}/{x}/{y}.png?key=mCnC0rArFsfnBvLPiB6J',{
+                attribution: '<a href="http://www.openmaptiles.org/" target="_blank">© OpenMapTiles</a>© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+                crossOrigin: true
+              }).addTo(map);
+            </script>
 
       <form id="changelist-form" method="post"{% if cl.formset.is_multipart %} enctype="multipart/form-data"{% endif %} novalidate>{% csrf_token %}
       {% if cl.formset %}
