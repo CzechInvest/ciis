@@ -29,6 +29,7 @@ from .models import Agent
 from .models import Owner
 from .models import MyLocation
 from cigeo.models import Lau1
+from cigeo.models import Nuts3
 from leaflet.admin import LeafletGeoAdmin
 
 class LocationInline(LeafletGeoAdmin, nested_admin.NestedStackedInline):
@@ -144,25 +145,45 @@ class RealEstateAdmin(nested_admin.NestedModelAdmin):
     search_fields = ("title", "agent__first_name", "agent__last_name",
         "mylocation__address__city__name", "owner__first_name",
         "owner__last_name")
-    list_display = ("title", "agent", "owner", "city")
+    list_display = ("title", "agent", "owner", "city", "size")
     inlines = (LocationInline, PhotoInline, AttachmentInline, ElectricityInline, DrinkingWaterInline,
             NonPotableWaterInline, GasInline, WasteWaterInline,
             TelecommunicationsInline, AreaInline
             )
+
+    def size(self, real_estate):
+        return real_estate.area.areaarea.total
 
     def city(self, real_estate):
 
         if real_estate.mylocation.address:
             return real_estate.mylocation.address.city
         else:
-            return ", ".join([l.__str__() for l in Lau1.objects.filter(geometry__intersects=real_estate.mylocation.geometry)])
+            return ", ".join([l.__str__() for l in Nuts3.objects.filter(geometry__intersects=real_estate.mylocation.geometry)])
 
     def get_search_results(self, request, queryset, search_term):
         queryset, use_distinct = super(RealEstateAdmin, self).get_search_results(request, queryset, search_term)
-        laus1 = Lau1.objects.filter(name__startswith=search_term)[0]
-        real_estates = RealEstate.objects.filter(mylocation__geometry__intersects=laus1.geometry)
-        queryset |= real_estates
+        queryset = self._search_lay1_by_name(queryset, search_term)
+        queryset = self._search_area(queryset, search_term)
+
         return (queryset, use_distinct)
+
+    def _search_lay1_by_name(self, queryset, search_term):
+
+        for cls in (Lau1, Nuts3):
+            objs = cls.objects.filter(name__startswith=search_term)
+            for o in objs:
+                real_estates = RealEstate.objects.filter(mylocation__geometry__intersects=o.geometry)
+                queryset |= real_estates
+        return queryset
+
+    def _search_area(self, queryset, search_term):
+
+        if search_term.find("<>") > -1:
+            a,b = [float(x) for x in search_term.split("<>")]
+            queryset |= RealEstate.objects.filter(
+                    area__areaarea__total__gte=a, area__areaarea__total__lte=b)
+        return queryset
 
 
 # Register your models here.

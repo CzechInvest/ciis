@@ -4,6 +4,29 @@ from addresses.models import Address
 import shapely.wkt
 from django.utils.translation import ugettext_lazy as _
 
+class Nuts3(models.Model):
+
+    class meta:
+        verbose_name = _("Kraj (NUTS3)")
+        verbose_name_plural = _("Kraje (NUTS3)")
+
+    code = models.IntegerField(
+            verbose_name=_("Kód")
+    )
+
+    name = models.CharField(
+            verbose_name=_("Název"),
+            max_length=256
+    )
+
+    geometry = models.MultiPolygonField(
+            verbose_name=_("Hranice"),
+            srid=4326)
+
+    def __str__(self):
+        return self.name
+
+
 class Lau1(models.Model):
     # okresy
 
@@ -21,7 +44,7 @@ class Lau1(models.Model):
     )
 
     geometry = models.MultiPolygonField(
-            verbose_name=_("Hranice okresů"),
+            verbose_name=_("Hranice"),
             srid=4326)
 
     def __str__(self):
@@ -68,5 +91,5 @@ class Location(models.Model):
             return "{} {}, {}".format(self.address.street, self.address.number,
                     self.address.city)
         else:
-            lau1s = ", ".join(Lau1.objects.filter(geometry__intersects=self.geometry))
+            lau1s = ", ".join([l.name for l in Lau1.objects.filter(geometry__intersects=self.geometry)])
             return lau1s
