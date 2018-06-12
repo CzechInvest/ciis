@@ -7,6 +7,11 @@
     <style>
       #map {width: 600px; height: 300px;}
     </style>
+    <script type="text/javascript">
+    {% autoescape off %}
+    var realitiesData = {{ objects_data }};
+    {% endautoescape %}
+    </script>
 
 {% endblock %}
 
@@ -60,6 +65,21 @@
                 attribution: '<a href="http://www.openmaptiles.org/" target="_blank">© OpenMapTiles</a>© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
                 crossOrigin: true
               }).addTo(map);
+
+              datalayer = L.geoJSON(realitiesData,{
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(
+                      '<strong>'+feature.properties.name+'</strong><br/>'+
+                      '<strong>Owner:</strong>'+feature.properties.owner+
+                      '<br />'+
+                      '<strong>Size:</strong>'+feature.properties.size+'m<sup>2</sup>'+
+                      '<br />'+
+                      '<a href="'+feature.properties.object_url+'">Detail</a>'
+                    );
+                }                
+              }).addTo(map);
+              map.setView([50, 15], 6);
+
             </script>
 
       <form id="changelist-form" method="post"{% if cl.formset.is_multipart %} enctype="multipart/form-data"{% endif %} novalidate>{% csrf_token %}

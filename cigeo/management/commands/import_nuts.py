@@ -10,7 +10,6 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
 
         for cls, files in ((Lau1,"okresy"), (Nuts3, "kraje")):
-            cls.objects.
 
             path = os.path.abspath(os.path.join(
                     os.path.dirname(__file__), "..",

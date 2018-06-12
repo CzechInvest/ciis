@@ -95,7 +95,8 @@ class Command(BaseCommand):
                         Address(
                                adm=int(kod_adm),
                                street=ulice,
-                               number=cislo_domovni,
+                               house_number=cislo_domovni,
+                               orientation_number=cislo_orientacni,
                                city=obec_obj,
                                zipcode=psc,
                                coordinates=coords)

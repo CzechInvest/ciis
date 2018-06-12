@@ -1,7 +1,8 @@
 from django.contrib import admin
+from django.urls import reverse
 import nested_admin
+import json
 from .models import RealEstate
-from .models import RealEstateType
 from .models import Attachment
 from .models import Photo
 from .models import Keyword
@@ -27,13 +28,18 @@ from .models import SellingPrice
 from .models import RentalPrice
 from .models import Agent
 from .models import Owner
-from .models import MyLocation
+from .models import Location
+
+from cigeo.admin import NUTS3Filter
 from cigeo.models import Lau1
 from cigeo.models import Nuts3
 from leaflet.admin import LeafletGeoAdmin
+from cigeo.admin import NUTS3Filter
+from cigeo.admin import ArealFieldAdmin
+from cigeo.models import Road
 
 class LocationInline(LeafletGeoAdmin, nested_admin.NestedStackedInline):
-    model=MyLocation
+    model=Location
     raw_id_fields = ("address",)
     default_zoom = 7
     default_lon = 1730000
@@ -141,74 +147,53 @@ class AreaInline(nested_admin.NestedStackedInline):
             AreaPriceInline, BuildingInline)
     model=Area
 
-class RealEstateAdmin(nested_admin.NestedModelAdmin):
-    search_fields = ("title", "agent__first_name", "agent__last_name",
+class RealEstateAdmin(ArealFieldAdmin):
+    search_fields = ("title", "realestate_type", "agent__first_name", "agent__last_name",
         "mylocation__address__city__name", "owner__first_name",
         "owner__last_name")
-    list_display = ("title", "agent", "owner", "city", "size")
+    list_filter = (NUTS3Filter, )
+    list_display = ("title", "realestate_type", "agent", "owner", "place", "size")
     inlines = (LocationInline, PhotoInline, AttachmentInline, ElectricityInline, DrinkingWaterInline,
             NonPotableWaterInline, GasInline, WasteWaterInline,
             TelecommunicationsInline, AreaInline
             )
 
     def size(self, real_estate):
-        return real_estate.area.areaarea.total
-
-    def city(self, real_estate):
-
-        if real_estate.mylocation.address:
-            return real_estate.mylocation.address.city
+        if hasattr(real_estate, "area"):
+            return real_estate.area.areaarea.total
         else:
-            return ", ".join([l.__str__() for l in Nuts3.objects.filter(geometry__intersects=real_estate.mylocation.geometry)])
+            return None
 
-    def get_search_results(self, request, queryset, search_term):
-        queryset, use_distinct = super(RealEstateAdmin, self).get_search_results(request, queryset, search_term)
-        queryset = self._search_lay1_by_name(queryset, search_term)
-        queryset = self._search_area(queryset, search_term)
 
-        return (queryset, use_distinct)
+    def place(self, obj):
+        """Used in the ChangeList view as "Location" column name
+        Display either City name or NUTS3 (Kraj) name
+        """
 
-    def _search_lay1_by_name(self, queryset, search_term):
-
-        for cls in (Lau1, Nuts3):
-            objs = cls.objects.filter(name__startswith=search_term)
-            for o in objs:
-                real_estates = RealEstate.objects.filter(mylocation__geometry__intersects=o.geometry)
-                queryset |= real_estates
-        return queryset
-
-    def _search_area(self, queryset, search_term):
-
-        if search_term.find("<>") > -1:
-            a,b = [float(x) for x in search_term.split("<>")]
-            queryset |= RealEstate.objects.filter(
-                    area__areaarea__total__gte=a, area__areaarea__total__lte=b)
-        return queryset
-
+        return self.get_place(obj)
 
 # Register your models here.
 admin.site.register(RealEstate,RealEstateAdmin)
-admin.site.register(Photo)
-admin.site.register(Attachment)
-admin.site.register(Keyword)
-#admin.site.register(RealEstateType)
-admin.site.register(Electricity)
-admin.site.register(DrinkingWater)
-admin.site.register(NonPotableWater)
-admin.site.register(Gas)
-admin.site.register(WasteWater)
-admin.site.register(Telecommunications)
-admin.site.register(Area, AreaAdmin)
-admin.site.register(AreaOwnership)
-admin.site.register(Purpose)
-admin.site.register(AreaArea)
-admin.site.register(AreaPrice, AreaPriceAdmin)
-admin.site.register(Building)
-admin.site.register(BuildingArea)
-admin.site.register(BuildingPrice)
-admin.site.register(BuildingDisposal)
-admin.site.register(Floor)
-admin.site.register(SellingPrice)
-admin.site.register(RentalPrice)
+#admin.site.register(Photo)
+#admin.site.register(Attachment)
+#admin.site.register(Keyword)
+#admin.site.register(Electricity)
+#admin.site.register(DrinkingWater)
+#admin.site.register(NonPotableWater)
+#admin.site.register(Gas)
+#admin.site.register(WasteWater)
+#admin.site.register(Telecommunications)
+#admin.site.register(Area, AreaAdmin)
+#admin.site.register(AreaOwnership)
+#admin.site.register(Purpose)
+#admin.site.register(AreaArea)
+#admin.site.register(AreaPrice, AreaPriceAdmin)
+#admin.site.register(Building)
+#admin.site.register(BuildingArea)
+#admin.site.register(BuildingPrice)
+#admin.site.register(BuildingDisposal)
+#admin.site.register(Floor)
+#admin.site.register(SellingPrice)
+#admin.site.register(RentalPrice)
 admin.site.register(Agent)
 admin.site.register(Owner)

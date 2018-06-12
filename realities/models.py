@@ -1,11 +1,15 @@
 from django.db import models
 from django.contrib.gis.db import models as gismodels
-from cigeo.models import Location
+from cigeo.models import Location as MyLocation
 from contacts.models import ContactPerson
 from django.utils.translation import ugettext_lazy as _
+from cigeo.models import Area as MyAreaArea
+from cigeo.models import Water
+from cigeo.models import Medium
 
-class MyLocation(Location):
+class Location(MyLocation):
 
+    highway_distance = models.FloatField()
     real_estate = models.OneToOneField(
             "RealEstate",
             on_delete=models.CASCADE,
@@ -27,16 +31,6 @@ class Owner(ContactPerson):
 
     # TODO: fix according to original model
 
-class Medium(models.Model):
-
-    distance = models.IntegerField(
-            verbose_name=_("Vzdálenost"),
-            help_text="vzdálenost k objektu <code>[m]</code>")
-
-    note = models.TextField(
-            verbose_name=_("Poznámka"),
-            help_text=_("Poznámka"))
-
 class Electricity(Medium):
 
     class Meta:
@@ -56,20 +50,6 @@ class Electricity(Medium):
             help_text=_("Nemovitost")
     )
 
-class Water(Medium):
-
-    diameter = models.IntegerField(
-            verbose_name=_("Velikost přípojky"),
-            help_text=_("Velikost přípojky <code>[mm]</code>"))
-    well = models.IntegerField(
-            verbose_name=_("Studna"),
-            help_text=_("Studna <code>[m<sup>3</sup>]</code>"))
-    capacity = models.IntegerField(
-            verbose_name=_("Kapacita přípojky"),
-            help_text=_("Kapacita přípojky <code>[m<sup>3</sup>/d]</code>"))
-    well_capacity = models.IntegerField(
-            verbose_name=_("Kapacita studny"),
-            help_text=_("Kapacita studny <code>[m<sup>3</sup>/d]</code>"))
 
 class DrinkingWater(Water):
 
@@ -80,6 +60,7 @@ class DrinkingWater(Water):
     real_estate = models.OneToOneField(
             "RealEstate",
             verbose_name=_("Nemovitost"),
+            related_name="real_estate",
             on_delete=models.CASCADE,
             help_text=_("Nemovitost")
     )
@@ -217,49 +198,12 @@ class Keyword(models.Model):
             blank=False,
             help_text="Klíčové slovo")
 
-class RealEstateType(models.Model):
-    title = models.CharField(
-            verbose_name=_("Název"),
-            max_length=50
-    )
-    description = models.CharField(
-        verbose_name=_("Popis"),
-        max_length=50,
-        null=True,
-        blank=True
-    )
-
-    def __str__(self):
-        if self.description:
-            return "{} ({})".format(self.title, self.description)
-        else:
-            return self.title
-
 class OriginalUsage(models.Model):
     usage = models.CharField(
             max_length=50)
 
-class AreaArea(models.Model):
+class AreaArea(MyAreaArea):
 
-    class Meta:
-        verbose_name = _("Rozloha plochy")
-        verbose_name_plural = _("Rozloha ploch")
-
-    total = models.IntegerField(
-            verbose_name=_('Celková rozloha'),
-            help_text = _("Celková rozloha <code>m<sup>2</sup></code>"))
-    free = models.IntegerField(
-            verbose_name=_('Volná plocha'),
-            help_text = _("Volná plocha <code>m<sup>2</sup></code>"))
-    to_be_build = models.IntegerField(
-            verbose_name=_('K zástavbě'),
-            help_text = _("K zástavbě dle ÚP <code>m<sup>2</sup></code>"))
-    for_expansion = models.IntegerField(
-            verbose_name=_('K expanzi'),
-            help_text = _("K expanzi <code>m<sup>2</sup></code>"))
-    available_from = models.DateField(
-            verbose_name=_('K dispozici od'),
-            help_text = _("K dispozici od"))
 
     area = models.OneToOneField(
             "Area",
@@ -833,10 +777,18 @@ class RealEstate(models.Model):
     #        help_text="Klíčová slova"
     #)
 
-    #type = models.ForeignKey(
-    #        RealEstateType,
-    #        help_text="Typ nemovitosti",
-    #        on_delete=models.PROTECT)
+    type_choices = (
+        (0, _("Greenfield/Průmyslová zóna")),
+        (1, _("Průmyslový park")),
+        (2, _("areál")),
+        (3, _("Vědecko-technický park")),
+        (4, _("Kanceláře")),
+    )
+
+    realestate_type = models.IntegerField(
+            choices=type_choices,
+            help_text="Typ nemovitosti",
+        )
 
     #original_usage = models.ForeignKey(
     #        OriginalUsage,

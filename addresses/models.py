@@ -10,13 +10,17 @@ class Address(models.Model):
     street = models.CharField(
             max_length = 200,
             help_text = "Ulice")
-    number = models.CharField(
+    house_number = models.CharField(
             max_length = 20,
             default=None,
             null=True,
-            help_text = "Č.p.")
-    city = models.ForeignKey("City",
-            on_delete=models.PROTECT)
+            help_text = "Domovní číslo")
+    orientation_number = models.CharField(
+            max_length = 20,
+            default=None,
+            null=True,
+            help_text = "Orientační číslo")
+    city = models.ForeignKey("City", on_delete=models.CASCADE)
     zipcode = models.CharField(
             max_length = 200,
             help_text = "PSČ")
@@ -29,7 +33,8 @@ class Address(models.Model):
             street = self.street
         else:
             street = self.city
-        return "{}, {}, {} - {}".format(street, self.number, self.zipcode, self.city)
+        return "{}, {}/{}, {} - {}".format(street, self.house_number,
+                self.orientation_number, self.zipcode, self.city)
 
 class City(models.Model):
     code = models.IntegerField(

@@ -79,12 +79,10 @@ class Infrastructure(models.Model):
             help_text="Just some note")
 
     contact_person = models.ManyToManyField(ContactPerson,
-            blank=True,
-            null=True)
+            blank=True)
 
     cooperation = models.ManyToManyField("Organisation",
-            blank=True,
-            null=True)
+            blank=True)
 
     def __str__(self):
         return self.name

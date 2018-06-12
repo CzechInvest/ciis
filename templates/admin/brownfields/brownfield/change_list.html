@@ -1,0 +1,99 @@
+{% extends "admin/change_list.html" %}
+{% block extrastyle %}
+{{ block.super }}
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <style>
+      #map {width: 600px; height: 300px;}
+    </style>
+    <script type="text/javascript">
+    {% autoescape off %}
+    var bfData = {{ objects_data }};
+    {% endautoescape %}
+    </script>
+
+{% endblock %}
+
+{% block extrahead %}
+{{ block.super }}
+
+
+
+{% endblock %}
+
+{% load i18n admin_urls static admin_list %}
+
+{% block content %}
+  <div id="content-main">
+    {% block object-tools %}
+        <ul class="object-tools">
+          {% block object-tools-items %}
+            {% if has_add_permission %}
+            <li>
+              {% url cl.opts|admin_urlname:'add' as add_url %}
+              <a href="{% add_preserved_filters add_url is_popup to_field %}" class="addlink">
+                {% blocktrans with cl.opts.verbose_name as name %}Add {{ name }}{% endblocktrans %}
+              </a>
+            </li>
+            {% endif %}
+          {% endblock %}
+        </ul>
+    {% endblock %}
+    {% if cl.formset.errors %}
+        <p class="errornote">
+        {% if cl.formset.total_error_count == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
+        </p>
+        {{ cl.formset.non_form_errors }}
+    {% endif %}
+    <div class="module{% if cl.has_filters %} filtered{% endif %}" id="changelist">
+      {% block search %}{% search_form cl %}{% endblock %}
+      {% block date_hierarchy %}{% date_hierarchy cl %}{% endblock %}
+
+      {% block filters %}
+        {% if cl.has_filters %}
+          <div id="changelist-filter">
+            <h2>{% trans 'Filter' %}</h2>
+            {% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
+          </div>
+        {% endif %}
+      {% endblock %}
+         <div id="map"></div>
+            <script>
+              var map = L.map('map').setView([0, 0], 1);
+              L.tileLayer('https://maps.tilehosting.com/styles/basic/{z}/{x}/{y}.png?key=mCnC0rArFsfnBvLPiB6J',{
+                attribution: '<a href="http://www.openmaptiles.org/" target="_blank">© OpenMapTiles</a>© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+                crossOrigin: true
+              }).addTo(map);
+
+              datalayer = L.geoJSON(bfData,{
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(
+                      '<strong>'+feature.properties.name+'</strong><br/>'+
+                      '<strong>Owner:</strong>'+feature.properties.owner+
+                      '<br />'+
+                      '<strong>Size:</strong>'+feature.properties.size+'m<sup>2</sup>'+
+                      '<br />'+
+                      '<a href="'+feature.properties.object_url+'">Detail</a>'
+                    );
+                }                
+              }).addTo(map);
+              map.setView([50, 15], 6);
+
+            </script>
+
+      <form id="changelist-form" method="post"{% if cl.formset.is_multipart %} enctype="multipart/form-data"{% endif %} novalidate>{% csrf_token %}
+      {% if cl.formset %}
+        <div>{{ cl.formset.management_form }}</div>
+      {% endif %}
+
+      {% block result_list %}
+          {% if action_form and actions_on_top and cl.show_admin_actions %}{% admin_actions %}{% endif %}
+          {% result_list cl %}
+          {% if action_form and actions_on_bottom and cl.show_admin_actions %}{% admin_actions %}{% endif %}
+      {% endblock %}
+      {% block pagination %}{% pagination cl %}{% endblock %}
+      </form>
+    </div>
+  </div>
+{% endblock %}
