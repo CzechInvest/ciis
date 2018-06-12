@@ -4,16 +4,40 @@ from cigeo.models import Road
 import os
 import fiona
 from shapely.geometry import shape
+import requests
+import atexit
+import tempfile
+import shutil
+import zipfile
+
+TEMPDIR=tempfile.mkdtemp()
+
+def clear():
+    shutil.rmtree(TEMPDIR)
+
+atexit.register(clear)
 
 class Command(BaseCommand):
     help = 'Import initial data sets to database'
 
     def handle(self, *args, **options):
 
+        self.stdout.write("Downloading data from OSM")
+        resp = requests.get("http://download.geofabrik.de/europe/czech-republic-latest-free.shp.zip",
+                stream=True)
+        zip_file = os.path.join(TEMPDIR, "czechrep.zip")
+        with open(zip_file, 'wb') as fd:
+            for chunk in resp.iter_content(chunk_size=1024):
+                fd.write(chunk)
 
-        path = os.path.abspath(os.path.join(
-                os.path.dirname(__file__), "..",
-                "data", "gis_osm_roads_free.gpkg"))
+        data_file = zipfile.ZipFile(zip_file)
+        for f in ("gis_osm_roads_free_1.cpg", "gis_osm_roads_free_1.dbf",
+                  "gis_osm_roads_free_1.prj", "gis_osm_roads_free_1.shp",
+                  "gis_osm_roads_free_1.shx"):
+            data_file.extract(f, path=TEMPDIR)
+
+
+        path = os.path.abspath(os.path.join(TEMPDIR, "gis_osm_roads_free_1.shp"))
 
         with fiona.open(path) as roads:
 
@@ -27,7 +51,7 @@ class Command(BaseCommand):
                 shapely_geom = shape(f["geometry"])
                 geom = GEOSGeometry(shapely_geom.wkt)
 
-                if f["properties"]["oneway"] == "yes":
+                if "oneway" in f["properties"] and f["properties"]["oneway"] == "yes":
                     oneway = True
                 else:
                     oneway = False
