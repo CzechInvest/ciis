@@ -10,6 +10,7 @@ from cigeo.models import Lau1
 from cigeo.admin import NUTS3Filter
 from cigeo.admin import ArealFieldAdmin
 from leaflet.admin import LeafletGeoAdmin
+from cigeo.forms import LocationForm
 
 from django.contrib.admin.widgets import AdminFileWidget
 
@@ -39,6 +40,12 @@ from .models import Telecommunications
 from .models import Road
 from .models import RailRoad
 from .models import Area
+from .models import Keeper
+
+
+class KeeperInline(nested_admin.NestedStackedInline):
+    model = Keeper
+    extra = 0
 
 
 class EcologicalLimitInline(nested_admin.NestedStackedInline):
@@ -176,13 +183,9 @@ class AttachmentInline(nested_admin.NestedStackedInline):
     model = Attachment
 
 
-class ArealInline(nested_admin.NestedStackedInline):
-    extra = 0
-    model = Areal
-
-
 class LocationInline(LeafletGeoAdmin, nested_admin.NestedStackedInline):
     model = Location
+    form = LocationForm
     raw_id_fields = ("address",)
     default_zoom = 7
     default_lon = 1730000
@@ -191,13 +194,13 @@ class LocationInline(LeafletGeoAdmin, nested_admin.NestedStackedInline):
     def __init__(self, *args, **kwargs):
         nested_admin.NestedStackedInline.__init__(
             self, parent_model=args[0], admin_site=args[1])
-        #LeafletGeoAdmin.__init__(self, MyLocation, args[1])
+        # LeafletGeoAdmin.__init__(self, MyLocation, args[1])
 
 
 class ArealInline(nested_admin.NestedStackedInline):
     model = Areal
     inlines = (
-        LocationInline,
+        KeeperInline,
         EcologicalLimitInline,
         ResearchFieldWorkInline,
         CulturalProtectionInline,
@@ -227,12 +230,15 @@ class BrownFieldAdmin(ArealFieldAdmin):
         "title",
         "status",
         "local_type",
-        "areal__location__address__city__name",
-        "keeper__first_name",
-        "keeper__last_name")
+        "location__address__city__name",
+        #"keeper__first_name",
+        #"keeper__last_name")
+    )
     list_filter = (NUTS3Filter, )
+    change_list_template = "admin/change_list-map.html"
     list_display = ("title", "status", "local_type", "place", "size")
-    inlines = (PhotoInline, AttachmentInline, ArealInline,)
+    inlines = (LocationInline, PhotoInline, AttachmentInline,
+               ArealInline,)
 
     # change_list_template
 
@@ -251,8 +257,20 @@ class BrownFieldAdmin(ArealFieldAdmin):
         return self.get_place(obj)
 
 
+class LocationAdmin(LeafletGeoAdmin):
+
+    form = LocationForm
+    raw_id_fields = ("address",)
+
+    def get_form(self, request, obj=None, **kwargs):
+        form = super(LocationAdmin, self).get_form(request, obj=obj, **kwargs)
+        form.obj = obj
+        return form
+
+
 # Register your models here.
 
 admin.site.register(BrownField, BrownFieldAdmin)
 admin.site.register(Areal)
 admin.site.register(Photo)
+admin.site.register(Location, LocationAdmin)

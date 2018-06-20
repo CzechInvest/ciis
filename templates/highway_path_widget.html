@@ -1,0 +1,5 @@
+{% if url %}
+<a href="{{ url }}" target="blank">{{ url|truncatechars:55 }}</a> 
+{% else %}
+    -----
+{% endif %}

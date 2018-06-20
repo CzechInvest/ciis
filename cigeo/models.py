@@ -2,6 +2,7 @@ from django.contrib.gis.db import models
 from django.contrib.gis import geos
 from django.contrib.gis.geos import *
 from django.contrib.gis.measure import D
+from django.db.models import Q 
 from django.contrib.gis.db.models.functions import Distance
 import requests
 import time
@@ -91,6 +92,9 @@ class Location(models.Model):
             gc = geos.GeometryCollection([self.address.coordinates])
             self.geometry = gc
 
+        if self.highway_distance == -1:
+            self.highway_distance = self.get_highway_distance()
+
         super().save(*args, **kwargs)
 
     def __str__(self):
@@ -119,12 +123,6 @@ class Location(models.Model):
         me.highway_distance = self.get_highway_distance()
         return me
 
-    def save(self, *args, **kwargs):
-
-        if self.highway_distance == -1:
-            self.highway_distance = self.get_highway_distance()
-        super().save(*args, **kwargs)
-
 
     def get_highway_distance(self):
 
@@ -133,11 +131,7 @@ class Location(models.Model):
         url = "https://router.project-osrm.org/route/v1/driving/{startx},{starty};{destx},{desty}?overview=simplified&geometries=geojson&steps=false"
 
         distances = []
-        link = Road.objects.filter(
-                fclass__contains="_link").filter(
-                        geometry__distance_lte=(centroid,
-                            D(m=100000))).annotate(distance=Distance('geometry',
-                                centroid)).order_by('distance')[0]
+        link = self.get_closest_highway_point()
 
         target = link.geometry.centroid
         target_url = url.format(startx=centroid.x, starty=centroid.y,
@@ -150,9 +144,27 @@ class Location(models.Model):
         else:
             if (resp.status_code == 429):
                 time.sleep(1)
-                return self.get_highway_distance(objct)
+                return self.get_highway_distance()
             else:
                 return -1
+
+    def get_closest_highway_point(self):
+
+        centroid = self.geometry.centroid
+
+        link = Road.objects.filter(
+            Q(fclass__contains="highway_link") | \
+            Q(fclass__contains="trunk_link") | \
+            Q(fclass__contains="motorway_link")
+        ).filter(
+            geometry__distance_lte=(
+                centroid,
+                D(m=100000)
+            )
+        ).annotate(distance=Distance('geometry', centroid)
+        ).order_by('distance')[0]
+
+        return link
 
 class Area(models.Model):
     class Meta:

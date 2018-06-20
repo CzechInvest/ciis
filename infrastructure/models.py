@@ -1,8 +1,12 @@
 from django.db import models
 from addresses.models import Address
-from contacts.models import ContactPerson
+from contacts.models import ContactPerson as MyContactPerson
 
-# Create your models here.
+
+class ContactPerson(MyContactPerson):
+    pass
+
+
 class Infrastructure(models.Model):
 
     name = models.CharField(
@@ -30,7 +34,7 @@ class Infrastructure(models.Model):
             help_text="Popis [en]", blank=True)
 
     address = models.ForeignKey(Address,
-            on_delete=models.PROTECT)
+                                on_delete=models.PROTECT)
 
     industry = models.ManyToManyField("Industry")
 

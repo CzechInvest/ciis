@@ -1,15 +1,23 @@
 from django.db import models
-from django.contrib.gis.db import models as gismodels
 from cigeo.models import Location as MyLocation
-from contacts.models import ContactPerson
+from contacts.models import ContactPerson as MyContactPerson
 from django.utils.translation import ugettext_lazy as _
 from cigeo.models import Area as MyAreaArea
 from cigeo.models import Water
 from cigeo.models import Medium
 
+
+class ContactPerson(MyContactPerson):
+    pass
+
+
 class Location(MyLocation):
 
-    highway_distance = models.FloatField()
+    help_text = _("Vzdálenost k dálnici")
+
+    highway_distance = models.FloatField(
+            default=-1,
+            help_text=help_text)
     real_estate = models.OneToOneField(
             "RealEstate",
             on_delete=models.CASCADE,

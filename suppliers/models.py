@@ -1,74 +1,84 @@
 from django.db import models
+from contacts.models import ContactPerson as MyContactPerson
+from contacts.models import Organisation as MyOrganisation
+from django.utils.translation import ugettext_lazy as _
 from addresses.models import Address
-from contacts.models import ContactPerson
+
 
 # Create your models here.
 class Supplier(models.Model):
+
     name = models.CharField(
             max_length=200,
             help_text="Název dodavatele",
             blank=False
     )
-    regid = models.IntegerField(
-            help_text="IČO",
-            blank=False
-    )
-
-    address = models.ForeignKey(Address,
-            on_delete=models.PROTECT)
-
-    phone = models.CharField(
-            max_length=20,
-            help_text="Telefon")
-
-    fax = models.CharField(
-            max_length=20,
-            help_text="Fax")
-
-    email = models.EmailField()
-
-    url = models.URLField()
-
-    sectors = models.ManyToManyField('Sector')
 
     join_venture = models.BooleanField(
-            help_text="Join-venture",
+            help_text=_("Join-venture"),
             default=False,
             blank=False)
 
     custom_made = models.BooleanField(
-            help_text="Zakázková výroa",
+            help_text=_("Zakázková výroba"),
             default=False,
             blank=False)
 
     capital = models.BooleanField(
-            help_text="Zahraniční kapitál",
+            help_text=_("Zahraniční kapitál"),
             default=False,
             blank=False)
 
     turnover = models.IntegerField(
-            help_text="Obrat [€]",
+            help_text=_("Obrat [€]"),
             blank=False)
 
     export = models.FloatField(
-            help_text="Export [%]",
+            help_text=_("Export [%]"),
             blank=False)
 
     employes = models.IntegerField(
-            help_text="Počet zaměstnanců",
+            help_text=_("Počet zaměstnanců"),
             blank=False)
 
-    year = models.IntegerField(
-            help_text="Rok založení",
+    established = models.IntegerField(
+            help_text=_("Rok založení"),
             blank=False)
 
     main_activity = models.CharField(
             max_length=200,
-            help_text="Hlavní činnost")
+            help_text=_("Hlavní činnost"))
 
     certificates = models.ManyToManyField("Certificate")
 
-    contact_person = models.ManyToManyField(ContactPerson)
+    sectors = models.ManyToManyField('Sector')
+
+    def __str__(self):
+        return self.name
+
+
+class Location(models.Model):
+
+    class Meta:
+        verbose_name = _("Lokace")
+        verbose_name_plural = _("Lokace")
+
+    address = models.ForeignKey(Address,
+                                on_delete=models.CASCADE)
+    supplier = models.ForeignKey('Supplier',
+                                 on_delete=models.CASCADE)
+
+
+class ContactPerson(MyContactPerson):
+    organisation = models.OneToOneField(
+        "Organisation",
+        on_delete=models.CASCADE)
+
+
+class Organisation(MyOrganisation):
+    supplier = models.OneToOneField(
+        "Supplier",
+        on_delete=models.CASCADE)
 
 
 class Sector(models.Model):
@@ -82,9 +92,10 @@ class Sector(models.Model):
 
 
 class Certificate(models.Model):
-    name=models.CharField(help_text="Certifikát",
-            unique=True,
-            max_length=20)
+    name = models.CharField(
+        help_text="Certifikát",
+        unique=True,
+        max_length=20)
 
     def __str__(self):
         return self.name

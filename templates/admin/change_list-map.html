@@ -70,9 +70,9 @@
                 onEachFeature: function (feature, layer) {
                     layer.bindPopup(
                       '<strong>'+feature.properties.name+'</strong><br/>'+
-                      '<strong>Owner:</strong>'+feature.properties.owner+
+                      (feature.properties.owner ? '<strong>Owner:</strong>'+ feature.properties.owner : "" )+
                       '<br />'+
-                      '<strong>Size:</strong>'+feature.properties.size+'m<sup>2</sup>'+
+                      (feature.properties.size ? '<strong>Size:</strong>'+  feature.properties.size +'m<sup>2</sup>' : "") +
                       '<br />'+
                       '<a href="'+feature.properties.object_url+'">Detail</a>'
                     );

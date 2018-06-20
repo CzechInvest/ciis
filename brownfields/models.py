@@ -1,5 +1,5 @@
 from django.db import models
-from contacts.models import ContactPerson
+from contacts.models import ContactPerson as MyContactPerson
 from cigeo.models import Medium
 from cigeo.models import Water
 from cigeo.models import Location as MyLocation
@@ -299,7 +299,8 @@ class Telecommunications(Medium):
 
 class Location(MyLocation):
 
-    highway_distance = models.FloatField()
+    highway_distance = models.FloatField(
+            default=-1)
     brownfield = models.OneToOneField(
         "BrownField",
         on_delete=models.CASCADE,
@@ -408,10 +409,6 @@ class BrownField(models.Model):
         help_text=_("Žadatel o dotaci z 'Národního programu'")
     )
 
-    keeper = models.ForeignKey(ContactPerson,
-                               on_delete=models.CASCADE,
-                               verbose_name=_("Správce"),
-                               help_text="Správce")
 
     local_type_choices = (
         (0, _("Areál (plocha s budovami)")),
@@ -611,3 +608,11 @@ class Attachment(models.Model):
         on_delete=models.CASCADE,
         help_text=_("BrownField")
     )
+
+
+class Keeper(MyContactPerson):
+    areal = models.OneToOneField(
+        "Areal",
+        on_delete=models.CASCADE,
+        verbose_name=_("Brownfield"),
+        help_text="Brownfield")

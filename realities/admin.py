@@ -37,8 +37,10 @@ from leaflet.admin import LeafletGeoAdmin
 from cigeo.admin import NUTS3Filter
 from cigeo.admin import ArealFieldAdmin
 from cigeo.models import Road
+from cigeo.forms import LocationForm
 
 class LocationInline(LeafletGeoAdmin, nested_admin.NestedStackedInline):
+    form = LocationForm
     model=Location
     raw_id_fields = ("address",)
     default_zoom = 7
@@ -147,16 +149,19 @@ class AreaInline(nested_admin.NestedStackedInline):
             AreaPriceInline, BuildingInline)
     model=Area
 
+
 class RealEstateAdmin(ArealFieldAdmin):
-    search_fields = ("title", "realestate_type", "agent__first_name", "agent__last_name",
-        "mylocation__address__city__name", "owner__first_name",
-        "owner__last_name")
+    search_fields = ("title", "realestate_type", "agent__first_name",
+                     "agent__last_name", "location__address__city__name",
+                     "owner__first_name", "owner__last_name")
     list_filter = (NUTS3Filter, )
-    list_display = ("title", "realestate_type", "agent", "owner", "place", "size")
-    inlines = (LocationInline, PhotoInline, AttachmentInline, ElectricityInline, DrinkingWaterInline,
-            NonPotableWaterInline, GasInline, WasteWaterInline,
-            TelecommunicationsInline, AreaInline
-            )
+    list_display = ("title", "realestate_type", "agent", "owner", "place",
+                    "size")
+    change_list_template = "admin/change_list-map.html"
+    inlines = (LocationInline, PhotoInline, AttachmentInline,
+               ElectricityInline, DrinkingWaterInline, NonPotableWaterInline,
+               GasInline, WasteWaterInline, TelecommunicationsInline,
+               AreaInline)
 
     def size(self, real_estate):
         if hasattr(real_estate, "area"):
@@ -171,6 +176,17 @@ class RealEstateAdmin(ArealFieldAdmin):
         """
 
         return self.get_place(obj)
+
+class LocationAdmin(LeafletGeoAdmin):
+
+    form = LocationForm
+    raw_id_fields = ("address",)
+
+    def get_form(self, request, obj=None, **kwargs):
+        form = super(LocationAdmin, self).get_form(request, obj=obj, **kwargs)
+        form.obj = obj
+        return form
+
 
 # Register your models here.
 admin.site.register(RealEstate,RealEstateAdmin)
@@ -194,6 +210,6 @@ admin.site.register(RealEstate,RealEstateAdmin)
 #admin.site.register(BuildingDisposal)
 #admin.site.register(Floor)
 #admin.site.register(SellingPrice)
-#admin.site.register(RentalPrice)
+admin.site.register(Location, LocationAdmin)
 admin.site.register(Agent)
 admin.site.register(Owner)
