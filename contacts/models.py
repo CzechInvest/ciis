@@ -1,6 +1,6 @@
 from django.db import models
-from addresses.models import Address
 from django.utils.translation import ugettext_lazy as _
+from addresses.models import Address
 
 
 class ContactPerson(models.Model):
@@ -12,33 +12,64 @@ class ContactPerson(models.Model):
             help_text="First name",
             max_length=20)
 
-    middle_name = models.CharField(
-            help_text="Middle name",
-            null=True,
-            blank=True,
-            max_length=20)
-
     last_name = models.CharField(
             help_text="Last name",
-            max_length=20)
-
-    titles = models.CharField(
-            help_text="Mgr., PhDr., MUDr., Ing., PhD., ...",
-            null=True,
-            blank=True,
-            max_length=20)
-
-    email = models.EmailField()
-
-    phone = models.CharField(
             max_length=20)
 
     role = models.CharField(
             help_text="Director, HR Manager, ...",
             max_length=20)
 
+    crm = models.URLField(
+            help_text=_("CRM link"))
+
     def __str__(self):
         return "{} {}".format(self.first_name, self.last_name)
+
+
+class Owner(models.Model):
+
+    class Meta:
+        abstract = True
+
+    PRIVATE = 0
+    PUBLIC = 1
+    COMBINED = 2
+
+    ONE = 1
+    TWO = 2
+    MORE = 100
+
+    type_choices = (
+        (PRIVATE, _("Private")),
+        (PUBLIC, _("Public")),
+        (COMBINED, _("Combined")),
+    )
+
+    type = models.IntegerField(
+        choices=type_choices,
+        help_text=_("Ownership type"))
+
+    name = models.CharField(
+        max_length=32,
+        help_text=_("Name"))
+
+    owners_choices = (
+        (ONE, _("One")),
+        (TWO, _("Two")),
+        (MORE, _("More")),
+    )
+
+    number_of_owners = models.IntegerField(
+        choices=owners_choices,
+        default=ONE,
+        help_text=_("Name"))
+
+    crm = models.URLField(
+            help_text=_("CRM link"))
+
+    def __str__(self):
+        return "{}".format(self.name)
 
 
 class Organisation(models.Model):

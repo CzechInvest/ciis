@@ -1,14 +1,9 @@
 from django.contrib.gis.db import models
-from django.contrib.gis import geos
-from django.contrib.gis.geos import *
-from django.contrib.gis.measure import D
-from django.db.models import Q 
-from django.contrib.gis.db.models.functions import Distance
-import requests
-import time
 from addresses.models import Address
-import shapely.wkt
 from django.utils.translation import ugettext_lazy as _
+from django.conf import settings
+import json
+
 
 class Nuts3(models.Model):
 
@@ -60,180 +55,76 @@ class Lau1(models.Model):
 class Location(models.Model):
 
     class Meta:
-        verbose_name=_("Umístění")
-        verbose_name_plural=_("Umístění")
+        verbose_name = _("Umístění")
+        verbose_name_plural = _("Umístění")
         abstract = True
 
+    address = models.ForeignKey(
+        Address,
+        null=True,
+        blank=True,
+        related_name="+",
+        verbose_name=_("Adresa"),
+        on_delete=models.SET_NULL
+    )
 
-    address = models.ForeignKey(Address,
-            null=True,
-            blank=True,
-            related_name="+",
-            verbose_name=_("Adresa"),
-            on_delete=models.SET_NULL)
-    geometry = models.GeometryCollectionField(
+    geometry = models.MultiPolygonField(
             verbose_name=_("Geometrie"),
             help_text=_("Body, linie, polygony"),
             null=True,
             blank=True,
             srid=4326)
 
-    def save(self, *args, **kwargs):
-        """Save location object
-
-        This method convert's address.geometry and appends it to geometry
-        """
-
-        if self.address and self.geometry:
-            if not self.address.coordinates.intersects(self.geometry):
-                self.geometry.append(self.address.coordinates)
-        elif self.address:
-
-            gc = geos.GeometryCollection([self.address.coordinates])
-            self.geometry = gc
-
-        if self.highway_distance == -1:
-            self.highway_distance = self.get_highway_distance()
-
-        super().save(*args, **kwargs)
-
     def __str__(self):
         if self.address:
-            if self.address.house_number and \
-                self.address.orientation_number:
-                    hr = "{}/{}".format(self.address.house_number,
-                            self.address.orientation_number)
+            if self.address.house_number and self.address.orientation_number:
+                hr = "{}/{}".format(self.address.house_number,
+                                    self.address.orientation_number)
             elif self.address.house_number:
                 hr = self.address.house_number
             elif self.address.orientation_number:
-                hr = orientation_number
+                hr = self.address.orientation_number
             else:
                 hr = ""
 
             return "{} {}, {}".format(self.address.street,
-                    hr, self.address.city)
+                                      hr, self.address.city)
         else:
-            lau1s = ", ".join([l.name for l in Lau1.objects.filter(geometry__intersects=self.geometry)])
+            lau1s = ", ".join([l.name for l in Lau1.objects.filter(
+                               geometry__intersects=self.geometry)])
             return lau1s
 
-    @classmethod
-    def create(self, *args, **kwargs):
+    @property
+    def json(self):
+        data = {
+            "geometry": json.loads(self.geometry.json)
+        }
+        if self.address:
+            data["address"] = self.address.json
 
-        me = super(Location, self)(*args, **kwargs)
-        me.highway_distance = self.get_highway_distance()
-        return me
+        return data
 
-
-    def get_highway_distance(self):
-
-        centroid = self.geometry.centroid
-
-        url = "https://router.project-osrm.org/route/v1/driving/{startx},{starty};{destx},{desty}?overview=simplified&geometries=geojson&steps=false"
-
-        distances = []
-        link = self.get_closest_highway_point()
-
-        target = link.geometry.centroid
-        target_url = url.format(startx=centroid.x, starty=centroid.y,
-                                destx=target.x, desty=target.y)
-
-        resp = requests.get(target_url)
-        if resp.status_code == 200:
-            data = resp.json()
-            return data["routes"][0]["distance"]
-        else:
-            if (resp.status_code == 429):
-                time.sleep(1)
-                return self.get_highway_distance()
-            else:
-                return -1
-
-    def get_closest_highway_point(self):
-
-        centroid = self.geometry.centroid
-
-        link = Road.objects.filter(
-            Q(fclass__contains="highway_link") | \
-            Q(fclass__contains="trunk_link") | \
-            Q(fclass__contains="motorway_link")
-        ).filter(
-            geometry__distance_lte=(
-                centroid,
-                D(m=100000)
-            )
-        ).annotate(distance=Distance('geometry', centroid)
-        ).order_by('distance')[0]
-
-        return link
-
-class Area(models.Model):
-    class Meta:
-        verbose_name = _("Rozloha plochy")
-        verbose_name_plural = _("Rozloha ploch")
-        abstract=True
-
-    total = models.IntegerField(
-            verbose_name=_('Celková rozloha'),
-            help_text = _("Celková rozloha <code>m<sup>2</sup></code>"))
-    free = models.IntegerField(
-            verbose_name=_('Volná plocha'),
-            help_text = _("Volná plocha <code>m<sup>2</sup></code>"))
-    to_be_build = models.IntegerField(
-            verbose_name=_('K zástavbě'),
-            help_text = _("K zástavbě dle ÚP <code>m<sup>2</sup></code>"))
-    for_expansion = models.IntegerField(
-            verbose_name=_('K expanzi'),
-            help_text = _("K expanzi <code>m<sup>2</sup></code>"))
-    available_from = models.DateField(
-            verbose_name=_('K dispozici od'),
-            help_text = _("K dispozici od"))
-
-    further_development = models.BooleanField(
-        default=False,
-        verbose_name=_('Možnost další expanze'),
-    )
-
-    further_development_description = models.TextField(
-        blank=True,
-        verbose_name=_('Možnost expanze - popis'),
-    )
-
-class Medium(models.Model):
-
-    class Meta:
-        abstract = True
-
-    distance = models.IntegerField(
-            verbose_name=_("Vzdálenost"),
-            help_text="vzdálenost k objektu <code>[m]</code>")
-
-    note = models.TextField(
-            verbose_name=_("Poznámka"),
-            help_text=_("Poznámka"))
+    def save(self, *args, **kwargs):
+        if not self.address and not self.geometry:
+            raise ValueError(_("At least Address field or Geometry "
+                               "field has to be set"))
+        super().save(*args, **kwargs)
 
 
-class Water(Medium):
+class GenericNote(models.Model):
+    activity_choices = []
+    date = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.PROTECT)
+    activity = models.CharField(choices=activity_choices,
+                                max_length=15)
+    note = models.TextField(blank=True)
 
-    class Meta:
-        abstract = True
-
-    diameter = models.IntegerField(
-            verbose_name=_("Velikost přípojky"),
-            help_text=_("Velikost přípojky <code>[mm]</code>"))
-    well = models.IntegerField(
-            verbose_name=_("Studna"),
-            help_text=_("Studna <code>[m<sup>3</sup>]</code>"))
-    capacity = models.IntegerField(
-            verbose_name=_("Kapacita přípojky"),
-            help_text=_("Kapacita přípojky <code>[m<sup>3</sup>/d]</code>"))
-    well_capacity = models.IntegerField(
-            verbose_name=_("Kapacita studny"),
-            help_text=_("Kapacita studny <code>[m<sup>3</sup>/d]</code>"))
 
 class Road(models.Model):
 
     class Meta:
-        verbose_name=_("Silnice a dálnice")
+        verbose_name = _("Silnice a dálnice")
 
     geometry = models.LineStringField(
             verbose_name=_("Geometrie"),
@@ -245,6 +136,36 @@ class Road(models.Model):
     code = models.IntegerField(blank=True)
     fclass = models.CharField(max_length=256)
     name = models.CharField(max_length=256, blank=True)
-    ref = models.CharField( max_length=256, blank=True)
+    ref = models.CharField(max_length=256, blank=True)
     oneway = models.BooleanField(default=False)
     maxspeed = models.IntegerField(blank=True)
+
+
+class Airport(models.Model):
+
+    geometry = models.PointField(
+            verbose_name=_("Geometrie"),
+            srid=4326)
+
+    name = models.CharField(max_length=256)
+    iata = models.CharField(max_length=4)
+
+
+class PublicTransportStop(models.Model):
+
+    geometry = models.PointField(
+            verbose_name=_("Geometrie"),
+            srid=4326)
+
+    name = models.CharField(max_length=256)
+    fclass = models.CharField(max_length=25)
+
+
+class RailwayStation(models.Model):
+
+    geometry = models.PointField(
+            verbose_name=_("Geometrie"),
+            srid=4326)
+
+    name = models.CharField(max_length=256)
+    fclass = models.CharField(max_length=25)

@@ -19,7 +19,7 @@ class NUTS3Filter(admin.SimpleListFilter):
     """Filter for admin interface of NUTS3 regions (Kraje)
     """
     title = _('NUTS3 regions')
-    parameter_name = 'nuts3'
+    parameter_name = 'nuts3#'
 
     def lookups(self, request, model_admin):
         nuts3 = Nuts3.objects.all()

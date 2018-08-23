@@ -15,7 +15,7 @@ from cigeo.forms import LocationForm
 from django.contrib.admin.widgets import AdminFileWidget
 
 from .models import Location
-from .models import BrownField
+from .models import Brownfield
 from .models import Photo
 from .models import Attachment
 from .models import Areal
@@ -225,7 +225,7 @@ class ArealInline(nested_admin.NestedStackedInline):
     )
 
 
-class BrownFieldAdmin(ArealFieldAdmin):
+class BrownfieldAdmin(ArealFieldAdmin):
     search_fields = (
         "title",
         "status",
@@ -270,7 +270,7 @@ class LocationAdmin(LeafletGeoAdmin):
 
 # Register your models here.
 
-admin.site.register(BrownField, BrownFieldAdmin)
+admin.site.register(Brownfield, BrownfieldAdmin)
 admin.site.register(Areal)
 admin.site.register(Photo)
 admin.site.register(Location, LocationAdmin)

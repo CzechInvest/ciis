@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.gis.db import models as gis_models
+import json
 
 # Create your models here.
 
@@ -35,6 +36,18 @@ class Address(models.Model):
             street = self.city
         return "{}, {}/{}, {} - {}".format(street, self.house_number,
                 self.orientation_number, self.zipcode, self.city)
+
+    @property
+    def json(self):
+        return {
+            "adm": self.adm,
+            "street": self.street,
+            "house_number": self.house_number,
+            "orientation_number": self.orientation_number,
+            "city": self.city.name,
+            "zipcode": self.zipcode,
+            "coordinates": json.loads(self.coordinates.json)
+        }
 
 class City(models.Model):
     code = models.IntegerField(

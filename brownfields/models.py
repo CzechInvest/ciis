@@ -1,7 +1,5 @@
 from django.db import models
 from contacts.models import ContactPerson as MyContactPerson
-from cigeo.models import Medium
-from cigeo.models import Water
 from cigeo.models import Location as MyLocation
 from cigeo.models import Area as AreaArea
 from django.utils.translation import ugettext_lazy as _
@@ -210,7 +208,7 @@ class Electricity(Medium):
     areal = models.OneToOneField(
         "Areal",
         on_delete=models.CASCADE,
-        help_text=_("BrownField")
+        help_text=_("Brownfield")
     )
 
 
@@ -238,7 +236,7 @@ class NonPotableWater(Water):
         "Areal",
         related_name="nonpotablewater",
         on_delete=models.CASCADE,
-        help_text=_("BrownField")
+        help_text=_("Brownfield")
     )
 
 
@@ -259,7 +257,7 @@ class Gas(Medium):
     areal = models.OneToOneField(
         "Areal",
         on_delete=models.CASCADE,
-        help_text=_("BrownField")
+        help_text=_("Brownfield")
     )
 
 
@@ -280,7 +278,7 @@ class WasteWater(Medium):
     areal = models.OneToOneField(
         "Areal",
         on_delete=models.CASCADE,
-        help_text=_("BrownField")
+        help_text=_("Brownfield")
     )
 
 
@@ -293,7 +291,7 @@ class Telecommunications(Medium):
     areal = models.OneToOneField(
         "Areal",
         on_delete=models.CASCADE,
-        help_text=_("BrownField")
+        help_text=_("Brownfield")
     )
 
 
@@ -301,10 +299,14 @@ class Location(MyLocation):
 
     highway_distance = models.FloatField(
             default=-1)
+
+    #airport_distance = models.FloatField(
+    #        default=-1)
+
     brownfield = models.OneToOneField(
-        "BrownField",
+        "Brownfield",
         on_delete=models.CASCADE,
-        help_text="BrownField"
+        help_text="Brownfield"
     )
 
 
@@ -364,12 +366,12 @@ class Areal(models.Model):
         help_text=_("Sklon pozemku"))
 
     brownfield = models.OneToOneField(
-        "BrownField",
+        "Brownfield",
         verbose_name=_('Brownfield'),
         on_delete=models.CASCADE)
 
 
-class BrownField(models.Model):
+class Brownfield(models.Model):
 
     class Meta:
         verbose_name = _("Brownfield")
@@ -515,36 +517,16 @@ class BrownField(models.Model):
         choices=previous_support_choices,
         verbose_name=_("Dřívější podpora z veřejných zdrojů"))
 
+    @property
+    def json(self):
+        return {
+            "title": self.title,
+            "id": self.id,
+            "location": self.location.json
+        }
+
     def __str__(self):
         return self.title
-
-    # description = models.TextField(
-    #        blank=True,
-    #        null=True
-    # )
-
-    # keywords = models.ManyToManyField(
-    #        Keyword,
-    #        blank=True,
-    #        help_text="Klíčová slova"
-    # )
-
-    # type = models.ForeignKey(
-    #        RealEstateType,
-    #        help_text="Typ nemovitosti",
-    #        on_delete=models.PROTECT)
-
-    # original_usage = models.ForeignKey(
-    #        OriginalUsage,
-    #        on_delete=models.PROTECT)
-
-    # date_inserted = models.DateField(
-    #    help_text="Datum vložení")
-
-    # contact_person = models.ManyToManyField(ContactPerson)
-
-    # areal = models.FloatField(
-    #        help_text="Plocha objektu <code>[m<sup>2</sup>]</code>")
 
 
 class Photo(models.Model):
@@ -570,10 +552,10 @@ class Photo(models.Model):
     )
 
     brownfield = models.ForeignKey(
-        "BrownField",
-        verbose_name=_("BrownField"),
+        "Brownfield",
+        verbose_name=_("Brownfield"),
         on_delete=models.CASCADE,
-        help_text="BrownField"
+        help_text="Brownfield"
     )
 
     def __str__(self):
@@ -603,10 +585,10 @@ class Attachment(models.Model):
     )
 
     brownfield = models.ForeignKey(
-        "BrownField",
-        verbose_name=_("BrownField"),
+        "Brownfield",
+        verbose_name=_("Brownfield"),
         on_delete=models.CASCADE,
-        help_text=_("BrownField")
+        help_text=_("Brownfield")
     )
 
 
