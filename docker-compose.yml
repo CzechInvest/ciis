@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  db:
+    image: "kartoza/postgis:9.6-2.4"
+    container_name: "ciis-db"
+    ports:
+      - "25432:5432"
+    env_file:
+        - docker/db/postgres.env
+        - local.env
+
+
+  web:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    volumes:
+        - ./:/var/ciis
+    container_name: "ciis-django"
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
