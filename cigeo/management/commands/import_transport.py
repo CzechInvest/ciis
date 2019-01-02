@@ -15,6 +15,7 @@ import zipfile
 import json
 
 TEMPDIR=tempfile.mkdtemp()
+print (TEMPDIR)
 
 def clear():
     shutil.rmtree(TEMPDIR)
@@ -33,7 +34,7 @@ class Command(BaseCommand):
         with open(zip_file, 'wb') as fd:
             for chunk in resp.iter_content(chunk_size=1024):
                 fd.write(chunk)
-        #zip_file = "/home/jachym/Stažené/czech-republic-latest-free.shp.zip"
+        #zip_file = "/tmp/tmp1bgch7zu/czechrep.zip"
 
         self._import_roads(zip_file)
         self._import_airports()
@@ -52,9 +53,13 @@ class Command(BaseCommand):
                 shapely_geom = shape(feature["geometry"])
                 geom = GEOSGeometry(shapely_geom.wkt)
 
+                name=feature["properties"]["name"],
+                if not name:
+                    name = ""
+
                 airport = Airport(
                     geometry=geom,
-                    name=feature["properties"]["name"],
+                    name=name,
                     iata=feature["properties"]["iata"]
                 )
 
@@ -84,11 +89,14 @@ class Command(BaseCommand):
                 geom = GEOSGeometry(shapely_geom.wkt)
 
                 if f["properties"]["fclass"].endswith('_stop'):
+                    name=f["properties"]["name"],
+                    if not name:
+                        name = ""
 
                     all_obj.append(
                             PublicTransportStop(
                                 geometry=geom,
-                                name=f["properties"]["name"],
+                                name=name,
                                 fclass=f["properties"]["fclass"],
                             )
                         )
@@ -145,14 +153,24 @@ class Command(BaseCommand):
                 else:
                     oneway = False
 
+                ref=f["properties"]["ref"]
+
+                if not ref:
+                    ref = -1
+
+                name = f["properties"]["name"]
+
+                if not name:
+                    name = ""
+
                 all_obj.append(
                         Road(
                             geometry=geom,
                             osm_id=f["properties"]["osm_id"],
                             code=f["properties"]["code"],
                             fclass=f["properties"]["fclass"],
-                            name=f["properties"]["name"],
-                            ref=f["properties"]["ref"],
+                            name=name,
+                            ref=ref,
                             oneway=oneway,
                             maxspeed=f["properties"]["maxspeed"],
                         )
