@@ -9,8 +9,8 @@ services:
     env_file:
         - docker/db/postgres.env
         - local.env
-
-
+    volumes:
+        - pgdata:/var/lib/postgresql/
   web:
     build:
         context: .
