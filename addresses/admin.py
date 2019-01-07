@@ -11,4 +11,7 @@ class AddressAdmin(admin.ModelAdmin):
     def number(self, address):
         return "{}/{}".format(address.house_number, address.orientation_number)
 
+    def get_search_results(self, request, queryset, search_term):
+        print(dir(queryset))
+
 admin.site.register(Address, AddressAdmin)
