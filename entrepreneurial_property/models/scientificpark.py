@@ -2,9 +2,7 @@ from django.db import models
 from .media import Water
 from .media import Electricity
 from .media import Gas
-from .media import WasteWaterSevage
-from .media import WasteWaterRain
-from .media import WasteWaterIndustrial
+from .media import WasteWater
 from .media import Telecommunication
 
 from .generic import Attachment
@@ -21,23 +19,7 @@ class ScientificParkTelecommunication(Telecommunication):
     )
 
 
-class ScientificParkWasteWaterSevage(WasteWaterSevage):
-    diameter = capacity = None
-    green_field = models.OneToOneField(
-        "ScientificPark",
-        on_delete=models.CASCADE
-    )
-
-
-class ScientificParkWasteWaterRain(WasteWaterRain):
-    diameter = capacity = None
-    green_field = models.OneToOneField(
-        "ScientificPark",
-        on_delete=models.CASCADE
-    )
-
-
-class ScientificParkWasteWaterIndustrial(WasteWaterIndustrial):
+class ScientificParkWasteWater(WasteWater):
     diameter = capacity = None
     green_field = models.OneToOneField(
         "ScientificPark",

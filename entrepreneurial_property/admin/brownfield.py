@@ -8,13 +8,11 @@ from entrepreneurial_property.models import BrownfieldElectricity
 from entrepreneurial_property.models import BrownfieldDrinkWater
 from entrepreneurial_property.models import BrownfieldTechnologicalWater
 from entrepreneurial_property.models import BrownfieldGas
-from entrepreneurial_property.models import BrownfieldWasteWaterSevage
-from entrepreneurial_property.models import BrownfieldWasteWaterRain
-from entrepreneurial_property.models import BrownfieldWasteWaterIndustrial
+from entrepreneurial_property.models import BrownfieldWasteWater
 from entrepreneurial_property.models import BrownfieldTelecommunication
 from entrepreneurial_property.models import BrownfieldGenericNote
 
-from entrepreneurial_property.forms import LocationForm
+from entrepreneurial_property.forms.path import LocationForm
 
 from leaflet.admin import LeafletGeoAdmin
 import nested_admin
@@ -32,18 +30,8 @@ class BrownfieldTelecommunicationInline(nested_admin.NestedStackedInline):
     extra = 0
 
 
-class BrownfieldWasteWaterSevageInline(nested_admin.NestedStackedInline):
-    model = BrownfieldWasteWaterSevage
-    extra = 0
-
-
-class BrownfieldWasteWaterRainInline(nested_admin.NestedStackedInline):
-    model = BrownfieldWasteWaterRain
-    extra = 0
-
-
-class BrownfieldWasteWaterIndustrialInline(nested_admin.NestedStackedInline):
-    model = BrownfieldWasteWaterIndustrial
+class BrownfieldWasteWaterInline(nested_admin.NestedStackedInline):
+    model = BrownfieldWasteWater
     extra = 0
 
 
@@ -110,18 +98,16 @@ class BrownfieldAdmin(nested_admin.NestedModelAdmin):
         BrownfieldDrinkWaterInline,
         BrownfieldTechnologicalWaterInline,
         BrownfieldGasInline,
-        BrownfieldWasteWaterSevageInline,
-        BrownfieldWasteWaterRainInline,
-        BrownfieldWasteWaterIndustrialInline,
+        BrownfieldWasteWaterInline,
     )
 
-    # readonly_fields = ('available_since',)
+    readonly_fields = ('uuid',)
     fieldsets = (
         (
             _("Basic information"),
             {
                 'fields': ('name', 'contact_person', 'owner', "donation",
-                           "status")
+                           "status", "uuid")
             }
         ),
         (

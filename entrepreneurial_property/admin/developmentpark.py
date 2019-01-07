@@ -8,13 +8,11 @@ from ..models import DevelopmentParkElectricity
 from ..models import DevelopmentParkDrinkWater
 from ..models import DevelopmentParkTechnologicalWater
 from ..models import DevelopmentParkGas
-from ..models import DevelopmentParkWasteWaterSevage
-from ..models import DevelopmentParkWasteWaterRain
-from ..models import DevelopmentParkWasteWaterIndustrial
+from ..models import DevelopmentParkWasteWater
 from ..models import DevelopmentParkTelecommunication
 from ..models import DevelopmentParkGenericNote
 
-from ..forms import LocationForm
+from ..forms.path import LocationForm
 
 from leaflet.admin import LeafletGeoAdmin
 import nested_admin
@@ -32,18 +30,8 @@ class DevelopmentParkTelecommunicationInline(nested_admin.NestedStackedInline):
     extra = 0
 
 
-class DevelopmentParkWasteWaterSevageInline(nested_admin.NestedStackedInline):
-    model = DevelopmentParkWasteWaterSevage
-    extra = 0
-
-
-class DevelopmentParkWasteWaterRainInline(nested_admin.NestedStackedInline):
-    model = DevelopmentParkWasteWaterRain
-    extra = 0
-
-
-class DevelopmentParkWasteWaterIndustrialInline(nested_admin.NestedStackedInline):
-    model = DevelopmentParkWasteWaterIndustrial
+class DevelopmentParkWasteWaterInline(nested_admin.NestedStackedInline):
+    model = DevelopmentParkWasteWater
     extra = 0
 
 
@@ -57,7 +45,9 @@ class DevelopmentParkDrinkWaterInline(nested_admin.NestedStackedInline):
     extra = 0
 
 
-class DevelopmentParkTechnologicalWaterInline(nested_admin.NestedStackedInline):
+class DevelopmentParkTechnologicalWaterInline(
+  nested_admin.NestedStackedInline):
+
     model = DevelopmentParkTechnologicalWater
     extra = 0
 
@@ -110,18 +100,16 @@ class DevelopmentParkAdmin(nested_admin.NestedModelAdmin):
         DevelopmentParkDrinkWaterInline,
         DevelopmentParkTechnologicalWaterInline,
         DevelopmentParkGasInline,
-        DevelopmentParkWasteWaterSevageInline,
-        DevelopmentParkWasteWaterRainInline,
-        DevelopmentParkWasteWaterIndustrialInline,
+        DevelopmentParkWasteWaterInline,
     )
 
-    # readonly_fields = ('available_since',)
+    readonly_fields = ('uuid',)
     fieldsets = (
         (
             _("Basic information"),
             {
                 'fields': ('name', 'contact_person', 'owner', "donation",
-                           "status")
+                           "status", "uuid")
             }
         ),
         (

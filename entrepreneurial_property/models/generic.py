@@ -94,26 +94,29 @@ class Location(GenericLocation):
     def get_distance_to(self, to):
         """Distance to certain point on the road network"""
 
-        centroid = self.geometry.centroid
+        try:
+            centroid = self.geometry.centroid
 
-        url = "https://router.project-osrm.org/route/v1/driving/{startx},{starty};{destx},{desty}?overview=simplified&geometries=geojson&steps=false"
+            url = "https://router.project-osrm.org/route/v1/driving/{startx},{starty};{destx},{desty}?overview=simplified&geometries=geojson&steps=false"
 
-        link = self.get_closest_point(to)
+            link = self.get_closest_point(to)
 
-        target = link.geometry.centroid
-        target_url = url.format(startx=centroid.x, starty=centroid.y,
-                                destx=target.x, desty=target.y)
+            target = link.geometry.centroid
+            target_url = url.format(startx=centroid.x, starty=centroid.y,
+                                    destx=target.x, desty=target.y)
 
-        resp = requests.get(target_url)
-        if resp.status_code == 200:
-            data = resp.json()
-            return data["routes"][0]["distance"]
-        else:
-            if (resp.status_code == 429):
-                time.sleep(1)
-                return self.get_distance_to(to)
+            resp = requests.get(target_url)
+            if resp.status_code == 200:
+                data = resp.json()
+                return data["routes"][0]["distance"]
             else:
-                return -1
+                if (resp.status_code == 429):
+                    time.sleep(1)
+                    return self.get_distance_to(to)
+                else:
+                    return -1
+        except requests.exceptions.ConnectionError as e:
+            return -1
 
     def get_closest_point(self, to):
 

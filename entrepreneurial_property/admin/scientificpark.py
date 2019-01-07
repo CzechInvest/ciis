@@ -8,13 +8,11 @@ from ..models import ScientificParkElectricity
 from ..models import ScientificParkDrinkWater
 from ..models import ScientificParkTechnologicalWater
 from ..models import ScientificParkGas
-from ..models import ScientificParkWasteWaterSevage
-from ..models import ScientificParkWasteWaterRain
-from ..models import ScientificParkWasteWaterIndustrial
+from ..models import ScientificParkWasteWater
 from ..models import ScientificParkTelecommunication
 from ..models import ScientificParkGenericNote
 
-from ..forms import LocationForm
+from ..forms.path import LocationForm
 
 from leaflet.admin import LeafletGeoAdmin
 import nested_admin
@@ -32,18 +30,8 @@ class ScientificParkTelecommunicationInline(nested_admin.NestedStackedInline):
     extra = 0
 
 
-class ScientificParkWasteWaterSevageInline(nested_admin.NestedStackedInline):
-    model = ScientificParkWasteWaterSevage
-    extra = 0
-
-
-class ScientificParkWasteWaterRainInline(nested_admin.NestedStackedInline):
-    model = ScientificParkWasteWaterRain
-    extra = 0
-
-
-class ScientificParkWasteWaterIndustrialInline(nested_admin.NestedStackedInline):
-    model = ScientificParkWasteWaterIndustrial
+class ScientificParkWasteWaterInline(nested_admin.NestedStackedInline):
+    model = ScientificParkWasteWater
     extra = 0
 
 
@@ -110,18 +98,16 @@ class ScientificParkAdmin(nested_admin.NestedModelAdmin):
         ScientificParkDrinkWaterInline,
         ScientificParkTechnologicalWaterInline,
         ScientificParkGasInline,
-        ScientificParkWasteWaterSevageInline,
-        ScientificParkWasteWaterRainInline,
-        ScientificParkWasteWaterIndustrialInline,
+        ScientificParkWasteWaterInline,
     )
 
-    # readonly_fields = ('available_since',)
+    readonly_fields = ('uuid',)
     fieldsets = (
         (
             _("Basic information"),
             {
                 'fields': ('name', 'contact_person', 'owner', "donation",
-                           "status")
+                           "status", "uuid")
             }
         ),
         (

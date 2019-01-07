@@ -8,13 +8,11 @@ from ..models import OfficeElectricity
 from ..models import OfficeDrinkWater
 from ..models import OfficeTechnologicalWater
 from ..models import OfficeGas
-from ..models import OfficeWasteWaterSevage
-from ..models import OfficeWasteWaterRain
-from ..models import OfficeWasteWaterIndustrial
+from ..models import OfficeWasteWater
 from ..models import OfficeTelecommunication
 from ..models import OfficeGenericNote
 
-from ..forms import LocationForm
+from ..forms.path import LocationForm
 
 from leaflet.admin import LeafletGeoAdmin
 import nested_admin
@@ -32,18 +30,8 @@ class OfficeTelecommunicationInline(nested_admin.NestedStackedInline):
     extra = 0
 
 
-class OfficeWasteWaterSevageInline(nested_admin.NestedStackedInline):
-    model = OfficeWasteWaterSevage
-    extra = 0
-
-
-class OfficeWasteWaterRainInline(nested_admin.NestedStackedInline):
-    model = OfficeWasteWaterRain
-    extra = 0
-
-
-class OfficeWasteWaterIndustrialInline(nested_admin.NestedStackedInline):
-    model = OfficeWasteWaterIndustrial
+class OfficeWasteWaterInline(nested_admin.NestedStackedInline):
+    model = OfficeWasteWater
     extra = 0
 
 
@@ -110,18 +98,16 @@ class OfficeAdmin(nested_admin.NestedModelAdmin):
         OfficeDrinkWaterInline,
         OfficeTechnologicalWaterInline,
         OfficeGasInline,
-        OfficeWasteWaterSevageInline,
-        OfficeWasteWaterRainInline,
-        OfficeWasteWaterIndustrialInline,
+        OfficeWasteWaterInline,
     )
 
-    # readonly_fields = ('available_since',)
+    readonly_fields = ('uuid',)
     fieldsets = (
         (
             _("Basic information"),
             {
                 'fields': ('name', 'contact_person', 'owner', "donation",
-                           "status")
+                           "status", "uuid")
             }
         ),
         (

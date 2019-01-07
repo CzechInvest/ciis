@@ -2,6 +2,7 @@ from django.db import models
 from contacts.models import ContactPerson as EstateContactPerson
 from contacts.models import Owner as EstateOwner
 from django.utils.translation import ugettext_lazy as _
+import uuid
 
 from .greenfield import *
 from .developmentpark import *
@@ -267,6 +268,15 @@ class Estate(models.Model):
     access_road = models.IntegerField(
         choices=access_road_choices
     )
+
+    uuid = models.CharField(max_length=36)
+
+    def save(self, *args, **kwargs):
+
+        if not self.uuid:
+            self.uuid = str(uuid.uuid4())
+
+        super().save(*args, **kwargs)
 
 
 class GreenField(Estate):

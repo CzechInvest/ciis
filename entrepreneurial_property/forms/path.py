@@ -1,5 +1,5 @@
 from django import forms
-from .models.generic import Location
+from ..models.generic import Location
 from django.utils.safestring import mark_safe
 from django.template.loader import render_to_string
 

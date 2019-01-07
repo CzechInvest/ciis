@@ -66,9 +66,19 @@ class Electricity(Medium):
 class WasteWater(Medium):
 
     class Meta:
-        verbose_name = _("Kanalizace")
-        verbose_name_plural = _("Kanalizace")
+        verbose_name = _("Odpadní voda")
+        verbose_name_plural = _("Odpadní vody")
         abstract = True
+
+    type_choices = (
+        (0, _("Sevage")),
+        (1, _("Rain")),
+        (2, _("Industry"))
+    )
+
+    cleaning_type = models.CharField(max_length=10,
+                                     verbose_name=_("Typ čistírny"),
+                                     choices=type_choices)
 
     diameter = models.IntegerField(
             verbose_name=_("Průměr"),
@@ -80,52 +90,22 @@ class WasteWater(Medium):
             verbose_name=_("Kapacita přípojky"),
             help_text="Kapacita přípojky <code>[m<sup>3</sup>/d]</code>")
 
-
-class WasteWaterSevage(WasteWater):
-
-    class Meta:
-        abstract = True
-
-    sewage_plant_name = models.TextField(
+    sevage_plant_name = models.TextField(
             blank=True,
             help_text="Name and address")
 
     technology_choices = ()
 
-    sewage_plant_technology = models.CharField(
+    sevage_plant_technology = models.CharField(
         blank=True,
         max_length=10,
         choices=technology_choices,
     )
-
-
-class WasteWaterRain(WasteWater):
-
-    class Meta:
-        abstract = True
 
     absorbtion = models.CharField(
         blank=True,
         max_length=64,
         help_text=_("River name, where the water will be absorbed")
-    )
-
-
-class WasteWaterIndustrial(WasteWater):
-
-    class Meta:
-        abstract = True
-
-    sewage_plant_name = models.TextField(
-            blank=True,
-            help_text="Name and address")
-
-    technology_choices = ()
-
-    sewage_plant_technology = models.CharField(
-        blank=True,
-        max_length=10,
-        choices=technology_choices,
     )
 
 
