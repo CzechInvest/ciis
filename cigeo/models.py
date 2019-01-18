@@ -7,9 +7,9 @@ import json
 
 class Nuts3(models.Model):
 
-    class meta:
-        verbose_name = _("Kraj (NUTS3)")
-        verbose_name_plural = _("Kraje (NUTS3)")
+    class Meta:
+        verbose_name = _("Kraj")
+        verbose_name_plural = _("Kraje")
 
     code = models.IntegerField(
             verbose_name=_("Kód")
@@ -31,9 +31,9 @@ class Nuts3(models.Model):
 class Lau1(models.Model):
     # okresy
 
-    class meta:
-        verbose_name = _("Okres (LAU1)")
-        verbose_name_plural = _("Okresy (LAU1)")
+    class Meta:
+        verbose_name = _("Okres")
+        verbose_name_plural = _("Okresy")
 
     code = models.IntegerField(
             verbose_name=_("Kód")

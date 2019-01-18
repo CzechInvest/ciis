@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.gis import geos
-from leaflet.admin import LeafletGeoAdmin
+from leaflet.admin import LeafletGeoAdmin, LeafletGeoAdminMixin
 from .models import Lau1
 from .models import Nuts3
 from django.urls import reverse
@@ -13,6 +13,23 @@ class LAU1Admin(LeafletGeoAdmin):
     default_zoom = 7
     default_lon = 1730000
     default_lat = 6430000
+    #readonly_fields = ("code", "name",)
+
+
+class NUTS3Admin(LeafletGeoAdmin):
+    default_zoom = 7
+    default_lon = 1730000
+    default_lat = 6430000
+
+    #readonly_fields = ("code", "name",)
+
+
+class NUTS3AdminInline(LeafletGeoAdminMixin, admin.StackedInline):
+    model = Nuts3
+
+
+class LAU1AdminInline(LeafletGeoAdminMixin, admin.StackedInline):
+    model = Lau1
 
 
 class NUTS3Filter(admin.SimpleListFilter):
@@ -167,3 +184,4 @@ class ArealFieldAdmin(nested_admin.NestedModelAdmin):
 
 # Register your models here.
 admin.site.register(Lau1, LAU1Admin)
+admin.site.register(Nuts3, NUTS3Admin)

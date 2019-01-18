@@ -5,7 +5,14 @@ from django.utils.translation import ugettext_lazy as _
 
 class Nuts3Stats(models.Model):
 
-    nuts3 = models.OneToOneField(Nuts3, on_delete=models.CASCADE)
+    class Meta:
+        verbose_name = _("Kraj")
+        verbose_name_plural = _("Kraje")
+
+    nuts3 = models.OneToOneField(
+        Nuts3, on_delete=models.CASCADE,
+        #parent_link=True,
+        verbose_name=_("Kraj"))
 
     population = models.IntegerField(
         verbose_name=_("Population"),
@@ -37,7 +44,15 @@ class Nuts3Stats(models.Model):
 
 class Lau1Stats(models.Model):
 
-    lau1 = models.OneToOneField(Lau1, on_delete=models.CASCADE)
+    class Meta:
+        verbose_name = _("Okres")
+        verbose_name_plural = _("Okresy")
+
+    lau1 = models.OneToOneField(
+        Lau1, on_delete=models.CASCADE,
+        #parent_link=True,
+        verbose_name=_("Okres")
+    )
 
     population = models.IntegerField(
         verbose_name=_("Population"),
