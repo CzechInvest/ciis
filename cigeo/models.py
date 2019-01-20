@@ -68,9 +68,9 @@ class Location(models.Model):
         on_delete=models.SET_NULL
     )
 
-    geometry = models.MultiPolygonField(
+    geometry = models.GeometryCollectionField(
             verbose_name=_("Geometrie"),
-            help_text=_("Body, linie, polygony"),
+            help_text=_("Geometrie"),
             null=True,
             blank=True,
             srid=4326)
@@ -90,9 +90,12 @@ class Location(models.Model):
             return "{} {}, {}".format(self.address.street,
                                       hr, self.address.city)
         else:
-            lau1s = ", ".join([l.name for l in Lau1.objects.filter(
+            if self.geometry:
+                lau1s = ", ".join([l.name for l in Lau1.objects.filter(
                                geometry__intersects=self.geometry)])
-            return lau1s
+                return lau1s
+            else:
+                return ""
 
     @property
     def json(self):

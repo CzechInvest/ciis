@@ -16,6 +16,10 @@ class ContactPerson(models.Model):
             help_text="Last name",
             max_length=20)
 
+    middle_name = models.CharField(
+            help_text="Last name",
+            max_length=20)
+
     role = models.CharField(
             help_text="Director, HR Manager, ...",
             max_length=20)

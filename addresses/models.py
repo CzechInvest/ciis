@@ -29,13 +29,24 @@ class Address(models.Model):
     coordinates = gis_models.PointField(
             null=True)
 
+    @property
+    def number(self):
+        slash = ""
+        if self.orientation_number:
+            slash = "/"
+        return "{}{}{}".format(
+            self.house_number,
+            slash,
+            self.orientation_number
+        )
+
     def __str__(self):
         if self.street:
             street = self.street
         else:
             street = self.city
-        return "{}, {}/{}, {} - {}".format(street, self.house_number,
-                self.orientation_number, self.zipcode, self.city)
+        return "{}, {}, {} - {}".format(street, self.number,
+                                        self.zipcode, self.city)
 
     @property
     def json(self):
