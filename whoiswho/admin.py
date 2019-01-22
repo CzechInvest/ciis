@@ -25,7 +25,8 @@ class SectorAdmin(admin.ModelAdmin):
 class WhoIsWhoAdmin(admin.ModelAdmin):
     search_fields = ("institution__name", "contact_person__first_name",
                      "contact_person__last_name",
-                     "sectors__name", "sectors__code", "keywords__kw", )
+                     "sectors__name", "sectors__code", "keywords__kw",
+                     "profile")
 
     list_display = ("institution", "legal_form", "web", "contact",
                     "sector_codes")

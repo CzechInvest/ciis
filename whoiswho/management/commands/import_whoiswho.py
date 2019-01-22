@@ -72,12 +72,13 @@ class Command(BaseCommand):
             if not last_name:
                 last_name = ""
 
-            contact_persons = ContactPerson.objects.filter(first_name=first_name,
-                                                 last_name=last_name)
+            contact_persons = ContactPerson.objects.filter(email=mail)
             if not contact_persons:
                 person = ContactPerson(
                     first_name=first_name,
                     last_name=last_name,
+                    email=mail,
+                    phone=phone,
                     role=position,
                     crm="")
                 person.save()

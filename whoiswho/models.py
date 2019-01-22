@@ -31,9 +31,17 @@ class WhoIsWho(models.Model):
         return "{} - {}".format(self.institution.name,
                                 self.specialization[0:20])
 
+    def json(self):
+        data = {
+            **self.institution.json,
+            **self.contact_person,
+        }
+
 
 class ContactPerson(MyContactPerson):
-    pass
+
+    email = models.EmailField()
+    phone = models.CharField(max_length=16, blank=True)
 
     @property
     def name(self):
