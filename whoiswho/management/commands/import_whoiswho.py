@@ -36,7 +36,7 @@ class Command(BaseCommand):
         for row in data[1:]:
             (institution1, institution2, legal_form, web, adresni_body, address_1,
             city, zipcode, region, ICO, last_name, first_name, position, phone,
-            mail, specialization, profile, keywords, sector, sector_code, notes) =  row
+            mail, specialization, profile, keywords, sector, sector_code, notes) =  row[:21]
 
             if not adresni_body:
                 continue
@@ -71,6 +71,8 @@ class Command(BaseCommand):
                 first_name = ""
             if not last_name:
                 last_name = ""
+            if not mail:
+                print(institution, first_name, last_name)
 
             contact_persons = ContactPerson.objects.filter(email=mail)
             if not contact_persons:

@@ -10,6 +10,7 @@ class WhoIsWho(models.Model):
                                     on_delete=models.CASCADE)
     specialization = models.CharField(max_length=256)
     contact_person = models.ForeignKey("ContactPerson",
+                                       blank=True,
                                        on_delete=models.PROTECT)
     keywords = models.ManyToManyField("Keyword")
     sectors = models.ManyToManyField("Sector")

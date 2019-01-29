@@ -50,9 +50,17 @@ class WhoIsWhoAdmin(admin.ModelAdmin):
         return ", ".join([sec.code for sec in wiw.sectors.all()])
 
 
+class WhoIsWhoInline(admin.TabularInline):
+    model = WhoIsWho
+    show_change_link = True
+    fields = ("institution", ) #, "legal_form", "web", "contact", "sector_codes")
+    readonly_fields = ("institution", )
+
+
 class ContactPersonAdmin(admin.ModelAdmin):
     list_display = ("name", "role", )
     search_fields = ("first_name", "last_name", "role", )
+    inlines = (WhoIsWhoInline, )
 
 
 class InstitutionAdmin(admin.ModelAdmin):
@@ -64,10 +72,6 @@ class InstitutionAdmin(admin.ModelAdmin):
     list_display = ("name", "name_en", "legal_form", "url")
 
     list_filter = ("legal_form", )
-
-
-class WhoIsWhoInline(nested_admin.NestedStackedInline):
-    model = WhoIsWho
 
 
 class ContactPersonInline(nested_admin.NestedStackedInline):
