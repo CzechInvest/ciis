@@ -6,6 +6,7 @@ from .models import Sector
 from .models import WhoIsWho
 from .models import ContactPerson
 from django.db.models.query import EmptyQuerySet
+import re
 
 
 from leaflet.admin import LeafletGeoAdmin
@@ -16,10 +17,10 @@ import nested_admin
 class KeywordAdmin(admin.ModelAdmin):
     search_fields = ("kw", )
 
+
 class SectorAdmin(admin.ModelAdmin):
     search_fields = ("code", "name", )
-
-    list_display = ("code","name", )
+    list_display = ("code", "name", )
 
 
 class WhoIsWhoAdmin(admin.ModelAdmin):
@@ -48,6 +49,28 @@ class WhoIsWhoAdmin(admin.ModelAdmin):
     def sector_codes(self, wiw):
 
         return ", ".join([sec.code for sec in wiw.sectors.all()])
+
+    def get_search_results(self, request, queryset, search_term):
+        """Custom implementation of search functions
+        """
+
+        queryset, use_distinct = super(WhoIsWhoAdmin, self).get_search_results(request, queryset, search_term)
+        if re.search(r"AND|NOT|OR", search_term):
+            all_objs = WhoIsWho.objects.all()
+            if re.search(r"AND", search_term):
+                search_term = search_term.replace("AND", "")
+                queryset, use_distinct = super(WhoIsWhoAdmin, self).get_search_results(request, queryset, search_term)
+            elif re.search(r"OR", search_term):
+                first, second = [s.strip() for s in search_term.split("OR")]
+                queryset1, use_distinct = super().get_search_results(request, all_objs, first)
+                queryset2, use_distinct = super().get_search_results(request, all_objs, second)
+                queryset = queryset1.union(queryset2)
+            elif re.search(r"NOT", search_term):
+                first, second = [s.strip() for s in search_term.split("NOT")]
+                queryset1, use_distinct = super().get_search_results(request, all_objs, first)
+                queryset2, use_distinct = super().get_search_results(request, all_objs, second)
+                queryset = queryset1.difference(queryset2)
+        return queryset, use_distinct
 
 
 class WhoIsWhoInline(admin.TabularInline):
