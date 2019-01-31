@@ -5,14 +5,97 @@ from .models import Keyword
 from .models import Sector
 from .models import WhoIsWho
 from .models import ContactPerson
+from django.http import HttpResponse
 from django.db.models.query import EmptyQuerySet
+from django.utils.translation import ugettext_lazy as _
 import re
+from openpyxl import Workbook
+import csv
+import io
+import tempfile
+import os
 
 
 from leaflet.admin import LeafletGeoAdmin
 
-import nested_admin
+def _export(queryset):
+    header = [
+        "institution", "institution_en", "legal_form", "url", "am", "street",
+        "city", "zip", "ICO", "last_name", "first_name", "position", "phone",
+        "mail", "specialization", "profile", "keywords", "sector", "notes"
+    ]
+    data = []
+    for whoiswho in queryset:
+        row = [
+            whoiswho.institution.name,
+            whoiswho.institution.name_en,
+            whoiswho.institution.legal_form,
+            whoiswho.institution.url,
+            whoiswho.institution.address.adm,
+            whoiswho.institution.address.street,
+            whoiswho.institution.address.city.name,
+            whoiswho.institution.address.zipcode,
+            whoiswho.institution.ico,
+            whoiswho.contact_person.first_name,
+            whoiswho.contact_person.last_name,
+            whoiswho.contact_person.role,
+            whoiswho.contact_person.phone,
+            whoiswho.contact_person.email,
+            whoiswho.specialization,
+            whoiswho.profile,
+            ", ".join([kw.kw for kw in whoiswho.keywords.all()]),
+            ",".join([s.code for s in whoiswho.sectors.all()]),
+            whoiswho.notes
+        ]
+        data.append(row)
+    return header, data
 
+
+def export_xlsx(modeladmin, request, queryset):
+    file_name = "whoiswho-export.xlsx"
+    header, data = _export(queryset)
+
+    wb = Workbook()
+    ws = wb["Sheet"]
+    header, data = _export(queryset)
+    ws.append(header)
+    for row in data:
+        ws.append(row)
+
+    tmp_file_name = tempfile.mktemp(prefix="ci-whoiswho-export-")
+    wb.save(tmp_file_name)
+
+    with open(tmp_file_name, 'rb') as mywb:
+        response = HttpResponse(mywb.read())
+        response['Content-Disposition'] = \
+            'attachment; filename={}'.format(file_name)
+        response['Content-Type'] = wb.mime_type
+    os.remove(tmp_file_name)
+
+    return response
+
+
+def export_csv(modeladmin, request, queryset):
+    file_name = "whoiswho-export.csv"
+    header, data = _export(queryset)
+
+    out = io.StringIO()
+
+    writer = csv.writer(out)
+    writer.writerow(header)
+    writer.writerows(data)
+
+    out.seek(0)
+    response = HttpResponse(out.read())
+    response['Content-Disposition'] = \
+        'attachment; filename={}'.format(file_name)
+    response['Content-Type'] = "text/csv"
+
+    return response
+
+
+export_csv.short_description = _("Stáhnout jako CSV")
+export_xlsx.short_description = _("Stáhnout jako XLSX")
 
 class KeywordAdmin(admin.ModelAdmin):
     search_fields = ("kw", )
@@ -35,6 +118,8 @@ class WhoIsWhoAdmin(admin.ModelAdmin):
     autocomplete_fields = ("keywords", "sectors")
 
     list_filter = ("sectors", "institution__legal_form")
+
+    actions = (export_csv, export_xlsx)
 
     def legal_form(self, wiw):
 
@@ -95,10 +180,6 @@ class InstitutionAdmin(admin.ModelAdmin):
     list_display = ("name", "name_en", "legal_form", "url")
 
     list_filter = ("legal_form", )
-
-
-class ContactPersonInline(nested_admin.NestedStackedInline):
-    model = ContactPerson
 
 
 admin.site.register(WhoIsWho, WhoIsWhoAdmin)
