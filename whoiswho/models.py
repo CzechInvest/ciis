@@ -11,6 +11,7 @@ class WhoIsWho(models.Model):
     specialization = models.CharField(max_length=256)
     contact_person = models.ForeignKey("ContactPerson",
                                        blank=True,
+                                       null=True,
                                        on_delete=models.PROTECT)
     keywords = models.ManyToManyField("Keyword")
     sectors = models.ManyToManyField("Sector")
@@ -64,7 +65,8 @@ class Institution(models.Model):
                                   choices=legal_form_choices)
     ico = models.CharField(max_length=8,)
     url = models.URLField()
-    address = models.ForeignKey(Address, on_delete=models.PROTECT)
+    address = models.ForeignKey(Address, blank=True, null=True,
+                                on_delete=models.PROTECT)
 
     def __str__(self):
         return self.name.replace("/", "\n ")[0:30]

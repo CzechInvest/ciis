@@ -33,13 +33,17 @@ class Command(BaseCommand):
         keyword_list = []
         sectors = []
 
+        print(len(data))
+        nr_whoiswho = 0
         for row in data[1:]:
             (institution1, institution2, legal_form, web, adresni_body, address_1,
             city, zipcode, region, ICO, last_name, first_name, position, phone,
             mail, specialization, profile, keywords, sector, sector_code, notes) =  row[:21]
 
-            if not adresni_body:
-                continue
+            if adresni_body:
+                address = Address.objects.get(adm=int(str(adresni_body).replace("AD.", "")))
+            else:
+                address = None
             ICO = str(ICO).split("_")[0]
 
             if not web:
@@ -50,7 +54,10 @@ class Command(BaseCommand):
 
             institutions = Institution.objects.filter(ico=ICO)
             if not institutions:
-                legal_form_id, text = legal_form.split(" - ")
+                if legal_form:
+                    legal_form_id, text = legal_form.split(" - ")
+                else:
+                    legal_form_id = ""
 
                 institution = Institution(
                     name=institution1,
@@ -58,7 +65,7 @@ class Command(BaseCommand):
                     legal_form = legal_form_id,
                     ico=ICO,
                     url=web,
-                    address=Address.objects.get(adm=int(str(adresni_body).replace("AD.", "")))
+                    address=address
                 )
 
                 institution.save()
@@ -73,19 +80,25 @@ class Command(BaseCommand):
                 last_name = ""
             if not mail:
                 print(institution, first_name, last_name)
+                mail = ""
+            if not phone:
+                phone = ""
 
-            contact_persons = ContactPerson.objects.filter(email=mail)
-            if not contact_persons:
-                person = ContactPerson(
-                    first_name=first_name,
-                    last_name=last_name,
-                    email=mail,
-                    phone=phone,
-                    role=position,
-                    crm="")
-                person.save()
+            if not mail:
+                person = None
             else:
-                person = contact_persons[0]
+                contact_persons = ContactPerson.objects.filter(email=mail)
+                if not contact_persons:
+                    person = ContactPerson(
+                        first_name=first_name,
+                        last_name=last_name,
+                        email=mail,
+                        phone=phone,
+                        role=position,
+                        crm="")
+                    person.save()
+                else:
+                    person = contact_persons[0]
 
             use_keywords = []
             if keywords:
@@ -134,6 +147,7 @@ class Command(BaseCommand):
                 notes=notes
             )
             whoiswho.save()
+            nr_whoiswho += 1
             whoiswho.keywords.set(use_keywords)
             whoiswho.sectors.set(use_sectors)
-        self.stdout.write('Successfully imported whoiswho data')
+        self.stdout.write('Successfully imported whoiswho data {}/{}'.format(nr_whoiswho, len(data)))

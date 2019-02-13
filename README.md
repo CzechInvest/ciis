@@ -83,3 +83,9 @@ python manage.py import_lau1
 ```
 python manage.py runserver
 ```
+
+## Running in production
+
+```
+gunicorn -c gunicorn-config.py ciis.wsgi
+```
