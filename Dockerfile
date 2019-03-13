@@ -17,4 +17,4 @@ RUN pip3 install -r /tmp/requirements.txt
 RUN pip3 install gunicorn
 
 EXPOSE 8000
-CMD  gunicorn ciis:wsgi
+CMD  gunicorn ciis.wsgi
