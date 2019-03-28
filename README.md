@@ -89,3 +89,18 @@ python manage.py runserver
 ```
 gunicorn -c gunicorn-config.py ciis.wsgi
 ```
+
+## Docker 
+
+Create local docker file `settings_local.py` with configuration content
+Create local configuration file `local.env` with following content:
+
+```
+DB_HOST="database host"
+DB_NAME="database name"
+DB_USER="database user"
+DB_PASSWD="password"
+```
+
+Run using `docker-compose web`
+

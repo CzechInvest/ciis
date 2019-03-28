@@ -10,3 +10,4 @@ django-leaflet
 django-nested-admin
 django-crispy-forms
 psycopg2-binary
+openpyxl

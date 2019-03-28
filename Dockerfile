@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y locales python3 \
 
 ENV PYTHONUNBUFFERED 1
 ENV LANG en_US.utf8
+WORKDIR /var/ciis
 
 
 ADD requirements.txt /tmp/requirements.txt
@@ -18,3 +19,4 @@ RUN pip3 install gunicorn
 
 EXPOSE 8000
 CMD  gunicorn ciis.wsgi
+#CMD bash
