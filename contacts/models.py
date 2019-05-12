@@ -10,19 +10,19 @@ class ContactPerson(models.Model):
 
     first_name = models.CharField(
             help_text="First name",
-            max_length=20)
+            max_length=40)
 
     last_name = models.CharField(
             help_text="Last name",
-            max_length=20)
+            max_length=40)
 
     middle_name = models.CharField(
             help_text="Last name",
-            max_length=20)
+            max_length=40)
 
     role = models.CharField(
             help_text="Director, HR Manager, ...",
-            max_length=20)
+            max_length=256)
 
     crm = models.URLField(
             help_text=_("CRM link"))
