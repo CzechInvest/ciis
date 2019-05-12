@@ -86,6 +86,8 @@ python manage.py runserver
 
 ## Running in production
 
+https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/
+
 ```
 gunicorn -c gunicorn-config.py ciis.wsgi
 ```
@@ -104,3 +106,4 @@ DB_PASSWD="password"
 
 Run using `docker-compose web`
 
+##

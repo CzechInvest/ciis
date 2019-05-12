@@ -8,7 +8,7 @@ class WhoIsWho(models.Model):
 
     institution = models.ForeignKey("Institution",
                                     on_delete=models.CASCADE)
-    specialization = models.CharField(max_length=256)
+    specialization = models.TextField()
     contact_person = models.ForeignKey("ContactPerson",
                                        blank=True,
                                        null=True,
@@ -43,7 +43,7 @@ class WhoIsWho(models.Model):
 class ContactPerson(MyContactPerson):
 
     email = models.EmailField()
-    phone = models.CharField(max_length=16, blank=True)
+    phone = models.CharField(max_length=64, blank=True)
 
     @property
     def name(self):
@@ -73,7 +73,7 @@ class Institution(models.Model):
 
 
 class Sector(models.Model):
-    code = models.CharField(max_length=4)
+    code = models.CharField(max_length=16)
     name = models.CharField(max_length=256)
 
     def __str__(self):
@@ -84,7 +84,7 @@ class Sector(models.Model):
 
 
 class Keyword(models.Model):
-    kw = models.CharField(max_length=64)
+    kw = models.CharField(max_length=256)
 
     def __str__(self):
         return self.kw

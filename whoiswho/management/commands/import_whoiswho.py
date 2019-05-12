@@ -7,6 +7,7 @@ from whoiswho.models import Keyword
 from whoiswho.models import Sector
 from addresses.models import Address
 from django.utils import timezone
+import re
 
 
 class Command(BaseCommand):
@@ -61,8 +62,8 @@ class Command(BaseCommand):
 
                 institution = Institution(
                     name=institution1,
-                    name_en = institution2,
-                    legal_form = legal_form_id,
+                    name_en=institution2,
+                    legal_form=legal_form_id,
                     ico=ICO,
                     url=web,
                     address=address
@@ -79,7 +80,7 @@ class Command(BaseCommand):
             if not last_name:
                 last_name = ""
             if not mail:
-                print(institution, first_name, last_name)
+                print("No e-mail", institution, first_name, last_name)
                 mail = ""
             if not phone:
                 phone = ""
@@ -102,7 +103,7 @@ class Command(BaseCommand):
 
             use_keywords = []
             if keywords:
-                my_keywords = keywords.split(",")
+                my_keywords = re.split(r"[,-;]", keywords)
                 for kw in my_keywords:
                     if not kw:
                         continue
@@ -118,14 +119,15 @@ class Command(BaseCommand):
             use_sectors = []
             if sector_code:
                 my_sectors = sector_code.split()
-                my_sectors_long = sector.split(", ")
+                my_sectors_long = re.split(r"[,;-]", sector)
                 for sec in my_sectors:
                     if not sec:
                         continue
                     found_sectors = Sector.objects.filter(code=sec)
                     if not found_sectors:
                         idx = my_sectors.index(sec)
-                        mysec = Sector(code=sec, name=my_sectors_long[idx].strip())
+                        name = my_sectors_long[idx].strip()
+                        mysec = Sector(code=sec, name=name)
                         mysec.save()
                         use_sectors.append(mysec)
                     else:
