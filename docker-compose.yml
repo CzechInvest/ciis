@@ -14,3 +14,18 @@ services:
       - "8000:8000"
     extra_hosts:
       - "ciisdb:192.168.161.77"
+    expose:
+      - 8000
+    depends_on:
+      - nginx
+
+  nginx:
+    build: ./nginx
+    volumes:
+            - c:\\Users\\ciis\\src\\ciis\\nginx\:/etc/nginx/conf.d
+    ports:
+      - "80:80"
+      - "443:443"
+    expose:
+      - 80
+      - 443
