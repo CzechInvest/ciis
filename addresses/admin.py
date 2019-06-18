@@ -1,8 +1,13 @@
 from django.contrib import admin
 from .models import Address
+from leaflet.admin import LeafletGeoAdmin, LeafletGeoAdminMixin
 
 
-class AddressAdmin(admin.ModelAdmin):
+class AddressAdmin(LeafletGeoAdmin):
+
+    default_zoom = 7
+    default_lon = 1730000
+    default_lat = 6430000
 
     list_display = ("adm", "street", "number", "city", "zipcode",)
 

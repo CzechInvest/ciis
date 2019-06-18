@@ -33,11 +33,35 @@ class WhoIsWho(models.Model):
         return "{} - {}".format(self.institution.name,
                                 self.specialization[0:20])
 
+    @property
     def json(self):
+        contact_person = self.contact_person
+        contact_person_name = ""
+        if contact_person:
+            contact_person_name = contact_person.name
+
+        coordinates = []
+        if self.institution.address:
+            coordinates = [
+                self.institution.address.coordinates.x,
+                self.institution.address.coordinates.y
+            ]
         data = {
-            **self.institution.json,
-            **self.contact_person,
+            "properties": {
+                "name": self.institution.name,
+                "legal_form": self.institution.legal_form,
+                "ico": self.institution.ico,
+                "url": self.institution.url,
+                "address": str(self.institution.address),
+                "contact_person": contact_person_name,
+                "sectors": [sector.name for sector in  self.sectors.all()],
+            },
+            "geometry": {
+                "type":"Point",
+                "coordinates": coordinates
+            }
         }
+        return data
 
 
 class ContactPerson(MyContactPerson):

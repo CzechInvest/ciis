@@ -4,9 +4,10 @@ from django.http import JsonResponse
 
 def whoiswho_json(request):
 
-    data = [
-        w.json for w in WhoIsWho.objects.all()
-    ]
+    data = {
+        "type": "FeatureCollection",
+        "features": [ w.json for w in WhoIsWho.objects.all() ]
+    }
 
-    return JsonResponse(data)
+    return JsonResponse(data, safe=False)
 
