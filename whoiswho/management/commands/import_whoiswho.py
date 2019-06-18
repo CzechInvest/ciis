@@ -53,7 +53,8 @@ class Command(BaseCommand):
             if web.find("http") != 0:
                 web = "http://"+web
 
-            institutions = Institution.objects.filter(ico=ICO)
+            institutions = Institution.objects.filter(ico=ICO, name=institution1,
+                                                      url=web)
             if not institutions:
                 if legal_form:
                     legal_form_id, text = legal_form.split(" - ")
