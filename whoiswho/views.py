@@ -11,3 +11,7 @@ def whoiswho_json(request):
 
     return JsonResponse(data, safe=False)
 
+def whoiswho_map(request):
+
+    context = {}
+    return render(request, 'ciis/whoiswho.html', context)

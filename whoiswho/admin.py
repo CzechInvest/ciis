@@ -14,6 +14,7 @@ import csv
 import io
 import tempfile
 import os
+from cigeo.admin import ArealFieldAdmin
 
 
 from leaflet.admin import LeafletGeoAdmin
@@ -26,15 +27,21 @@ def _export(queryset):
     ]
     data = []
     for whoiswho in queryset:
+        if whoiswho.institution.address:
+            address = [
+                whoiswho.institution.address.adm,
+                whoiswho.institution.address.street,
+                whoiswho.institution.address.city.name,
+                whoiswho.institution.address.zipcode
+            ]
+        else:
+            address =  [None, None, None, None]
+
         row = [
             whoiswho.institution.name,
             whoiswho.institution.name_en,
             whoiswho.institution.legal_form,
-            whoiswho.institution.url,
-            whoiswho.institution.address.adm,
-            whoiswho.institution.address.street,
-            whoiswho.institution.address.city.name,
-            whoiswho.institution.address.zipcode,
+            whoiswho.institution.url] + address + [
             whoiswho.institution.ico,
             whoiswho.contact_person.first_name,
             whoiswho.contact_person.last_name,
@@ -106,7 +113,12 @@ class SectorAdmin(admin.ModelAdmin):
     list_display = ("code", "name", )
 
 
-class WhoIsWhoAdmin(admin.ModelAdmin):
+class WhoIsWhoAdmin(ArealFieldAdmin, LeafletGeoAdmin):
+    default_zoom = 7
+    default_lon = 1730000
+    default_lat = 6430000
+    change_list_template = "admin/change_list-map.html"
+
     search_fields = ("institution__name", "contact_person__first_name",
                      "contact_person__last_name",
                      "sectors__name", "sectors__code", "keywords__kw",

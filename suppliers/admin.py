@@ -4,42 +4,33 @@ import nested_admin
 # Register your models here.
 
 from .models import Supplier
-from .models import ContactPerson
-from .models import Certificate
-from .models import Sector
-from .models import Organisation
-from .models import Location
 from cigeo.admin import ArealFieldAdmin
 from cigeo.admin import NUTS3Filter
+from leaflet.admin import LeafletGeoAdmin, LeafletGeoAdminMixin
 
 
-class LocationAdminInline(nested_admin.NestedStackedInline):
-    model = Location
-    raw_id_fields = ("address",)
-    extra = 1
+class SupplierAdmin(ArealFieldAdmin, LeafletGeoAdmin):
 
+    default_zoom = 7
+    default_lon = 1730000
+    default_lat = 6430000
 
-class ContactPersonAdminInline(nested_admin.NestedStackedInline):
-    model = ContactPerson
-
-
-class OrganisationAdminInline(nested_admin.NestedStackedInline):
-    model = Organisation
-    inlines = (ContactPersonAdminInline, )
-    raw_id_fields = ("address",)
-    extra = 1
-
-
-class SupplierAdmin(ArealFieldAdmin):
     change_list_template = "admin/change_list-map.html"
-    inlines = (OrganisationAdminInline, LocationAdminInline, )
     list_filter = (NUTS3Filter, )
     pass
 
     def size(self, obj):
         return None
 
+    def change_view(self, request, object_id, extra_context=None):
+        extra_context = extra_context or {}
+        extra_context['show_save_and_continue'] = False
+        extra_context['show_add_another'] = False
+        extra_context['show_delete'] = False
+        extra_context['show_save'] = False
+        extra_context['show_save_and_add_another'] = False
+        extra_context['read_only'] = True
+        return super(SupplierAdmin, self).changeform_view(request, object_id, extra_context=extra_context)
+
 
 admin.site.register(Supplier, SupplierAdmin)
-admin.site.register(Sector)
-admin.site.register(Certificate)

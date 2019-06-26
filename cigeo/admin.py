@@ -3,10 +3,39 @@ from django.contrib.gis import geos
 from leaflet.admin import LeafletGeoAdmin, LeafletGeoAdminMixin
 from .models import Lau1
 from .models import Nuts3
+from .models import Airport
+from .models import Road
+from .models import PublicTransportStop
+from .models import RailwayStation
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 import nested_admin
 import json
+
+
+class AirportAdmin(LeafletGeoAdmin):
+    default_zoom = 7
+    default_lon = 1730000
+    default_lat = 6430000
+    #readonly_fields = ("code", "name",)
+
+class RoadAdmin(LeafletGeoAdmin):
+    default_zoom = 7
+    default_lon = 1730000
+    default_lat = 6430000
+    #readonly_fields = ("code", "name",)
+
+class RailwayStationAdmin(LeafletGeoAdmin):
+    default_zoom = 7
+    default_lon = 1730000
+    default_lat = 6430000
+    #readonly_fields = ("code", "name",)
+
+class PublicTransportStopAdmin(LeafletGeoAdmin):
+    default_zoom = 7
+    default_lon = 1730000
+    default_lat = 6430000
+    #readonly_fields = ("code", "name",)
 
 
 class LAU1Admin(LeafletGeoAdmin):
@@ -49,7 +78,7 @@ class NUTS3Filter(admin.SimpleListFilter):
         if val:
             nuts3 = Nuts3.objects.get(pk=val)
             results = queryset.filter(
-                location__geometry__intersects=nuts3.geometry)
+                xlocation__geometry__intersects=nuts3.geometry)
         else:
             results = queryset
 
@@ -147,6 +176,8 @@ class ArealFieldAdmin(nested_admin.NestedModelAdmin):
             elif hasattr(obj, "location"):
 
                 geom = obj.location.geometry.centroid
+            elif hasattr(obj, "geom"):
+                geom = obj.geom
 
             if geom:
                 title = None
@@ -185,3 +216,7 @@ class ArealFieldAdmin(nested_admin.NestedModelAdmin):
 # Register your models here.
 admin.site.register(Lau1, LAU1Admin)
 admin.site.register(Nuts3, NUTS3Admin)
+admin.site.register(Road, RoadAdmin)
+admin.site.register(PublicTransportStop, PublicTransportStopAdmin)
+admin.site.register(RailwayStation, RailwayStationAdmin)
+admin.site.register(Airport, AirportAdmin)

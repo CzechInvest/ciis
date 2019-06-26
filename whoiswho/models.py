@@ -47,6 +47,7 @@ class WhoIsWho(models.Model):
                 self.institution.address.coordinates.y
             ]
         data = {
+            "type": "Feature",
             "properties": {
                 "name": self.institution.name,
                 "legal_form": self.institution.legal_form,
@@ -55,12 +56,17 @@ class WhoIsWho(models.Model):
                 "address": str(self.institution.address),
                 "contact_person": contact_person_name,
                 "sectors": [sector.name for sector in  self.sectors.all()],
+                "keywords": [kw.kw for kw in  self.keywords.all()],
+                "profile": self.profile,
+                "specialization": self.specialization,
             },
-            "geometry": {
+        }
+        if len(coordinates):
+            data["geometry"] = {
                 "type":"Point",
                 "coordinates": coordinates
             }
-        }
+
         return data
 
 

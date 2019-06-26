@@ -2,100 +2,40 @@ from django.db import models
 from contacts.models import ContactPerson as MyContactPerson
 from contacts.models import Organisation as MyOrganisation
 from django.utils.translation import ugettext_lazy as _
-from addresses.models import Address
+from django.contrib.gis.db import models as gis_models
 
 
 # Create your models here.
 class Supplier(models.Model):
 
-    name = models.CharField(
-            max_length=200,
-            help_text="Název dodavatele",
-            blank=False
-    )
+    id = models.IntegerField(default=-1, primary_key=True)
 
-    join_venture = models.BooleanField(
-            help_text=_("Join-venture"),
-            default=False,
-            blank=False)
+    name = models.TextField(
+            help_text=_("Name"), blank=True)
 
-    custom_made = models.BooleanField(
-            help_text=_("Zakázková výroba"),
-            default=False,
-            blank=False)
+    address = models.TextField(
+            help_text=_("Adresa"),
+            blank=True)
 
-    capital = models.BooleanField(
-            help_text=_("Zahraniční kapitál"),
-            default=False,
-            blank=False)
+    ico = models.TextField(
+            help_text=_("IČO"),
+            blank=True)
 
-    turnover = models.IntegerField(
-            help_text=_("Obrat [€]"),
-            blank=False)
+    url = models.URLField(
+            help_text=_("URL"),
+            blank=True)
 
-    export = models.FloatField(
-            help_text=_("Export [%]"),
-            blank=False)
+    core_business = models.TextField(
+            help_text=_("Core business"),
+            blank=True)
 
-    employes = models.IntegerField(
-            help_text=_("Počet zaměstnanců"),
-            blank=False)
-
-    established = models.IntegerField(
-            help_text=_("Rok založení"),
-            blank=False)
-
-    main_activity = models.CharField(
-            max_length=200,
-            help_text=_("Hlavní činnost"))
-
-    certificates = models.ManyToManyField("Certificate")
-
-    sectors = models.ManyToManyField('Sector')
+    geom = gis_models.PointField(
+            help_text=_("Bod"),
+            blank=True)
 
     def __str__(self):
         return self.name
 
-
-class Location(models.Model):
-
-    class Meta:
-        verbose_name = _("Lokace")
-        verbose_name_plural = _("Lokace")
-
-    address = models.ForeignKey(Address,
-                                on_delete=models.CASCADE)
-    supplier = models.ForeignKey('Supplier',
-                                 on_delete=models.CASCADE)
-
-
-class ContactPerson(MyContactPerson):
-    organisation = models.OneToOneField(
-        "Organisation",
-        on_delete=models.CASCADE)
-
-
-class Organisation(MyOrganisation):
-    supplier = models.OneToOneField(
-        "Supplier",
-        on_delete=models.CASCADE)
-
-
-class Sector(models.Model):
-    name = models.CharField(
-            max_length=200,
-            unique=True,
-            help_text="Sektor")
-
-    def __str__(self):
-        return self.name
-
-
-class Certificate(models.Model):
-    name = models.CharField(
-        help_text="Certifikát",
-        unique=True,
-        max_length=20)
-
-    def __str__(self):
-        return self.name
+    class Meta():
+        managed = False
+        db_table = 'domino\".\"suppliers'
