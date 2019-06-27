@@ -176,6 +176,7 @@ class ArealFieldAdmin(nested_admin.NestedModelAdmin):
             elif hasattr(obj, "location"):
 
                 geom = obj.location.geometry.centroid
+
             elif hasattr(obj, "geom"):
                 geom = obj.geom
 
@@ -198,10 +199,6 @@ class ArealFieldAdmin(nested_admin.NestedModelAdmin):
                     "geometry": json.loads(geom.json),
                     "id": obj.pk
                 }
-
-                size = self.size(obj)
-                if size:
-                    feature["properties"]["size"] = size
 
                 for attribute in attributes:
                     if hasattr(obj, attribute):

@@ -37,6 +37,9 @@ class Brownfield(models.Model):
     access_road = models.TextField()
     telco_kw_medium_distance = models.FloatField()
 
+    def __str__(self):
+        return self.name
+
 
 # class Restriction(models.Model):
 # 

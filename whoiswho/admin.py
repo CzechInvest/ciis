@@ -37,17 +37,24 @@ def _export(queryset):
         else:
             address =  [None, None, None, None]
 
+        if whoiswho.contact:
+            contact = [
+                whoiswho.contact_person.first_name,
+                whoiswho.contact_person.last_name,
+                whoiswho.contact_person.role,
+                whoiswho.contact_person.phone,
+                whoiswho.contact_person.email
+            ]
+        else:
+            contact = [ None, None, None, None, None ]
+
         row = [
             whoiswho.institution.name,
             whoiswho.institution.name_en,
             whoiswho.institution.legal_form,
             whoiswho.institution.url] + address + [
-            whoiswho.institution.ico,
-            whoiswho.contact_person.first_name,
-            whoiswho.contact_person.last_name,
-            whoiswho.contact_person.role,
-            whoiswho.contact_person.phone,
-            whoiswho.contact_person.email,
+            whoiswho.institution.ico
+            ] + contact + [
             whoiswho.specialization,
             whoiswho.profile,
             ", ".join([kw.kw for kw in whoiswho.keywords.all()]),
@@ -135,7 +142,10 @@ class WhoIsWhoAdmin(ArealFieldAdmin, LeafletGeoAdmin):
 
     def legal_form(self, wiw):
 
-        return dict(Institution.legal_form_choices)[wiw.institution.legal_form]
+        if wiw.institution.legal_form:
+            return dict(Institution.legal_form_choices)[wiw.institution.legal_form]
+        else:
+            return 
 
     def web(self, wiw):
         return wiw.institution.url

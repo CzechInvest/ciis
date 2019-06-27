@@ -49,12 +49,20 @@ class BrownfieldAdmin(ArealFieldAdmin, LeafletGeoAdmin):
     default_lon = 1730000
     default_lat = 6430000
 
+    list_display = [
+        "name", "status", "address", "total_area", "built_up_area",
+        "selling_price"
+    ]
+
     change_list_template = "admin/change_list-map.html"
     list_filter = (NUTS3Filter, )
     pass
 
     def size(self, obj):
         return None
+
+    def selling_price(self, obj):
+        return "{} - {}".format(obj.selling_price_from, obj.selling_price_to)
 
     def change_view(self, request, object_id, extra_context=None):
         extra_context = extra_context or {}

@@ -69,6 +69,16 @@ class WhoIsWho(models.Model):
 
         return data
 
+    @property
+    def geom(self):
+        if self.institution.address:
+            return self.institution.address.coordinates
+
+    @property
+    def title(self):
+        if self.institution:
+            return self.institution.name
+
 
 class ContactPerson(MyContactPerson):
 

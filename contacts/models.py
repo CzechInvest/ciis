@@ -18,6 +18,7 @@ class ContactPerson(models.Model):
 
     middle_name = models.CharField(
             help_text="Last name",
+            blank=True,
             max_length=40)
 
     role = models.CharField(
@@ -25,6 +26,7 @@ class ContactPerson(models.Model):
             max_length=256)
 
     crm = models.URLField(
+            blank=True,
             help_text=_("CRM link"))
 
     def __str__(self):
