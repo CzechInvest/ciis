@@ -35,9 +35,9 @@ def _export(queryset):
                 whoiswho.institution.address.zipcode
             ]
         else:
-            address =  [None, None, None, None]
+            address = [None, None, None, None]
 
-        if whoiswho.contact:
+        if whoiswho.contact_person:
             contact = [
                 whoiswho.contact_person.first_name,
                 whoiswho.contact_person.last_name,

@@ -147,12 +147,13 @@ class ArealFieldAdmin(nested_admin.NestedModelAdmin):
         response = super().changelist_view(
             request, extra_context=extra_context,
         )
-        filtered_query_set = response.context_data["cl"].queryset
+        if hasattr(response, "context_data"):
+            filtered_query_set = response.context_data["cl"].queryset
 
-        extra_context['objects_data'] = \
-            json.dumps(self.as_geojson(filtered_query_set))
+            extra_context['objects_data'] = \
+                json.dumps(self.as_geojson(filtered_query_set))
 
-        response.context_data.update(extra_context)
+            response.context_data.update(extra_context)
         return response
 
     def as_geojson(self, queryset):
