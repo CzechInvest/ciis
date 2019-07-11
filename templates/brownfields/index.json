@@ -1,0 +1,8 @@
+[
+    {% for brownfield in brownfields %}
+       {% include "./brownfield.json" %}
+       {% if not loop.last %}
+       ,
+       {% endif %}
+    {% endfor %}
+]

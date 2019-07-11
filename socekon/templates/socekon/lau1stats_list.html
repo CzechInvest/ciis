@@ -1,0 +1,24 @@
+{% extends "cigeo/cigeo_base.html" %}
+
+{% block title %}Socioekonomické údaje: Mapa{% endblock %}
+{% block data %}
+    var geojson={{ geojson|safe }};
+{% endblock %}
+
+{% block content %}
+<h1>Socioekonomické údaje: mapa</h1>
+{% endblock %}
+
+{% block after_map_content %}
+{% endblock %}
+
+{% block functions %}
+    var getContent = function (feature) {
+    var table = '<table class="table table-sm">';
+    for (var i in feature.properties) {
+        table += '<tr><th>' + i + '</th><td>' + feature.properties[i] + '</td></tr>';
+    }
+    table += '</table>';
+    return table;
+    };
+{% endblock %}

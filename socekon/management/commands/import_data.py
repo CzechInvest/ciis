@@ -50,7 +50,6 @@ class Command(BaseCommand):
                         print("updating")
                         existing_objs.update(**rec)
                     else:
-                        print("newwww")
                         new_obj.append(cls(**rec))
             cls.objects.bulk_create(new_obj)
             self.stdout.write(self.style.SUCCESS('Successfully imported {} data'.format(files)))

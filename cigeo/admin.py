@@ -78,7 +78,7 @@ class NUTS3Filter(admin.SimpleListFilter):
         if val:
             nuts3 = Nuts3.objects.get(pk=val)
             results = queryset.filter(
-                xlocation__geometry__intersects=nuts3.geometry)
+                location__geometry__intersects=nuts3.geometry)
         else:
             results = queryset
 

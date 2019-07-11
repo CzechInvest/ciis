@@ -27,6 +27,19 @@ class Nuts3(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def json(self):
+        data = {
+            "geometry": json.loads(self.geometry.json)
+        }
+        data["properties"] = {
+            "name": self.name,
+            "code": self.code
+        }
+        data["type"] = "Feature"
+
+        return data
+
 
 class Lau1(models.Model):
     # okresy
@@ -50,6 +63,19 @@ class Lau1(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def json(self):
+        data = {
+            "geometry": json.loads(self.geometry.json)
+        }
+        data["properties"] = {
+            "name": self.name,
+            "code": self.code
+        }
+        data["type"] = "Feature"
+
+        return data
 
 
 class Location(models.Model):

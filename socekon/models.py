@@ -38,6 +38,18 @@ class Nuts3Stats(models.Model):
         verbose_name=_("Medium salary"),
     )
 
+    @property
+    def json(self):
+        nut3 = self.nuts3.json
+        nut3["id"] = nut3["properties"]["code"]
+        nut3["properties"]["population"] = self.population
+        nut3["properties"]["work_power"] = self.work_power
+        nut3["properties"]["unemployment"] = self.unemployment
+        nut3["properties"]["unemployment_rate"] = self.unemployment_rate
+        nut3["properties"]["unemployed_per_job"] = self.unemployed_per_job
+        nut3["properties"]["medium_salary"] = self.medium_salary
+        return nut3
+
     def __str__(self):
         return self.nuts3.name
 
@@ -77,3 +89,13 @@ class Lau1Stats(models.Model):
     def __str__(self):
         return self.lau1.name
 
+    @property
+    def json(self):
+        lau1 = self.lau1.json
+        lau1["id"] = lau1["properties"]["code"]
+        lau1["properties"]["population"] = self.population
+        lau1["properties"]["work_power"] = self.work_power
+        lau1["properties"]["unemployment"] = self.unemployment
+        lau1["properties"]["unemployment_rate"] = self.unemployment_rate
+        lau1["properties"]["unemployed_per_job"] = self.unemployed_per_job
+        return lau1
