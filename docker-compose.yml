@@ -1,12 +1,13 @@
-version: '3'
+version: '3.7'
 
 services:
-  web:
+  django_service:
     build:
         context: .
         dockerfile: Dockerfile
     volumes:
             - c:\\Users\\ciis\\src\\ciis:/var/ciis
+            - c:\\Users\\ciis\\src\\ssl:/usr/local/etc/ssl/
     container_name: "ciis-django"
     env_file:
         - local.env
@@ -16,16 +17,17 @@ services:
       - "ciisdb:192.168.161.77"
     expose:
       - 8000
-    depends_on:
-      - nginx
 
   nginx:
     build: ./nginx
     volumes:
             - c:\\Users\\ciis\\src\\ciis\\nginx\:/etc/nginx/conf.d
+            - c:\\Users\\ciis\\src\\ssl:/usr/local/etc/ssl/
     ports:
       - "80:80"
       - "443:443"
     expose:
       - 80
       - 443
+    depends_on:
+      - django_service
