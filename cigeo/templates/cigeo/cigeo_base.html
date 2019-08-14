@@ -1,70 +1,46 @@
+{% extends "base.html" %}
 {% load leaflet_tags %}
 {% load static %}
-<html>
-    <head>
-    <title>{% block title %}CzechInvest{% endblock %}</title>
+{% block scripts %}
     {% leaflet_js %}
     {% leaflet_css %}
-    <script src="https://unpkg.com/vue"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+{% endblock %}
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% block content %}
 
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+{% block map_content %}
+        {% leaflet_map "cigeo_map" callback="map_init" %}
+{% endblock %}
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
-    <script type="text/javascript">
-        {% block data %}
-        {% endblock %}
-    </script>
-    </head>
-    <body>
-        {% block content %}{% endblock %}
-        {% block map_content %}
-        {% leaflet_map "cigeo_map" callback="window.map_init" %}
-        {% endblock %}
+{% block after_map_content %}
+    <!-- to be filled -->
+{% endblock %}
+
+{% block tablecontent %}
         <div id="table">
           <table class="table table-sm">
             <thead>
             <tr>
-                <template>
+                <template v-if="features" >
                 <feature-column v-bind:attribute="attribute" v-bind:key="attribute" v-on:click.native='onColumnClick(attribute)' v-for="attribute in Object.keys(features.features[0].properties)"></feature-column>
                 </template>
             </tr>
             </thead>
             <tbody>
-              <template>
+              <template v-if="features">
                 <feature-row v-bind:feature="feature" v-bind:layer="layer" v-bind:features="features.features" v-bind:key="feature.id" v-for="feature in features.features"></feature-row>
               </template>
             </tbody>
           </table>
         </div>
-        {% block after_map_content %}{% endblock %}
-    </body>
+{% endblock %}
 
-    <script type="text/javascript">
-        var MAP = null;
-        var LAYER = null;
-        var MIN = null;
-        var MAX = null;
-        var LEGEND_PROPERTY = null;
+{% block after_table_content %}
+    <!-- to be filled -->
+{% endblock %}
 
-        var map_init = function(map, options) {
-            window.vue_app.map = map;
-        };
-        var onEachFeature = function (feature, layer) {
-            // does this feature have a property named popupContent?
-            if (feature.properties) {
-                layer.bindPopup(getContent(feature));
-            }
-        };
+<script type="text/javascript" src="{% static "ciis/map.js" %}"></script>
+<script type="text/javascript" src="{% static "ciis/table.js" %}"></script>
 
-        {% block functions %}{% endblock %}
-    </script>
-    <script type="text/javascript" src="{% static "cigeo/table.js" %}"></script>
-
-</html>
+{% endblock %}

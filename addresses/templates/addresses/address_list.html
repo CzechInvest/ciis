@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load leaflet_tags %}
+{% load static %}
+{% block scripts %}
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+{% endblock %}
+
+{% block content %}
+
+{% block map_content %}
+        {% leaflet_map "cigeo_map" callback="map_init" %}
+{% endblock %}
+
+{% block after_map_content %}
+    <!-- to be filled -->
+{% endblock %}
+
+{% block tablecontent %}
+        <div id="table">
+        {% if data %}
+          <table class="table table-sm">
+            <thead>
+                <th>id</th><th>ulice</th><th>č.p.</th><th>obec</th><th>psč</th>
+            </thead>
+            <tbody>
+                {% for adp in data %}
+                    <tr>
+                        <td>{{ adp.adm }}</td>
+                        <td>{{ adp.street }}</td>
+                        <td>{{ adp.house_number }}
+                            {% if adp.orientation_number %}
+                            / {{ adp.orientation_number }}
+                            {% endif %}
+                        </td>
+                        <td>{{ adp.city.name }}</td>
+                        <td>{{ adp.zipcode }}</td>
+                    </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+            {# .... **Now the pagination section** .... #}
+            {% if is_paginated %}
+                <div class="pagination">
+                    <span class="page-links">
+                        {% if page_obj.has_previous %}
+                            <a href="/address?page={{ page_obj.previous_page_number }}">previous</a>
+                        {% endif %}
+                        <span class="page-current">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        </span>
+                        {% if page_obj.has_next %}
+                            <a href="/address?page={{ page_obj.next_page_number }}">next</a>
+                        {% endif %}
+                    </span>
+                </div>
+            {% endif %}
+        {% endif %}
+        </div>
+{% endblock %}
+
+{% block after_table_content %}
+    <!-- to be filled -->
+{% endblock %}
+
+<script type="text/javascript" src="{% static "ciis/map.js" %}"></script>
+<script type="text/javascript" src="{% static "ciis/table.js" %}"></script>
+
+{% endblock %}

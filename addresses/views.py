@@ -3,24 +3,22 @@ from .models import Address
 from django.http import JsonResponse
 from django.http import HttpResponse
 from django.http import HttpResponseNotFound
-from .models import Address
+from .serializers import AddressSerializer
+from rest_framework import viewsets
+from django.views.generic import ListView
+#from rest_framework import mixins
 
-# Create your views here.
+class AddressViewSet(viewsets.ModelViewSet):
+    queryset = Address.objects.all()
+    serializer = AddressSerializer
+    http_method_names = ['get', 'head']
 
-def address(request, address_id):
-    address = Address.objects.get(pk=address_id)
-    if not address:
-        return HttpResponseNotFound()
-    else:
-        return HttpResponse("Address found")
+class AddressView(ListView):
+    template_name = "addresses/address_list.html"
+    model = Address # fill this in your class
+    context_object_name = "data" # Providing a useful context_object_name is always a good idea. Your coworkers who design templates will thank you.
+    paginate_by = 100  # if pagination is desired
 
-def address_json(request, address_id):
-    address = Address.objects.get(pk=address_id)
-    return address.json
-
-def address_search(request):
-    pass
-
-def address_search_json(request, query):
-    addresses = Address.objects.find()
-    pass
+    #def get_context_data(self, **kwargs):
+    #    context = super().get_context_data(**kwargs)
+    #    return context
