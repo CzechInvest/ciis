@@ -12,3 +12,4 @@ django-crispy-forms
 psycopg2-binary
 openpyxl
 djangorestframework
+djangorestframework-gis
