@@ -50,7 +50,7 @@ var vue_app = new Vue({
   },
   mounted () {
      axios
-      .get('/api/cigeo/' + OBJECT_NAME)
+      .get('/api/' + OBJECT_NAME)
       .then(response => (this.features = response.data))
       .then(this.initMap)
   },

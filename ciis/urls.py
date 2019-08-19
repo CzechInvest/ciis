@@ -23,10 +23,13 @@ from .views import IndexView
 from rest_framework import routers
 from cigeo import views as cviews
 from addresses import views as aviews
+from socekon import views as seviews
 
 router = routers.DefaultRouter()
 router.register(r'cigeo/nuts3', cviews.Nuts3ViewSet)
 router.register(r'cigeo/lau1', cviews.Lau1ViewSet)
+router.register(r'socekon/nuts3', seviews.Nuts3ViewSet)
+router.register(r'socekon/lau1', seviews.Lau1ViewSet)
 router.register(r'addresses/', aviews.AddressViewSet)
 
 urlpatterns = [

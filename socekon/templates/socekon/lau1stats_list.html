@@ -1,24 +1,11 @@
 {% extends "cigeo/cigeo_base.html" %}
 
-{% block title %}Socioekonomické údaje: Mapa{% endblock %}
 {% block data %}
-    var geojson={{ geojson|safe }};
+  var OBJECT_NAME = "socekon/lau1";
 {% endblock %}
 
-{% block content %}
-<h1>Socioekonomické údaje: mapa</h1>
-{% endblock %}
+{% block title %}CzechInvest Information System - CIIS | Socekon | LAU1 {% endblock %}
 
-{% block after_map_content %}
-{% endblock %}
-
-{% block functions %}
-    var getContent = function (feature) {
-    var table = '<table class="table table-sm">';
-    for (var i in feature.properties) {
-        table += '<tr><th>' + i + '</th><td>' + feature.properties[i] + '</td></tr>';
-    }
-    table += '</table>';
-    return table;
-    };
+{% block heading %}
+<h1>CIIS - Socio-ekonomické údaje | LAU1 (Okresy)</h1>
 {% endblock %}
