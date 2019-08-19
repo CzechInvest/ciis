@@ -1,0 +1,76 @@
+{% load leaflet_tags %}
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <script type="text/javascript">
+    //function getCookie(name) {
+    //    var cookieValue = null;
+    //    if (document.cookie && document.cookie !== '') {
+    //        var cookies = document.cookie.split(';');
+    //        for (var i = 0; i < cookies.length; i++) {
+    //            var cookie = cookies[i].trim();
+    //            // Does this cookie string begin with the name we want?
+    //            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+    //                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+    //                break;
+    //            }
+    //        }
+    //    }
+    //    return cookieValue;
+    //}
+
+    function map_init (map, options) {
+        var dataurl = "{% url 'whoiswho_json' %}";
+        console.log(dataurl);
+        //var csrftoken = getCookie('csrftoken');
+
+        $.ajax({
+            type: "GET",
+            url: dataurl,
+            dataType: 'json',
+            success: function (response) {
+                geojsonLayer = L.geoJson(response, {
+                    onEachFeature: function onEachFeature(feature, layer) {
+                        var props = feature.properties;
+                        var content = `<h3>${props.name}</h3><table class="table table-sm">`+
+                            `<tr><th>Legal form</th><td>${props.legal_form}</td></tr>`+
+                            `<tr><th>url</th><td><a href="${props.url}">${props.url}</a></td></tr>`+
+                            `<tr><th>IČO</th><td>${props.ico}</td</tr>` + 
+                            `<tr><th>Address</th><td>${props.address}</td></tr>` +
+                            `<tr><th>Contact person</th><td>${props.contact_person}</td></tr>`;
+                        layer.bindPopup(content);
+                    }}).addTo(map);
+                map.fitBounds(geojsonLayer.getBounds());
+            }
+        });
+    }
+</script>
+<style>
+
+    .leaflet-container {  /* all maps */
+        width:  1024px;
+        height: 768;
+    }
+
+    #specialbigmap {
+        height: 800px;
+    }
+
+    /* Resize the "display_raw" textbox */
+    .django-leaflet-raw-textarea {
+        width: 100%;
+    }
+
+</style>
+</head>
+<body>
+<h1>Whoiswho</h1>
+{% leaflet_map "whoiswho_map" callback="window.map_init" %}
+{% csrf_token %}
+</body>
+</html>
