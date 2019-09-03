@@ -6,7 +6,7 @@ services:
         context: .
         dockerfile: Dockerfile
     volumes:
-            - c:\\Users\\ciis\\src\\ciis:/var/ciis
+            - c:\\Users\\ciis\\src\\ciis:/var/ciis/
             - c:\\Users\\ciis\\src\\ssl:/usr/local/etc/ssl/
     container_name: "ciis-django"
     env_file:
@@ -23,6 +23,7 @@ services:
     volumes:
             - c:\\Users\\ciis\\src\\ciis\\nginx\:/etc/nginx/conf.d
             - c:\\Users\\ciis\\src\\ssl:/usr/local/etc/ssl/
+            - c:\\Users\\ciis\\src\\ciis\\static\:/var/static/
     ports:
       - "80:80"
       - "443:443"
