@@ -7,6 +7,7 @@ from cigeo.admin import NUTS3AdminInline, LAU1AdminInline
 class Lau1StatsAdmin(admin.ModelAdmin):
     list_display = (
         "lau1",
+        "year",
         "population",
         "work_power",
         "unemployment",
@@ -15,12 +16,14 @@ class Lau1StatsAdmin(admin.ModelAdmin):
     )
     search_fields = ("lau1__name",)
     readonly_fields = ("lau1", )
+    list_filter = ["lau1", "year"]
     #inlines = (LAU1AdminInline, )
 
 
 class Nuts3StatsAdmin(admin.ModelAdmin):
     list_display = (
         "nuts3",
+        "year",
         "population",
         "work_power",
         "unemployment",
@@ -31,6 +34,7 @@ class Nuts3StatsAdmin(admin.ModelAdmin):
     search_fields = ("nuts3__name",)
     readonly_fields = ("nuts3", )
     #inlines = (NUTS3AdminInline, )
+    list_filter = ["nuts3", "year"]
 
 
 admin.site.register(Nuts3Stats, Nuts3StatsAdmin)
