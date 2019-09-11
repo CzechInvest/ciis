@@ -45,6 +45,7 @@ urlpatterns = [
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace="cigeo")),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('microsoft/', include('microsoft_auth.urls', namespace='microsoft')),
 ]
 
 if settings.DEBUG:

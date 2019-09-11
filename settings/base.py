@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'rest_framework',
     'rest_framework_gis',
+    'microsoft_auth',
 ]
 
 MIDDLEWARE = [
@@ -78,9 +79,17 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'microsoft_auth.context_processors.microsoft',
             ],
         },
     },
+]
+
+
+AUTHENTICATION_BACKENDS = [
+    'microsoft_auth.backends.MicrosoftAuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend' # if you also want to use Django's authentication
+    # I recommend keeping this with at least one database superuser in case of unable to use others
 ]
 
 WSGI_APPLICATION = 'ciis.wsgi.application'
