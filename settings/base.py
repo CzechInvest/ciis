@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'suppliers.apps.SuppliersConfig',
     'socekon.apps.SocekonConfig',
     'brownfields.apps.BrownfieldsConfig',
+    'circular_economy.apps.CircularEconomyConfig',
     #'entrepreneurial_property.apps.EntrepreneurialPropertyConfig',
     'nested_admin',
     'crispy_forms',
