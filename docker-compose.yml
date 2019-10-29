@@ -12,11 +12,25 @@ services:
     env_file:
         - local.env
     ports:
-      - "8000:8000"
+      - "9000:9000"
     extra_hosts:
       - "ciisdb:192.168.161.77"
     expose:
-      - 8000
+      - 9000
+
+        #geonetwork:
+        #  image: geonetwork:postgres
+        #  container_name: ciis-geonetwork
+        #  ports:
+        #     - "8080:8080"
+        #  expose:
+        #     - 8080
+        #  extra_hosts:
+        #     - "ciisdb:192.168.161.77"
+        #  env_file:
+        #     - local.env
+        #  volumes:
+        #     - geonetwork:/var/lib/geonetwork_data
 
   nginx:
     build: ./nginx
@@ -32,3 +46,7 @@ services:
       - 443
     depends_on:
       - django_service
+        #- geonetwork
+
+volumes:
+  geonetwork:

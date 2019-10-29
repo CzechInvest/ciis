@@ -18,8 +18,8 @@ ADD requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
 RUN pip3 install gunicorn
 
-EXPOSE 8000
+EXPOSE 9000
 EXPOSE 443
 
-CMD  gunicorn ciis.wsgi
+CMD  gunicorn -b 0.0.0.0:9000 ciis.wsgi
 #CMD bash

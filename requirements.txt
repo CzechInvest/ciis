@@ -13,3 +13,4 @@ psycopg2-binary
 openpyxl
 djangorestframework
 djangorestframework-gis
+django-microsoft-auth
