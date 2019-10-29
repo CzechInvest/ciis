@@ -10,6 +10,7 @@ from .models import RailwayStation
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 import nested_admin
+import uuid
 import json
 
 
@@ -181,12 +182,20 @@ class ArealFieldAdmin(nested_admin.NestedModelAdmin):
             elif hasattr(obj, "geom"):
                 geom = obj.geom
 
+            elif hasattr(obj, "address"):
+                geom = obj.address.coordinates
+
             if geom:
                 title = None
                 if hasattr(obj, "title"):
                     title = obj.title
                 elif hasattr(obj, "name"):
                     title = obj.name
+
+                if type(obj.pk) == uuid.UUID:
+                    id = str(obj.pk)
+                else:
+                    id = obj.pk
 
                 feature = {
                     "type": "Feature",
@@ -198,14 +207,19 @@ class ArealFieldAdmin(nested_admin.NestedModelAdmin):
                                 obj._meta.model_name), args=(obj.pk,)),
                     },
                     "geometry": json.loads(geom.json),
-                    "id": obj.pk
+                    "id": id
                 }
 
                 for attribute in attributes:
                     if hasattr(obj, attribute):
-                        feature[attribute] = getattr(obj, attribute.__str__())
+                        value = getattr(obj, attribute.__str__())
+                        if type(value) == uuid.UUID:
+                            feature[attribute] = str(value)
+                        else:
+                            feature[attribute] = value
 
 
+                print(feature)
                 data["features"].append(feature)
 
         return data

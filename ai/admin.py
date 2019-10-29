@@ -5,6 +5,7 @@ from .models import *
 
 class AiAdmin(ArealFieldAdmin, LeafletGeoAdmin):
 
+    change_list_template = "admin/change_list-map.html"
     raw_id_fields = ("address",)
     default_zoom = 7
     default_lon = 1730000
