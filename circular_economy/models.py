@@ -13,6 +13,9 @@ class ContactPerson(MyContactPerson):
 class Keyword(models.Model):
     keyword = models.TextField(max_length=32)
 
+    def __str__(self):
+        return self.keyword
+
 
 class Company(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -32,6 +35,9 @@ class Company(models.Model):
                                 on_delete=models.PROTECT)
 
     characteristics = models.TextField()
+
+    def __str__(self):
+        return self.name
 
 
 class Municipality(models.Model):
@@ -60,6 +66,8 @@ class Municipality(models.Model):
     result = models.TextField()
     keywords = models.ManyToManyField("Keyword")
 
+    def __str__(self):
+        return self.name
 
 class Pilot(models.Model):
 
@@ -86,3 +94,6 @@ class Pilot(models.Model):
     challange = models.TextField()
     result = models.TextField()
     keywords = models.ManyToManyField("Keyword")
+
+    def __str__(self):
+        return self.name

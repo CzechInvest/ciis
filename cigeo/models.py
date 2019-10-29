@@ -179,6 +179,9 @@ class Airport(models.Model):
     name = models.CharField(max_length=256)
     iata = models.CharField(max_length=4)
 
+    def __str__(self):
+        return self.name
+
 
 class PublicTransportStop(models.Model):
 
