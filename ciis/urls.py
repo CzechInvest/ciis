@@ -32,7 +32,7 @@ router.register(r'cigeo/lau1', cviews.Lau1ViewSet)
 router.register(r'socekon/nuts3', seviews.Nuts3ViewSet)
 router.register(r'socekon/lau1', seviews.Lau1ViewSet)
 router.register(r'addresses/', aviews.AddressViewSet)
-router.register(r'circular_economy/', ceviews.MunicipalityViewset)
+router.register(r'circular_economy/companies', ceviews.CompanyViewset)
 
 urlpatterns = [
     url('^$', IndexView.as_view(), name="index_page"),

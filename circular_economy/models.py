@@ -6,6 +6,7 @@ import uuid
 
 
 class ContactPerson(MyContactPerson):
+    mail = models.EmailField(blank=True)
     pass
 
 

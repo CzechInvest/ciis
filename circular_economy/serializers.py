@@ -4,27 +4,22 @@ from rest_framework_gis import serializers as geoserializers
 from rest_framework_gis.serializers import GeoFeatureModelSerializer, GeometrySerializerMethodField
 
 
-class MunicipalitySerializer(geoserializers.GeoFeatureModelSerializer):
+class CompanySerializer(geoserializers.GeoFeatureModelSerializer):
 
     # a field which contains a geometry value and can be used as geo_field
     geom = GeometrySerializerMethodField()
     def get_geom(self, obj):
-        return obj.address.geometry
+        return obj.address.coordinates
 
     class Meta:
         depth = 1
-        model = Municipality
+        model = Company
         geo_field = "geom"
         fields = [
-            "uuid",
+            "id",
             "name",
-            "activity",
             "url",
             "contact_person",
-            "address"
+            "address",
             "characteristics",
-            "project_description",
-            "challange",
-            "result",
-            "keywords"
         ]
