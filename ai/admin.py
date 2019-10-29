@@ -1,8 +1,9 @@
 from django.contrib import admin
 from leaflet.admin import LeafletGeoAdmin, LeafletGeoAdminMixin
+from cigeo.admin import ArealFieldAdmin
 from .models import *
 
-class AiAdmin(LeafletGeoAdmin):
+class AiAdmin(ArealFieldAdmin, LeafletGeoAdmin):
 
     raw_id_fields = ("address",)
     default_zoom = 7
