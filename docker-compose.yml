@@ -1,14 +1,14 @@
 version: '3.7'
 
 services:
-  django_service:
+  django_ciis:
     build:
         context: .
         dockerfile: Dockerfile
     volumes:
-            - c:\\Users\\ciis\\src\\ciis:/var/ciis/
-            - c:\\Users\\ciis\\src\\ssl:/usr/local/etc/ssl/
-    container_name: "ciis-django"
+            - /home/ciis/src/ciis/:/var/ciis/
+            - /home/ciis/ssl:/usr/local/etc/ssl/
+    container_name: "django_ciis"
     env_file:
         - local.env
     ports:
@@ -18,26 +18,26 @@ services:
     expose:
       - 9000
 
-        #geonetwork:
-        #  image: geonetwork:postgres
-        #  container_name: ciis-geonetwork
-        #  ports:
-        #     - "8080:8080"
-        #  expose:
-        #     - 8080
-        #  extra_hosts:
-        #     - "ciisdb:192.168.161.77"
-        #  env_file:
-        #     - local.env
-        #  volumes:
-        #     - geonetwork:/var/lib/geonetwork_data
+  geonetwork_ciis:
+    image: geonetwork:postgres
+    env_file:
+        - local.env
+    container_name: "geonetwork_ciis"
+    expose: 
+      - 8080
+    ports:
+      - "8080:8080"
+    extra_hosts:
+      - "ciisdb:192.168.161.77"
+    volumes:
+      - geonetwork_ciis:/var/lib/geonetwork_data
 
-  nginx:
+  nginx-local:
     build: ./nginx
     volumes:
-            - c:\\Users\\ciis\\src\\ciis\\nginx\:/etc/nginx/conf.d
-            - c:\\Users\\ciis\\src\\ssl:/usr/local/etc/ssl/
-            - c:\\Users\\ciis\\src\\ciis\\static\:/var/static/
+            - /home/ciis/src/ciis/nginx:/etc/nginx/conf.d
+            - /home/ciis/ssl:/usr/local/etc/ssl/
+            - /home/ciis/src/ciis/static/:/var/static/
     ports:
       - "80:80"
       - "443:443"
@@ -45,8 +45,9 @@ services:
       - 80
       - 443
     depends_on:
-      - django_service
-        #- geonetwork
-
+      - django_ciis
+      - geonetwork_ciis
 volumes:
-  geonetwork:
+  geonetwork_ciis:
+    external:
+            name: geonetwork
