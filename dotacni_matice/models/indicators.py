@@ -185,3 +185,6 @@ class Indicator(models.Model):
             null=True,
             blank=True,
             verbose_name=_("Comments EK"))
+
+    def __str__(self):
+        return self.kod_nci_2014

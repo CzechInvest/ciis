@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'brownfields.apps.BrownfieldsConfig',
     'circular_economy.apps.CircularEconomyConfig',
     'ai.apps.AiConfig',
+    'dotacni_matice.apps.DotacniMaticeConfig',
     #'entrepreneurial_property.apps.EntrepreneurialPropertyConfig',
     'nested_admin',
     'crispy_forms',
