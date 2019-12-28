@@ -45,7 +45,7 @@ class Competence(models.Model):
 
 class Program(models.Model):
 
-    program = models.CharField(max_length=16)
+    program = models.CharField(max_length=64)
     description = models.TextField(blank=True)
 
     def __str__(self):
@@ -85,7 +85,7 @@ class DotacniTitul(models.Model):
                 null=True,
             on_delete=models.PROTECT)
 
-    area=models.CharField(max_length=64, null=True, blank=True)
+    area=models.CharField(max_length=256, null=True, blank=True)
 
     mip = models.IntegerField(blank=True,
                 null=True,
@@ -138,15 +138,14 @@ class DotacniTitul(models.Model):
     form = models.CharField(
             blank=True,
                 null=True,
-            max_length=32)
-    history = models.CharField(
+            max_length=64)
+    history = models.TextField(
             blank=True,
-                null=True,
-            max_length=32)
+                null=True)
     regime = models.CharField(
             blank=True,
                 null=True,
-            max_length=32)
+            max_length=64)
 
     supported_activities = models.TextField(
             null=True,
@@ -160,7 +159,7 @@ class DotacniTitul(models.Model):
             blank=True)
     pkn = models.IntegerField(blank=True, null=True)
     pkv = models.IntegerField(blank=True, null=True)
-    url = models.URLField(blank=True, null=True)
+    url = models.URLField(blank=True, null=True, max_length=256)
     comment = models.TextField(blank=True, null=True)
     note = models.TextField(blank=True, null=True)
 

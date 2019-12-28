@@ -61,34 +61,35 @@ class DotacniTitulStateFilter(admin.SimpleListFilter):
 
         today = datetime.date.today()
 
-        value = int(self.value())
+        if self.value():
+            value = int(self.value())
 
-        # plánováno
-        if value == 0:
-            queryset = queryset.filter(date_call__gt=today)
+            # plánováno
+            if value == 0:
+                queryset = queryset.filter(date_call__gt=today)
 
-        # vyhlášeno
-        elif value == 1:
-            queryset = DotacniTitul.objects.filter(
-                    Q(date_call__lte=today, date_full_from__gt=today) |
-                    Q(date_call__lte=today, date_pref_from__gt=today)
-            )
+            # vyhlášeno
+            elif value == 1:
+                queryset = DotacniTitul.objects.filter(
+                        Q(date_call__lte=today, date_full_from__gt=today) |
+                        Q(date_call__lte=today, date_pref_from__gt=today)
+                )
 
-        # sběr plná
-        elif value == 2:
-            queryset = queryset.filter(date_full_from__lte=today, date_full_to__gt=today)
+            # sběr plná
+            elif value == 2:
+                queryset = queryset.filter(date_full_from__lte=today, date_full_to__gt=today)
 
-        # sběr předběžná
-        elif value == 3:
-            queryset = queryset.filter(date_full_from__lte=today, date_full_to__gt=today)
+            # sběr předběžná
+            elif value == 3:
+                queryset = queryset.filter(date_full_from__lte=today, date_full_to__gt=today)
 
-        # před plnou
-        elif value == 4:
-            queryset = queryset.filter(date_pref_to__lt=today, date_full_from__gt=today)
+            # před plnou
+            elif value == 4:
+                queryset = queryset.filter(date_pref_to__lt=today, date_full_from__gt=today)
 
-        # ukončeno
-        elif value == 5:
-            queryset = queryset.filter(date_full_to__lt=today)
+            # ukončeno
+            elif value == 5:
+                queryset = queryset.filter(date_full_to__lt=today)
 
 
         return queryset

@@ -11,7 +11,7 @@ class KodSed(models.Model):
 
 class OP(models.Model):
     op = models.CharField(
-            max_length=16
+            max_length=32
     )
 
     def __str__(self):
@@ -20,7 +20,7 @@ class OP(models.Model):
 
 class Field(models.Model):
     field = models.CharField(
-            max_length=16)
+            max_length=128)
 
     def __str__(self):
         return str(self.field)
@@ -129,7 +129,7 @@ class Indicator(models.Model):
     indicator_name_en = models.TextField(
             verbose_name=_("Název indikátoru (EN)"))
     unit = models.CharField(
-            max_length=8,
+            max_length=32,
             verbose_name=_("Měrná jednotka"))
 
     type = models.CharField(
@@ -147,20 +147,20 @@ class Indicator(models.Model):
     )
     frequency = models.CharField(
             verbose_name=_("Frekvence"),
-            max_length=16
+            max_length=128
             )
 
     resource = models.URLField(
             null=True,
             blank=True,
-            verbose_name=_("Odkaz na zdroj dat")
+            verbose_name=_("Odkaz na zdroj dat"),
+            max_length=512
             )
 
-    resource_comments = models.CharField(
+    resource_comments = models.TextField(
             null=True,
             blank=True,
             verbose_name=_("Zdroj metodiky / komentáře"),
-            max_length=256
             )
 
     data_source = models.ForeignKey(
