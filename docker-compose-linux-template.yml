@@ -1,0 +1,56 @@
+version: '3.7'
+
+services:
+  django_ciis:
+    image: ciis_django_service:postgres-ciis
+    build:
+        context: .
+        dockerfile: Dockerfile
+    volumes:
+            - /home/ciis/src/ciis/:/var/ciis/
+            - /home/ciis/ssl:/usr/local/etc/ssl/
+    container_name: "django_ciis"
+    env_file:
+        - local.env
+    ports:
+      - "9000:9000"
+    extra_hosts:
+      - "ciisdb:192.168.161.77"
+    expose:
+      - 9000
+
+  geonetwork_ciis:
+    image: geonetwork:postgres
+    env_file:
+        - local.env
+    container_name: "geonetwork_ciis"
+    expose: 
+      - 8080
+    ports:
+      - "8080:8080"
+    extra_hosts:
+      - "ciisdb:192.168.161.77"
+    volumes:
+      - geonetwork_ciis:/var/lib/geonetwork_data
+
+  nginx-local:
+    build: ./nginx
+    image: ciis_nginx
+    volumes:
+            - /home/ciis/src/ciis/nginx:/etc/nginx/conf.d
+            - /home/ciis/ssl:/usr/local/etc/ssl/
+            - /home/ciis/src/ciis/static/:/var/static/
+    ports:
+      - "80:80"
+      - "443:443"
+    expose:
+      - 80
+      - 443
+    depends_on:
+      - django_ciis
+      - geonetwork_ciis
+
+volumes:
+  geonetwork_ciis:
+    external:
+            name: geonetwork
