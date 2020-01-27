@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     #'entrepreneurial_property.apps.EntrepreneurialPropertyConfig',
     'nested_admin',
     'crispy_forms',
+    'leaflet',
     'cigeo.apps.CIGeoConfig',
     'django.contrib.admin',
     'django.contrib.auth',
