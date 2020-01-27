@@ -14,3 +14,4 @@ openpyxl
 djangorestframework
 djangorestframework-gis
 django-microsoft-auth
+django-six

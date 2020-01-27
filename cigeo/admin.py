@@ -219,7 +219,7 @@ class ArealFieldAdmin(nested_admin.NestedModelAdmin):
                             feature[attribute] = value
 
 
-                print(feature)
+                #print(feature)
                 data["features"].append(feature)
 
         return data
