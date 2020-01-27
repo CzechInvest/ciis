@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'django.contrib.sites',
+    'vtp.apps.VtpConfig',
     'rest_framework',
     'rest_framework_gis',
     'microsoft_auth',
