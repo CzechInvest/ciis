@@ -7,12 +7,18 @@ class VtpType(models.Model):
     type = models.CharField(
             max_length=16
     )
+    def __str__(self):
+
+        return self.type
 
 
 class Service(models.Model):
 
     service = models.CharField(
-            max_length=64)
+            max_length=128)
+
+    def __str__(self):
+        return self.service
 
 class Vtp(models.Model):
 
