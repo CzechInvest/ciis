@@ -9,3 +9,11 @@ class AddressSerializer(geoserializers.GeoFeatureModelSerializer):
         geo_field = "coordinates"
         fields = ['adm', 'street', "house_number", "orientation_number",
                   "city", "zipcode"]
+
+
+class TextAddressSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Address
+        fields: ["adm", "street", "house_number", "orientation_number", "city",
+                "zipcode"]
