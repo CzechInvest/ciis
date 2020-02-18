@@ -105,7 +105,7 @@ class Lau1Stats(models.Model):
         return lau1
 
 class Date(models.Model):
-    date = models.DateField()
+    date = models.DateField(unique=True)
     czk_euro = models.FloatField()
     czk_usd = models.FloatField()
 
@@ -123,11 +123,19 @@ class HumanResourcesLau1(models.Model):
     applications_per_vacancy = models.FloatField()
 
     def __str__(self):
-        return "%s %s".format(self.lau1, self.date)
+        return "{} {}".format(self.lau1, self.date)
 
 
 class HumanResourcesNuts3(models.Model):
     nuts3 = models.ForeignKey(Nuts3, on_delete=models.PROTECT)
     date = models.ForeignKey(Date, on_delete=models.PROTECT)
     wages = models.IntegerField()
+    inhabitans = models.IntegerField()
+    productive_inhabitans = models.IntegerField()
+    unemployed = models.IntegerField()
+    vacancies = models.IntegerField()
+    unemployment = models.FloatField()
+    applications_per_vacancy = models.FloatField()
 
+    def __str__(self):
+        return "{} {}".format(self.nuts3, self.date)

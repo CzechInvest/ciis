@@ -47,26 +47,17 @@ class HumanResourcesAdminNuts3(admin.ModelAdmin):
         "unemployment",
         "applications_per_vacancy",
         "wages",
+        "wages_eur",
+        "wages_usd",
         "date"
     )
 
-    def inhabitans(self, obj):
-        return 10
 
-    def productive_inhabitans(self, obj):
-        return 10
+    def wages_eur(self, obj):
+        return obj.wages/obj.date.czk_euro
 
-    def unemployed(self, obj):
-        return 10
-
-    def vacancies(self, obj):
-        return 10
-
-    def unemployment(self, obj):
-        return 10
-
-    def applications_per_vacancy(self, obj):
-        return 10
+    def wages_usd(self, obj):
+        return obj.wages/obj.date.czk_usd
 
 
 class HumanResourcesAdminLau1(admin.ModelAdmin):
