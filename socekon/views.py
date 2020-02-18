@@ -33,3 +33,13 @@ class Lau1ViewSet(viewsets.ModelViewSet):
     serializer_class = Lau1Serializer
     http_method_names = ['get', 'head']
 
+#class HRNuts3ViewSet(viewsets.ModelViewSet):
+#    queryset = HumanResourcesNuts3.objects.all()
+#    serializer_class = Nuts3Serializer
+#    http_method_names = ['get', 'head']
+#
+#
+#class HRLau1ViewSet(viewsets.ModelViewSet):
+#    queryset = HumanResourcesLau1.objects.all()
+#    serializer_class = Lau1Serializer
+#    http_method_names = ['get', 'head']
