@@ -109,6 +109,9 @@ class Date(models.Model):
     czk_euro = models.FloatField()
     czk_usd = models.FloatField()
 
+    def month(self):
+        return "{}-{}".format(self.date.year, self.date.month)
+
     def __str__(self):
         return "{}".format(self.date)
 
@@ -136,6 +139,9 @@ class HumanResourcesNuts3(models.Model):
     vacancies = models.IntegerField()
     unemployment = models.FloatField()
     applications_per_vacancy = models.FloatField()
+
+    def month(self):
+        return "2020-12"
 
     def __str__(self):
         return "{} {}".format(self.nuts3, self.date)

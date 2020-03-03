@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_gis',
     'microsoft_auth',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -179,3 +180,9 @@ LEAFLET_CONFIG = {
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL="/"
 SITE_ID = 1
+
+REST_FRAMEWORK = {
+        'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+        'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+        'PAGE_SIZE': 100
+}
