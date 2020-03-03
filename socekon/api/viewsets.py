@@ -1,6 +1,6 @@
-from ..models import HumanResourcesNuts3, Date
-from cigeo.models import Nuts3
-from .serializers import HRNuts3Serializer
+from ..models import HumanResourcesNuts3, HumanResourcesLau1, Date
+from cigeo.models import Nuts3, Lau1
+from .serializers import HRNuts3Serializer, HRLau1Serializer
 from rest_framework import viewsets
 from rest_framework import exceptions
 from rest_framework import pagination
@@ -9,6 +9,9 @@ import calendar
 
 class Nuts3Pagination(pagination.PageNumberPagination):
     page_size = 14
+
+class Lau1Pagination(pagination.PageNumberPagination):
+    page_size = 77
 
 class MonthFilter(filters.CharFilter):
 
@@ -38,11 +41,30 @@ class HRNuts3Filter(filters.FilterSet):
                 "nuts3__code": ("exact",),
                 }
 
+class HRLau1Filter(filters.FilterSet):
+
+    date__date = MonthFilter()
+
+    class Meta:
+        model = HumanResourcesLau1
+        fields = {
+                "lau1__name": ("icontains",),
+                "lau1__code": ("exact",),
+                }
+
 
 class Nuts3ViewSet(viewsets.ModelViewSet):
     queryset = HumanResourcesNuts3.objects.all()
     serializer_class = HRNuts3Serializer
     filter_class = HRNuts3Filter
     pagination_class = Nuts3Pagination
+
+    http_method_names = ['get', 'head']
+
+class Lau1ViewSet(viewsets.ModelViewSet):
+    queryset = HumanResourcesLau1.objects.all()
+    serializer_class = HRLau1Serializer
+    filter_class = HRLau1Filter
+    pagination_class = Lau1Pagination
 
     http_method_names = ['get', 'head']
