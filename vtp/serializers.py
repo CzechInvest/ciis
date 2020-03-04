@@ -2,7 +2,6 @@ from .models import Vtp, VtpType, Service
 from rest_framework import serializers
 from rest_framework_gis import serializers as geoserializers
 from rest_framework_gis.serializers import GeoFeatureModelSerializer, GeometrySerializerMethodField
-from addresses import serializers as address_serializers
 
 
 class VtpSerializer(geoserializers.GeoFeatureModelSerializer):
