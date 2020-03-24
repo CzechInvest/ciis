@@ -51,7 +51,7 @@ var vue_app = new Vue({
   mounted () {
      axios
       .get('/api/' + OBJECT_NAME)
-      .then(response => (this.features = response.data))
+      .then(response => (this.features = response.data.features ? response.data : response.data.results))
       .then(this.initMap)
   },
   methods: {

@@ -11,7 +11,7 @@ class VtpSerializer(geoserializers.GeoFeatureModelSerializer):
 
     # a field which contains a geometry value and can be used as geo_field
     geom = GeometrySerializerMethodField()
-    address =  serializers.CharField()
+    address = serializers.CharField()
 
 
 

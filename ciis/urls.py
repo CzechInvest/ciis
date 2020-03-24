@@ -28,6 +28,9 @@ from vtp import views as vtpviews
 
 from .router import router
 
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='Pastebin API')
 
 
 urlpatterns = [
@@ -45,6 +48,7 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace="cigeo")),
     path('accounts/', include('django.contrib.auth.urls')),
     path('microsoft/', include('microsoft_auth.urls', namespace='microsoft')),
+    url(r'^apidoc/', schema_view, name='api-doc'),
 ]
 
 if settings.DEBUG:

@@ -1,6 +1,6 @@
 from ..models import HumanResourcesNuts3, HumanResourcesLau1, Date
 from cigeo.models import Nuts3, Lau1
-from .serializers import HRNuts3Serializer, HRLau1Serializer
+from .serializers import HRNuts3Serializer, HRLau1Serializer, HRNuts3NonGeomSerializer
 from rest_framework import viewsets
 from rest_framework import exceptions
 from rest_framework import pagination
@@ -55,11 +55,18 @@ class HRLau1Filter(filters.FilterSet):
 
 class Nuts3ViewSet(viewsets.ModelViewSet):
     queryset = HumanResourcesNuts3.objects.all()
-    serializer_class = HRNuts3Serializer
     filter_class = HRNuts3Filter
     pagination_class = Nuts3Pagination
 
     http_method_names = ['get', 'head']
+
+    def get_serializer_class(self):
+
+        if self.get_serializer_context()["format"] == "xlsx":
+            self.filename = 'nuts3.xlsx'
+            return HRNuts3NonGeomSerializer
+        else:
+            return HRNuts3Serializer
 
 class Lau1ViewSet(viewsets.ModelViewSet):
     queryset = HumanResourcesLau1.objects.all()

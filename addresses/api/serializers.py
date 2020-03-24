@@ -2,6 +2,13 @@ from ..models import Address
 from rest_framework import serializers
 from rest_framework_gis import serializers as geoserializers
 
+class AddressAsTextSerializer(serializers.ModelSerializer):
+
+    text_address = serializers.CharField(source="__str__")
+
+    class Meta:
+        model = Address
+        fields = ['adm', 'text_address']
 
 class AddressSerializer(geoserializers.GeoFeatureModelSerializer):
     city = serializers.CharField(source="city.name")

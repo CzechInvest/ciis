@@ -1,5 +1,5 @@
 from cigeo.views import MapView
-from .models import Nuts3Stats, Lau1Stats
+from .models import HumanResourcesNuts3, HumanResourcesLau1
 from ciis.views import IndexView as CIISIndexView
 
 
@@ -8,10 +8,10 @@ class IndexView(CIISIndexView):
 
 
 class MapViewNuts3(MapView):
-    model = Nuts3Stats
+    model = HumanResourcesNuts3
     context_object_name = "data"
 
 
 class MapViewLau1(MapView):
-    model = Lau1Stats
+    model = HumanResourcesLau1
     context_object_name = "data"

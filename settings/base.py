@@ -60,6 +60,8 @@ INSTALLED_APPS = [
     'rest_framework_gis',
     'microsoft_auth',
     'django_filters',
+    'rest_framework_swagger',
+    #'rest_pandas',
 ]
 
 MIDDLEWARE = [
@@ -182,7 +184,34 @@ LOGIN_REDIRECT_URL="/"
 SITE_ID = 1
 
 REST_FRAMEWORK = {
-        'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
-        'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-        'PAGE_SIZE': 100
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100,
+    'DEFAULT_RENDERER_CLASSES': [
+        'drf_renderer_xlsx.renderers.XLSXRenderer',
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}
+
+SWAGGER_SETTINGS = {
+    "exclude_namespaces": ['rest_logout', ],  # List URL namespaces to ignore
+    "SUPPORTED_SUBMIT_METHODS": [  # Specify which methods to enable in Swagger UI
+        'get',
+        'post',
+        'put',
+        'delete'
+    ],
+    'SECURITY_DEFINITIONS': {
+        'api_key': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'Authorization'
+        }
+    },
+    'USE_SESSION_AUTH': True,
+    'JSON_EDITOR': True,
+    'REFETCH_SCHEMA_ON_LOGOUT': True
+
 }

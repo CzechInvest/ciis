@@ -3,6 +3,26 @@ from rest_framework import serializers
 from rest_framework_gis import serializers as geoserializers
 from rest_framework_gis.serializers import GeoFeatureModelSerializer, GeometrySerializerMethodField
 
+class HRNuts3NonGeomSerializer(serializers.ModelSerializer):
+
+    name = serializers.CharField(source='nuts3.name')
+    code = serializers.IntegerField(source='nuts3.code')
+    date = serializers.DateField(source='date.date')
+
+    class Meta:
+        model = HumanResourcesNuts3
+        fields = [
+                  "date",
+                  "name",
+                  "code",
+                  "wages",
+                  "inhabitans",
+                  "productive_inhabitans",
+                  "unemployed",
+                  "vacancies",
+                  "unemployment",
+                  "applications_per_vacancy"
+                  ]
 
 class HRNuts3Serializer(geoserializers.GeoFeatureModelSerializer):
 #class HRNuts3Serializer(serializers.ModelSerializer):

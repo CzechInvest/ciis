@@ -70,7 +70,7 @@ class Command(BaseCommand):
                 )
             
             else:
-                print(name)
+                print("{} not imported".format(name))
 
         HumanResourcesNuts3.objects.bulk_create(nuts_recs)
         HumanResourcesLau1.objects.bulk_create(laus_recs)
