@@ -1,5 +1,44 @@
 var MAP_APP = {};
 
+Vue.use(VueI18n)
+// Ready translated locale messages
+const messages = {
+  en: {
+    message: {
+      date: 'Date',
+      name: 'Name',
+      code: 'Code',
+      wages: 'Wages',
+      inhabitans: 'Inhabitans',
+      productive_inhabitans: 'Productive inhabitans',
+      unemployed: 'Unemployed',
+      vacancies: 'Vacancies',
+      unemployment: 'Unemployment',
+      applications_per_vacancy: 'Applications per vacancy'
+    }
+  },
+  cs: {
+    message: {
+      date: 'Datum',
+      name: 'Jméno',
+      code: 'Kód',
+      wages: 'Pracovní síla',
+      inhabitans: 'Počet obyvatel',
+      productive_inhabitans: 'Počet obyvatel v produktivním věku',
+      unemployed: 'Počet nezaměstnaných',
+      vacancies: 'Počet pracovních míst',
+      unemployment: 'Nezaměstnanost',
+      applications_per_vacancy: 'Počet žádostí na jedno pracovní místo'
+    }
+  }
+}
+
+// Create VueI18n instance with options
+const i18n = new VueI18n({
+  locale: 'cs', // set locale
+  messages, // set locale messages
+})
+
 Vue.component("feature-row", {
   props: ["feature", "features", "layer"],
   methods: {
@@ -22,21 +61,35 @@ Vue.component("feature-column", {
     props: ["attribute"],
     methods: {
     },
-    template: "<th>{{ attribute }}</th>"
+    template: "<th>{{ $t( String( \"message.\" + attribute) ) }}</th>"
+});
+
+Vue.component("api-links", {
+    props: ["OBJECT_NAME"],
+    methods: {
+    },
+    template: '<span><a href="/apidoc/">[API]</a> | ' +
+              '<a href="/api/' + OBJECT_NAME + '.json">[GeoJSON]</a> | ' + 
+              '<a href="/api/' + OBJECT_NAME + '.xlsx">[XLSX]</a>' + 
+              "</span>"
 });
 
 /**
  * initialize table from geojson variable data
  */
 var vue_app = new Vue({
+  i18n,
   delimiters: ['[[', ']]'],
   el: '#table',
   data: {
     title: 'Welcome to My Journal',
     features: null,
+    data: null,
     legend_column: null,
     min: null,
     max: null,
+    page: null,
+    pages: null,
     map: window.MAP,
     object_name: null,
     layer: null,
@@ -51,7 +104,7 @@ var vue_app = new Vue({
   mounted () {
      axios
       .get('/api/' + OBJECT_NAME)
-      .then(response => (this.features = response.data.features ? response.data : response.data.results))
+      .then(response => (this.data = response.data))
       .then(this.initMap)
   },
   methods: {
@@ -59,6 +112,8 @@ var vue_app = new Vue({
       this.legend_column = name;
     },
     "initMap": function() {
+      this.features  = this.data.features ? this.data : this.data.results;
+
       this.layer = L.geoJSON(this.features, {
           //onEachFeature: onEachFeature,
           //style: this.getFeatureStyle
@@ -148,4 +203,6 @@ var vue_app = new Vue({
 var map_init = function(map) {
   vue_app.map = map;
 };
+
+
 
