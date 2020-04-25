@@ -1,0 +1,20 @@
+{% extends "cigeo/cigeo_base.html" %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+    {% breadcrumb "Home" "/" %}
+    {% breadcrumb "CI-Geo" "socekon_index" %}
+    {% breadcrumb "NUTS3" "socekon_nuts3_map" %}
+{% endblock %}
+
+{% block data %}
+  let OBJECT_NAME = "socekon/nuts3";
+  let DESC = true;
+{% endblock %}
+
+{% block title %}CzechInvest Information System - CIIS | Socekon | NUTS3 {% endblock %}
+
+{% block heading %}
+<h1>CIIS - Socio-ekonomické údaje | NUTS3 (Kraje)</h1>
+{% endblock %}
+

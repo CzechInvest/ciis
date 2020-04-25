@@ -1,16 +1,29 @@
 {% extends "base.html" %}
+{% load django_bootstrap_breadcrumbs %}
 {% load leaflet_tags %}
 {% load static %}
 {% block scripts %}
+    <link rel="stylesheet" href="{% static "cigeo/style.css" %}">
     {% leaflet_js %}
     {% leaflet_css %}
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+{% endblock %}
+
+{% block data %}
+  let OBJECT_NAME = "";
+  let DESC = false;
 {% endblock %}
 
 {% block content %}
 
 {% block map_content %}
+<div class="container-fluid">
         {% leaflet_map "cigeo_map" callback="map_init" %}
+
+</div>
 {% endblock %}
 
 {% block after_map_content %}
@@ -18,14 +31,27 @@
 {% endblock %}
 
 {% block tablecontent %}
-        <div id="table">
-          <div id="datasource">
-            Zdroj:
-            <template>
-              <api-links></api-links>
-            </template>
+        <div id="navigation_table">
+          <div id="source" class="container-fluid">
+                <div class="row">
+                        <div class="col-sm text-left">
+                                <template>
+                                <api-links></api-links>
+                                </template>
+                        </div>
+                        <div class="col-sm text-center">
+                          <div id="spinner" class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                        <div class="col-sm text-right">
+                                <template v-if="count">
+                                  <pages v-bind:count="count" v-bind:next="next" v-bind:previous="previous"></pages>
+                                </template>
+                        </div>
+                </div>
           </div>
-          <table class="table table-sm">
+          <table class="table table table-responsive table-striped">
             <thead>
             <tr>
                 <template v-if="features" >

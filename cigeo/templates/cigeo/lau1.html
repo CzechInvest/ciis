@@ -1,9 +1,17 @@
 {% extends "cigeo/cigeo_base.html" %}
+{% load django_bootstrap_breadcrumbs %}
 {% block data %}
-  var OBJECT_NAME = "cigeo/lau1";
+  let OBJECT_NAME = "cigeo/lau1";
+  let DESC = false;
 {% endblock %}
 {% block title %}CzechInvest Information System - CIIS | CIGeo | LAU1 {% endblock %}
 
 {% block heading %}
 <h1>CIIS - Základní prostorové prvky | LAU1 (Okresy)</h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumb "Home" "/" %}
+    {% breadcrumb "CI-Geo" "cigeo_index" %}
+    {% breadcrumb "Lau1" "cigeo_lau1_map" %}
 {% endblock %}

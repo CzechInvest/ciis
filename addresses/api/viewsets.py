@@ -34,7 +34,7 @@ class AddressFilter(filters.FilterSet):
 
 
 class AddressesViewSet(viewsets.ModelViewSet):
-    queryset = Address.objects.all()
+    queryset = Address.objects.all().order_by("adm").prefetch_related("city")
     serializer_class = AddressSerializer
     filter_class = AddressFilter
     pagination_class = AddressPagination

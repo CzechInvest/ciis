@@ -1,9 +1,19 @@
 {% extends "cigeo/cigeo_base.html" %}
+{% load django_bootstrap_breadcrumbs %}
+
+
 {% block data %}
-  var OBJECT_NAME = "cigeo/nuts3";
+  let OBJECT_NAME = "cigeo/nuts3";
+  let DESC = false;
 {% endblock %}
 {% block title %}CzechInvest Information System - CIIS | CIGeo | NUTS3 {% endblock %}
 
 {% block heading %}
 <h1>CIIS - Základní prostorové prvky | NUTS3 (Kraje)</h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumb "Home" "/" %}
+    {% breadcrumb "CI-Geo" "cigeo_index" %}
+    {% breadcrumb "Nuts3" "cigeo_nuts3_map" %}
 {% endblock %}

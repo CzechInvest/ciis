@@ -5,6 +5,12 @@ import json
 # Create your models here.
 
 class Address(models.Model):
+    
+    class Meta:
+        ordering = ['adm']
+        indexes = [
+            models.Index(fields=['adm', 'street', 'city', 'zipcode', 'coordinates']),
+        ]
     adm = models.IntegerField(
             help_text='Kód ADM',
             primary_key=True)

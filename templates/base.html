@@ -1,8 +1,17 @@
 {% load static %}
+{% load django_bootstrap_breadcrumbs %}
+{% block breadcrumbs %}
+    {% clear_breadcrumbs %}
+    {% breadcrumb "Home" "/" %}
+{% endblock %}
 <html>
     <head>
     <title>{% block title %}CzechInvest{% endblock %}</title>
+    {% if DEBUG %}
     <script src="https://unpkg.com/vue"></script>
+    {% else %}
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>"
+    {% endif %}
     <script src="https://unpkg.com/vue-i18n/dist/vue-i18n.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -32,11 +41,18 @@
             {% endif %}
         </ul>
         </nav>
-        <main role="main" class="container">
+        <div>
+            {% render_breadcrumbs %}
+        </div>
+
+
+        <main role="main" class="container-fluid"></main>
         {% block heading %}{% endblock %}
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
         </main>
         {% block javascript_functions %}
         {% endblock %}
+
     </body>
 </html>

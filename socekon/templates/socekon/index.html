@@ -1,7 +1,14 @@
 {% extends "base.html" %}
+{% load django_bootstrap_breadcrumbs %}
+{% block breadcrumbs %}
+    {% breadcrumb "Home" "/" %}
+    {% breadcrumb "Socio-ekonomické údaje" "socekon_index" %}
+{% endblock %}
+
 {% block title %}CzechInvest Information System - CIIS | Socio-ekonomické ukazatele{% endblock %}
 
 {% block content %}
+
 <h1>CIIS - Socio-ekonomické ukazatele</h1>
     <ul>
       <li>

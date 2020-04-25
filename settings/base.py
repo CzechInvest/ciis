@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'microsoft_auth',
     'django_filters',
     'rest_framework_swagger',
+    'django_bootstrap_breadcrumbs',
     #'rest_pandas',
 ]
 
@@ -188,9 +189,9 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 100,
     'DEFAULT_RENDERER_CLASSES': [
-        'drf_renderer_xlsx.renderers.XLSXRenderer',
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
+        'drf_renderer_xlsx.renderers.XLSXRenderer',
     ],
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }

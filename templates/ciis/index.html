@@ -1,7 +1,10 @@
 {% extends "base.html" %}
+{% load django_bootstrap_breadcrumbs %}
+
 {% block title %}CzechInvest Information System - CIIS{% endblock %}
 
 {% block content %}
+
 <h1>CzechInvest Information System - CIIS</h1>
 {% if user.is_authenticated and user.is_staff %}
 <ul>
@@ -12,7 +15,7 @@
     <li><a href="/cigeo/">Základní prostorové prvky</a></li>
     <li><a href="/address">Adresní místa</a></li>
     <li><a href="/socekon">Socio-ekonomické údaje</a></li>
-    <li><a href="/brownfields">Brownfieldy</a></li>
-    <li><a href="/whoiswho">WhoIsWho</a></li>
+    <!--li><a href="/brownfields">Brownfieldy</a></li>
+    <li><a href="/whoiswho">WhoIsWho</a></li-->
 </ul>
 {% endblock %}

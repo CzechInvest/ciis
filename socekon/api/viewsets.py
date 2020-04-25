@@ -8,7 +8,7 @@ from django_filters import rest_framework as filters
 import calendar
 
 class Nuts3Pagination(pagination.PageNumberPagination):
-    page_size = 14
+    page_size = 13
 
 class Lau1Pagination(pagination.PageNumberPagination):
     page_size = 77
@@ -54,7 +54,7 @@ class HRLau1Filter(filters.FilterSet):
 
 
 class Nuts3ViewSet(viewsets.ModelViewSet):
-    queryset = HumanResourcesNuts3.objects.all()
+    queryset = HumanResourcesNuts3.objects.all().order_by("-date").prefetch_related("date").prefetch_related("nuts3")
     filter_class = HRNuts3Filter
     pagination_class = Nuts3Pagination
 
@@ -69,7 +69,7 @@ class Nuts3ViewSet(viewsets.ModelViewSet):
             return HRNuts3Serializer
 
 class Lau1ViewSet(viewsets.ModelViewSet):
-    queryset = HumanResourcesLau1.objects.all()
+    queryset = HumanResourcesLau1.objects.all().order_by("-date").prefetch_related("date").prefetch_related("lau1")
     serializer_class = HRLau1Serializer
     filter_class = HRLau1Filter
     pagination_class = Lau1Pagination
