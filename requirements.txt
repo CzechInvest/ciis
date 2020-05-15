@@ -17,3 +17,4 @@ django-microsoft-auth
 django-six
 django-filter==2.0.0
 django-rest-swagger
+django-bootstrap-breadcrumbs
