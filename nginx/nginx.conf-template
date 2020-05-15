@@ -18,10 +18,9 @@
 
 	server {
         listen 443 ssl;
-	    #ssl_certificate /usr/local/etc/ssl/certs/nginx-selfsigned.crt;
-        #ssl_certificate_key /usr/local/etc/ssl/private/nginx-selfsigned.key;
-	    ssl_certificate /usr/local/etc/ssl/certs/starcert.pem;
-        ssl_certificate_key /usr/local/etc/ssl/private/server.key;
+	    ssl_certificate /usr/local/etc/ssl/ciis-test-selfsigned.crt;
+	    ssl_certificate_key /usr/local/etc/ssl/ciis-test-selfsigned.key;
+
 	    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 	    ssl_prefer_server_ciphers on;
 	    ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";
