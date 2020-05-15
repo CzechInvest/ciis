@@ -65,9 +65,14 @@ Vue.component("feature-row", {
       let layerFeatures = this.layer.getLayers();
       for (var i = 0; i < layerFeatures.length - 1; i++) {
         var f = layerFeatures[i];
-        f.setStyle(vue_app.styles.default);
+        f.setStyle && f.setStyle(vue_app.styles.default);
         if (f.feature == this.feature) {
-          f.setStyle(vue_app.styles.highlight);
+          f.setStyle && f.setStyle(vue_app.styles.highlight);
+          if (f.feature.geometry.type == "Point") {
+            vue_app.map.flyTo(f.getLatLng(), 17);
+          } else {
+            vue_app.map.fitBounds(f.getBounds());
+          }
         }
       }
     },
@@ -121,11 +126,12 @@ Vue.component("api-links", {
     props: ["OBJECT_NAME"],
     methods: {
       "openWindow": function(type) {
+        var url;
         if (type === "apidoc") {
-          let url = '/apidoc/';
+          url = '/apidoc/';
         }
         else {
-          let url =  '/api/' + OBJECT_NAME.replace(/\/$/, '') + '.' + type;
+          url =  '/api/' + OBJECT_NAME.replace(/\/$/, '') + '.' + type;
         }
         window.open(url, '_blank');
       }
@@ -137,6 +143,26 @@ Vue.component("api-links", {
       '</div>'
 });
 
+var FeatureDetailComponent = Vue.component("feature-detail", {
+  props: ["attributes"],
+  methods: {},
+  template: '<table class="table stripped table-sm">' + 'ahoj' + '</table>'
+});
+//'<template>' + 
+//    '<feature-detail-attribute v-bind:attribute="attribute" v-bind:key="attribute" v-for="attribute in Object.keys(attributes)"></feature-detail-attribute>' +
+//'</template>' + 
+//this._div.innerHTML = "<table class=\"table stripped table-sm\">" + tbl + "</table>";
+
+Vue.component("feature-detail-attribute", {
+  props: [],
+  methods: {},
+  template: '<table class="table stripped table-sm">'
+           // '<tr><th>' + k + "</th><td>"+ props[k] + "</td></tr>";
+           //   this._div.innerHTML += "<tr><th>" + k + "</th><td>"+ props[k] + "</td></tr>"
+           // }
+            //this._div.innerHTML = "<table class=\"table stripped table-sm\">" + tbl + "</table>"
+});
+
 /**
  * initialize table from geojson variable data
  */
@@ -144,6 +170,9 @@ var vue_app = new Vue({
   i18n,
   delimiters: ['[[', ']]'],
   el: '#navigation_table',
+  components: {
+    "feature-detail": FeatureDetailComponent
+  },
   data: {
     title: 'Welcome to My Journal',
     data_link: '/api/' + OBJECT_NAME,
@@ -214,12 +243,14 @@ var vue_app = new Vue({
 
       document.getElementById("spinner").style.display = "none";
     },
+
     "initInfoPanel": function() {
       if (this.info) {
         this.map.removeControl(this.info);
       }
 
       this.info = L.control();
+      console.log(this.components);
 
       this.info.onAdd = function (map) {
           this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
@@ -233,8 +264,8 @@ var vue_app = new Vue({
           if (props) {
             var tbl = "";
             for (var k in props) {
-              tbl += "<tr><th>" + k + "</th><td>"+ props[k] + "</td></tr>";
-              //this._div.innerHTML += "<tr><th>" + k + "</th><td>"+ props[k] + "</td></tr>";
+
+               tbl += "<tr><th>" + k + "</th><td>"+ props[k] + "</td></tr>";
             }
             this._div.innerHTML = "<table class=\"table stripped table-sm\">" + tbl + "</table>";
           } else {
@@ -290,32 +321,6 @@ var vue_app = new Vue({
             });
         return [Math.min(...data), Math.max(...data)];
 
-        try {
-          for (var i = 0; i < this.features.features.length; i++) {
-            var f = this.features.features[i];
-            if (min != null) {
-              if (f.properties[attribute] < min) {
-                min = Math.round(Number(f.properties[attribute]));
-              }
-            }
-            else {
-              min =  Math.round(Number(f.properties[attribute]));
-            }
-
-            if (max) {
-              if (f.properties[attribute] > max) {
-                min = Math.round((f.properties[attribute]));
-              }
-            }
-            else {
-                max = Math.round(Number(f.properties[attribute]));
-            }
-          }
-          return [min, max];
-        } catch (e) {
-          console.log(e);
-          return [undefined, undefined];
-        }
       },
       "onEachFeature": function(feature, layer) {
         layer.on({
@@ -369,25 +374,32 @@ var vue_app = new Vue({
 
       var layer = e.target;
 
-      layer.setStyle(this.styles.highlight);
+      layer.setStyle && layer.setStyle(this.styles.highlight);
 
       if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-          layer.bringToFront();
+          layer.bringToFront && layer.bringToFront();
       }
       this.info.update(layer.feature.properties);
     },
 
     "resetHighlight": function(e) {
-        e.target.setStyle(this.getFeatureStyle(e.target.feature));
+        var f = e.target;
+        f.setStyle && f.setStyle(this.getFeatureStyle(e.target.feature));
         this.info.update();
     },
     "zoomToFeature": function (e) {
+      var f = e.target;
+      if (f.feature.geometry.type == "Point") {
+        //
+      } else {
         this.map.fitBounds(e.target.getBounds());
+      }
     },
   },
   watch: {
     legend_column: function(name) {
       var mm =  this.getDataExtent(name);
+      let displayLegend = true;
       if (mm[0] !== undefined) {
         this.min = mm[0];
         this.max = mm[1];
@@ -395,9 +407,16 @@ var vue_app = new Vue({
         let layerFeatures = this.layer.getLayers();
         for (var i = 0; i < layerFeatures.length; i++) {
           l = layerFeatures[i];
-          l.setStyle(this.getFeatureStyle(l.feature));
+          if (l.setStyle) {
+            l.setStyle(this.getFeatureStyle(l.feature));
+          } else {
+            displayLegend = false;
+            break;
+          }
         }
-        this.initLegendPanel();
+        if (displayLegend) {
+          this.initLegendPanel();
+        }
       } else {
         this.min = mm[0];
         this.max = mm[1];
