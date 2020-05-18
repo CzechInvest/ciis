@@ -4,8 +4,7 @@
 {% load static %}
 {% block scripts %}
     <link rel="stylesheet" href="{% static "cigeo/style.css" %}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet-src.js"></script>
-    <ahoj>{% leaflet_js %}</ahoj>
+    {% leaflet_js %}
     {% leaflet_css %}
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
