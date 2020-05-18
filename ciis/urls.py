@@ -28,10 +28,23 @@ from vtp import views as vtpviews
 
 from .router import router
 
-from rest_framework_swagger.views import get_swagger_view
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+from rest_framework import permissions
 
-schema_view = get_swagger_view(title='Pastebin API')
 
+schema_view = get_schema_view(
+   openapi.Info(
+      title="CIIS API",
+      default_version='v1',
+      description="CIIS Swagger API interface",
+      terms_of_service="TBD",
+      contact=openapi.Contact(email="ciis czechinvest org"),
+      license=openapi.License(name="TBD"),
+   ),
+   public=True,
+   permission_classes=(permissions.AllowAny,),
+)
 
 urlpatterns = [
     url('^$', IndexView.as_view(), name="index_page"),
@@ -48,7 +61,9 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace="cigeo")),
     path('accounts/', include('django.contrib.auth.urls')),
     path('microsoft/', include('microsoft_auth.urls', namespace='microsoft')),
-    url(r'^apidoc/', schema_view, name='api-doc'),
+    url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc')
 ]
 
 if settings.DEBUG:

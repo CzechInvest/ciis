@@ -16,7 +16,7 @@ djangorestframework-gis
 django-microsoft-auth
 django-six
 django-filter==2.0.0
-django-rest-swagger
+drf-yasg
 django-bootstrap-breadcrumbs
 drf-renderer-xlsx
 rest-pandas

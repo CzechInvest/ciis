@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'rest_framework_gis',
     'microsoft_auth',
     'django_filters',
-    'rest_framework_swagger',
+    'drf_yasg',
     'django_bootstrap_breadcrumbs',
     #'rest_pandas',
 ]

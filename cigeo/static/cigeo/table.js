@@ -127,8 +127,8 @@ Vue.component("api-links", {
     methods: {
       "openWindow": function(type) {
         var url;
-        if (type === "apidoc") {
-          url = '/apidoc/';
+        if (type === "swagger") {
+          url = '/swagger/';
         }
         else {
           url =  '/api/' + OBJECT_NAME.replace(/\/$/, '') + '.' + type;
@@ -137,7 +137,7 @@ Vue.component("api-links", {
       }
     },
     template: '<div class="btn-group">' +
-        '<button type="button" class="btn btn-outline-primary" v-on:click="openWindow(\'apidoc\')" >API (Swagger)</button>'+
+        '<button type="button" class="btn btn-outline-primary" v-on:click="openWindow(\'swagger\')" >API (Swagger)</button>'+
         '<button type="button" class="btn btn-outline-primary" v-on:click="openWindow(\'json\')" >(Geo)JSON</button>'+
         '<button type="button" class="btn btn-outline-primary" v-on:click="openWindow(\'xlsx\')" >XLSX</button>'+
       '</div>'
