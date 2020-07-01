@@ -20,3 +20,6 @@ drf-yasg
 django-bootstrap-breadcrumbs
 drf-renderer-xlsx
 rest-pandas
+django-debug-toolbar
+sparql-client
+django-cors-headers

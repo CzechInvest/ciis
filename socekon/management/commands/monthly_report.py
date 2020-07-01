@@ -29,6 +29,9 @@ from openpyxl import load_workbook
 import os
 from collections import OrderedDict
 import copy
+import urllib
+import time
+import sys
 
 from html.parser import HTMLParser
 import requests
@@ -38,7 +41,7 @@ import shutil
 import zipfile
 import sparql
 import ssl
-import ssl
+import csv
 
 
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -85,39 +88,226 @@ class Command(BaseCommand):
         (year, month, day) = thedate.split("-")
         #month, year = (int(month), int(year))
 
+        structure = self._get_structure()
         unemployment_data = self._get_unemployment(year, month)
         resources_data = self._get_jobs(unemployment_data["kraje"], year, month)
         data = self.merge(unemployment_data, resources_data)
-        wages_nuts3 = self._get_stats_link(year, month)
+        wages_nuts3 = self._get_wages_data(year, month)
+        population_lau1, population_nuts3 = self._get_population(year, month, structure)
 
-        self.import_data(data, wages_nuts3, year, month)
-
-    @staticmethod
-    def import_lau1(data, year, month):
-        for lau1 in data:
-            print("""
-            lau1={lau1},
-            date={date{,
-            inhabitans={inhabitans},
-            productive_inhabitans={productive_inhabitans},
-            unemployment={unemployment},
-            vacanies={vacancies},
-            unemployment={unemployment},
-            applications_per_vacancy={applications_per_vacancy},
-            """)
-        print(data[lau1])
-
+        self.import_data(data, wages_nuts3, population_lau1, population_nuts3, year, month, day)
 
     @staticmethod
-    def import_data(data, wages_nuts3, year, month):
+    def _get_structure():
+        structure = os.path.join(
+                os.path.dirname(os.path.abspath(__file__)), "..",
+                "data", "struktura_uzemi_cr_1_1_2016_az_1_1_2020-1.xlsx")
 
-        self.import_lau1(data["okresy"], year, month)
+        wb = load_workbook(structure)
+        data_sheet = wb.get_sheet_by_name("1.1.2020")
+        nuts2 = {}
+        nuts3 = {}
+        lau1 = {}
+        orp = {}
+        lau2 = {}
+
+        all_data = list(data_sheet.values)[3:6261]
+
+        for row in all_data:
+            (obec_kod, obec_name, status, opu_kod, opu_name, 
+            orp_kod, orp_name, lau1_kod, lau1_name, nuts3_kod, nuts3_name, 
+            nuts2_kod, nuts2_name) = row
+
+            lau2[int(obec_kod)] = {
+                "code": int(obec_kod),
+                "name": obec_name,
+                "lau1_kod": lau1_kod,
+                "lau1_name": lau1_name,
+                "nuts3_kod": nuts3_kod,
+                "nuts3_name": nuts3_name
+            }
+
+        return lau2
 
 
     @staticmethod
-    def _get_stats_link(year, month):
+    def _get_population(year, month, structure):
+        sparql_url = "https://data.gov.cz/sparql?query=define%20sql%3Adescribe-mode%20%22CBD%22%20%20DESCRIBE%20%3Chttps%3A%2F%2Fdata.gov.cz%2Fzdroj%2Fdatov%C3%A9-sady%2Fhttp---vdb.czso.cz-pll-eweb-package_show-id-130149%3E&output=application%2Frdf%2Bjson"
+
+        s = requests.get(sparql_url)
+        data = s.json()
+        link = data[list(data.keys())[0]]["http://www.w3.org/ns/dcat#distribution"]
+        download_sparql = link[0]["value"]
+        
+        sparql_url = "https://data.gov.cz/sparql?query=define%20sql%3Adescribe-mode%20%22CBD%22%20%20DESCRIBE%20%3C{}%3E&output=application%2Frdf%2Bjson".format(download_sparql)
+
+        s = requests.get(sparql_url)
+        data = s.json()
+        link = data[list(data.keys())[0]]["http://www.w3.org/ns/dcat#downloadURL"]
+        zip_link = link[0]["value"]
+
+        fd, zip_file_name = tempfile.mkstemp("zip-population")
+        __FILES__.append(zip_file_name)
+
+        z = requests.get(zip_link)
+
+
+        thedir = tempfile.mkdtemp(prefix="population-")
+        __FILES__.append(thedir)
+
+        population_zip = os.path.join(thedir, "{}-{}.zip".format(year, month))
+
+        with open(population_zip, "wb") as zip_file:
+            zip_file.write(z.content)
+
+        zipfile_class = zipfile.ZipFile(population_zip)
+        files = zipfile_class.namelist()
+        population_csv = os.path.join(thedir, files[0])
+        zipfile_class.extract(os.path.basename(population_csv), path=thedir)
+
+        assert os.path.isfile(population_csv)
+
+        population_data =  {}
+        with open(population_csv) as csvfile:
+            dialect = csv.Sniffer().sniff(csvfile.read(2048))
+            csvfile.seek(0)
+            reader = csv.reader(csvfile)
+            for row in reader:
+
+                (idhod, hodnota, stapro_kod, pohlavi_cis, pohlavi_kod,
+                vuzemi_cis, vuzemi_kod, rok, casref_do, pohlavi_txt,
+                vuzemi_txt) = row
+
+                if idhod == "idhod":
+                    continue
+
+                (pyear, pmonth, pday) = (int(v) for v in casref_do.split("-"))
+                rok = int(rok)
+                vuzemi_kod = int(vuzemi_kod)
+
+                if rok not in population_data:
+                    population_data[rok] = {}
+                #    if vuzemi_kod not in population_data[rok]:
+                #        population_data[rok][vuzemi_kod] = 0
+
+                if not pohlavi_kod:
+                    population_data[rok][vuzemi_kod] = int(hodnota)
+
+        year = int(year)
+        if year in population_data:
+            year_data = population_data[year]
+        elif year - 1 in population_data:
+            year_data = population_data[year-1]
+        elif year - 2 in population_data:
+            year_data = population_data[year-2]
+
+
+        #print(len(population_data))
+        #print(len(population_data[2019].keys()))
+        #print(len(population_data[2018].keys()))
+        #print(len(population_data[2017].keys()))
+        #print(year_data)
+        #print(population_data.keys())
+        missing = []
+
+        population_lau1 = {}
+        population_nuts3 = {}
+
+        for k in year_data.keys():
+            if int(k) in structure:
+                k = int(k)
+                #print(k, year_data[k], structure[k]["name"])
+                lau1_name = structure[k]["lau1_name"]
+                nuts3_name = structure[k]["nuts3_name"]
+
+                if lau1_name not in population_lau1:
+                    population_lau1[lau1_name] = 0
+
+                if nuts3_name not in population_nuts3:
+                    population_nuts3[nuts3_name] = 0
+
+                population_lau1[lau1_name] += year_data[k]
+                population_nuts3[nuts3_name] += year_data[k]
+
+            else:
+                missing.append((k, year_data[k]))
+
+        # print(missing)
+
+        #print(population_lau1)
+        #print(population_nuts3)
+
+        return (population_lau1, population_nuts3)
+
+
+    def import_lau1(self, data, population,  year, month, day):
+        for lau1_name in data:
+            lau1 = Lau1.objects.get(name=lau1_name)
+            date = Date.objects.get(date="{}-{}-{}".format(year, month, day))
+            inhabitans = population[lau1_name]
+            productive_inhabitans = data[lau1_name]["productive_inhabitans"]
+            unemployed = data[lau1_name]["unemployed"]
+            vacancies = data[lau1_name]["vacancies"]
+            unemployment = data[lau1_name]["unemployment"]
+            applications_per_vacancy = data[lau1_name]["applications_per_vacancy"]
+            if len(HumanResourcesLau1.objects.filter(lau1=lau1, date=date)):
+                self.stdout.write(self.style.WARNING("LAU1 for {} and {} exists already, remove first".format(lau1.name, date.date)))
+
+            else:
+                HumanResourcesLau1.objects.create(
+                    lau1=lau1,
+                    date=date,
+                    inhabitans=inhabitans,
+                    productive_inhabitans=productive_inhabitans,
+                    unemployed=unemployed,
+                    vacancies=vacancies,
+                    unemployment=unemployment,
+                    applications_per_vacancy=applications_per_vacancy
+                )
+                self.stdout.write(self.style.SUCCESS('Successfully imported {}'.format(lau1.name)))
+
+    def import_nuts3(self, data, wages, population,  year, month, day):
+        for nuts3_name in data:
+            nuts3 = Nuts3.objects.get(name=nuts3_name)
+            date = Date.objects.get(date="{}-{}-{}".format(year, month, day))
+            nuts3_wages = wages[nuts3_name]
+            inhabitans = population[nuts3_name]
+            productive_inhabitans = data[nuts3_name]["productive_inhabitans"]
+            unemployed = data[nuts3_name]["unemployed"]
+            vacancies = data[nuts3_name]["vacancies"]
+            unemployment = data[nuts3_name]["unemployment"]
+            applications_per_vacancy = data[nuts3_name]["applications_per_vacancy"]
+            if len(HumanResourcesNuts3.objects.filter(nuts3=nuts3, date=date)):
+                self.stdout.write(self.style.WARNING(
+                    "NUTS3 for {} and {} exists already, remove first".format(nuts3.name, date.date))
+                    )
+
+            else:
+                HumanResourcesNuts3.objects.create(
+                    nuts3=nuts3,
+                    date=date,
+                    wages=nuts3_wages,
+                    inhabitans=inhabitans,
+                    productive_inhabitans=productive_inhabitans,
+                    unemployed=unemployed,
+                    vacancies=vacancies,
+                    unemployment=unemployment,
+                    applications_per_vacancy=applications_per_vacancy
+                )
+                self.stdout.write(self.style.SUCCESS('Successfully imported {}'.format(nuts3.name)))
+
+
+    def import_data(self, data, wages_nuts3, population_lau1, population_nuts3, year,
+            month, day):
+
+        self.import_lau1(data["okresy"],  population_lau1, year, month, day)
+        self.import_nuts3(data["kraje"],  wages_nuts3, population_nuts3, year, month, day)
+
+
+    @staticmethod
+    def _get_wages_data(year, month):
         global __FILES__
-        print(year, month)
+        #print(year, month)
         month = int(month)
 
         q = 1
@@ -158,7 +348,7 @@ class Command(BaseCommand):
         data = {}
 
         for row in all_data:
-            data[row[0]] = row[4]
+            data[row[0]] = row[5]
         return data
 
     def _merge_type(self, unempl, resource, mytype):
@@ -168,7 +358,6 @@ class Command(BaseCommand):
             if name == "Praha" and mytype == "okresy":
                 continue
             if name in resource[mytype]:
-                print(name)
                 data[name] = OrderedDict(
                     #inhabitans=
                     name=name,
@@ -183,11 +372,10 @@ class Command(BaseCommand):
     def merge(self, unempl, resource):
         okresy = self._merge_type(unempl, resource, "okresy")
         kraje = self._merge_type(unempl, resource, "kraje")
-        print(kraje)
         return {"kraje": kraje, "okresy": okresy}
 
 
-    def _get_unemployment(self,year, month):
+    def _get_unemployment(self, year, month):
         global __FILES__
         response = requests.get("https://www.mpsv.cz/o/rest/statistiky/nezamestnanost/{}/{}".format(year,
             month))
@@ -202,7 +390,14 @@ class Command(BaseCommand):
             out_zip.write(response.content)
 
         zipfile_class = zipfile.ZipFile(unemployment_zip)
-        zipfile_class.extract(os.path.basename(unemployment_excel), path=thedir)
+
+        for f in ("4. NEZ{}{}h.xlsx", "4. Nez{}{}h.xlsx", "4. nez{}{}h.xlsx"):
+            try:
+                unemployment_excel =  os.path.join(thedir, f.format(month, int(year)-2000))
+                zipfile_class.extract(os.path.basename(unemployment_excel), path=thedir)
+                break
+            except KeyError as e:
+                pass
 
         assert os.path.isfile(unemployment_excel)
 
@@ -290,7 +485,13 @@ class Command(BaseCommand):
             ).format(month=month, year=year)
         s = sparql.Service("https://www.mpsv.cz/sparql/", "utf-8", "POST",
                            accept='application/json')
-        result = s.query(data, raw=True)
+        while True:
+            try:
+                result = s.query(data, raw=True)
+                break
+            except urllib.error.HTTPError as e:
+                print("Sparql failed, re-trying")
+                time.sleep(5)
         #response = requests.post("https://www.mpsv.cz/sparql/", data=data,
         #        headers={"Accept": "application/json"})
         data = json.load(result)

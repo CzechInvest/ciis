@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_yasg',
     'django_bootstrap_breadcrumbs',
+    'corsheaders',
     #'rest_pandas',
 ]
 
@@ -73,6 +74,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'ciis.urls'
@@ -219,3 +222,7 @@ SWAGGER_SETTINGS = {
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+
+CORS_URLS_REGEX = r'^/api/.*$'
+CORS_ALLOW_METHODS = [ 'GET', ]
+CORS_ORIGIN_ALLOW_ALL = True
