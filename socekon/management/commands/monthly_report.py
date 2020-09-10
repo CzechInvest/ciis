@@ -202,12 +202,6 @@ class Command(BaseCommand):
             year_data = population_data[year-2]
 
 
-        #print(len(population_data))
-        #print(len(population_data[2019].keys()))
-        #print(len(population_data[2018].keys()))
-        #print(len(population_data[2017].keys()))
-        #print(year_data)
-        #print(population_data.keys())
         missing = []
 
         population_lau1 = {}
@@ -216,9 +210,10 @@ class Command(BaseCommand):
         for k in year_data.keys():
             if int(k) in structure:
                 k = int(k)
-                #print(k, year_data[k], structure[k]["name"])
                 lau1_name = structure[k]["lau1_name"]
                 nuts3_name = structure[k]["nuts3_name"]
+                if lau1_name == "Praha":
+                    lau1_name = "Hlavní město Praha"
 
                 if lau1_name not in population_lau1:
                     population_lau1[lau1_name] = 0
@@ -231,11 +226,6 @@ class Command(BaseCommand):
 
             else:
                 missing.append((k, year_data[k]))
-
-        # print(missing)
-
-        #print(population_lau1)
-        #print(population_nuts3)
 
         return (population_lau1, population_nuts3)
 
@@ -307,7 +297,6 @@ class Command(BaseCommand):
     @staticmethod
     def _get_wages_data(year, month):
         global __FILES__
-        #print(year, month)
         month = int(month)
 
         q = 1
@@ -348,15 +337,16 @@ class Command(BaseCommand):
         data = {}
 
         for row in all_data:
-            data[row[0]] = row[5]
+            if row[0] == "Hl. m. Praha":
+                data["Hlavní město Praha"] = row[5]
+            else:
+                data[row[0]] = row[5]
         return data
 
     def _merge_type(self, unempl, resource, mytype):
 
         data = {}
         for name in unempl[mytype]:
-            if name == "Praha" and mytype == "okresy":
-                continue
             if name in resource[mytype]:
                 data[name] = OrderedDict(
                     #inhabitans=
@@ -421,6 +411,13 @@ class Command(BaseCommand):
                 'unemployment': unemployment,
                 'applications_per_vacancy': applications_per_vacancy
             }
+
+            if name == "Praha":
+
+                data["kraje"]["Hlavní město Praha"] = record
+                data["kraje"]["Hlavní město Praha"]["okresy"] = ["Hlavní město Praha"]
+                data["okresy"]["Hlavní město Praha"] = record
+                continue
 
             if name.lower().find("kraj") > -1:
                 data["kraje"][name] = record
@@ -507,8 +504,8 @@ class Command(BaseCommand):
                 nazevOkresu = "Plzeň-město"
             if nazevOkresu == "Ostrava":
                 nazevOkresu = "Ostrava-město"
-            if nazevOkresu == "Hlavní město Praha":
-                nazevOkresu = "Praha"
+            #if nazevOkresu == "Hlavní město Praha":
+            #    nazevOkresu = "Praha"
             kraj = self._get_kraj_name(nazevOkresu, kraje)
             assert kraj
 
