@@ -1,43 +1,44 @@
 from django.contrib import admin
+from django.urls import reverse
+import django.urls
 from .models import Nuts3Stats, Lau1Stats, HumanResourcesLau1, HumanResourcesNuts3, Date
 from cigeo.admin import NUTS3AdminInline, LAU1AdminInline
 
+from django.http import HttpResponseRedirect
+from urllib.parse import urlunparse
+from urllib.parse import urlencode
 
+def __export_to(modeladmin, request, queryset, frmt):
 
-class Lau1StatsAdmin(admin.ModelAdmin):
-    list_display = (
-        "lau1",
-        "year",
-        "population",
-        "work_power",
-        "unemployment",
-        "unemployment_rate",
-        "unemployed_per_job"
+    selected = queryset.values_list('pk', flat=True)
+    args = urlencode({
+        "id": ",".join(str(pk) for pk in selected)
+        })
+
+    url = urlunparse(
+            ["", "",
+                reverse('api/socekon/nuts3-list').rstrip("/") + frmt,
+                "",
+                args,
+                ""
+             ]
     )
-    search_fields = ("lau1__name",)
-    readonly_fields = ("lau1", )
-    list_filter = ["lau1", "year"]
-    #inlines = (LAU1AdminInline, )
 
+    return HttpResponseRedirect(url)
 
-class Nuts3StatsAdmin(admin.ModelAdmin):
-    list_display = (
-        "nuts3",
-        "year",
-        "population",
-        "work_power",
-        "unemployment",
-        "unemployment_rate",
-        "unemployed_per_job",
-        "medium_salary"
-    )
-    search_fields = ("nuts3__name",)
-    readonly_fields = ("nuts3", )
-    #inlines = (NUTS3AdminInline, )
-    list_filter = ["nuts3", "year"]
+def export_selected_json(modeladmin, request, queryset):
+    return __export_to(modeladmin, request, queryset, ".json")
+
+def export_selected_excel(modeladmin, request, queryset):
+    return __export_to(modeladmin, request, queryset, ".xlsx")
+
+export_selected_json.short_description = "Export selected (GeoJSON)"
+export_selected_excel.short_description = "Export selected (Excel)"
 
 class HumanResourcesAdminNuts3(admin.ModelAdmin):
 
+    actions = [export_selected_json, export_selected_excel]
+    list_filter = ("nuts3", "date")
     list_display = (
         "nuts3",
         "inhabitans",
@@ -62,6 +63,8 @@ class HumanResourcesAdminNuts3(admin.ModelAdmin):
 
 class HumanResourcesAdminLau1(admin.ModelAdmin):
 
+    actions = [export_selected_json, export_selected_excel]
+    list_filter = ("lau1", "date")
     list_display = (
         "lau1",
         "inhabitans",
@@ -73,9 +76,6 @@ class HumanResourcesAdminLau1(admin.ModelAdmin):
         "date"
     )
 
-
-admin.site.register(Nuts3Stats, Nuts3StatsAdmin)
-admin.site.register(Lau1Stats, Lau1StatsAdmin)
 
 admin.site.register(HumanResourcesNuts3, HumanResourcesAdminNuts3)
 admin.site.register(HumanResourcesLau1, HumanResourcesAdminLau1)

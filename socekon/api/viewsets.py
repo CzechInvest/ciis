@@ -13,6 +13,10 @@ class Nuts3Pagination(pagination.PageNumberPagination):
 class Lau1Pagination(pagination.PageNumberPagination):
     page_size = 77
 
+class NumberInFilter(filters.BaseInFilter, filters.NumberFilter):
+    pass
+
+
 class MonthFilter(filters.CharFilter):
 
     def filter(self, qs, value):
@@ -33,30 +37,35 @@ class MonthFilter(filters.CharFilter):
 class HRNuts3Filter(filters.FilterSet):
 
     date__date = MonthFilter()
+    nuts3__code = NumberInFilter(field_name='nuts3__code', lookup_expr='in')
+    id = NumberInFilter(field_name='pk', lookup_expr='in')
 
     class Meta:
         model = HumanResourcesNuts3
         fields = {
                 "nuts3__name": ("icontains",),
-                "nuts3__code": ("exact",),
                 }
 
 class HRLau1Filter(filters.FilterSet):
 
     date__date = MonthFilter()
+    lau1__code = NumberInFilter(field_name='lau1__code', lookup_expr='in')
+    id = NumberInFilter(field_name='pk', lookup_expr='in')
 
     class Meta:
         model = HumanResourcesLau1
         fields = {
                 "lau1__name": ("icontains",),
-                "lau1__code": ("exact",),
                 }
 
 
 class Nuts3ViewSet(viewsets.ModelViewSet):
+    basename="socekon/nuts3"
+
     queryset = HumanResourcesNuts3.objects.all().order_by("-date").prefetch_related("date").prefetch_related("nuts3")
     filter_class = HRNuts3Filter
     pagination_class = Nuts3Pagination
+
 
     http_method_names = ['get', 'head']
 

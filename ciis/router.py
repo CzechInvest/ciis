@@ -7,8 +7,8 @@ from django.conf.urls import url
 from django.urls import include, path
 
 router = routers.DefaultRouter()
-router.register("socekon/nuts3", socekon_viewsets.Nuts3ViewSet)
-router.register("socekon/lau1", socekon_viewsets.Lau1ViewSet)
+router.register("socekon/nuts3", socekon_viewsets.Nuts3ViewSet, basename="api/socekon/nuts3")
+router.register("socekon/lau1", socekon_viewsets.Lau1ViewSet, basename="api/socekon/lau1")
 router.register("cigeo/nuts3", cigeo_viewsets.Nuts3ViewSet)
 router.register("cigeo/lau1", cigeo_viewsets.Lau1ViewSet)
 router.register("addresses", addresses_viewsets.AddressesViewSet)
