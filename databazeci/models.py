@@ -22,7 +22,7 @@ class Subject(models.Model):
 
     turnover = models.ForeignKey("Turnover", on_delete=models.PROTECT)
     employees = models.ForeignKey("Employees", on_delete=models.PROTECT)
-    contact = models.ForeignKey("Contact", blank=True, null=True, on_delete=models.PROTECT)
+    contact = models.ManyToManyField("Contact")
     profile = models.TextField(blank=True)
 
     module = models.ManyToManyField("Module")
