@@ -90,15 +90,15 @@ class Domain(models.Model):
         return self.domain
 
 class Subdomain(models.Model):
-    sector = models.CharField(max_length=256)
+    subdomain = models.CharField(max_length=256)
     domain = models.ForeignKey(Domain, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.sector
+        return self.subdomain
 
 class Department(models.Model):
     abbr = models.CharField(max_length=4)
     name = models.CharField(max_length=256)
 
     def __str__(self):
-        return self.sector
+        return self.name
