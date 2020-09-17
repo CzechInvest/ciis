@@ -15,7 +15,7 @@ class Subject(models.Model):
                                 on_delete=models.PROTECT)
     keywords = models.ManyToManyField("Keyword")
     domain = models.ManyToManyField("Domain")
-    subsector = models.ManyToManyField("Subsector")
+    subdomain = models.ManyToManyField("Subdomain")
     department = models.ManyToManyField("Department")
     note = models.TextField(blank=True)
 
@@ -89,8 +89,9 @@ class Domain(models.Model):
     def __str__(self):
         return self.domain
 
-class Subsector(models.Model):
+class Subdomain(models.Model):
     sector = models.CharField(max_length=256)
+    domain = models.ForeignKey(Domain, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.sector

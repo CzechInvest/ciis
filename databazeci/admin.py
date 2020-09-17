@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, Subject, Keyword, Nace, Ket, Module, Sector, Turnover, Employees, Domain, Subsector, Department
+from .models import Contact, Subject, Keyword, Nace, Ket, Module, Sector, Turnover, Employees, Domain, Subdomain, Department
 
 class ContactAdmin(admin.ModelAdmin):
     pass
@@ -8,7 +8,7 @@ class SubjectAdmin(admin.ModelAdmin):
 
     raw_id_fields = ("address", )
     search_fields = ("name", "ico")
-    list_filter = ("domain","subsector", "module__sector", "ket", "nace")
+    list_filter = ("domain","subdomain", "module__sector", "ket", "nace")
 
     fieldsets = (
         (None, {
@@ -17,7 +17,7 @@ class SubjectAdmin(admin.ModelAdmin):
             'profile', 'note')
         }),
         ('Sectors', {
-            'fields': ('domain', 'subsector', 'module', 'ket', 'nace'),
+            'fields': ('domain', 'subdomain', 'module', 'ket', 'nace'),
     }),
     )
 
@@ -31,5 +31,5 @@ admin.site.register(Sector)
 admin.site.register(Turnover)
 admin.site.register(Employees)
 admin.site.register(Domain)
-admin.site.register(Subsector)
+admin.site.register(Subdomain)
 admin.site.register(Department)
