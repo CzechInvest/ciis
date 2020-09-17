@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     #'suppliers.apps.SuppliersConfig',
     #'infrastructure.apps.InfrastructureConfig',
+    'databazeci.apps.DatabazeciConfig',
     'addresses.apps.AddressesConfig',
     'contacts.apps.ContactsConfig',
     'whoiswho.apps.WhoiswhoConfig',
