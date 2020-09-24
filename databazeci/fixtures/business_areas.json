@@ -3,224 +3,224 @@
         "fields": {
             "business_area": "Agriculture and Food"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 1
     },
     {
         "fields": {
             "business_area": "Analytics and Big Data"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 2
     },
     {
         "fields": {
             "business_area": "Automotive"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 3
     },
     {
         "fields": {
             "business_area": "Circular economy"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 4
     },
     {
         "fields": {
             "business_area": "Cleantech"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 5
     },
     {
         "fields": {
             "business_area": "Cloud Computing"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 6
     },
     {
         "fields": {
             "business_area": "Connected Devices"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 7
     },
     {
         "fields": {
             "business_area": "Construction"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 8
     },
     {
         "fields": {
             "business_area": "Cybersecurity & security tech"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 9
     },
     {
         "fields": {
             "business_area": "Design"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 10
     },
     {
         "fields": {
             "business_area": "E-commerce and Marketing"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 11
     },
     {
         "fields": {
             "business_area": "Education"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 12
     },
     {
         "fields": {
             "business_area": "Energy"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 13
     },
     {
         "fields": {
             "business_area": "Environment"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 14
     },
     {
         "fields": {
             "business_area": "Fintech"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 15
     },
     {
         "fields": {
             "business_area": "Fun/Media"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 16
     },
     {
         "fields": {
             "business_area": "Gaming"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 17
     },
     {
         "fields": {
             "business_area": "Legaltech and Insurance"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 18
     },
     {
         "fields": {
             "business_area": "Life Science"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 19
     },
     {
         "fields": {
             "business_area": "Manufacturing"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 20
     },
     {
         "fields": {
             "business_area": "Medical devices and equipment"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 21
     },
     {
         "fields": {
             "business_area": "Proptech and Architecture"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 22
     },
     {
         "fields": {
             "business_area": "Retail"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 23
     },
     {
         "fields": {
             "business_area": "Scientific and special HW"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 24
     },
     {
         "fields": {
             "business_area": "Shared Economy"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 25
     },
     {
         "fields": {
             "business_area": "Smart cities"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 26
     },
     {
         "fields": {
             "business_area": "Space and Aerospace"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 27
     },
     {
         "fields": {
             "business_area": "Telco"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 28
     },
     {
         "fields": {
             "business_area": "Textiles"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 29
     },
     {
         "fields": {
             "business_area": "Transportation and Logistic"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 30
     },
     {
         "fields": {
             "business_area": "Travel and Tourism"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 31
     },
     {
         "fields": {
             "business_area": "Web services"
         },
-        "model": "databazeci.business_area",
+        "model": "databazeci.businessarea",
         "pk": 32
     }
 ]
