@@ -2,8 +2,16 @@ from django.db import models
 from addresses.models import Address
 from django.utils.translation import ugettext_lazy as _
 import uuid
+from django.core.exceptions import ValidationError
 
 # Create your models here.
+
+def is_year(value):
+    if not 1700 < value < 2050:
+        raise ValidationError(
+            _('%(value)d does not seem tobe valid year'),
+            params={'value': value},
+        )
 
 class Subject(models.Model):
 
@@ -13,21 +21,49 @@ class Subject(models.Model):
     url = models.URLField()
     address = models.ForeignKey(Address, blank=True, null=True,
                                 on_delete=models.PROTECT)
-    keywords = models.ManyToManyField("Keyword")
-    domain = models.ManyToManyField("Domain")
-    subdomain = models.ManyToManyField("Subdomain")
-    department = models.ManyToManyField("Department")
-    note = models.TextField(blank=True)
+    keywords = models.ManyToManyField("Keyword", blank=True)
+    domain = models.ManyToManyField("Domain", blank=True)
+    subdomain = models.ManyToManyField("Subdomain", blank=True)
+    business_area = models.ManyToManyField("BusinessArea", blank=True)
+    department = models.ForeignKey("Department", on_delete=models.PROTECT)
+    note = models.TextField(blank=True, null=True)
 
 
-    turnover = models.ForeignKey("Turnover", on_delete=models.PROTECT)
-    employees = models.ForeignKey("Employees", on_delete=models.PROTECT)
+    turnover = models.ForeignKey("Turnover", blank=True, null=True,
+            on_delete=models.PROTECT)
+    employees = models.ForeignKey("Employees", blank=True, null=True,
+            on_delete=models.PROTECT)
     contact = models.ManyToManyField("Contact")
-    profile = models.TextField(blank=True)
+    profile = models.TextField(blank=True, null=True)
 
-    module = models.ManyToManyField("Module")
-    ket = models.ManyToManyField("Ket")
-    nace = models.ForeignKey("Nace", on_delete=models.PROTECT)
+    #module = models.ManyToManyField("Module")
+    ket = models.ManyToManyField("Ket", blank=True)
+    nace = models.ManyToManyField("Nace", blank=True)
+
+    TECHNOLOGY_LEVEL_CHOICES = (
+            (1, 1),
+            (2, 2),
+            (3, 3),
+            (4, 4),
+            (5, 5),
+            (7, 7),
+            (8, 8),
+            (9, 9),
+            (10, 10),
+    )
+    technology_readiness = models.IntegerField(null=True, blank=True,
+            choices=TECHNOLOGY_LEVEL_CHOICES)
+    year_founded = models.IntegerField("Year of foundation",
+            null=True, blank=True, validators=[is_year])
+
+    #destination = models.ManyToManyField("Destination")
+    #programm = models.ManyToManyField("Programm")
+
+class Programm(models.Model):
+    name = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.name
 
 class Contact(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -36,6 +72,7 @@ class Contact(models.Model):
     position = models.CharField(max_length=256)
     email = models.CharField(max_length=256)
     voicephone = models.CharField(max_length=256)
+    department = models.ManyToManyField("Department")
 
 
 class Keyword(models.Model):
@@ -45,10 +82,11 @@ class Keyword(models.Model):
         return self.kw
 
 class Nace(models.Model):
+    nace_id = models.CharField(max_length=16, primary_key=True)
     nace = models.CharField(max_length=256)
 
     def __str__(self):
-        return self.nace
+        return "{} {}".format(self.id, self.nace)
 
 class Ket(models.Model):
     ket = models.CharField(max_length=256)
@@ -82,6 +120,12 @@ class Employees(models.Model):
 
     def __str__(self):
         return self.description
+
+class BusinessArea(models.Model):
+    business_area = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.business_area
 
 class Domain(models.Model):
     domain = models.CharField(max_length=256)

@@ -1,0 +1,44 @@
+[
+   {
+      "fields" : {
+         "ket" : "advanced manufacturing"
+      },
+      "model" : "databazeci.ket",
+      "pk" : 1
+   },
+   {
+      "fields" : {
+         "ket" : "advanced materials"
+      },
+      "model" : "databazeci.ket",
+      "pk" : 2
+   },
+   {
+      "fields" : {
+         "ket" : "life-science technologies"
+      },
+      "model" : "databazeci.ket",
+      "pk" : 3
+   },
+   {
+      "fields" : {
+         "ket" : "micro/nano-electronics and photonics"
+      },
+      "model" : "databazeci.ket",
+      "pk" : 4
+   },
+   {
+      "fields" : {
+         "ket" : "artificial intelligence"
+      },
+      "model" : "databazeci.ket",
+      "pk" : 5
+   },
+   {
+      "fields" : {
+         "ket" : "security and connectivity"
+      },
+      "model" : "databazeci.ket",
+      "pk" : 6
+   }
+]

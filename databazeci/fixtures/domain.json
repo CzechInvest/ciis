@@ -1,0 +1,72 @@
+[
+   {
+      "fields" : {
+         "domain" : "HealthTech"
+      },
+      "model" : "databazeci.domain",
+      "pk" : 1
+   },
+   {
+      "fields" : {
+         "domain" : "Advanced Industrial Technologies"
+      },
+      "model" : "databazeci.domain",
+      "pk" : 1
+   },
+   {
+      "fields" : {
+         "domain" : "Mobility"
+      },
+      "model" : "databazeci.domain",
+      "pk" : 1
+   },
+   {
+      "fields" : {
+         "domain" : "AI & Digital"
+      },
+      "model" : "databazeci.domain",
+      "pk" : 1
+   },
+   {
+      "fields" : {
+         "domain" : "Aerospace and Defence"
+      },
+      "model" : "databazeci.domain",
+      "pk" : 1
+   },
+   {
+      "fields" : {
+         "domain" : "Creative business"
+      },
+      "model" : "databazeci.domain",
+      "pk" : 1
+   },
+   {
+      "fields" : {
+         "domain" : "EcoTech"
+      },
+      "model" : "databazeci.domain",
+      "pk" : 1
+   },
+   {
+      "fields" : {
+         "domain" : "Space"
+      },
+      "model" : "databazeci.domain",
+      "pk" : 1
+   },
+   {
+      "fields" : {
+         "domain" : "Other services"
+      },
+      "model" : "databazeci.domain",
+      "pk" : 1
+   },
+   {
+      "fields" : {
+         "domain" : "Other products and manufacturing"
+      },
+      "model" : "databazeci.domain",
+      "pk" : 1
+   }
+]

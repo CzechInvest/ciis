@@ -1,0 +1,27 @@
+[
+   {
+      "fields" : {
+         "abbr" : "REK",
+         "name" : "Regionální kanceláře"
+      },
+      "model" : "databazeci.department",
+      "pk" : 1
+   },
+   {
+      "fields" : {
+         "abbr" : "SUP",
+         "name" : "Startupy"
+      },
+      "model" : "databazeci.department",
+      "pk" : 2
+   },
+   {
+      "fields" : {
+         "abbr" : "RIN",
+         "name": "Regionální investice"
+      },
+      "model" : "databazeci.department",
+      "pk" : 3
+   }
+]
+
