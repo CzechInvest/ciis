@@ -82,7 +82,7 @@ class Keyword(models.Model):
         return self.kw
 
 class Nace(models.Model):
-    nace_id = models.CharField(max_length=16, primary_key=True)
+    id = models.CharField(max_length=16, primary_key=True)
     nace = models.CharField(max_length=256)
 
     def __str__(self):
