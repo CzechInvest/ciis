@@ -6,7 +6,7 @@ class ContactAdmin(admin.ModelAdmin):
 
 class SubjectAdmin(admin.ModelAdmin):
 
-    raw_id_fields = ("address", )
+    raw_id_fields = ("address", "nace")
     search_fields = ("name", "ico")
     list_filter = ("domain","subdomain", "ket", "nace")
 
