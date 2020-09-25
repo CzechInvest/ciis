@@ -15,7 +15,7 @@ djangorestframework
 djangorestframework-gis
 django-microsoft-auth
 django-six
-django-filter==2.0.0
+django-filter
 drf-yasg
 django-bootstrap-breadcrumbs
 drf-renderer-xlsx
