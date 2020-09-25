@@ -59,6 +59,10 @@ class Subject(models.Model):
     #destination = models.ManyToManyField("Destination")
     #programm = models.ManyToManyField("Programm")
 
+    def __str__(self):
+        return self.name
+
+
 class Programm(models.Model):
     name = models.CharField(max_length=256)
 
@@ -74,6 +78,8 @@ class Contact(models.Model):
     voicephone = models.CharField(max_length=256)
     department = models.ManyToManyField("Department")
 
+    def __str__(self):
+        return "{name} {surname}".format(name=self.name, surname=self.surname)
 
 class Keyword(models.Model):
     kw = models.CharField(max_length=256)
