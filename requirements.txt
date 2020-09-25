@@ -22,3 +22,4 @@ drf-renderer-xlsx
 django-debug-toolbar
 sparql-client
 django-cors-headers
+django-dbbackup

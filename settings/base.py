@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'django_bootstrap_breadcrumbs',
     'corsheaders',
+    'dbbackup',
     #'rest_pandas',
 ]
 
@@ -227,3 +228,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 CORS_URLS_REGEX = r'^/api/.*$'
 CORS_ALLOW_METHODS = [ 'GET', ]
 CORS_ORIGIN_ALLOW_ALL = True
+
+DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DBBACKUP_STORAGE_OPTIONS = {'location': '/home/ciis/src/backup/'}

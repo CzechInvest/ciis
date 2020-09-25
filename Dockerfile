@@ -22,5 +22,5 @@ RUN pip3 install gunicorn
 EXPOSE 9000
 EXPOSE 443
 
-CMD  gunicorn -b 0.0.0.0:9000 --error-logfile /var/ciis/logs/error.log ciis.wsgi
-#CMD bash
+#CMD  gunicorn -b 0.0.0.0:9000 --error-logfile /var/ciis/logs/error.log ciis.wsgi
+CMD bash
