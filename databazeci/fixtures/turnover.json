@@ -8,8 +8,8 @@
 },
 { 
     "fields": {
-    	"upto": 10000000,
-    	"description": "6 - 10 mil. Kč",
+    	"upto": 10E6,
+    	"description": "6 - 10 mil. Kč"
     },
     "model":"databazeci.Turnover"
 },
@@ -46,7 +46,7 @@
     	"upto": 500000000,
     	"description": "101 - 500 mil. Kč"
     },
-    "model":"databazeci.Turnover"
+    "model": "databazeci.Turnover"
 },
 { 
     "fields": {
