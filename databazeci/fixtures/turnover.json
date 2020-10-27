@@ -1,70 +1,70 @@
 [
  { 
     "fields": {
-    	"upto": 5000000,
+    	"upto": 5,
     	"description": "do 5 mil. Kč"
     },
     "model":"databazeci.Turnover"
 },
 { 
     "fields": {
-    	"upto": 10E6,
+    	"upto": 10,
     	"description": "6 - 10 mil. Kč"
     },
     "model":"databazeci.Turnover"
 },
 { 
     "fields": {
-    	"upto": 15000000,
+    	"upto": 15,
     	"description": "11 - 15 mil. Kč"
     },
     "model":"databazeci.Turnover"
 },
 { 
     "fields": {
-    	"upto": 30000000,
+    	"upto": 30,
     	"description": "16 - 30 mil. Kč"
     },
     "model":"databazeci.Turnover"
 },
 { 
     "fields": {
-    	"upto": 50000000,
+    	"upto": 50,
     	"description": "31 - 50 mil. Kč"
     },
     "model":"databazeci.Turnover"
 },
 { 
     "fields": {
-    	"upto": 100000000,
+    	"upto": 100,
     	"description": "51 - 100 mil. Kč"
     },
     "model":"databazeci.Turnover"
 },
 { 
     "fields": {
-    	"upto": 500000000,
+    	"upto": 500,
     	"description": "101 - 500 mil. Kč"
     },
     "model": "databazeci.Turnover"
 },
 { 
     "fields": {
-    	"upto": 1000000000,
+    	"upto": 1000,
     	"description": "501 - 1000 mil. Kč"
     },
     "model":"databazeci.Turnover"
 },
 { 
     "fields": {
-    	"upto": 5000000000,
+    	"upto": 5000,
     	"description": "1001 - 5000 mil. Kč"
     },
     "model":"databazeci.Turnover"
 },
 { 
     "fields": {
-    	"upto": 100000000000,
+    	"upto": 10000,
     	"description": "5001 - více mil. Kč"
     },
     "model":"databazeci.Turnover"
