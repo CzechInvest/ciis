@@ -1,0 +1,30 @@
+[
+	{
+		"fields": {
+			"upto": 10,
+			"description": "do 10 zaměstnanců (0-10)"
+		},
+		"model": "databazeci.Employees"
+	},
+	{
+		"fields": {
+			"upto": 50,
+			"description": "do 50 zaměstnanců (11-50)"
+		},
+		"model": "databazeci.Employees"
+	},
+	{
+		"fields": {
+			"upto": 250,
+			"description": "do 250 zaměstnanců (51-250)"
+		},
+		"model": "databazeci.Employees"
+	},
+	{
+		"fields": {
+			"upto": 1000,
+			"description": "nad 250 zaměstnanců (251 a více)"
+		},
+		"model": "databazeci.Employees"
+	}
+]
