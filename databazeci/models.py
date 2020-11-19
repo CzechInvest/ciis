@@ -36,7 +36,7 @@ class Subject(models.Model):
     contact = models.ManyToManyField("Contact")
     profile = models.TextField(blank=True, null=True)
 
-    #module = models.ManyToManyField("Module")
+    module = models.ManyToManyField("SectorModule", null=True, blank=True)
     ket = models.ManyToManyField("Ket", blank=True)
     nace = models.ManyToManyField("Nace", blank=True)
 
@@ -51,10 +51,15 @@ class Subject(models.Model):
             (9, 9),
             (10, 10),
     )
+    product_service = models.TextField(blank=True, null=True)
+
     technology_readiness = models.IntegerField(null=True, blank=True,
             choices=TECHNOLOGY_LEVEL_CHOICES)
     year_founded = models.IntegerField("Year of foundation",
             null=True, blank=True, validators=[is_year])
+
+    legal_form = models.ForeignKey("LegalForm", on_delete=models.PROTECT, null=True)
+
 
     #destination = models.ManyToManyField("Destination")
     #programm = models.ManyToManyField("Programm")
@@ -71,15 +76,18 @@ class Programm(models.Model):
 
 class Contact(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=256)
-    surname = models.CharField(max_length=256)
-    position = models.CharField(max_length=256)
+    name = models.CharField(max_length=256, blank=True, null=True)
+    surname = models.CharField(max_length=256, blank=True, null=True)
+    position = models.CharField(max_length=256, blank=True, null=True)
     email = models.CharField(max_length=256)
-    voicephone = models.CharField(max_length=256)
+    voicephone = models.CharField(max_length=256, blank=True, null=True)
     department = models.ManyToManyField("Department")
 
     def __str__(self):
-        return "{name} {surname}".format(name=self.name, surname=self.surname)
+        if self.name and self.surname:
+            return "{name} {surname}".format(name=self.name, surname=self.surname)
+        else:
+            return self.email
 
 class Keyword(models.Model):
     kw = models.CharField(max_length=256)
@@ -100,18 +108,18 @@ class Ket(models.Model):
     def __str__(self):
         return self.ket
 
-class Module(models.Model):
-    module = models.CharField(max_length=256)
-    sector = models.ForeignKey("Sector", on_delete=models.PROTECT)
+#class Module(models.Model):
+#    module = models.CharField(max_length=256)
+#    sector = models.ForeignKey("Sector", on_delete=models.PROTECT)
+#
+#    def __str__(self):
+#        return "{} | {}".format(self.sector, self.module)
 
-    def __str__(self):
-        return "{} | {}".format(self.sector, self.module)
-
-class Sector(models.Model):
-    sector = models.CharField(max_length=256)
-
-    def __str__(self):
-        return self.sector
+#class Sector(models.Model):
+#    sector = models.CharField(max_length=256)
+#
+#    def __str__(self):
+#        return self.sector
 
 class Turnover(models.Model):
     upto = models.IntegerField()
@@ -149,6 +157,36 @@ class Subdomain(models.Model):
 class Department(models.Model):
     abbr = models.CharField(max_length=4)
     name = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.name
+
+
+class LegalForm(models.Model):
+    form_id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.name
+
+
+class SectorModule(models.Model):
+
+    sector = models.ForeignKey("Sector", on_delete=models.PROTECT)
+    sort = models.IntegerField(default=-1)
+    name = models.CharField(max_length=256)
+    unid = models.CharField(max_length=32, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Sector(models.Model):
+    sort = models.IntegerField(default=-1, blank=True)
+    name = models.CharField(max_length=256, default="")
+    short_name = models.CharField(max_length=32, default="")
+    description = models.TextField(default="")
+    unid = models.CharField(max_length=32, null=True, blank=True)
 
     def __str__(self):
         return self.name
