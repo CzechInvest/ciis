@@ -21,6 +21,7 @@ WORKDIR /var/ciis
 
 ADD requirements.txt /tmp/requirements.txt
 #RUN python3 /var/ciis/manage.py collectstatic --noinput
+RUN pip3 install Cython
 RUN pip3 install -r /tmp/requirements.txt
 RUN pip3 install gunicorn
 
