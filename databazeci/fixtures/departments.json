@@ -1,27 +1,242 @@
 [
-   {
-      "fields" : {
-         "abbr" : "REK",
-         "name" : "Regionální kanceláře"
-      },
-      "model" : "databazeci.department",
-      "pk" : 1
-   },
-   {
-      "fields" : {
-         "abbr" : "SUP",
-         "name" : "Startupy"
-      },
-      "model" : "databazeci.department",
-      "pk" : 2
-   },
-   {
-      "fields" : {
-         "abbr" : "RIN",
-         "name": "Regionální investice"
-      },
-      "model" : "databazeci.department",
-      "pk" : 3
-   }
+    {
+        "fields": {
+            "number": 1000,
+            "name": "Generální ředitel"
+        },
+        "model": "databazeci.department",
+        "pk": 1000
+    },
+    {
+        "fields": {
+            "number": 1100,
+            "name": "Kancelář generálního ředitele"
+        },
+        "model": "databazeci.department",
+        "pk": 1100
+    },
+    {
+        "fields": {
+            "number": 2000,
+            "name": "Útvar náměstka pro strategii"
+        },
+        "model": "databazeci.department",
+        "pk": 2000
+    },
+    {
+        "fields": {
+            "number": 2100,
+            "name": "Odbor interních projektů"
+        },
+        "model": "databazeci.department",
+        "pk": 2100
+    },
+    {
+        "fields": {
+            "number": 2200,
+            "name": "Odbor marketingu"
+        },
+        "model": "databazeci.department",
+        "pk": 2200
+    },
+    {
+        "fields": {
+            "number": 2300,
+            "name": "Odbor analyticko-informační"
+        },
+        "model": "databazeci.department",
+        "pk": 2300
+    },
+    {
+        "fields": {
+            "number": 3000,
+            "name": "Divize start-upů a inovativních MSP"
+        },
+        "model": "databazeci.department",
+        "pk": 3000
+    },
+    {
+        "fields": {
+            "number": 3100,
+            "name": "Odbor start-upů"
+        },
+        "model": "databazeci.department",
+        "pk": 3100
+    },
+    {
+        "fields": {
+            "number": 3200,
+            "name": "Odbor technologické inkubace"
+        },
+        "model": "databazeci.department",
+        "pk": 3200
+    },
+    {
+        "fields": {
+            "number": 3300,
+            "name": "Odbor inovací"
+        },
+        "model": "databazeci.department",
+        "pk": 3300
+    },
+    {
+        "fields": {
+            "number": 4000,
+            "name": "Divize podnikatelského prostředí"
+        },
+        "model": "databazeci.department",
+        "pk": 4000
+    },
+    {
+        "fields": {
+            "number": 4100,
+            "name": "Odbor regionálních kanceláří"
+        },
+        "model": "databazeci.department",
+        "pk": 4100
+    },
+    {
+        "fields": {
+            "number": 4101,
+            "name": "RK Ústí nad Labem"
+        },
+        "model": "databazeci.department",
+        "pk": 4101
+    },
+    {
+        "fields": {
+            "number": 4102,
+            "name": "RK Olomouc"
+        },
+        "model": "databazeci.department",
+        "pk": 4102
+    },
+    {
+        "fields": {
+            "number": 4103,
+            "name": "RK Ostrava"
+        },
+        "model": "databazeci.department",
+        "pk": 4103
+    },
+    {
+        "fields": {
+            "number": 4104,
+            "name": "RK Středočeský kraj a Praha"
+        },
+        "model": "databazeci.department",
+        "pk": 4104
+    },
+    {
+        "fields": {
+            "number": 4105,
+            "name": "RK Hradec Králové"
+        },
+        "model": "databazeci.department",
+        "pk": 4105
+    },
+    {
+        "fields": {
+            "number": 4106,
+            "name": "RK Pardubice"
+        },
+        "model": "databazeci.department",
+        "pk": 4106
+    },
+    {
+        "fields": {
+            "number": 4107,
+            "name": "RK Brno"
+        },
+        "model": "databazeci.department",
+        "pk": 4107
+    },
+    {
+        "fields": {
+            "number": 4108,
+            "name": "RK Zlín"
+        },
+        "model": "databazeci.department",
+        "pk": 4108
+    },
+    {
+        "fields": {
+            "number": 4109,
+            "name": "RK Liberec"
+        },
+        "model": "databazeci.department",
+        "pk": 4109
+    },
+    {
+        "fields": {
+            "number": 4110,
+            "name": "RK České Budějovice"
+        },
+        "model": "databazeci.department",
+        "pk": 4110
+    },
+    {
+        "fields": {
+            "number": 4111,
+            "name": "RK Plzeň"
+        },
+        "model": "databazeci.department",
+        "pk": 4111
+    },
+    {
+        "fields": {
+            "number": 4112,
+            "name": "RK Jihlava"
+        },
+        "model": "databazeci.department",
+        "pk": 4112
+    },
+    {
+        "fields": {
+            "number": 4113,
+            "name": "RK Karlovy Vary"
+        },
+        "model": "databazeci.department",
+        "pk": 4113
+    },
+    {
+        "fields": {
+            "number": 4200,
+            "name": "Odbor podnikatelské lokalizace"
+        },
+        "model": "databazeci.department",
+        "pk": 4200
+    },
+    {
+        "fields": {
+            "number": 5000,
+            "name": "Divize investic a zahraničních aktivit"
+        },
+        "model": "databazeci.department",
+        "pk": 5000
+    },
+    {
+        "fields": {
+            "number": 5100,
+            "name": "Odbor rozvoje investic"
+        },
+        "model": "databazeci.department",
+        "pk": 5100
+    },
+    {
+        "fields": {
+            "number": 5200,
+            "name": "Odbor financování investic"
+        },
+        "model": "databazeci.department",
+        "pk": 5200
+    },
+    {
+        "fields": {
+            "number": 5300,
+            "name": "Odbor zahraničních aktivit"
+        },
+        "model": "databazeci.department",
+        "pk": 5300
+    }
 ]
-

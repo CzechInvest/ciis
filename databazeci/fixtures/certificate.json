@@ -1,0 +1,74 @@
+[
+    {
+        "fields": {
+            "authority": "IATF",
+            "number": 16949
+        },
+        "pk": 1,
+        "model": "databazeci.certificate"
+    },
+    {
+        "fields": {
+            "authority": "NADCAP",
+            "number": null
+        },
+        "pk": 2,
+        "model": "databazeci.certificate"
+    },
+    {
+        "fields": {
+            "authority": "AS",
+            "number": 9100
+        },
+        "pk": 3,
+        "model": "databazeci.certificate"
+    },
+    {
+        "fields": {
+            "authority": "OS",
+            "number": null
+        },
+        "pk": 4,
+        "model": "databazeci.certificate"
+    },
+    {
+        "fields": {
+            "authority": "VDA",
+            "number":  null
+        },
+        "pk": 5,
+        "model": "databazeci.certificate"
+    },
+    {
+        "fields": {
+            "authority": "ISO",
+            "number":  13485
+        },
+        "pk": 6,
+        "model": "databazeci.certificate"
+    },
+    {
+        "fields": {
+            "authority": "ISO",
+            "number":  16949
+        },
+        "pk": 7,
+        "model": "databazeci.certificate"
+    },
+    {
+        "fields": {
+            "authority": "ISO",
+            "number":  9001
+        },
+        "pk": 8,
+        "model": "databazeci.certificate"
+    },
+    {
+        "fields": {
+            "authority": "ISO",
+            "number":  14001
+        },
+        "pk": 9,
+        "model": "databazeci.certificate"
+    }
+]

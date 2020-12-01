@@ -1,0 +1,874 @@
+[
+  {
+    "fields": {
+      "form_id": "100",
+      "name": "Podnikající osoba tuzemská"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "form_id": "101",
+      "name": "Fyzická osoba podnikající dle živnostenského zákona nezapsaná v obchodním rejstříku"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "form_id": "102",
+      "name": "Fyzická osoba podnikající dle živnostenského zákona zapsaná v obchodním rejstříku"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "form_id": "104",
+      "name": "Samostatně hospodařící rolník zapsaný v obchodním rejstříku"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "form_id": "105",
+      "name": "Fyzická osoba podnikající dle jiných zákonů než živnostenského a zákona o zemědělství nezapsaná v obchodním rejstříku"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "form_id": "106",
+      "name": "Fyzická osoba podnikající dle jiných zákonů než živnostenského a zákona o zemědělství zapsaná v obchodním rejstříku"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "form_id": "107",
+      "name": "Zemědělský podnikatel - fyzická osoba nezapsaná v obchodním rejstříku"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "form_id": "108",
+      "name": "Zemědělský podnikatel - fyzická osoba zapsaná v obchodním rejstříku"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 8
+  },
+  {
+    "fields": {
+      "form_id": "111",
+      "name": "Veřejná obchodní společnost"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "form_id": "112",
+      "name": "Společnost s ručením omezeným"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 10
+  },
+  {
+    "fields": {
+      "form_id": "113",
+      "name": "Společnost komanditní"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "form_id": "115",
+      "name": "Společný podnik"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 12
+  },
+  {
+    "fields": {
+      "form_id": "116",
+      "name": "Zájmové sdružení"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 13
+  },
+  {
+    "fields": {
+      "form_id": "117",
+      "name": "Nadace"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "form_id": "118",
+      "name": "Nadační fond"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "form_id": "121",
+      "name": "Akciová společnost"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 16
+  },
+  {
+    "fields": {
+      "form_id": "141",
+      "name": "Obecně prospěšná společnost"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 17
+  },
+  {
+    "fields": {
+      "form_id": "145",
+      "name": "Společenství vlastníků jednotek"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 18
+  },
+  {
+    "fields": {
+      "form_id": "151",
+      "name": "Komoditní burza"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 19
+  },
+  {
+    "fields": {
+      "form_id": "152",
+      "name": "Garanční fond obchodníků s cennými papíry"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 20
+  },
+  {
+    "fields": {
+      "form_id": "161",
+      "name": "Ústav"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 21
+  },
+  {
+    "fields": {
+      "form_id": "201",
+      "name": "Zemědělské družstvo"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 22
+  },
+  {
+    "fields": {
+      "form_id": "205",
+      "name": "Družstvo"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 23
+  },
+  {
+    "fields": {
+      "form_id": "231",
+      "name": "Výrobní družstvo"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 24
+  },
+  {
+    "fields": {
+      "form_id": "232",
+      "name": "Spotřební družstvo"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 25
+  },
+  {
+    "fields": {
+      "form_id": "233",
+      "name": "Bytové družstvo"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 26
+  },
+  {
+    "fields": {
+      "form_id": "234",
+      "name": "Jiné družstvo"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 27
+  },
+  {
+    "fields": {
+      "form_id": "241",
+      "name": "Družstevní podnik (s jedním zakladatelem)"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 28
+  },
+  {
+    "fields": {
+      "form_id": "242",
+      "name": "Společný podnik (s více zakladateli)"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 29
+  },
+  {
+    "fields": {
+      "form_id": "251",
+      "name": "Zájmová organizace družstev"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 30
+  },
+  {
+    "fields": {
+      "form_id": "261",
+      "name": "Společná zájmová organizace družstev"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 31
+  },
+  {
+    "fields": {
+      "form_id": "301",
+      "name": "Státní podnik"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 32
+  },
+  {
+    "fields": {
+      "form_id": "302",
+      "name": "Národní podnik"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 33
+  },
+  {
+    "fields": {
+      "form_id": "312",
+      "name": "Banka-státní peněžní ústav"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 34
+  },
+  {
+    "fields": {
+      "form_id": "313",
+      "name": "Česká národní banka"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 35
+  },
+  {
+    "fields": {
+      "form_id": "314",
+      "name": "Česká konsolidační agentura"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 36
+  },
+  {
+    "fields": {
+      "form_id": "325",
+      "name": "Organizační složka státu"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 37
+  },
+  {
+    "fields": {
+      "form_id": "331",
+      "name": "Příspěvková organizace"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 38
+  },
+  {
+    "fields": {
+      "form_id": "332",
+      "name": "Státní příspěvková organizace"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 39
+  },
+  {
+    "fields": {
+      "form_id": "352",
+      "name": "Správa železniční dopravní cesty, státní organizace"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 40
+  },
+  {
+    "fields": {
+      "form_id": "353",
+      "name": "Rada pro veřejný dohled nad auditem"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 41
+  },
+  {
+    "fields": {
+      "form_id": "361",
+      "name": "Veřejnoprávní instituce (ČT,ČRo,ČTK)"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 42
+  },
+  {
+    "fields": {
+      "form_id": "362",
+      "name": "Česká tisková kancelář"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 43
+  },
+  {
+    "fields": {
+      "form_id": "381",
+      "name": "Fond (ze zákona)"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 44
+  },
+  {
+    "fields": {
+      "form_id": "382",
+      "name": "Státní fond ze zákona"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 45
+  },
+  {
+    "fields": {
+      "form_id": "391",
+      "name": "Zdravotní pojišťovna"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 46
+  },
+  {
+    "fields": {
+      "form_id": "401",
+      "name": "Sdružení mezinárodního obchodu"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 47
+  },
+  {
+    "fields": {
+      "form_id": "411",
+      "name": "Podnik se zahraniční majetkovou účastí"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 48
+  },
+  {
+    "fields": {
+      "form_id": "421",
+      "name": "Odštěpný závod zahraniční právnické osoby"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 49
+  },
+  {
+    "fields": {
+      "form_id": "422",
+      "name": "Organizační složka zahraničního nadačního fondu"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 50
+  },
+  {
+    "fields": {
+      "form_id": "423",
+      "name": "Organizační složka zahraniční nadace"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 51
+  },
+  {
+    "fields": {
+      "form_id": "424",
+      "name": "Zahraniční"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 52
+  },
+  {
+    "fields": {
+      "form_id": "425",
+      "name": "Odštěpný závod zahraniční fyzické osoby"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 53
+  },
+  {
+    "fields": {
+      "form_id": "426",
+      "name": "Zastoupení zahraniční banky"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 54
+  },
+  {
+    "fields": {
+      "form_id": "441",
+      "name": "Podnik zahraničního obchodu"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 55
+  },
+  {
+    "fields": {
+      "form_id": "501",
+      "name": "Odštěpný závod nebo jiná organizační složka podniku zapisující se do obchodního rejstříku"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 56
+  },
+  {
+    "fields": {
+      "form_id": "521",
+      "name": "Samostatná drobná provozovna obecního úřadu"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 57
+  },
+  {
+    "fields": {
+      "form_id": "525",
+      "name": "Vnitřní organizační jednotka organizační složky státu"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 58
+  },
+  {
+    "fields": {
+      "form_id": "541",
+      "name": "Podílový fond"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 59
+  },
+  {
+    "fields": {
+      "form_id": "601",
+      "name": "Vysoká škola"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 60
+  },
+  {
+    "fields": {
+      "form_id": "641",
+      "name": "Školská právnická osoba"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 61
+  },
+  {
+    "fields": {
+      "form_id": "651",
+      "name": "Zdravotnické zařízení"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 62
+  },
+  {
+    "fields": {
+      "form_id": "661",
+      "name": "Veřejná výzkumná instituce"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 63
+  },
+  {
+    "fields": {
+      "form_id": "671",
+      "name": "Veřejné neziskové ústavní zdravotnické zařízení"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 64
+  },
+  {
+    "fields": {
+      "form_id": "701",
+      "name": "Sdružení (svaz, spolek, společnost, klub aj.)"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 65
+  },
+  {
+    "fields": {
+      "form_id": "703",
+      "name": "Odborová organizace a organizace zaměstnavatelů"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 66
+  },
+  {
+    "fields": {
+      "form_id": "704",
+      "name": "Zvláštní organizace pro zastoupení českých zájmů v mezinárodních nevládních organizacích"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 67
+  },
+  {
+    "fields": {
+      "form_id": "705",
+      "name": "Podnik nebo hospodářské zařízení sdružení"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 68
+  },
+  {
+    "fields": {
+      "form_id": "706",
+      "name": "Spolek"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 69
+  },
+  {
+    "fields": {
+      "form_id": "707",
+      "name": "Odborová organizace"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 70
+  },
+  {
+    "fields": {
+      "form_id": "708",
+      "name": "Organizace zaměstnavatelů"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 71
+  },
+  {
+    "fields": {
+      "form_id": "711",
+      "name": "Politická strana, politické hnutí"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 72
+  },
+  {
+    "fields": {
+      "form_id": "715",
+      "name": "Podnik nebo hospodářské zařízení politické strany"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 73
+  },
+  {
+    "fields": {
+      "form_id": "721",
+      "name": "Církevní organizace"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 74
+  },
+  {
+    "fields": {
+      "form_id": "722",
+      "name": "Evidované církevní právnické osoby"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 75
+  },
+  {
+    "fields": {
+      "form_id": "723",
+      "name": "Svazy církví a náboženských společností"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 76
+  },
+  {
+    "fields": {
+      "form_id": "731",
+      "name": "Organizační jednotka sdružení"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 77
+  },
+  {
+    "fields": {
+      "form_id": "732",
+      "name": "Organizační jednotka politické strany, politického hnutí"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 78
+  },
+  {
+    "fields": {
+      "form_id": "733",
+      "name": "Organizační jednotka odborové organizace a organizace zaměstnavatelů"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 79
+  },
+  {
+    "fields": {
+      "form_id": "736",
+      "name": "Pobočný spolek"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 80
+  },
+  {
+    "fields": {
+      "form_id": "741",
+      "name": "Stavovská organizace - profesní komora"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 81
+  },
+  {
+    "fields": {
+      "form_id": "745",
+      "name": "Komora (s výjimkou profesních komor)"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 82
+  },
+  {
+    "fields": {
+      "form_id": "751",
+      "name": "Zájmové sdružení právnických osob"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 83
+  },
+  {
+    "fields": {
+      "form_id": "761",
+      "name": "Honební společenstvo"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 84
+  },
+  {
+    "fields": {
+      "form_id": "771",
+      "name": "Svazek obcí"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 85
+  },
+  {
+    "fields": {
+      "form_id": "801",
+      "name": "Obec nebo městská část hlavního města Prahy"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 86
+  },
+  {
+    "fields": {
+      "form_id": "804",
+      "name": "Kraj"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 87
+  },
+  {
+    "fields": {
+      "form_id": "805",
+      "name": "Regionální rada regionu soudržnosti"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 88
+  },
+  {
+    "fields": {
+      "form_id": "811",
+      "name": "Městská část, městský obvod"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 89
+  },
+  {
+    "fields": {
+      "form_id": "901",
+      "name": "Zastupitelský orgán jiných států"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 90
+  },
+  {
+    "fields": {
+      "form_id": "906",
+      "name": "Zahraniční spolek"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 91
+  },
+  {
+    "fields": {
+      "form_id": "907",
+      "name": "Mezinárodní odborová organizace"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 92
+  },
+  {
+    "fields": {
+      "form_id": "908",
+      "name": "Mezinárodní organizace zaměstnavatelů"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 93
+  },
+  {
+    "fields": {
+      "form_id": "911",
+      "name": "Zahraniční kulturní, informační středisko, rozhlasová, tisková a televizní agentura"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 94
+  },
+  {
+    "fields": {
+      "form_id": "921",
+      "name": "Mezinárodní organizace a sdružení"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 95
+  },
+  {
+    "fields": {
+      "form_id": "922",
+      "name": "Organizační jednotka organizace s mezinárodním prvkem"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 96
+  },
+  {
+    "fields": {
+      "form_id": "931",
+      "name": "Evropské hospodářské zájmové sdružení"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 97
+  },
+  {
+    "fields": {
+      "form_id": "932",
+      "name": "Evropská společnost"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 98
+  },
+  {
+    "fields": {
+      "form_id": "933",
+      "name": "Evropská družstevní společnost"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 99
+  },
+  {
+    "fields": {
+      "form_id": "936",
+      "name": "Zahraniční pobočný spolek"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 100
+  },
+  {
+    "fields": {
+      "form_id": "937",
+      "name": "Pobočná mezinárodní odborová organizace"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 101
+  },
+  {
+    "fields": {
+      "form_id": "938",
+      "name": "Pobočná mezinárodní organizace zaměstnavatelů"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 102
+  },
+  {
+    "fields": {
+      "form_id": "941",
+      "name": "Evropské seskupení pro územní spolupráci"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 103
+  },
+  {
+    "fields": {
+      "form_id": "950",
+      "name": "Subjekt právním řádem výslovně neupravený"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 104
+  },
+  {
+    "fields": {
+      "form_id": "951",
+      "name": "Mezinárodní vojenská organizace vzniklá na základě mezinárodní smlouvy"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 105
+  },
+  {
+    "fields": {
+      "form_id": "952",
+      "name": "Konsorcium evropské výzkumné infrastruktury"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 106
+  },
+  {
+    "fields": {
+      "form_id": "960",
+      "name": "Právnická osoba zřízená zvláštním zákonem zapisovaná do veřejného rejstříku"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 107
+  },
+  {
+    "fields": {
+      "form_id": "961",
+      "name": "Svěřenský fond"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 108
+  },
+  {
+    "fields": {
+      "form_id": "962",
+      "name": "Zahraniční svěřenský fond"
+    },
+    "model": "databazeci.LegalForm",
+    "pk": 109
+  }
+]

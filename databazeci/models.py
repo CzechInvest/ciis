@@ -60,6 +60,8 @@ class Subject(models.Model):
 
     legal_form = models.ForeignKey("LegalForm", on_delete=models.PROTECT, null=True)
 
+    certificates = models.ManyToManyField("Certificate", null=True, blank=True)
+
 
     #destination = models.ManyToManyField("Destination")
     #programm = models.ManyToManyField("Programm")
@@ -155,8 +157,8 @@ class Subdomain(models.Model):
         return self.subdomain
 
 class Department(models.Model):
-    abbr = models.CharField(max_length=4)
     name = models.CharField(max_length=256)
+    number = models.IntegerField()
 
     def __str__(self):
         return self.name
@@ -190,3 +192,12 @@ class Sector(models.Model):
 
     def __str__(self):
         return self.name
+
+class Certificate(models.Model):
+    authority = models.CharField(max_length=32)
+    number = models.IntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return "{} {}".format(self.authority, self.number)
+
+

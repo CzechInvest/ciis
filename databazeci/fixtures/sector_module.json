@@ -1,0 +1,4372 @@
+[
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 240,
+      "name": "Palubní deska/Střední konzole",
+      "unid": "0129DFFED196A545C1257DD3004DB3F9"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "1"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 80,
+      "name": "Laboratorní a zdravotnická  technika",
+      "unid": "01AEB3E2C869F7ABC1257DD3004DB496"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "2"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 230,
+      "name": "Povrchová úprava - Potisk",
+      "unid": "02D7D9B76E3E7501C1257DD3004DB9A8"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "3"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 20,
+      "name": "Billing and e-Billing",
+      "unid": "031F796B2CBFF66DC1257DD3004DB71E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "4"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 250,
+      "name": "Pozemní vybavení letišť",
+      "unid": "04605F0B1FFFC273C1257DD3004DB3D0"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "5"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 30,
+      "name": "Hřídel větrných elektráren",
+      "unid": "04ACC42A9BB9C862C1257DD3004DB556"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "6"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 320,
+      "name": "Pryž-Lisování",
+      "unid": "04D398F656CF944FC1257DD3004DB9D5"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "7"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 730,
+      "name": "Textil - Metráže/tkaniny",
+      "unid": "053EF8B70B0146C1C1257DD3004DB82F"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "8"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 120,
+      "name": "Chemický průmysl-Potravinářská chemie",
+      "unid": "067D02363D634728C1257DD3004DB778"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "9"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 30,
+      "name": "Interiér",
+      "unid": "0699AEC54C7D4F92C1257DD3004DB39B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "10"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 80,
+      "name": "Lisování - Ostatní",
+      "unid": "06BF9591B33D92BBC1257DD3004DB8DF"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "11"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 400,
+      "name": "Obrábění - Broušení CNC",
+      "unid": "070D87D7A534A244C1257DD3004DB89C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "12"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 320,
+      "name": "Biotechnologie-vývoj lidských a živočišných diagnostik, farmaceutik",
+      "unid": "071776E3FE9BC5DDC1257DD3004DB65B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "13"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 460,
+      "name": "Obaly-Výplně EPS",
+      "unid": "079DB0765B3510EBC1257DD3004DB7A4"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "14"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 170,
+      "name": "Odlévání - Gravitační lití - železné kovy",
+      "unid": "07E1D7C16074A96AC1257DD3004DB894"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "15"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 700,
+      "name": "Textil - Sportovní oděvy",
+      "unid": "089E1A32D46CD7E5C1257DD3004DB83E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "16"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 180,
+      "name": "Rehabilitace, rekondice, zdravý životní styl, wellness",
+      "unid": "08CAE2DB7AE9AB15C1257DD3004DB67B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "17"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 240,
+      "name": "Kovové komponenty",
+      "unid": "09096079448A18C0C1257DD3004DB696"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "18"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 230,
+      "name": "Armatura a potrubí pro jaderné elektrárny",
+      "unid": "0A6234209948815EC1257DD3004DB59C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "19"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 300,
+      "name": "Laminace-Ostatní lití",
+      "unid": "0AF7683E45BE0A45C1257DD3004DB9FD"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "20"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 60,
+      "name": "Hydraulické systémy",
+      "unid": "0B26733417134559C1257DD3004DB3BA"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "21"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 210,
+      "name": "Interiér",
+      "unid": "0BD79F768AF835ACC1257DD3004DB428"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "22"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 110,
+      "name": "Sací systém",
+      "unid": "0C0D72730991DBBFC1257DD3004DB445"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "23"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 600,
+      "name": "Nástroje pro odlévání kovů",
+      "unid": "0CADD0FA88B07CF7C1257DD3004DB946"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "24"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 40,
+      "name": "Zařízení a pomůcky pro anestezii a resuscitační péči",
+      "unid": "0D9122086A58735DC1257DD3004DB661"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "25"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 200,
+      "name": "Primární okruh jaderných elektráren",
+      "unid": "0DB10B1291798120C1257DD3004DB553"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "26"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 670,
+      "name": "Povrch. Úpravy - Eloxování",
+      "unid": "0E7DF56A2B65373AC1257DD3004DB956"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "27"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 450,
+      "name": "Dělení - Pila",
+      "unid": "0F206583D22F0AA6C1257DD3004DB899"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "28"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 360,
+      "name": "Obrábění - Soustružení CNC",
+      "unid": "131A39E1EF21CFD5C1257DD3004DB8E5"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "29"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 80,
+      "name": "Kola/Nápravy/Zavěšení/ Odpružení",
+      "unid": "13986BC488707EFBC1257DD3004DB43F"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "30"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 710,
+      "name": "Textil - Pracovní oděvy",
+      "unid": "13D30CE331A312AFC1257DD3004DB837"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "31"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 150,
+      "name": "Hutnictví železa-Tažení trubek",
+      "unid": "1624FEB3F117F83FC1257DD3004DB82C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "32"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 320,
+      "name": "Filtrační zařízení a odlučovače tepelených elektráren",
+      "unid": "1681AFAFA0075A29C1257DD3004DB599"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "33"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 310,
+      "name": "Vzduchotechnika tepelných elektráren",
+      "unid": "189629E8D767C5E2C1257DD3004DB5AF"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "34"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 70,
+      "name": "Implantáty a nástroje pro traumatologii a ortopedii",
+      "unid": "18A369E6747815FDC1257DD3004DB688"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "35"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 410,
+      "name": "Plynové kotle",
+      "unid": "18B039918A48F20AC1257DD3004DB55B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "36"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 340,
+      "name": "Hutnictví neželezných kovů-Lisování profilů",
+      "unid": "18B33BC9D9EDA4F9C1257DD3004DB7DF"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "37"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 250,
+      "name": "Plastové komponenty",
+      "unid": "18EDF1DDC6817661C1257DD3004DB480"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "38"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 220,
+      "name": "Vzduchotechnika pro jaderné elektrárny",
+      "unid": "197AB30A57C53AADC1257DD3004DB559"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "39"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 570,
+      "name": "Svařování - ocelových konstrukcí",
+      "unid": "19D35EB82B119EC2C1257DD3004DB924"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "40"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 490,
+      "name": "Servomotory",
+      "unid": "19F0256947C20A1AC1257DD3004DB564"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "41"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 510,
+      "name": "Dřevo-Výroba nábytku",
+      "unid": "1A408E997B6CFFD7C1257DD3004DB7E8"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "42"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 70,
+      "name": "Vstřikování - Ostatní zálisky",
+      "unid": "1A48578C949D4B09C1257DD3004DB999"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "43"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 130,
+      "name": "Chlazení",
+      "unid": "1B5FE0D49B428BD5C1257DD3004DB429"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "44"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 500,
+      "name": "Čerpadla",
+      "unid": "1BD6EE87B24FC90CC1257DD3004DB508"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "45"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 190,
+      "name": "Výpočetní a telekomunikační technika pro zdravotnictví",
+      "unid": "1C5C422B914D3FF7C1257DD3004DB65E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "46"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 50,
+      "name": "Stavební mechanizace, zemní stroje a jeřáby",
+      "unid": "1C8A4AFF77ABCE17C1257DD3004DB616"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "47"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 180,
+      "name": "PCB - Výroba, návrh, osazování desek plošných spojů",
+      "unid": "1D0491698DA37840C1257DD3004DB4B9"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "48"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 100,
+      "name": "Klimatizace letadel",
+      "unid": "1DE78B0EE4BDB87EC1257DD3004DB3A8"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "49"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 310,
+      "name": "Hutnictví neželezných kovů-Hutní druhovýroba",
+      "unid": "1E999CEC5124D4B5C1257DD3004DB7AD"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "50"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 260,
+      "name": "Odlévání - Šedá litina",
+      "unid": "1FA86B3F98ADEE54C1257DD3004DB93B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "51"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 190,
+      "name": "Embedded systémy",
+      "unid": "2065DA4BF037DEB1C1257DD3004DB474"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "52"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 20,
+      "name": "Tvářecí stroje",
+      "unid": "2180069213B06370C1257DD3004DB626"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "53"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 210,
+      "name": "Sekundární okruh jaderných elektráren",
+      "unid": "21ADAC75EA419AEEC1257DD3004DB591"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "54"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 380,
+      "name": "Nástroje a Formy",
+      "unid": "222BB434904DD63CC1257DD3004DB9EB"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "55"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 480,
+      "name": "Dělení - Plamen CNC",
+      "unid": "22967DE0184C7F3AC1257DD3004DB952"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "56"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 340,
+      "name": "Doprava paliva",
+      "unid": "23AC2ABFA11462F5C1257DD3004DB5A7"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "57"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 570,
+      "name": "Přenos plynu",
+      "unid": "23FE6D5C3CC71C2BC1257DD3004DB54E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "58"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 300,
+      "name": "Služby/Projektování/SW/ Obaly/atd.",
+      "unid": "2402A22419A1A003C1257DD3004DB42F"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "59"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 10,
+      "name": "Karoserie",
+      "unid": "24596E0E80633D7FC1257DD3004DB3F4"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "60"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 720,
+      "name": "Textil – Technické textilie ",
+      "unid": "24EA32B61F017EADC1257DD3004DB83A"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "61"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 60,
+      "name": "Lisování - Lisovací linka",
+      "unid": "2502D82F0833AE61C1257DD3004DB8CF"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "62"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 250,
+      "name": "Hutnictví železa-Válcování elektrotechnických plechů",
+      "unid": "27DFAF82DF2CFEFDC1257DD3004DB77B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "63"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 100,
+      "name": "Data Warehouse Management",
+      "unid": "287D086038AECED3C1257DD3004DB716"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "64"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 130,
+      "name": "Textilní a gumové výrobky, ochranné pomůcky, obaly",
+      "unid": "2931D668F02024B9C1257DD3004DB690"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "65"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 260,
+      "name": "Prepreg",
+      "unid": "2A0CF3365E9D495EC1257DD3004DB9BD"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "66"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 280,
+      "name": "Strojovny tepelných elektráren",
+      "unid": "2B37C0023D22F1D3C1257DD3004DB580"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "67"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 20,
+      "name": "Vstřikování 51t-200t",
+      "unid": "2BF69686D03B583FC1257DD3004DB9B2"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "68"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 90,
+      "name": "Motor a komponenty",
+      "unid": "2C0EA8D72C62BC09C1257DD3004DB398"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "69"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 100,
+      "name": "Ostatní nábytek a vybavení zdravotnického zařízení",
+      "unid": "2C88612A05B62081C1257DD3004DB683"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "70"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 210,
+      "name": "Záchranné prostředky",
+      "unid": "2D917A918142D53BC1257DD3004DB395"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "71"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 360,
+      "name": "Hořák",
+      "unid": "2DE41B7BF44FA6DEC1257DD3004DB516"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "72"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 610,
+      "name": "Přenos elektřiny - NN",
+      "unid": "2DF676802B2F5FC6C1257DD3004DB5B1"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "73"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 340,
+      "name": "Obrábění - Obráběcí centra",
+      "unid": "2E6F44C40AE9C8F5C1257DD3004DB8E2"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "74"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 300,
+      "name": "Kondenzační a chladící systém tepelných elektráren",
+      "unid": "2F63D9E6946B146EC1257DD3004DB583"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "75"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 370,
+      "name": "Hutnictví neželezných kovů-Válcování plechů a pásů ",
+      "unid": "2F7596D71196F57EC1257DD3004DB7FB"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "76"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 190,
+      "name": "Hutnictví železa-Kování tyčí",
+      "unid": "318E3251BF734227C1257DD3004DB793"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "77"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 310,
+      "name": "Odlévání - Vytavitelný model",
+      "unid": "31BE14CB573414BDC1257DD3004DB91F"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "78"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 130,
+      "name": "Zobrazovací technika",
+      "unid": "325CF83411576E60C1257DD3004DB4C2"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "79"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 520,
+      "name": "Dřevo-Dřevěné obaly",
+      "unid": "32A71609E54EA91AC1257DD3004DB797"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "80"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 20,
+      "name": "Chemický průmysl-Spotřební chemie",
+      "unid": "335F5141E1002D1DC1257DD3004DB79E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "81"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 560,
+      "name": "Sklo a Keramika-Stavební keramika",
+      "unid": "33A1DF4CC40439C7C1257DD3004DB810"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "82"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 240,
+      "name": "Kondenzační a chladící systémy pro jaderné elektrárny",
+      "unid": "33BABB3DA336C5EFC1257DD3004DB59F"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "83"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 260,
+      "name": "Kompresory, čerpadla a dmychadla",
+      "unid": "33D9FD8EF0589C29C1257DD3004DB5ED"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "84"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 40,
+      "name": "Rotor větrných elektráren",
+      "unid": "341C511A5D23CB94C1257DD3004DB547"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "85"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 200,
+      "name": "Security",
+      "unid": "343B6F6F2E12FA70C1257DD3004DB700"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "86"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 120,
+      "name": "Kování - Hliník",
+      "unid": "347AC0CFF7F87473C1257DD3004DB8B0"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "87"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 240,
+      "name": "Wireless and Mobile",
+      "unid": "34EC5D16888B90AEC1257DD3004DB719"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "88"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 690,
+      "name": "Textil - Módní konfekce ",
+      "unid": "351CCAE50C2BE550C1257DD3004DB83D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "89"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 210,
+      "name": "Odlévání - Nízkotlaké hořčík",
+      "unid": "367D2B32E5022E5EC1257DD3004DB8CE"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "90"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 340,
+      "name": "Monitoring",
+      "unid": "3682732E9C9056E2C1257DD3004DB706"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "91"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 330,
+      "name": "Entertainment",
+      "unid": "3768A98BCAB4CC03C1257DD3004DB6EC"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "92"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 130,
+      "name": "Zdroje elektrického proudu a el. součástky",
+      "unid": "377E41BD30EE75B9C1257DD3004DB3BF"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "93"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 230,
+      "name": "VOIP",
+      "unid": "37FB2C6C5704FDE9C1257DD3004DB729"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "94"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 30,
+      "name": "Chemický průmysl-Výroba technických plynů",
+      "unid": "3835612B435AE65EC1257DD3004DB80C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "95"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 170,
+      "name": "Signalizace",
+      "unid": "38DA9E9FF1E1F877C1257DD3004DB3AC"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "96"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 60,
+      "name": "Generátor větrných elektráren",
+      "unid": "391518DA4FB9C74EC1257DD3004DB52F"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "97"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 110,
+      "name": "Turbíny vodních elektráren",
+      "unid": "39663F874095BBCEC1257DD3004DB512"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "98"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 660,
+      "name": "Výrobky z drátu-Ocelové tkaniny",
+      "unid": "3A8E1368263D08AEC1257DD3004DB7DA"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "99"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 190,
+      "name": "Radio/Palubní počítač/Navigace",
+      "unid": "3A9CFEAFBF5A4C1CC1257DD3004DB420"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "100"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 50,
+      "name": "Podvozek a pneumatiky",
+      "unid": "3B0F09850841A73CC1257DD3004DB3C1"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "101"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 360,
+      "name": "Hutnictví neželezných kovů-Výroba folií",
+      "unid": "3B3086BEA77E3850C1257DD3004DB7B2"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "102"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 90,
+      "name": "Řízení a pedálová souprava",
+      "unid": "3D11FFCC6C1D3379C1257DD3004DB415"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "103"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 210,
+      "name": "Small Business",
+      "unid": "3DA0B06D47BA3A00C1257DD3004DB6F0"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "104"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 70,
+      "name": "Elektrické nářadí",
+      "unid": "3DCBAA0BB1B94F81C1257DD3004DB4B2"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "105"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 550,
+      "name": "Svařování - hliníku",
+      "unid": "3DDFBBC8AA57804AC1257DD3004DB92A"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "106"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 100,
+      "name": "Chemický průmysl-Výroba polymerů a pryží",
+      "unid": "3E5BEDACB8DC9415C1257DD3004DB7C9"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "107"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 90,
+      "name": "Nanotechnologie",
+      "unid": "3EFD7D9A52E7F6F8C1257DD3004DB4A1"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "108"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 80,
+      "name": "Chemický průmysl-Výroba barev a laků (vodní)",
+      "unid": "3F36A93649950AEBC1257DD3004DB7A7"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "109"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 220,
+      "name": "Supply Chain Management",
+      "unid": "40FB273D98AF6B70C1257DD3004DB73A"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "110"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 100,
+      "name": "Kování - Zápustkové",
+      "unid": "42819F0D4960077BC1257DD3004DB912"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "111"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 130,
+      "name": "Kování - Mosaz",
+      "unid": "43CF93E872A68376C1257DD3004DB8A5"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "112"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 270,
+      "name": "Banking Software",
+      "unid": "445541AB919649CAC1257DD3004DB6E9"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "113"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 380,
+      "name": "Obrábění - Frézování CNC",
+      "unid": "4592E7D37DA4FA28C1257DD3004DB927"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "114"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 100,
+      "name": "Farmacie",
+      "unid": "465B8BF6E007A680C1257DD3004DB664"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "115"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 320,
+      "name": "Hutnictví neželezných kovů-Tažení profilů",
+      "unid": "4696EB6651AE7B9EC1257DD3004DB7F5"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "116"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 70,
+      "name": "Listy rotoru",
+      "unid": "47819EF90A53AAEFC1257DD3004DB543"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "117"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 140,
+      "name": "Hutnictví železa-Válcování drátu",
+      "unid": "48B02481DBC6B496C1257DD3004DB825"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "118"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 110,
+      "name": "DRM",
+      "unid": "4A45C7BCFF907F99C1257DD3004DB725"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "119"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 30,
+      "name": "Lisování - Hydraulické lisy",
+      "unid": "4A460F66D752AD0AC1257DD3004DB8E8"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "120"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 50,
+      "name": "Počítače a kancelářská technika",
+      "unid": "4D589768BC983523C1257DD3004DB479"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "121"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 20,
+      "name": "Lisování - Ohraňovací lisy",
+      "unid": "4D88277A7D7C4C56C1257DD3004DB8F5"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "122"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 240,
+      "name": "RTM",
+      "unid": "4E57DBF6A3796515C1257DD3004DB9A0"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "123"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 40,
+      "name": "Radiová a komunikační technika",
+      "unid": "4FB3BD2CE908D87CC1257DD3004DB4AE"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "124"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 610,
+      "name": "Nástroje pro kování",
+      "unid": "50FC958791CAD43AC1257DD3004DB903"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "125"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 140,
+      "name": "Human Resources",
+      "unid": "513A5CBBDC05142CC1257DD3004DB70E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "126"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 390,
+      "name": "Obaly-Papírové tubusy",
+      "unid": "520051E62D01217DC1257DD3004DB7AA"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "127"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 40,
+      "name": "CAD/CAM/CAE/EDA",
+      "unid": "532C266BB2700371C1257DD3004DB6EF"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "128"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 230,
+      "name": "Chladící technika, vzduchotechnika",
+      "unid": "536CC4B9E3B59E1FC1257DD3004DB5E6"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "129"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 70,
+      "name": "Chemický průmysl-Výroba barev a laků (syntetické)",
+      "unid": "538703F985A62149C1257DD3004DB7E5"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "130"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 160,
+      "name": "Kování - Ostatní",
+      "unid": "539F484314581313C1257DD3004DB8AF"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "131"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 230,
+      "name": "Plastové výrobky ",
+      "unid": "54D8DF053E5564C8C1257DD3004DB69B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "132"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 350,
+      "name": "Obrábění - Soustružení",
+      "unid": "54DCC8BA8829BD1AC1257DD3004DB889"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "133"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 220,
+      "name": "Výbava motorového prostoru",
+      "unid": "54FA623044FF852BC1257DD3004DB419"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "134"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 110,
+      "name": "Nerezový program",
+      "unid": "56A9B0826C52DE21C1257DD3004DB693"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "135"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 230,
+      "name": "Odlévání - Vysokotlaké hliník",
+      "unid": "56FE93F4BFBB265DC1257DD3004DB904"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "136"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 680,
+      "name": "Povrch. Úpravy - Lakování manuální",
+      "unid": "572FBC885211F58AC1257DD3004DB886"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "137"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 20,
+      "name": "Dveře/kapota/zadní víko",
+      "unid": "5755894C99DE8C20C1257DD3004DB407"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "138"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 680,
+      "name": "Textil - Bytový textil, čalounictví",
+      "unid": "592B4DA2127A2418C1257DD3004DB780"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "139"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 220,
+      "name": "Polovodiče, optické zdroje, detektory",
+      "unid": "5970BE5963B9654AC1257DD3004DB492"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "140"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 40,
+      "name": "Kokpit",
+      "unid": "59BC185CB87559AAC1257DD3004DB3CF"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "141"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 560,
+      "name": "Ostatní komponenty paroplynových elektráren",
+      "unid": "5A20F67756E16AEDC1257DD3004DB56C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "142"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 290,
+      "name": "Laminace-Pod plachetkou",
+      "unid": "5A3E2D5CDD2145BDC1257DD3004DB9A2"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "143"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 180,
+      "name": "Odlévání - Gravitační lití - hliník",
+      "unid": "5A4BB24FEAAC7F08C1257DD3004DB94E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "144"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 80,
+      "name": "Laboratorní technika a vybavení, biochemická diagnostika",
+      "unid": "5A7DF53EE9347588C1257DD3004DB67F"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "145"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 50,
+      "name": "Lisování - Transferové lisy",
+      "unid": "5BE96F817883C72AC1257DD3004DB8ED"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "146"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 150,
+      "name": "Brzdový systém",
+      "unid": "5CDF094AD5DF26E7C1257DD3004DB3FD"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "147"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 580,
+      "name": "Nástroje  pro lisování a střihání plechů",
+      "unid": "5CECFC14F931AD71C1257DD3004DB94C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "148"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 470,
+      "name": "Dělení - Laser",
+      "unid": "5E4ABE06AF608270C1257DD3004DB8BB"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "149"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 200,
+      "name": "Zařízení a stroje pro textilní průmysl",
+      "unid": "5E927456CED18BD4C1257DD3004DB5F7"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "150"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 260,
+      "name": "Řídící a kontrolní systémy tepelných elektráren",
+      "unid": "5F76D36BDC6C5AFFC1257DD3004DB5A9"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "151"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 160,
+      "name": "Kotle na biomasu",
+      "unid": "5FCC43B50EA95496C1257DD3004DB58E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "152"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 180,
+      "name": "Energetické strojírenství",
+      "unid": "612FE907D8B5AF88C1257DD3004DB61F"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "153"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 570,
+      "name": "Sklo a Keramika-Ostatní keramika",
+      "unid": "61C5928786B8950AC1257DD3004DB817"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "154"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 300,
+      "name": "Multimedia Software",
+      "unid": "629F9B6CBC7FFDBEC1257DD3004DB6FB"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "155"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 220,
+      "name": "Zbraňové prostředky",
+      "unid": "637EB9CF6D19FA00C1257DD3004DB3A0"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "156"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 600,
+      "name": "Přenos elektřiny - VN",
+      "unid": "63E809F423CD3619C1257DD3004DB5A1"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "157"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 90,
+      "name": "Kování - Volné ",
+      "unid": "63FFD3278B2B7010C1257DD3004DB921"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "158"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 310,
+      "name": "Mikrobiální a buněčná biotechnologie",
+      "unid": "6426274657B3F0EDC1257DD3004DB674"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "159"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 170,
+      "name": "Hutnictví železa-Lisování trubek",
+      "unid": "6437E0684B0BA949C1257DD3004DB800"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "160"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 200,
+      "name": "Stěrače a odstřikovače",
+      "unid": "648178D13765D458C1257DD3004DB442"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "161"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 390,
+      "name": "Dieselový motor",
+      "unid": "659248786C57CDD4C1257DD3004DB524"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "162"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 160,
+      "name": "Obrábění-Strojní",
+      "unid": "66591BEE4E325F90C1257DD3004DB9D1"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "163"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 350,
+      "name": "Recyklace plastů",
+      "unid": "676E84A138C8E83FC1257DD3004DB9D6"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "164"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 410,
+      "name": "Obaly-Papírové obaly - Ofset",
+      "unid": "67C34C4DAA0A6FD4C1257DD3004DB7B5"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "165"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 270,
+      "name": "Těsnění a izolace",
+      "unid": "681045966E4F4435C1257DD3004DB40F"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "166"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 100,
+      "name": "Zařízení pro povrchovou ochranu",
+      "unid": "68AE5519B8ED8FEAC1257DD3004DB619"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "167"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 310,
+      "name": "Pryž-Vysekávání",
+      "unid": "68E8BDB4037526C2C1257DD3004DB99D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "168"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 220,
+      "name": "Veterinární lékařství",
+      "unid": "699439FCC40997FFC1257DD3004DB675"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "169"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 610,
+      "name": "Sklo a Keramika-Broušení",
+      "unid": "69EDD2C3447AA85BC1257DD3004DB7AF"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "170"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 490,
+      "name": "Dělení - Plazma",
+      "unid": "6A857DBE9259C0A7C1257DD3004DB944"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "171"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 250,
+      "name": "Elektrické pohony",
+      "unid": "6B7736F8D2450ACBC1257DD3004DB5E9"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "172"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 190,
+      "name": "Zařízení pro ekoenergetiku",
+      "unid": "6BEA04730C802D21C1257DD3004DB5EA"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "173"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 660,
+      "name": "Povrch. úpravy - Galvanizace (jiná)",
+      "unid": "6CB3E5F587D94249C1257DD3004DB8A2"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "174"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 110,
+      "name": "Svařování tepelné",
+      "unid": "6CBAE32DCAC40B44C1257DD3004DB9D2"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "175"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 60,
+      "name": "Chemický průmysl-Výroba desinfekcí a čistících přípravků",
+      "unid": "6D645B67509A06D4C1257DD3004DB783"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "176"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 750,
+      "name": "Textil - Pletené zboží, galanterie",
+      "unid": "6DAEAEA1A8C68250C1257DD3004DB830"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "177"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 390,
+      "name": "Obrábění - Broušení ",
+      "unid": "6DD7D655F5991220C1257DD3004DB91C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "178"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 340,
+      "name": "Pryž-Vytlačování",
+      "unid": "6FD341A00EEA39FFC1257DD3004DB9B5"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "179"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 440,
+      "name": "Obaly-Plastové obaly - s potiskem",
+      "unid": "6FE60194CDCF1F65C1257DD3004DB81C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "180"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 280,
+      "name": "Database Software",
+      "unid": "709F2186473A6FD5C1257DD3004DB722"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "181"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 140,
+      "name": "Komunikační prostředky",
+      "unid": "70C20A54A5B3C25BC1257DD3004DB38F"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "182"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 590,
+      "name": "Přenos elektřiny - VVN",
+      "unid": "71B2D4646AC6AC77C1257DD3004DB551"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "183"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 150,
+      "name": "Stroje a zařízení pro hutě a metalurgii",
+      "unid": "71C3125E254FFD1EC1257DD3004DB60E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "184"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 460,
+      "name": "Elektromotory asynchronní",
+      "unid": "72B596CB97BF677DC1257DD3004DB561"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "185"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 530,
+      "name": "Komprese vzduchu paroplynových elektráren",
+      "unid": "74E1A43B4D506AE6C1257DD3004DB566"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "186"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 250,
+      "name": "Odlévání - Šedá litina (formovací linka)",
+      "unid": "74E76453EE4D7521C1257DD3004DB930"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "187"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 160,
+      "name": "Energetika, výroba a uskladnění energie",
+      "unid": "74F077412C666DC2C1257DD3004DB488"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "188"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 210,
+      "name": "Pasivní komponenty",
+      "unid": "75033A24F3649C35C1257DD3004DB47A"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "189"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 140,
+      "name": "Měřící, testovací a senzorová zařízení a systémy",
+      "unid": "7555E2EC0E8BAD1FC1257DD3004DB4CD"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "190"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 230,
+      "name": "Výroba a zpracování kompozitních materiálů",
+      "unid": "75C370F4332C72D2C1257DD3004DB3B9"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "191"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 510,
+      "name": "Dělení a ohýbání - trubek a profilů",
+      "unid": "760061C8452B6ADBC1257DD3004DB8F0"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "192"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 140,
+      "name": "Topení a klimatizace",
+      "unid": "769795E0DE2F58D0C1257DD3004DB412"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "193"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 280,
+      "name": "Zemědělské stroje",
+      "unid": "76981432AE7DA463C1257DD3004DB611"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "194"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 350,
+      "name": "Hutnictví neželezných kovů-Kování tyčí",
+      "unid": "7789E43BDB19E509C1257DD3004DB814"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "195"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 40,
+      "name": "Vstřikování 601t-1 000t",
+      "unid": "77C8060B7F91B67FC1257DD3004DB9D9"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "196"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 70,
+      "name": "Communications",
+      "unid": "78A04646D992331EC1257DD3004DB6E7"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "197"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 260,
+      "name": "Palubní síť/Elektronika vozu",
+      "unid": "7910D19FFC477300C1257DD3004DB42C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "198"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 140,
+      "name": "Vytlačování",
+      "unid": "7981BA34245FB77DC1257DD3004DB9C4"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "199"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 160,
+      "name": "Tiskařské stroje",
+      "unid": "79D89C22D40954C8C1257DD3004DB5FD"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "200"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 10,
+      "name": "Zobrazovací a diagnostické přístroje",
+      "unid": "79D8F59DFB245D31C1257DD3004DB667"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "201"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 240,
+      "name": "Jednoúčelové stroje",
+      "unid": "79E34661A95BB5A6C1257DD3004DB5EF"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "202"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 440,
+      "name": "Obrábění - Ostatní",
+      "unid": "79FD4A469C3A784FC1257DD3004DB951"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "203"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 330,
+      "name": "Výzkum a vývoj",
+      "unid": "7A5043B6BEBD9C6CC1257DD3004DB64B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "204"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 630,
+      "name": "Sklo a Keramika-Pískování",
+      "unid": "7A81A37B1EC2051FC1257DD3004DB78E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "205"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 190,
+      "name": "Požární systémy, detekce a hašení",
+      "unid": "7B8F66D406A62FF4C1257DD3004DB393"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "206"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 50,
+      "name": "Vstřikování nad 1 000t",
+      "unid": "7C02CFC3E430E3BDC1257DD3004DB9AD"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "207"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 270,
+      "name": "Laminace-Strojní ",
+      "unid": "7C3373808270A3DCC1257DD3004DB9CE"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "208"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 300,
+      "name": "Hutnictví neželezných kovů-Kování profilů",
+      "unid": "7C5025CB707801CDC1257DD3004DB7ED"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "209"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 90,
+      "name": "Vyfukování",
+      "unid": "7CA19E76DF882CE9C1257DD3004DB9AE"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "210"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 350,
+      "name": "Armatury a potrubí tepelných elektráren",
+      "unid": "7CC836A71F72D17DC1257DD3004DB519"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "211"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 380,
+      "name": "Obaly-Papírové obaly",
+      "unid": "7DC70E06BD2E4381C1257DD3004DB790"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "212"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 350,
+      "name": "Training",
+      "unid": "7DFA23234B529047C1257DD3004DB711"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "213"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 260,
+      "name": "Kovové komponenty",
+      "unid": "7F931CCB620EC01FC1257DD3004DB47D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "214"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 10,
+      "name": "Řídící a kontrolní systémy větrných elektráren",
+      "unid": "800478F0CFB76749C1257DD3004DB571"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "215"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 430,
+      "name": "Obaly-Plastové obaly",
+      "unid": "80731533CE099234C1257DD3004DB819"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "216"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 120,
+      "name": "Ostatní spotřební Elektronika&Elektrotechnika",
+      "unid": "80AF6D964039C712C1257DD3004DB4C8"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "217"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 50,
+      "name": "Převodovky větrných elektráren",
+      "unid": "81E978122EB4D596C1257DD3004DB52E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "218"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 540,
+      "name": "Plynové turbíny",
+      "unid": "82514B77B88209E8C1257DD3004DB5AC"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "219"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 60,
+      "name": "Vstřikování - Kovové zálisky",
+      "unid": "834B9239E355B98BC1257DD3004DB9B9"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "220"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 30,
+      "name": "Otvírací střecha",
+      "unid": "85501F0E931B9A7DC1257DD3004DB3FC"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "221"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 50,
+      "name": "Nárazníky",
+      "unid": "862F9C24A1D3CB10C1257DD3004DB402"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "222"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 190,
+      "name": "Network and Service Management",
+      "unid": "8684EEE87747F350C1257DD3004DB6DC"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "223"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 150,
+      "name": "Potrubí a armatura vodních elektráren",
+      "unid": "877B286B236D9B6EC1257DD3004DB4D0"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "224"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 250,
+      "name": "Testing",
+      "unid": "87879CB7755D5F36C1257DD3004DB73D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "225"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 10,
+      "name": "Balící stroje",
+      "unid": "878FC7B94A191DC3C1257DD3004DB602"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "226"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 30,
+      "name": "Vstřikování 201t-600t",
+      "unid": "882E2F4AD8B3FB8AC1257DD3004DB9DC"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "227"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 400,
+      "name": "Obaly-Papírové obaly - Flexotisk",
+      "unid": "884041BA4007E494C1257DD3004DB822"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "228"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 20,
+      "name": "Stožáry a tubusy větrných elektráren",
+      "unid": "889B38579E5FD03AC1257DD3004DB57C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "229"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 710,
+      "name": "Výroba z drátů-Pružiny tažené za studena",
+      "unid": "8980FD432CFBAD4AC1257DD3004DB891"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "230"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 310,
+      "name": "Project Management Software",
+      "unid": "89827F52629D4E0FC1257DD3004DB703"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "231"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 110,
+      "name": "Kyslíková soustava a komponenty",
+      "unid": "899180A2CC6A86A9C1257DD3004DB3CA"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "232"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 120,
+      "name": "Osvětlení vnitřní a vnější",
+      "unid": "89FCE205354CE578C1257DD3004DB3CB"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "233"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 130,
+      "name": "Stroje pro výrobu plastů a pryže",
+      "unid": "8A674A9CAB89D2B8C1257DD3004DB61C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "234"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 370,
+      "name": "Data center services",
+      "unid": "8B11919D622C343BC1257DD3004DB735"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "235"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 160,
+      "name": "Intranet/Portals",
+      "unid": "8C03B0DF2F2E2B8AC1257DD3004DB71B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "236"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 50,
+      "name": "Lodní doprava",
+      "unid": "8CEDF9228D091FA6C1257DD3004DB5E3"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "237"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 300,
+      "name": "Odlévání - Litá ocel",
+      "unid": "8D287257BD554FE2C1257DD3004DB88C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "238"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 180,
+      "name": "Odlévání - Gravitační lití - barevné kovy",
+      "unid": "8E52B99E82546E35C1257DD3004DB92B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "239"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 120,
+      "name": "Robotika",
+      "unid": "D12D0413515D1728C1257DD3004DB613"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "360"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 690,
+      "name": "Povrch. Úpravy - Lakování na automatické lince.",
+      "unid": "9048D8BA8D8426F5C1257DD3004DB917"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "240"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 640,
+      "name": "Povrch. Úpravy - Galvanizace (chrom)",
+      "unid": "90663146EE28B0F2C1257DD3004DB90E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "241"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 410,
+      "name": "Obrábění - Vrtání",
+      "unid": "907FCB54D4B26AC3C1257DD3004DB89D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "242"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 210,
+      "name": "Hutnictví železa-Tažení profilů",
+      "unid": "90F6493C7F650EA4C1257DD3004DB7B8"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "243"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 70,
+      "name": "Palivové systémy",
+      "unid": "91751971A5F85286C1257DD3004DB3A3"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "244"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 240,
+      "name": "Povrchová úprava - Pogumování",
+      "unid": "92B66C702F34FF12C1257DD3004DB9F3"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "245"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 320,
+      "name": "Automation Software",
+      "unid": "9371A5D8F0CA5D97C1257DD3004DB713"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "246"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 230,
+      "name": "Výbava zavazadlového prostoru",
+      "unid": "93B16B53044CC109C1257DD3004DB424"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "247"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 230,
+      "name": "Spojovací a propojovací komponenty",
+      "unid": "948637786BD0C723C1257DD3004DB4BF"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "248"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 290,
+      "name": "Formy/Přípravky/Nástroje",
+      "unid": "94BB6E117731254EC1257DD3004DB44A"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "249"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 360,
+      "name": "Recyklace pryže",
+      "unid": "9666E95572996FBEC1257DD3004DB9B6"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "250"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 210,
+      "name": "Zdroje světla, signalizační systémy, osvětlení",
+      "unid": "96F1B8426AF05E68C1257DD3004DB68E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "251"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 30,
+      "name": "Obráběcí stroje",
+      "unid": "9729A7A91A03EC6BC1257DD3004DB606"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "252"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 250,
+      "name": "Technologie RIM",
+      "unid": "9860341846FA7CB0C1257DD3004DB9E4"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "253"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 130,
+      "name": "ERP",
+      "unid": "986D665729D4F80AC1257DD3004DB6E1"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "254"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 170,
+      "name": "Pomůcky a přístroje pro postižené",
+      "unid": "9940248D6BE5B7ACC1257DD3004DB66A"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "255"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 270,
+      "name": "Odlévání - Tvárná litina (formovací linka)",
+      "unid": "99E7A757EA159EB2C1257DD3004DB8D7"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "256"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 210,
+      "name": "Hydraulické zařízení",
+      "unid": "9A242B3FD5158D2DC1257DD3004DB5DC"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "257"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 20,
+      "name": "Ostatní diagnostické a měřící přístroje a zařízení",
+      "unid": "9A320F6B7FA63261C1257DD3004DB680"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "258"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 90,
+      "name": "Chemický průmysl-Výroba chemie pro elektroniku",
+      "unid": "9AC3138EB2CD129CC1257DD3004DB79A"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "259"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 200,
+      "name": "Povrchová úprava - Tampoprint",
+      "unid": "9AEA6D88C27F88A9C1257DD3004DB9A5"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "260"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 50,
+      "name": "Chemický průmysl-Výroba a zpracování syntetických vláken",
+      "unid": "9B129DAD5C47A82FC1257DD3004DB7C0"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "261"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 220,
+      "name": "Pneumatické stroje a zařízení",
+      "unid": "9C0613B19741E061C1257DD3004DB5F2"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "262"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 250,
+      "name": "Stomatologie",
+      "unid": "9C2553D195A2C1D5C1257DD3004DB68B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "263"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 580,
+      "name": "Nástroje pro obrábění",
+      "unid": "9C815E4D396DF74EC1257DD3004DB8EA"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "264"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 140,
+      "name": "Stroje a zařízení pro chemický průmysl",
+      "unid": "9CB9A9480FDC0F1CC1257DD3004DB5F4"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "265"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 520,
+      "name": "Dělení a ohýbání - trubek a profilů CNC",
+      "unid": "9CCAF61A330032DCC1257DD3004DB90B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "266"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 730,
+      "name": "Výroba z drátů-Svařování a tváření drátů",
+      "unid": "9D3ED4ED2BE8BA0AC1257DD3004DB8CB"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "267"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 310,
+      "name": "Technologie a technologické díly",
+      "unid": "9D88E675B5BC0912C1257DD3004DB447"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "268"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 240,
+      "name": "Hutnictví železa-Válcování plechů a pásů ",
+      "unid": "9E86A4CC425FB524C1257DD3004DB775"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "269"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 270,
+      "name": "Hutnictví neželezných kovů-Lisování drátu",
+      "unid": "9ED22730B73EC3B4C1257DD3004DB7EA"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "270"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 150,
+      "name": "Přístupové a identifikační systémy, platební terminály",
+      "unid": "9F7727111A4B4E58C1257DD3004DB49D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "271"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 160,
+      "name": "Hutnictví železa-Válcování trubek",
+      "unid": "9F79F60337426AB4C1257DD3004DB7D7"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "272"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 180,
+      "name": "Zamykání a alarmy",
+      "unid": "9FEF8A29F821686AC1257DD3004DB434"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "273"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 270,
+      "name": "Kotle tepelných elektráren",
+      "unid": "A05A4274DB3E4EE7C1257DD3004DB50D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "274"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 200,
+      "name": "Hutnictví železa-Hutní druhovýroba",
+      "unid": "A13C69F14CC692C5C1257DD3004DB7E2"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "275"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 30,
+      "name": "Terapeutické přístroje a zařízení ",
+      "unid": "A2D753023432AE97C1257DD3004DB650"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "276"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 190,
+      "name": "Odlévání - Nízkotlaké zinek",
+      "unid": "A2EA6CA1F5DC324DC1257DD3004DB8C4"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "277"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 130,
+      "name": "Vakuové tvarování",
+      "unid": "A3F1FD52B4900FACC1257DD3004DB9DD"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "278"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 30,
+      "name": "Business Intelligence",
+      "unid": "A4518C3419CEF5EBC1257DD3004DB6E4"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "279"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 220,
+      "name": "Odlévání - Vysokotlaké zinek",
+      "unid": "A49500FCD0BC42D3C1257DD3004DB88E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "280"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 560,
+      "name": "Svařování - nerezové oceli",
+      "unid": "A58BCCE178D6FE0BC1257DD3004DB914"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "281"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 130,
+      "name": "Hutnictví železa-Tažení drátu",
+      "unid": "A5A452BB2F871357C1257DD3004DB7C5"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "282"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 10,
+      "name": "Lisování - Klikové lisy",
+      "unid": "A6436C250EC4E87CC1257DD3004DB8FA"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "283"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 550,
+      "name": "Tlakové komponenty paroplynových elektráren",
+      "unid": "A7441A2E7C2817A4C1257DD3004DB505"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "284"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 210,
+      "name": "Povrchová úprava - Laser",
+      "unid": "A88E7790F6B063E1C1257DD3004DB9F2"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "285"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 290,
+      "name": "Odlévání - Bílá litina",
+      "unid": "A99B1C6FE2212A6AC1257DD3004DB8D9"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "286"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 600,
+      "name": "Sklo a Keramika-Leštění",
+      "unid": "A9A737804AEC64EEC1257DD3004DB7CE"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "287"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 150,
+      "name": "Kování - za studena",
+      "unid": "A9E79D0C89A61506C1257DD3004DB93E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "288"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 80,
+      "name": "Content Management",
+      "unid": "A9EEB0D3C24950CCC1257DD3004DB730"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "289"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 620,
+      "name": "Sklo a Keramika-Lisování",
+      "unid": "AB026EF6D9BA0AAFC1257DD3004DB7FD"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "290"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 530,
+      "name": "Svařování - bodové",
+      "unid": "ACA6DBAD637F3BA0C1257DD3004DB8D4"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "291"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 500,
+      "name": "Dělení - Ostatní",
+      "unid": "AD6FA17A1EDFEBCEC1257DD3004DB8AA"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "292"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 200,
+      "name": "Ochrana proti ledu",
+      "unid": "AEB7721A888D0E2AC1257DD3004DB3B4"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "293"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 290,
+      "name": "Facility Management",
+      "unid": "AEFBC0D59A796F89C1257DD3004DB6F7"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "294"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 200,
+      "name": "Vzduchotechnika, medicínské plyny, zdrojové jednotky",
+      "unid": "AF2D3D8931113731C1257DD3004DB66F"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "295"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 170,
+      "name": "Drtiče a lisy na biomasu",
+      "unid": "AF3049B1D247A2C1C1257DD3004DB595"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "296"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 140,
+      "name": "Kování - Měď",
+      "unid": "AF5ABF40C73CAD02C1257DD3004DB936"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "297"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 330,
+      "name": "Pryž-Vulkanizace",
+      "unid": "B0636DF0D3E199F3C1257DD3004DB9C9"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "298"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 120,
+      "name": "Svařování ultrazvukové",
+      "unid": "B1B09282D182961DC1257DD3004DB9F8"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "299"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 430,
+      "name": "Transformátory VVN",
+      "unid": "B1C8DE9FB203B0FBC1257DD3004DB51C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "300"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 380,
+      "name": "Tlakové nádoby ",
+      "unid": "B37DC290BD0777ADC1257DD3004DB534"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "301"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 110,
+      "name": "Bílé zboží",
+      "unid": "B3BD73ECD9BD8E00C1257DD3004DB48D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "302"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 200,
+      "name": "Aktivní komponenty",
+      "unid": "B43705BA39587882C1257DD3004DB4C5"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "303"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 40,
+      "name": "Chemický průmysl-Ušlechtilé a zvláštní chemikálie",
+      "unid": "B43CE8C64B175E8AC1257DD3004DB81F"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "304"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 80,
+      "name": "Manipulační technika",
+      "unid": "B4D3ED736531B038C1257DD3004DB5DF"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "305"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 290,
+      "name": "Parní turbína",
+      "unid": "B4ED0ED79E7D9C08C1257DD3004DB596"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "306"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 180,
+      "name": "Povrchová úprava - Lakování",
+      "unid": "B55B46652E7084CEC1257DD3004DB9C0"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "307"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 430,
+      "name": "Obrábění - Elektroerozivní",
+      "unid": "B628509E7D2A06E9C1257DD3004DB896"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "308"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 100,
+      "name": "Palivová soustava",
+      "unid": "B63028136DF3CC8CC1257DD3004DB437"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "309"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 110,
+      "name": "Kování - Ocel",
+      "unid": "B71558DF24FAC836C1257DD3004DB8B3"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "310"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 270,
+      "name": "Nářadí",
+      "unid": "B797C5664F56C2D5C1257DD3004DB5FA"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "311"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 60,
+      "name": "Průmyslová Elektronika&Elektrotechnika",
+      "unid": "B7D4A4B2761C0745C1257DD3004DB4BA"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "312"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 260,
+      "name": "Artificial Intelligence Software",
+      "unid": "B897EF164B60DC65C1257DD3004DB721"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "313"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 60,
+      "name": "Důlní a zeměvrtná zařízení",
+      "unid": "BA3C3BB95474F497C1257DD3004DB623"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "314"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 40,
+      "name": "Zasklení vozu",
+      "unid": "BA47EBB2541535E8C1257DD3004DB41D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "315"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 100,
+      "name": "Řídící a kontrolní systém vodních elektráren",
+      "unid": "BBB1347809351D81C1257DD3004DB54A"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "316"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 670,
+      "name": "Povrch. Úpravy - Práškové lakování",
+      "unid": "BC25A9864B81C07FC1257DD3004DB919"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "317"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 10,
+      "name": "Accounting",
+      "unid": "BD847AE1FCEDEE8DC1257DD3004DB732"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "318"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 490,
+      "name": "Obaly-Kovové klece",
+      "unid": "BDC465BCE2C5EC50C1257DD3004DB7DE"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "319"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 500,
+      "name": "Sloupy a stožáry ",
+      "unid": "BE138D35591F3976C1257DD3004DB569"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "320"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 260,
+      "name": "Hutnictví neželezných kovů-Tažení drátu",
+      "unid": "C02692C2D7917F39C1257DD3004DB7A2"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "321"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 120,
+      "name": "Výfukový systém",
+      "unid": "C03B577AD2F4E089C1257DD3004DB401"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "322"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 10,
+      "name": "Chemický průmysl-Petrochemie",
+      "unid": "C096C93A9E80679DC1257DD3004DB7C3"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "323"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 190,
+      "name": "Řídící a bezpečností systémy jaderných elektráren",
+      "unid": "C0B36A373A457D24C1257DD3004DB54B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "324"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 370,
+      "name": "Ostatní komponenty tepelných elektráren",
+      "unid": "C0C47A88B3E7EDB3C1257DD3004DB55E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "325"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 120,
+      "name": "Enterprise Application Integration",
+      "unid": "C1B8022BAB0EB8A1C1257DD3004DB6FE"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "326"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 90,
+      "name": "Nemocniční postele a jejich součásti",
+      "unid": "C1E8982EA0BB1B29C1257DD3004DB659"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "327"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 60,
+      "name": "Chirurgické nástroje",
+      "unid": "C2918B1C32FAD557C1257DD3004DB698"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "328"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 240,
+      "name": "Formy/Přípravky/Nástroje",
+      "unid": "C2B2C3E68557DF00C1257DD3004DB3A6"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "329"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 160,
+      "name": "Ochranné systémy/Airbagy",
+      "unid": "C3252899C92FDAFBC1257DD3004DB416"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "330"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 580,
+      "name": "Přenos páry",
+      "unid": "C3B12645E4B8D884C1257DD3004DB574"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "331"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 70,
+      "name": "Dřevozpracující stroje",
+      "unid": "C409CCAD6792E658C1257DD3004DB60D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "332"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 220,
+      "name": "Hutnictví železa-Válcování profilů",
+      "unid": "C446C788442A680DC1257DD3004DB796"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "333"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 470,
+      "name": "Obaly-Folie ",
+      "unid": "C45B6D80AD2F5B78C1257DD3004DB7F2"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "334"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 50,
+      "name": "CASE",
+      "unid": "C46E364AE6AACE2FC1257DD3004DB709"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "335"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 40,
+      "name": "Kolejová vozidla",
+      "unid": "C52EDBD4C9120B95C1257DD3004DB627"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "336"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 110,
+      "name": "Chemický průmysl-Výroba pryskyřic",
+      "unid": "C587F4BD96F503C7C1257DD3004DB788"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "337"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 290,
+      "name": "Biotechnologie životního prostředí",
+      "unid": "C5E7418746039B8DC1257DD3004DB686"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "338"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 10,
+      "name": "Vstřikování do 50t",
+      "unid": "C66A046989850A61C1257DD3004DB994"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "339"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 120,
+      "name": "Sterilizace, dezinfekce",
+      "unid": "C73509C1FF32DEF1C1257DD3004DB654"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "340"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 180,
+      "name": "Knowledge Management",
+      "unid": "C755849D6536E985C1257DD3004DB72A"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "341"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 170,
+      "name": "Silnoproudá elektrotechnika, rozvod elektrické energie",
+      "unid": "C77BC7E40A41218AC1257DD3004DB484"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "342"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 30,
+      "name": "Telekomunikace",
+      "unid": "C78ABD49F15ECBC6C1257DD3004DB4BD"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "343"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 700,
+      "name": "Výroba z drátů-Ocelová lana",
+      "unid": "C82CE4155F31E3CBC1257DD3004DB949"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "344"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 150,
+      "name": "Kogenerační jednotky",
+      "unid": "C888B8CC761ACBF3C1257DD3004DB58B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "345"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 330,
+      "name": "Hutnictví neželezných kovů-Válcování profilů",
+      "unid": "C8944E3ADF2DBFDAC1257DD3004DB811"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "346"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 650,
+      "name": "Výrobky z drátu-Pružiny tažené za tepla",
+      "unid": "C8EE09674B55B6A1C1257DD3004DB808"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "347"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 320,
+      "name": "Elektromobilita",
+      "unid": "CA4244E98F45D8C1C1258394004EE024"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "348"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 280,
+      "name": "Odlévání - Tvárná litina",
+      "unid": "CA7CCF1DFBB5D375C1257DD3004DB8C0"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "349"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 90,
+      "name": "CRM",
+      "unid": "CA9E740CEC3FE269C1257DD3004DB6F8"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "350"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 370,
+      "name": "Obrábění - Frézování",
+      "unid": "CC52249ACAE10AF1C1257DD3004DB941"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "351"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 450,
+      "name": "Transformátory NN",
+      "unid": "CC859BE977D04623C1257DD3004DB5A4"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "352"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 180,
+      "name": "Letecké simulátory",
+      "unid": "CCE7CDC2AB8825DFC1257DD3004DB3C4"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "353"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 230,
+      "name": "Hutnictví železa-Lisování profilů",
+      "unid": "CED6DD09370D5531C1257DD3004DB7BD"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "354"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 470,
+      "name": "Elektromotory synchronní",
+      "unid": "CEE2A42045F8C163C1257DD3004DB521"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "355"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 280,
+      "name": "Laminace-Ruční",
+      "unid": "CF7DA50F1B8830A4C1257DD3004DB9F9"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "356"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 180,
+      "name": "Fermentační systémy",
+      "unid": "D0A25F24874A60D2C1257DD3004DB57D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "357"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 60,
+      "name": "Commerce Suites",
+      "unid": "D110E713D381045DC1257DD3004DB70D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "358"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 630,
+      "name": "Regulační technika",
+      "unid": "D126802673A31518C1257DD3004DB527"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "359"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 10,
+      "name": "Automobilový průmysl a kolejová vozidla",
+      "unid": "D1C8748B48915E34C1257DD3004DB4A7"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "361"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 100,
+      "name": "Lepení",
+      "unid": "D2431CAED5E47240C1257DD3004DB9EE"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "362"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 620,
+      "name": "Tanky a nádrže",
+      "unid": "D2E4AA88839B0936C1257DD3004DB578"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "363"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 220,
+      "name": "Povrchová úprava - Softtouch",
+      "unid": "D340660999219F62C1257DD3004DB9E7"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "364"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 160,
+      "name": "Palubní přístroje",
+      "unid": "D4A14656A4EBCC7EC1257DD3004DB39D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "365"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 80,
+      "name": "Vstřikování 2 složkové",
+      "unid": "D4CABC7F9F062513C1257DD3004DB9E8"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "366"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 250,
+      "name": "Sedadla",
+      "unid": "D63BB73007DC3A4EC1257DD3004DB40B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "367"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 20,
+      "name": "Drak letounu",
+      "unid": "D6D3BE0C26EDDC0FC1257DD3004DB3AF"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "368"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 170,
+      "name": "Osvětlovací systémy",
+      "unid": "D7137C0D7C8D764DC1257DD3004DB43C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "369"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 320,
+      "name": "Odlévání - Hořčík",
+      "unid": "D71A30D502165433C1257DD3004DB939"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "370"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 330,
+      "name": "Odlévání - Ostatní",
+      "unid": "D7F8D6CDA4F1E188C1257DD3004DB8B8"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "371"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 740,
+      "name": "Textil - Kožené výrobky",
+      "unid": "D86756D55699851BC1257DD3004DB833"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "372"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 530,
+      "name": "Dřevo-Palety",
+      "unid": "D87CC80A02DBF41BC1257DD3004DB7D3"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "373"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 20,
+      "name": "Letectví a vojenská technika",
+      "unid": "D8947FDD95645D54C1257DD3004DB4B5"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "374"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 280,
+      "name": "Hutnictví neželezných kovů-Tažení trubek",
+      "unid": "D8E760E31836CC29C1257DD3004DB7D6"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "375"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 480,
+      "name": "Obaly-Folie - antistatické",
+      "unid": "D8F46FDCDCED13DFC1257DD3004DB7D0"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "376"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 590,
+      "name": "Nástroje pro lisování plastů",
+      "unid": "D90B77AC28DA5A2FC1257DD3004DB92F"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "377"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 150,
+      "name": "Ražení",
+      "unid": "D91752DF61EE5A6DC1257DD3004DB9C7"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "378"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 80,
+      "name": "Startovací jednotky",
+      "unid": "D9837B8698B43ADEC1257DD3004DB3C7"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "379"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 200,
+      "name": "Odlévání - Nízkotlaké hliník",
+      "unid": "D9A70B527B6D088AC1257DD3004DB8F8"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "380"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 590,
+      "name": "Sklo a Keramika-Foukání",
+      "unid": "DA7E49809E0A8E79C1257DD3004DB770"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "381"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 360,
+      "name": "Webhosting",
+      "unid": "DB156EC39973C141C1257DD3004DB737"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "382"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 90,
+      "name": "Termoelektrické technologie",
+      "unid": "DC7D678BC1FE4358C1257DD3004DB542"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "383"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 120,
+      "name": "Strojovny vodních elektráren (generátor)",
+      "unid": "DD1BF140E2F21220C1257DD3004DB539"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "384"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 140,
+      "name": "Ostatní komponenty vodních elektráren",
+      "unid": "DD1EF2EDEC9D6B75C1257DD3004DB58A"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "385"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 550,
+      "name": "Sklo a Keramika-Užitková keramika",
+      "unid": "DD6A1AED920551ADC1257DD3004DB77D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "386"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 240,
+      "name": "Odlévání - Vysokotlaké hořčík",
+      "unid": "DE79FD7C561BF1E2C1257DD3004DB933"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "387"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 70,
+      "name": "Převody a náhony",
+      "unid": "DF96721D679530D5C1257DD3004DB423"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "388"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 80,
+      "name": "Fotovoltaické technologie",
+      "unid": "E0EBD987B50B6568C1257DD3004DB535"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "389"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 640,
+      "name": "Měřící technika",
+      "unid": "E0FC0EC72E2B10EDC1257DD3004DB520"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "390"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 50,
+      "name": "Vybavení operačních sálů a ambulancí",
+      "unid": "E1692D7519798A1CC1257DD3004DB69E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "391"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 90,
+      "name": "Keramické a sklářské stroje",
+      "unid": "E1C8E41C5CD024FCC1257DD3004DB60A"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "392"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 280,
+      "name": "Živočišná biotechnologie",
+      "unid": "E22C6010CD65E95BC1257DD3004DB651"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "393"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 520,
+      "name": "Generátor paroplynové elektrárny",
+      "unid": "E2601070C75EC231C1257DD3004DB575"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "394"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 240,
+      "name": "Materiály pro Elektroniku&Elektrotechniku",
+      "unid": "E2731DB92BF7B3B1C1257DD3004DB4B1"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "395"
+  },
+  {
+    "fields": {
+      "sector": 8,
+      "sort": 100,
+      "name": "AV technika",
+      "unid": "E2C235C88B517551C1257DD3004DB4CB"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "396"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 170,
+      "name": "Obrábění-Ruční",
+      "unid": "E31DC75A7DA93A7AC1257DD3004DBA00"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "397"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 440,
+      "name": "Transformátory VN",
+      "unid": "E3326CF3D3376FD8C1257DD3004DB510"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "398"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 110,
+      "name": "Kontrolní a měřící zařízení",
+      "unid": "E34592B6D74534EBC1257DD3004DB5FF"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "399"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 420,
+      "name": "Obrábění - Vyvrtávání",
+      "unid": "E3C4EFA3D8033F50C1257DD3004DB8BD"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "400"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 290,
+      "name": "Hutnictví neželezných kovů-Lisování trubek",
+      "unid": "E3D40C33DC3E479AC1257DD3004DB805"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "401"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 40,
+      "name": "Lisování - Excentrické lisy ",
+      "unid": "E472187264C199FDC1257DD3004DB900"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "402"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 270,
+      "name": "Rostlinná biotechnologie",
+      "unid": "E49B63A4597DF573C1257DD3004DB69F"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "403"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 630,
+      "name": "Povrch. Úpravy - Galvanizace(zinek)",
+      "unid": "E5068EDCCB8E524DC1257DD3004DB8C3"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "404"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 670,
+      "name": "Výrobky z drátu-Ocelová lana",
+      "unid": "E51734089353D67BC1257DD3004DB80B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "405"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 670,
+      "name": "Povrch. úpravy - Fluoroplasty",
+      "unid": "E568301FCF5F4967C1257DD3004DB8A8"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "406"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 130,
+      "name": "Hřídele vodních elektráren",
+      "unid": "E5C5208FC36BF187C1257DD3004DB587"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "407"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 370,
+      "name": "Pěny",
+      "unid": "E6F728EA1D8A1CA1C1257DD3004DB9AA"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "408"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 170,
+      "name": "Inventory Management",
+      "unid": "E7639D09E3F4A294C1257DD3004DB72D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "409"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 380,
+      "name": "GIS",
+      "unid": "E83299BBBAE9ACECC1257DD3004DB73E"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "410"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 540,
+      "name": "Sklo a Keramika-Vstřikování keramiky",
+      "unid": "E9D1143D1D383BE8C1257DD3004DB828"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "411"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 420,
+      "name": "Obaly-Papírové obaly - Hlubotisk",
+      "unid": "EB8DCC2A724EA64CC1257DD3004DB7CB"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "412"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 140,
+      "name": "Spotřební, jednorázový a jiný materiál",
+      "unid": "EC6C7ED932F9765BC1257DD3004DB678"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "413"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 500,
+      "name": "Dřevo-Zpracování dřeva pro stavebnictví",
+      "unid": "EC78C4FF49A21BE7C1257DD3004DB78B"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "414"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 70,
+      "name": "Lisování - Hlubokotažné",
+      "unid": "ED6C1AEC72F60018C1257DD3004DB909"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "415"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 390,
+      "name": "Rotační tváření plastů",
+      "unid": "EF2DC2E68F9C10A8C1257DD3004DB9C1"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "416"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 10,
+      "name": "Finální montáž letadla",
+      "unid": "F0133F12055C8461C1257DD3004DB3D3"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "417"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 460,
+      "name": "Dělení - Pila CNC",
+      "unid": "F02B9A56FEEC9C89C1257DD3004DB8FD"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "418"
+  },
+  {
+    "fields": {
+      "sector": 4,
+      "sort": 150,
+      "name": "Navigace",
+      "unid": "F1743E9EF28E6545C1257DD3004DB3B3"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "419"
+  },
+  {
+    "fields": {
+      "sector": 1,
+      "sort": 190,
+      "name": "Povrchová úprava - Metalizace",
+      "unid": "F179F24B58DB9056C1257DD3004DB9E0"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "420"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 620,
+      "name": "Povrch. úpravy - Galvanizace (měď)",
+      "unid": "F2041D8E3E5FD284C1257DD3004DB8C8"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "421"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 280,
+      "name": "Výbava karoserie vnější",
+      "unid": "F271F2242F9836BAC1257DD3004DB40A"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "422"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 650,
+      "name": "Povrch. Úpravy - Galvanizace (nikl)",
+      "unid": "F288773536CDCEA0C1257DD3004DB8DC"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "423"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 640,
+      "name": "Výrobky z drátu-Pružiny tažené za studena",
+      "unid": "F2D1578B4431828AC1257DD3004DB786"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "424"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 420,
+      "name": "Zařízení pro výrobu bioplynu",
+      "unid": "F45B846A7F19E96CC1257DD3004DB53C"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "425"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 720,
+      "name": "Výroba z drátů-Pružiny tažené za tepla",
+      "unid": "F461D97DF8CD45BBC1257DD3004DB8B6"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "426"
+  },
+  {
+    "fields": {
+      "sector": 7,
+      "sort": 540,
+      "name": "Svařování - MIG, MAG, WIG (TIG)",
+      "unid": "F582B092D30EE6B9C1257DD3004DB8F3"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "427"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 180,
+      "name": "Hutnictví železa-Kování profilů",
+      "unid": "F680CBCA30205477C1257DD3004DB7BA"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "428"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 330,
+      "name": "Tepelné výměníky pro tepelné elektrárny",
+      "unid": "F6A615C6EA184F0CC1257DD3004DB515"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "429"
+  },
+  {
+    "fields": {
+      "sector": 5,
+      "sort": 170,
+      "name": "Stroje pro výrobu potravin",
+      "unid": "F758EB4191A6D5ADC1257DD3004DB605"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "430"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 580,
+      "name": "Sklo a Keramika-Tavení ",
+      "unid": "F7A905F4A8CF6740C1257DD3004DB7F0"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "431"
+  },
+  {
+    "fields": {
+      "sector": 3,
+      "sort": 450,
+      "name": "Obaly-Výplně EPE",
+      "unid": "F83FA1244E175FF9C1257DD3004DB7F8"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "432"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 400,
+      "name": "Plynový motor",
+      "unid": "F896C2E24C4F512AC1257DD3004DB53D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "433"
+  },
+  {
+    "fields": {
+      "sector": 10,
+      "sort": 60,
+      "name": "Motor a jeho součásti",
+      "unid": "F9FD82FECD7B5DC7C1257DD3004DB432"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "434"
+  },
+  {
+    "fields": {
+      "sector": 6,
+      "sort": 160,
+      "name": "Ortopedické pomůcky, Pomůcky pro chůzi a dopravu        ",
+      "unid": "FABC21861410868EC1257DD3004DB66D"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "435"
+  },
+  {
+    "fields": {
+      "sector": 2,
+      "sort": 250,
+      "name": "Ostatní komponenty jaderných elektráren",
+      "unid": "FCA715308CDCC2ADC1257DD3004DB52A"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "436"
+  },
+  {
+    "fields": {
+      "sector": 9,
+      "sort": 150,
+      "name": "Information Management Workflow",
+      "unid": "FFEE095EEB2EB44DC1257DD3004DB6F4"
+    },
+    "model": "databazeci.SectorModule",
+    "pk": "437"
+  }
+]
