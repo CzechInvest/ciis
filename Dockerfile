@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 LABEL vendor="CzechInvest"
 
 
-RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get install -y locales python3 \
+RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y locales python3 \
         gdal-bin python3-gdal libgdal-dev libsqlite3-mod-spatialite \
         openssl lsb-release apt-utils wget \
         python3-pip && rm -rf /var/lib/apt/lists/* \
