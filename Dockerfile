@@ -24,6 +24,7 @@ ADD requirements.txt /tmp/requirements.txt
 RUN pip3 install Cython
 RUN pip3 install -r /tmp/requirements.txt
 RUN pip3 install gunicorn
+RUN mkdir -p /var/ciis/logs
 
 EXPOSE 9000
 EXPOSE 443
