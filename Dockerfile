@@ -19,6 +19,7 @@ ENV LANG en_US.utf8
 WORKDIR /var/ciis
 
 
+
 ADD requirements.txt /tmp/requirements.txt
 #RUN python3 /var/ciis/manage.py collectstatic --noinput
 RUN pip3 install Cython
@@ -26,8 +27,10 @@ RUN pip3 install -r /tmp/requirements.txt
 RUN pip3 install gunicorn
 RUN mkdir -p /var/ciis/logs
 
-EXPOSE 9000
-EXPOSE 443
+ADD . /var/ciis/
 
-CMD  gunicorn -b 0.0.0.0:9000 --error-logfile /var/ciis/logs/error.log ciis.wsgi
-#CMD bash
+EXPOSE 9000
+#EXPOSE 443
+
+#CMD  gunicorn -b 0.0.0.0:9000 --error-logfile /var/ciis/logs/error.log ciis.wsgi
+CMD bash
