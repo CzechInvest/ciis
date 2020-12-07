@@ -24,6 +24,7 @@ class Subject(models.Model):
     keywords = models.ManyToManyField("Keyword", blank=True)
     domain = models.ManyToManyField("Domain", blank=True)
     subdomain = models.ManyToManyField("Subdomain", blank=True)
+    module = models.ManyToManyField("Module", null=True, blank=True)
     business_area = models.ManyToManyField("BusinessArea", blank=True)
     department = models.ForeignKey("Department", on_delete=models.PROTECT)
     note = models.TextField(blank=True, null=True)
@@ -36,7 +37,6 @@ class Subject(models.Model):
     contact = models.ManyToManyField("Contact")
     profile = models.TextField(blank=True, null=True)
 
-    module = models.ManyToManyField("SectorModule", null=True, blank=True)
     ket = models.ManyToManyField("Ket", blank=True)
     nace = models.ManyToManyField("Nace", blank=True)
 
@@ -110,19 +110,6 @@ class Ket(models.Model):
     def __str__(self):
         return self.ket
 
-#class Module(models.Model):
-#    module = models.CharField(max_length=256)
-#    sector = models.ForeignKey("Sector", on_delete=models.PROTECT)
-#
-#    def __str__(self):
-#        return "{} | {}".format(self.sector, self.module)
-
-#class Sector(models.Model):
-#    sector = models.CharField(max_length=256)
-#
-#    def __str__(self):
-#        return self.sector
-
 class Turnover(models.Model):
     upto = models.IntegerField()
     description = models.CharField(max_length=32)
@@ -172,26 +159,15 @@ class LegalForm(models.Model):
         return self.name
 
 
-class SectorModule(models.Model):
+class Module(models.Model):
 
-    sector = models.ForeignKey("Sector", on_delete=models.PROTECT)
-    sort = models.IntegerField(default=-1)
+    subdomain = models.ForeignKey("Subdomain", on_delete=models.PROTECT)
     name = models.CharField(max_length=256)
-    unid = models.CharField(max_length=32, null=True, blank=True)
+    name_en = models.CharField(max_length=256)
 
     def __str__(self):
         return self.name
 
-
-class Sector(models.Model):
-    sort = models.IntegerField(default=-1, blank=True)
-    name = models.CharField(max_length=256, default="")
-    short_name = models.CharField(max_length=32, default="")
-    description = models.TextField(default="")
-    unid = models.CharField(max_length=32, null=True, blank=True)
-
-    def __str__(self):
-        return self.name
 
 class Certificate(models.Model):
     authority = models.CharField(max_length=32)

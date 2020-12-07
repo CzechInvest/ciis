@@ -1,0 +1,2405 @@
+[
+    {
+        "fields": {
+            "name": "Zařízení a pomůcky pro anestezii a resuscitační péči",
+            "name_en": "Equipment and aids for anesthesia and resuscitation care",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "name": "Vybavení operačních sálů a ambulancí",
+            "name_en": "Equipment for operating rooms and ambulances",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "name": "Chirurgické nástroje",
+            "name_en": "Surgical instruments",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "name": "Implantáty a nástroje pro traumatologii a ortopedii",
+            "name_en": "Implants and instruments for traumatology and orthopedics",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 4
+    },
+    {
+        "fields": {
+            "name": "Laboratorní technika a vybavení, biochemická diagnostika",
+            "name_en": "Laboratory technology and equipment, biochemical diagnostics",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 5
+    },
+    {
+        "fields": {
+            "name": "Nemocniční postele a jejich součásti",
+            "name_en": "Hospital beds and their components",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 6
+    },
+    {
+        "fields": {
+            "name": "Ostatní nábytek a vybavení zdravotnického zařízení",
+            "name_en": "Other furniture and medical equipment",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 7
+    },
+    {
+        "fields": {
+            "name": "Nerezový program",
+            "name_en": "Stainless steel program",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 8
+    },
+    {
+        "fields": {
+            "name": "Sterilizace, dezinfekce",
+            "name_en": "Sterilization, disinfection",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 9
+    },
+    {
+        "fields": {
+            "name": "Textilní a gumové výrobky, ochranné pomůcky, obaly",
+            "name_en": "Textile and rubber products, protective equipment, packaging",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 10
+    },
+    {
+        "fields": {
+            "name": "Spotřební, jednorázový a jiný materiál",
+            "name_en": "Consumables, disposable and other material",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 11
+    },
+    {
+        "fields": {
+            "name": "Ortopedické pomůcky, Pomůcky pro chůzi a dopravu",
+            "name_en": "Orthopedic aids, Aids for walking and transport",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 12
+    },
+    {
+        "fields": {
+            "name": "Pomůcky a přístroje pro postižené",
+            "name_en": "Aids and devices for the disabled",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 13
+    },
+    {
+        "fields": {
+            "name": "Rehabilitace, rekondice, zdravý životní styl, wellness",
+            "name_en": "Rehabilitation, reconditioning, healthy lifestyle, wellness",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 14
+    },
+    {
+        "fields": {
+            "name": "Vzduchotechnika, medicínské plyny, zdrojové jednotky",
+            "name_en": "Air conditioning, medical gases, source units",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 15
+    },
+    {
+        "fields": {
+            "name": "Zdroje světla, signalizační systémy, osvětlení",
+            "name_en": "Light sources, signaling systems, lighting",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 16
+    },
+    {
+        "fields": {
+            "name": "Veterinární lékařství",
+            "name_en": "Veterinary medicine",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 17
+    },
+    {
+        "fields": {
+            "name": "Plastové výrobky",
+            "name_en": "Plastic products",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 18
+    },
+    {
+        "fields": {
+            "name": "Kovové komponenty",
+            "name_en": "Metal components",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 19
+    },
+    {
+        "fields": {
+            "name": "Stomatologie",
+            "name_en": "Dentistry",
+            "subdomain": 1
+        },
+        "model": "databazeci.module",
+        "pk": 20
+    },
+    {
+        "fields": {
+            "name": "Farmacie",
+            "name_en": "Pharma",
+            "subdomain": 2
+        },
+        "model": "databazeci.module",
+        "pk": 21
+    },
+    {
+        "fields": {
+            "name": "Elektronika",
+            "name_en": "Medical electronics",
+            "subdomain": 4
+        },
+        "model": "databazeci.module",
+        "pk": 22
+    },
+    {
+        "fields": {
+            "name": "Zobrazovací a diagnostické přístroje",
+            "name_en": "Imaging and diagnostic devices",
+            "subdomain": 4
+        },
+        "model": "databazeci.module",
+        "pk": 23
+    },
+    {
+        "fields": {
+            "name": "Ostatní diagnostické a měřící přístroje a zařízení",
+            "name_en": "Other diagnostic and measuring instruments and appliances",
+            "subdomain": 4
+        },
+        "model": "databazeci.module",
+        "pk": 24
+    },
+    {
+        "fields": {
+            "name": "Terapeutické přístroje a zařízení",
+            "name_en": "Therapeutic devices and equipment",
+            "subdomain": 4
+        },
+        "model": "databazeci.module",
+        "pk": 25
+    },
+    {
+        "fields": {
+            "name": "Rostlinná biotechnologie",
+            "name_en": "Plant biotechnology",
+            "subdomain": 5
+        },
+        "model": "databazeci.module",
+        "pk": 26
+    },
+    {
+        "fields": {
+            "name": "Živočišná biotechnologie",
+            "name_en": "Animal biotechnology",
+            "subdomain": 5
+        },
+        "model": "databazeci.module",
+        "pk": 27
+    },
+    {
+        "fields": {
+            "name": "Biotechnologie životního prostředí",
+            "name_en": "Environmental biotechnology",
+            "subdomain": 5
+        },
+        "model": "databazeci.module",
+        "pk": 28
+    },
+    {
+        "fields": {
+            "name": "Mikrobiální a buněčná biotechnologie",
+            "name_en": "Microbial and cellular biotechnology",
+            "subdomain": 5
+        },
+        "model": "databazeci.module",
+        "pk": 29
+    },
+    {
+        "fields": {
+            "name": "Biotechnologie-vývoj lidských a živočišných diagnostik, farmaceutik",
+            "name_en": "Biotechnology-development of human and animal diagnostics, pharmaceuticals",
+            "subdomain": 5
+        },
+        "model": "databazeci.module",
+        "pk": 30
+    },
+    {
+        "fields": {
+            "name": "Balící stroje",
+            "name_en": "Packaging machines",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 31
+    },
+    {
+        "fields": {
+            "name": "Tvářecí stroje",
+            "name_en": "Forming machines",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 32
+    },
+    {
+        "fields": {
+            "name": "Obráběcí stroje",
+            "name_en": "Machine tools",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 33
+    },
+    {
+        "fields": {
+            "name": "Lodní doprava",
+            "name_en": "Ship transportation",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 34
+    },
+    {
+        "fields": {
+            "name": "Stavební mechanizace, zemní stroje a jeřáby",
+            "name_en": "Construction machinery, earthmoving machinery and cranes",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 35
+    },
+    {
+        "fields": {
+            "name": "Důlní a zeměvrtná zařízení",
+            "name_en": "Mining and drilling equipment",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 36
+    },
+    {
+        "fields": {
+            "name": "Dřevozpracující stroje",
+            "name_en": "Woodworking machines",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 37
+    },
+    {
+        "fields": {
+            "name": "Manipulační technika",
+            "name_en": "Handling technology",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 38
+    },
+    {
+        "fields": {
+            "name": "Keramické a sklářské stroje",
+            "name_en": "Ceramic and glass machines",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 39
+    },
+    {
+        "fields": {
+            "name": "Zařízení pro povrchovou ochranu",
+            "name_en": "Surface protection equipment",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 40
+    },
+    {
+        "fields": {
+            "name": "Kontrolní a měřící zařízení",
+            "name_en": "Control and measuring equipment",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 41
+    },
+    {
+        "fields": {
+            "name": "Stroje pro výrobu plastů a pryže",
+            "name_en": "Machines for the production of plastics and rubber",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 42
+    },
+    {
+        "fields": {
+            "name": "Stroje a zařízení pro chemický průmysl",
+            "name_en": "Machinery and equipment for the chemical industry",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 43
+    },
+    {
+        "fields": {
+            "name": "Stroje a zařízení pro hutě a metalurgii",
+            "name_en": "Machinery and equipment for metallurgy and metallurgy",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 44
+    },
+    {
+        "fields": {
+            "name": "Tiskařské stroje",
+            "name_en": "Printing machines",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 45
+    },
+    {
+        "fields": {
+            "name": "Stroje pro výrobu potravin",
+            "name_en": "Food production machines",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 46
+    },
+    {
+        "fields": {
+            "name": "Energetické strojírenství",
+            "name_en": "Energy engineering",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 47
+    },
+    {
+        "fields": {
+            "name": "Zařízení pro ekoenergetiku",
+            "name_en": "Equipment for eco-energy",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 48
+    },
+    {
+        "fields": {
+            "name": "Zařízení a stroje pro textilní průmysl",
+            "name_en": "Equipment and machinery for the textile industry",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 49
+    },
+    {
+        "fields": {
+            "name": "Hydraulické zařízení",
+            "name_en": "Hydraulic equipment",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 50
+    },
+    {
+        "fields": {
+            "name": "Pneumatické stroje a zařízení",
+            "name_en": "Pneumatic machines and equipment",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 51
+    },
+    {
+        "fields": {
+            "name": "Chladící technika, vzduchotechnika",
+            "name_en": "Refrigeration technology, air conditioning",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 52
+    },
+    {
+        "fields": {
+            "name": "Jednoúčelové stroje",
+            "name_en": "Single-purpose machines",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 53
+    },
+    {
+        "fields": {
+            "name": "Elektrické pohony",
+            "name_en": "Electric drives",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 54
+    },
+    {
+        "fields": {
+            "name": "Kompresory, čerpadla a dmychadla",
+            "name_en": "Compressors, pumps and blowers",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 55
+    },
+    {
+        "fields": {
+            "name": "Nářadí",
+            "name_en": "Tool",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 56
+    },
+    {
+        "fields": {
+            "name": "Zemědělské stroje",
+            "name_en": "Agricultural machinery",
+            "subdomain": 7
+        },
+        "model": "databazeci.module",
+        "pk": 57
+    },
+    {
+        "fields": {
+            "name": "Lisování - Klikové lisy",
+            "name_en": "Pressing - Crank presses",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 58
+    },
+    {
+        "fields": {
+            "name": "Lisování - Ohraňovací lisy",
+            "name_en": "Pressing - Press brakes",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 59
+    },
+    {
+        "fields": {
+            "name": "Lisování - Hydraulické lisy",
+            "name_en": "Pressing - Hydraulic presses",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 60
+    },
+    {
+        "fields": {
+            "name": "Lisování - Excentrické lisy",
+            "name_en": "Pressing - Eccentric presses",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 61
+    },
+    {
+        "fields": {
+            "name": "Lisování - Transferové lisy",
+            "name_en": "Pressing - Transfer presses",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 62
+    },
+    {
+        "fields": {
+            "name": "Lisování - Lisovací linka",
+            "name_en": "Pressing - Pressing line",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 63
+    },
+    {
+        "fields": {
+            "name": "Lisování - Hlubokotažné",
+            "name_en": "Pressing - Deep drawing",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 64
+    },
+    {
+        "fields": {
+            "name": "Lisování - Ostatní",
+            "name_en": "Pressing - Other",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 65
+    },
+    {
+        "fields": {
+            "name": "Kování - Volné",
+            "name_en": "Fittings - Loose",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 66
+    },
+    {
+        "fields": {
+            "name": "Kování - Zápustkové",
+            "name_en": "Fittings - Drop",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 67
+    },
+    {
+        "fields": {
+            "name": "Kování - Ocel",
+            "name_en": "Fittings - Steel",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 68
+    },
+    {
+        "fields": {
+            "name": "Kování - Hliník",
+            "name_en": "Fittings - Aluminum",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 69
+    },
+    {
+        "fields": {
+            "name": "Kování - Mosaz",
+            "name_en": "Fittings - Brass",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 70
+    },
+    {
+        "fields": {
+            "name": "Kování - Měď",
+            "name_en": "Fittings - Copper",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 71
+    },
+    {
+        "fields": {
+            "name": "Kování - za studena",
+            "name_en": "Fittings - cold",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 72
+    },
+    {
+        "fields": {
+            "name": "Kování - Ostatní",
+            "name_en": "Fittings - Other",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 73
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Gravitační lití - železné kovy",
+            "name_en": "Casting - Gravity casting - ferrous metals",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 74
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Gravitační lití - barevné kovy",
+            "name_en": "Casting - Gravity casting - non-ferrous metals",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 75
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Gravitační lití - hliník",
+            "name_en": "Casting - Gravity casting - aluminum",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 76
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Nízkotlaké zinek",
+            "name_en": "Casting - Low pressure zinc",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 77
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Nízkotlaké hliník",
+            "name_en": "Casting - Low pressure aluminum",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 78
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Nízkotlaké hořčík",
+            "name_en": "Casting - Low pressure magnesium",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 79
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Vysokotlaké zinek",
+            "name_en": "Casting - High pressure zinc",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 80
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Vysokotlaké hliník",
+            "name_en": "Casting - High pressure aluminum",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 81
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Vysokotlaké hořčík",
+            "name_en": "Casting - High pressure magnesium",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 82
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Šedá litina (formovací linka)",
+            "name_en": "Casting - Gray cast iron (molding line)",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 83
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Šedá litina",
+            "name_en": "Casting - Gray cast iron",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 84
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Tvárná litina (formovací linka)",
+            "name_en": "Casting - Ductile iron (molding line)",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 85
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Tvárná litina",
+            "name_en": "Casting - Ductile iron",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 86
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Bílá litina",
+            "name_en": "Casting - White cast iron",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 87
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Litá ocel",
+            "name_en": "Casting - Cast steel",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 88
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Vytavitelný model",
+            "name_en": "Casting - Fusible model",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 89
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Hořčík",
+            "name_en": "Casting - Magnesium",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 90
+    },
+    {
+        "fields": {
+            "name": "Odlévání - Ostatní",
+            "name_en": "Casting - Other",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 91
+    },
+    {
+        "fields": {
+            "name": "Obrábění - Obráběcí centra",
+            "name_en": "Machining - Machining centers",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 92
+    },
+    {
+        "fields": {
+            "name": "Obrábění - Soustružení",
+            "name_en": "Machining - Turning",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 93
+    },
+    {
+        "fields": {
+            "name": "Obrábění - Soustružení CNC",
+            "name_en": "Machining - CNC turning",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 94
+    },
+    {
+        "fields": {
+            "name": "Obrábění - Frézování",
+            "name_en": "Machining - Milling",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 95
+    },
+    {
+        "fields": {
+            "name": "Obrábění - Frézování CNC",
+            "name_en": "Machining - CNC milling",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 96
+    },
+    {
+        "fields": {
+            "name": "Obrábění - Broušení",
+            "name_en": "Machining - Grinding",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 97
+    },
+    {
+        "fields": {
+            "name": "Obrábění - Broušení CNC",
+            "name_en": "Machining - CNC grinding",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 98
+    },
+    {
+        "fields": {
+            "name": "Obrábění - Vrtání",
+            "name_en": "Machining - Drilling",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 99
+    },
+    {
+        "fields": {
+            "name": "Obrábění - Vyvrtávání",
+            "name_en": "Machining - Boring",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 100
+    },
+    {
+        "fields": {
+            "name": "Obrábění - Elektroerozivní",
+            "name_en": "Machining - EDM",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 101
+    },
+    {
+        "fields": {
+            "name": "Obrábění - Ostatní",
+            "name_en": "Machining - Other",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 102
+    },
+    {
+        "fields": {
+            "name": "Dělení - Pila",
+            "name_en": "Cutting - Saw",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 103
+    },
+    {
+        "fields": {
+            "name": "Dělení - Pila CNC",
+            "name_en": "Cutting - CNC saw",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 104
+    },
+    {
+        "fields": {
+            "name": "Dělení - Laser",
+            "name_en": "Cutting - Laser",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 105
+    },
+    {
+        "fields": {
+            "name": "Dělení - Plamen CNC",
+            "name_en": "Cutting - Flame CNC",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 106
+    },
+    {
+        "fields": {
+            "name": "Dělení - Plazma",
+            "name_en": "Division - Plasma",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 107
+    },
+    {
+        "fields": {
+            "name": "Dělení - Ostatní",
+            "name_en": "Division - Other",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 108
+    },
+    {
+        "fields": {
+            "name": "Dělení a ohýbání - trubek a profilů",
+            "name_en": "Cutting and bending - pipes and profiles",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 109
+    },
+    {
+        "fields": {
+            "name": "Dělení a ohýbání - trubek a profilů CNC",
+            "name_en": "Cutting and bending - pipes and CNC profiles",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 110
+    },
+    {
+        "fields": {
+            "name": "Svařování - bodové",
+            "name_en": "Welding - spot",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 111
+    },
+    {
+        "fields": {
+            "name": "Svařování - MIG, MAG, WIG (TIG)",
+            "name_en": "Welding - MIG, MAG, TIG (TIG)",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 112
+    },
+    {
+        "fields": {
+            "name": "Svařování - hliníku",
+            "name_en": "Welding - aluminum",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 113
+    },
+    {
+        "fields": {
+            "name": "Svařování - nerezové oceli",
+            "name_en": "Welding - stainless steel",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 114
+    },
+    {
+        "fields": {
+            "name": "Svařování - ocelových konstrukcí",
+            "name_en": "Welding - steel structures",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 115
+    },
+    {
+        "fields": {
+            "name": "Nástroje  pro lisování a střihání plechů",
+            "name_en": "Tools for stamping and cutting sheets",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 116
+    },
+    {
+        "fields": {
+            "name": "Nástroje pro obrábění",
+            "name_en": "Machining tools",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 117
+    },
+    {
+        "fields": {
+            "name": "Nástroje pro lisování plastů",
+            "name_en": "Plastic molding tools",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 118
+    },
+    {
+        "fields": {
+            "name": "Nástroje pro odlévání kovů",
+            "name_en": "Metal casting tools",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 119
+    },
+    {
+        "fields": {
+            "name": "Nástroje pro kování",
+            "name_en": "Forging tools",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 120
+    },
+    {
+        "fields": {
+            "name": "Povrch. úpravy - Galvanizace (měď)",
+            "name_en": "Surface. modifications - Galvanization (copper)",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 121
+    },
+    {
+        "fields": {
+            "name": "Povrch. Úpravy - Galvanizace(zinek)",
+            "name_en": "Surface. Modifications - Galvanization (zinc)",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 122
+    },
+    {
+        "fields": {
+            "name": "Povrch. Úpravy - Galvanizace (chrom)",
+            "name_en": "Surface. Adjustments - Galvanization (chrome)",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 123
+    },
+    {
+        "fields": {
+            "name": "Povrch. Úpravy - Galvanizace (nikl)",
+            "name_en": "Surface. Modifications - Galvanization (nickel)",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 124
+    },
+    {
+        "fields": {
+            "name": "Povrch. úpravy - Galvanizace (jiná)",
+            "name_en": "Surface. modifications - Galvanization (other)",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 125
+    },
+    {
+        "fields": {
+            "name": "Povrch. Úpravy - Eloxování",
+            "name_en": "Surface. Adjustments - Anodizing",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 126
+    },
+    {
+        "fields": {
+            "name": "Povrch. úpravy - Fluoroplasty",
+            "name_en": "Surface. modifications - Fluoroplastics",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 127
+    },
+    {
+        "fields": {
+            "name": "Povrch. Úpravy - Práškové lakování",
+            "name_en": "Surface. Modifications - Powder coating",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 128
+    },
+    {
+        "fields": {
+            "name": "Povrch. Úpravy - Lakování manuální",
+            "name_en": "Surface. Adjustments - Manual painting",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 129
+    },
+    {
+        "fields": {
+            "name": "Povrch. Úpravy - Lakování na automatické lince.",
+            "name_en": "Surface. Adjustments - Painting on an automatic line.",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 130
+    },
+    {
+        "fields": {
+            "name": "Výroba z drátů-Ocelová lana",
+            "name_en": "Manufacture from wires-Steel ropes",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 131
+    },
+    {
+        "fields": {
+            "name": "Výroba z drátů-Pružiny tažené za studena",
+            "name_en": "Manufacture from wires-Cold drawn springs",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 132
+    },
+    {
+        "fields": {
+            "name": "Výroba z drátů-Pružiny tažené za tepla",
+            "name_en": "Manufacture from wires-Hot drawn springs",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 133
+    },
+    {
+        "fields": {
+            "name": "Výroba z drátů-Svařování a tváření drátů",
+            "name_en": "Manufacture of wires-Welding and wire forming",
+            "subdomain": 9
+        },
+        "model": "databazeci.module",
+        "pk": 134
+    },
+    {
+        "fields": {
+            "name": "Robotika",
+            "name_en": "Robotics",
+            "subdomain": 10
+        },
+        "model": "databazeci.module",
+        "pk": 135
+    },
+    {
+        "fields": {
+            "name": "Vstřikování do 50t",
+            "name_en": "Injection up to 50t",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 136
+    },
+    {
+        "fields": {
+            "name": "Vstřikování 51t-200t",
+            "name_en": "Injection 51t-200t",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 137
+    },
+    {
+        "fields": {
+            "name": "Vstřikování 201t-600t",
+            "name_en": "Injection 201t-600t",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 138
+    },
+    {
+        "fields": {
+            "name": "Vstřikování 601t-1 000t",
+            "name_en": "Injection 601t - 1,000t",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 139
+    },
+    {
+        "fields": {
+            "name": "Vstřikování nad 1 000t",
+            "name_en": "Injection molding over 1,000 t",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 140
+    },
+    {
+        "fields": {
+            "name": "Vstřikování - Kovové zálisky",
+            "name_en": "Injection molding - Metal inserts",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 141
+    },
+    {
+        "fields": {
+            "name": "Vstřikování - Ostatní zálisky",
+            "name_en": "Injection molding - Other inserts",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 142
+    },
+    {
+        "fields": {
+            "name": "Vstřikování 2 složkové",
+            "name_en": "2-component injection",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 143
+    },
+    {
+        "fields": {
+            "name": "Vyfukování",
+            "name_en": "Blowing",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 144
+    },
+    {
+        "fields": {
+            "name": "Lepení",
+            "name_en": "Bonding",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 145
+    },
+    {
+        "fields": {
+            "name": "Svařování tepelné",
+            "name_en": "Thermal welding",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 146
+    },
+    {
+        "fields": {
+            "name": "Svařování ultrazvukové",
+            "name_en": "Ultrasonic welding",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 147
+    },
+    {
+        "fields": {
+            "name": "Vakuové tvarování",
+            "name_en": "Vacuum forming",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 148
+    },
+    {
+        "fields": {
+            "name": "Vytlačování",
+            "name_en": "Extrusion",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 149
+    },
+    {
+        "fields": {
+            "name": "Ražení",
+            "name_en": "Stamping",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 150
+    },
+    {
+        "fields": {
+            "name": "Obrábění-Strojní",
+            "name_en": "Machining-Machining",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 151
+    },
+    {
+        "fields": {
+            "name": "Obrábění-Ruční",
+            "name_en": "Machining-Manual",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 152
+    },
+    {
+        "fields": {
+            "name": "Povrchová úprava - Lakování",
+            "name_en": "Surface treatment - Painting",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 153
+    },
+    {
+        "fields": {
+            "name": "Povrchová úprava - Metalizace",
+            "name_en": "Surface treatment - Metallization",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 154
+    },
+    {
+        "fields": {
+            "name": "Povrchová úprava - Tampoprint",
+            "name_en": "Surface treatment - Tampoprint",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 155
+    },
+    {
+        "fields": {
+            "name": "Povrchová úprava - Laser",
+            "name_en": "Surface treatment - Laser",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 156
+    },
+    {
+        "fields": {
+            "name": "Povrchová úprava - Softtouch",
+            "name_en": "Surface treatment - Softtouch",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 157
+    },
+    {
+        "fields": {
+            "name": "Povrchová úprava - Potisk",
+            "name_en": "Surface treatment - Printing",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 158
+    },
+    {
+        "fields": {
+            "name": "Povrchová úprava - Pogumování",
+            "name_en": "Surface treatment - Rubberizing",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 159
+    },
+    {
+        "fields": {
+            "name": "RTM",
+            "name_en": "RTM",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 160
+    },
+    {
+        "fields": {
+            "name": "Technologie RIM",
+            "name_en": "RIM technology",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 161
+    },
+    {
+        "fields": {
+            "name": "Prepreg",
+            "name_en": "Prepreg",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 162
+    },
+    {
+        "fields": {
+            "name": "Laminace-Strojní",
+            "name_en": "Lamination-Machine",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 163
+    },
+    {
+        "fields": {
+            "name": "Laminace-Ruční",
+            "name_en": "Lamination-Manual",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 164
+    },
+    {
+        "fields": {
+            "name": "Laminace-Pod plachetkou",
+            "name_en": "Lamination-Under the tarpaulin",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 165
+    },
+    {
+        "fields": {
+            "name": "Laminace-Ostatní lití",
+            "name_en": "Lamination-Other casting",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 166
+    },
+    {
+        "fields": {
+            "name": "Pryž-Vysekávání",
+            "name_en": "Rubber-Cutting",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 167
+    },
+    {
+        "fields": {
+            "name": "Pryž-Lisování",
+            "name_en": "Rubber-Pressing",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 168
+    },
+    {
+        "fields": {
+            "name": "Pryž-Vulkanizace",
+            "name_en": "Rubber-Vulcanization",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 169
+    },
+    {
+        "fields": {
+            "name": "Pryž-Vytlačování",
+            "name_en": "Rubber-Extrusion",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 170
+    },
+    {
+        "fields": {
+            "name": "Recyklace plastů",
+            "name_en": "Plastic recycling",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 171
+    },
+    {
+        "fields": {
+            "name": "Recyklace pryže",
+            "name_en": "Rubber recycling",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 172
+    },
+    {
+        "fields": {
+            "name": "Pěny",
+            "name_en": "Walls",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 173
+    },
+    {
+        "fields": {
+            "name": "Nástroje a Formy",
+            "name_en": "Tools and Molds",
+            "subdomain": 14
+        },
+        "model": "databazeci.module",
+        "pk": 174
+    },
+    {
+        "fields": {
+            "name": "Kolejová vozidla",
+            "name_en": "Rail vehicles",
+            "subdomain": 19
+        },
+        "model": "databazeci.module",
+        "pk": 175
+    },
+    {
+        "fields": {
+            "name": "Karoserie",
+            "name_en": "Body",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 176
+    },
+    {
+        "fields": {
+            "name": "Dveře/kapota/zadní víko",
+            "name_en": "Door / bonnet / rear cover",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 177
+    },
+    {
+        "fields": {
+            "name": "Otvírací střecha",
+            "name_en": "Sunroof",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 178
+    },
+    {
+        "fields": {
+            "name": "Zasklení vozu",
+            "name_en": "Car glazing",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 179
+    },
+    {
+        "fields": {
+            "name": "Nárazníky",
+            "name_en": "Bumpers",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 180
+    },
+    {
+        "fields": {
+            "name": "Motor a jeho součásti",
+            "name_en": "Engine and its components",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 181
+    },
+    {
+        "fields": {
+            "name": "Převody a náhony",
+            "name_en": "Gears and drives",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 182
+    },
+    {
+        "fields": {
+            "name": "Kola/Nápravy/Zavěšení/ Odpružení",
+            "name_en": "Wheels / Axles / Suspension / Suspension",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 183
+    },
+    {
+        "fields": {
+            "name": "Řízení a pedálová souprava",
+            "name_en": "Steering and pedal set",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 184
+    },
+    {
+        "fields": {
+            "name": "Palivová soustava",
+            "name_en": "Fuel system",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 185
+    },
+    {
+        "fields": {
+            "name": "Sací systém",
+            "name_en": "Suction system",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 186
+    },
+    {
+        "fields": {
+            "name": "Výfukový systém",
+            "name_en": "Exhaust system",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 187
+    },
+    {
+        "fields": {
+            "name": "Chlazení",
+            "name_en": "Cooling",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 188
+    },
+    {
+        "fields": {
+            "name": "Topení a klimatizace",
+            "name_en": "Heating and air conditioning",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 189
+    },
+    {
+        "fields": {
+            "name": "Brzdový systém",
+            "name_en": "Brake system",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 190
+    },
+    {
+        "fields": {
+            "name": "Ochranné systémy/Airbagy",
+            "name_en": "Protective systems / Airbags",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 191
+    },
+    {
+        "fields": {
+            "name": "Osvětlovací systémy",
+            "name_en": "Lighting systems",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 192
+    },
+    {
+        "fields": {
+            "name": "Zamykání a alarmy",
+            "name_en": "Locks and alarms",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 193
+    },
+    {
+        "fields": {
+            "name": "Radio/Palubní počítač/Navigace",
+            "name_en": "Radio / Board computer / Navigation",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 194
+    },
+    {
+        "fields": {
+            "name": "Stěrače a odstřikovače",
+            "name_en": "Wipers and sprayers",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 195
+    },
+    {
+        "fields": {
+            "name": "Interiér",
+            "name_en": "Interior",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 196
+    },
+    {
+        "fields": {
+            "name": "Výbava motorového prostoru",
+            "name_en": "Engine compartment equipment",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 197
+    },
+    {
+        "fields": {
+            "name": "Výbava zavazadlového prostoru",
+            "name_en": "Luggage compartment equipment",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 198
+    },
+    {
+        "fields": {
+            "name": "Palubní deska/Střední konzole",
+            "name_en": "Dashboard / Center console",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 199
+    },
+    {
+        "fields": {
+            "name": "Sedadla",
+            "name_en": "Seats",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 200
+    },
+    {
+        "fields": {
+            "name": "Palubní síť/Elektronika vozu",
+            "name_en": "On-board network / Car electronics",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 201
+    },
+    {
+        "fields": {
+            "name": "Těsnění a izolace",
+            "name_en": "Sealing and insulation",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 202
+    },
+    {
+        "fields": {
+            "name": "Výbava karoserie vnější",
+            "name_en": "Exterior body equipment",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 203
+    },
+    {
+        "fields": {
+            "name": "Formy/Přípravky/Nástroje",
+            "name_en": "Molds / Jigs / Tools",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 204
+    },
+    {
+        "fields": {
+            "name": "Služby/Projektování/SW/ Obaly/atd.",
+            "name_en": "Services / Design / SW / Packaging / etc.",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 205
+    },
+    {
+        "fields": {
+            "name": "Lodní doprava",
+            "name_en": "Shipbuilding",
+            "subdomain": 21
+        },
+        "model": "databazeci.module",
+        "pk": 206
+    },
+    {
+        "fields": {
+            "name": "Accounting",
+            "name_en": "Accounting",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 207
+    },
+    {
+        "fields": {
+            "name": "Billing and e-Billing",
+            "name_en": "Billing and e-Billing",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 208
+    },
+    {
+        "fields": {
+            "name": "Business Intelligence",
+            "name_en": "Business Intelligence",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 209
+    },
+    {
+        "fields": {
+            "name": "CAD/CAM/CAE/EDA",
+            "name_en": "CAD/CAM/CAE/EDA",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 210
+    },
+    {
+        "fields": {
+            "name": "CASE",
+            "name_en": "CASE",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 211
+    },
+    {
+        "fields": {
+            "name": "Commerce Suites",
+            "name_en": "Commerce Suites",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 212
+    },
+    {
+        "fields": {
+            "name": "Communications",
+            "name_en": "Communications",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 213
+    },
+    {
+        "fields": {
+            "name": "Content Management",
+            "name_en": "Content Management",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 214
+    },
+    {
+        "fields": {
+            "name": "CRM",
+            "name_en": "CRM",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 215
+    },
+    {
+        "fields": {
+            "name": "Data Warehouse Management",
+            "name_en": "Data Warehouse Management",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 216
+    },
+    {
+        "fields": {
+            "name": "DRM",
+            "name_en": "DRM",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 217
+    },
+    {
+        "fields": {
+            "name": "Enterprise Application Integration",
+            "name_en": "Enterprise Application Integration",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 218
+    },
+    {
+        "fields": {
+            "name": "ERP",
+            "name_en": "ERP",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 219
+    },
+    {
+        "fields": {
+            "name": "Human Resources",
+            "name_en": "Human Resources",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 220
+    },
+    {
+        "fields": {
+            "name": "Information Management Workflow",
+            "name_en": "Information Management Workflow",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 221
+    },
+    {
+        "fields": {
+            "name": "Intranet/Portals",
+            "name_en": "Intranet/Portals",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 222
+    },
+    {
+        "fields": {
+            "name": "Inventory Management",
+            "name_en": "Inventory Management",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 223
+    },
+    {
+        "fields": {
+            "name": "Knowledge Management",
+            "name_en": "Knowledge Management",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 224
+    },
+    {
+        "fields": {
+            "name": "Network and Service Management",
+            "name_en": "Network and Service Management",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 225
+    },
+    {
+        "fields": {
+            "name": "Security",
+            "name_en": "Security",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 226
+    },
+    {
+        "fields": {
+            "name": "Small Business",
+            "name_en": "Small Business",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 227
+    },
+    {
+        "fields": {
+            "name": "Supply Chain Management",
+            "name_en": "Supply Chain Management",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 228
+    },
+    {
+        "fields": {
+            "name": "VOIP",
+            "name_en": "VOIP",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 229
+    },
+    {
+        "fields": {
+            "name": "Wireless and Mobile",
+            "name_en": "Wireless and Mobile",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 230
+    },
+    {
+        "fields": {
+            "name": "Testing",
+            "name_en": "Testing",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 231
+    },
+    {
+        "fields": {
+            "name": "Banking Software",
+            "name_en": "Banking Software",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 232
+    },
+    {
+        "fields": {
+            "name": "Database Software",
+            "name_en": "Database Software",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 233
+    },
+    {
+        "fields": {
+            "name": "Facility Management",
+            "name_en": "Facility Management",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 234
+    },
+    {
+        "fields": {
+            "name": "Multimedia Software",
+            "name_en": "Multimedia Software",
+            "subdomain": 30
+        },
+        "model": "databazeci.module",
+        "pk": 235
+    },
+    {
+        "fields": {
+            "name": "Telekomunikace",
+            "name_en": "Telecommunications",
+            "subdomain": 33
+        },
+        "model": "databazeci.module",
+        "pk": 236
+    },
+    {
+        "fields": {
+            "name": "Radiová a komunikační technika",
+            "name_en": "Radio and communication technology",
+            "subdomain": 33
+        },
+        "model": "databazeci.module",
+        "pk": 237
+    },
+    {
+        "fields": {
+            "name": "Počítače a kancelářská technika",
+            "name_en": "Computers and office technology",
+            "subdomain": 33
+        },
+        "model": "databazeci.module",
+        "pk": 238
+    },
+    {
+        "fields": {
+            "name": "Elektrické nářadí",
+            "name_en": "Electric tools",
+            "subdomain": 33
+        },
+        "model": "databazeci.module",
+        "pk": 239
+    },
+    {
+        "fields": {
+            "name": "AV technika",
+            "name_en": "AV technology",
+            "subdomain": 33
+        },
+        "model": "databazeci.module",
+        "pk": 240
+    },
+    {
+        "fields": {
+            "name": "Bílé zboží",
+            "name_en": "White goods",
+            "subdomain": 33
+        },
+        "model": "databazeci.module",
+        "pk": 241
+    },
+    {
+        "fields": {
+            "name": "Ostatní spotřební Elektronika&Elektrotechnika",
+            "name_en": "Other consumer electronics and electrical engineering",
+            "subdomain": 33
+        },
+        "model": "databazeci.module",
+        "pk": 242
+    },
+    {
+        "fields": {
+            "name": "Palubní přístroje",
+            "name_en": "Board instruments",
+            "subdomain": 34
+        },
+        "model": "databazeci.module",
+        "pk": 243
+    },
+    {
+        "fields": {
+            "name": "Komunikační prostředky",
+            "name_en": "Means of communication",
+            "subdomain": 34
+        },
+        "model": "databazeci.module",
+        "pk": 244
+    },
+    {
+        "fields": {
+            "name": "Navigace",
+            "name_en": "Navigation",
+            "subdomain": 34
+        },
+        "model": "databazeci.module",
+        "pk": 245
+    },
+    {
+        "fields": {
+            "name": "Finální montáž letadla",
+            "name_en": "Final assembly of the aircraft",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 246
+    },
+    {
+        "fields": {
+            "name": "Drak letounu",
+            "name_en": "Dragon airplane",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 247
+    },
+    {
+        "fields": {
+            "name": "Interiér",
+            "name_en": "Interior",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 248
+    },
+    {
+        "fields": {
+            "name": "Kokpit",
+            "name_en": "Cockpit",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 249
+    },
+    {
+        "fields": {
+            "name": "Podvozek a pneumatiky",
+            "name_en": "Chassis and tires",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 250
+    },
+    {
+        "fields": {
+            "name": "Hydraulické systémy",
+            "name_en": "Hydraulic systems",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 251
+    },
+    {
+        "fields": {
+            "name": "Palivové systémy",
+            "name_en": "Fuel systems",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 252
+    },
+    {
+        "fields": {
+            "name": "Startovací jednotky",
+            "name_en": "Starting units",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 253
+    },
+    {
+        "fields": {
+            "name": "Klimatizace letadel",
+            "name_en": "Aircraft air conditioning",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 254
+    },
+    {
+        "fields": {
+            "name": "Kyslíková soustava a komponenty",
+            "name_en": "Oxygen system and components",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 255
+    },
+    {
+        "fields": {
+            "name": "Osvětlení vnitřní a vnější",
+            "name_en": "Interior and exterior lighting",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 256
+    },
+    {
+        "fields": {
+            "name": "Zdroje elektrického proudu a el. součástky",
+            "name_en": "Sources of electric current and el. component",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 257
+    },
+    {
+        "fields": {
+            "name": "Signalizace",
+            "name_en": "Signaling",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 258
+    },
+    {
+        "fields": {
+            "name": "Letecké simulátory",
+            "name_en": "Flight simulators",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 259
+    },
+    {
+        "fields": {
+            "name": "Požární systémy, detekce a hašení",
+            "name_en": "Fire systems, detection and extinguishing",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 260
+    },
+    {
+        "fields": {
+            "name": "Ochrana proti ledu",
+            "name_en": "Ice protection",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 261
+    },
+    {
+        "fields": {
+            "name": "Záchranné prostředky",
+            "name_en": "Rescue equipment",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 262
+    },
+    {
+        "fields": {
+            "name": "Zbraňové prostředky",
+            "name_en": "Weapons",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 263
+    },
+    {
+        "fields": {
+            "name": "Výroba a zpracování kompozitních materiálů",
+            "name_en": "Production and processing of composite materials",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 264
+    },
+    {
+        "fields": {
+            "name": "Formy/Přípravky/Nástroje",
+            "name_en": "Molds / Jigs / Tools",
+            "subdomain": 35
+        },
+        "model": "databazeci.module",
+        "pk": 265
+    },
+    {
+        "fields": {
+            "name": "Motor a komponenty",
+            "name_en": "Engine and its components",
+            "subdomain": 38
+        },
+        "model": "databazeci.module",
+        "pk": 266
+    },
+    {
+        "fields": {
+            "name": "Pozemní vybavení letišť",
+            "name_en": "Ground Airport Equipment",
+            "subdomain": 39
+        },
+        "model": "databazeci.module",
+        "pk": 267
+    }
+]

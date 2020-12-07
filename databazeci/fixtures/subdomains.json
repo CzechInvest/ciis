@@ -2,7 +2,7 @@
     {
         "fields": {
             "domain": 1,
-            "subdomain": "Zdravotnick\u00e9 prost\u0159edky a jejich certifikace\n"
+            "subdomain": "Zdravotnické prostředky a jejich certifikace"
         },
         "model": "databazeci.subdomain",
         "pk": 1
@@ -10,7 +10,7 @@
     {
         "fields": {
             "domain": 1,
-            "subdomain": "V\u00fdvoj l\u00e9\u010div (Pharma)\n"
+            "subdomain": "Vývoj léčiv (Pharma)"
         },
         "model": "databazeci.subdomain",
         "pk": 2
@@ -18,7 +18,7 @@
     {
         "fields": {
             "domain": 1,
-            "subdomain": "Informa\u010dn\u00ed technologie ve zdravotnictv\u00ed\n"
+            "subdomain": "Informační technologie ve zdravotnictví"
         },
         "model": "databazeci.subdomain",
         "pk": 3
@@ -26,7 +26,7 @@
     {
         "fields": {
             "domain": 1,
-            "subdomain": "P\u0159\u00edstrojov\u00e1 technika (MedTech)\n"
+            "subdomain": "Přístrojová technika (MedTech)"
         },
         "model": "databazeci.subdomain",
         "pk": 4
@@ -34,7 +34,7 @@
     {
         "fields": {
             "domain": 1,
-            "subdomain": "Biotechnologie\n"
+            "subdomain": "Biotechnologie"
         },
         "model": "databazeci.subdomain",
         "pk": 5
@@ -42,7 +42,7 @@
     {
         "fields": {
             "domain": 1,
-            "subdomain": "Pokro\u010dil\u00e9 materi\u00e1ly v medic\u00edn\u011b\n"
+            "subdomain": "Pokročilé materiály v medicíně"
         },
         "model": "databazeci.subdomain",
         "pk": 6
@@ -50,7 +50,7 @@
     {
         "fields": {
             "domain": 2,
-            "subdomain": "Pokro\u010dil\u00e9 stroje\n"
+            "subdomain": "Pokročilé stroje"
         },
         "model": "databazeci.subdomain",
         "pk": 7
@@ -58,7 +58,7 @@
     {
         "fields": {
             "domain": 2,
-            "subdomain": "Nanotechnologie\n"
+            "subdomain": "Nanotechnologie"
         },
         "model": "databazeci.subdomain",
         "pk": 8
@@ -66,7 +66,7 @@
     {
         "fields": {
             "domain": 2,
-            "subdomain": "Pokro\u010dil\u00e9 materi\u00e1ly\n"
+            "subdomain": "Pokročilé materiály"
         },
         "model": "databazeci.subdomain",
         "pk": 9
@@ -74,7 +74,7 @@
     {
         "fields": {
             "domain": 2,
-            "subdomain": "Robotika\n"
+            "subdomain": "Robotika"
         },
         "model": "databazeci.subdomain",
         "pk": 10
@@ -82,7 +82,7 @@
     {
         "fields": {
             "domain": 2,
-            "subdomain": "Inovativn\u00ed v\u00fdrobn\u00ed technologie\n"
+            "subdomain": "Inovativní výrobní technologie"
         },
         "model": "databazeci.subdomain",
         "pk": 11
@@ -90,7 +90,7 @@
     {
         "fields": {
             "domain": 2,
-            "subdomain": "3D tisk\n"
+            "subdomain": "3D tisk"
         },
         "model": "databazeci.subdomain",
         "pk": 12
@@ -98,7 +98,7 @@
     {
         "fields": {
             "domain": 2,
-            "subdomain": "Mikro \u2013 a nanoelektronika\n"
+            "subdomain": "Mikro – a nanoelektronika"
         },
         "model": "databazeci.subdomain",
         "pk": 13
@@ -106,7 +106,7 @@
     {
         "fields": {
             "domain": 2,
-            "subdomain": "V\u00fdroba pry\u017eov\u00fdch a plastov\u00fdch v\u00fdrobk\u016f\n"
+            "subdomain": "Výroba pryžových a plastových výrobků"
         },
         "model": "databazeci.subdomain",
         "pk": 14
@@ -114,7 +114,7 @@
     {
         "fields": {
             "domain": 2,
-            "subdomain": "Automatizace a digitalizace\n"
+            "subdomain": "Automatizace a digitalizace"
         },
         "model": "databazeci.subdomain",
         "pk": 15
@@ -122,7 +122,7 @@
     {
         "fields": {
             "domain": 3,
-            "subdomain": "Autonomn\u00ed \u0159\u00edzen\u00ed\n"
+            "subdomain": "Autonomní řízení"
         },
         "model": "databazeci.subdomain",
         "pk": 16
@@ -130,7 +130,7 @@
     {
         "fields": {
             "domain": 3,
-            "subdomain": "\u010cist\u00e1 mobilita\n"
+            "subdomain": "Čistá mobilita"
         },
         "model": "databazeci.subdomain",
         "pk": 17
@@ -138,7 +138,7 @@
     {
         "fields": {
             "domain": 3,
-            "subdomain": "Konektivita a digitalizace\n"
+            "subdomain": "Konektivita a digitalizace"
         },
         "model": "databazeci.subdomain",
         "pk": 18
@@ -146,7 +146,7 @@
     {
         "fields": {
             "domain": 3,
-            "subdomain": "Kolejov\u00e1 vozidla\n"
+            "subdomain": "Kolejová vozidla"
         },
         "model": "databazeci.subdomain",
         "pk": 19
@@ -154,7 +154,7 @@
     {
         "fields": {
             "domain": 3,
-            "subdomain": "Hromadn\u00e1 doprava\n"
+            "subdomain": "Hromadná doprava"
         },
         "model": "databazeci.subdomain",
         "pk": 20
@@ -162,7 +162,7 @@
     {
         "fields": {
             "domain": 3,
-            "subdomain": "V\u00fdroba dopravn\u00edch prost\u0159edk\u016f\n"
+            "subdomain": "Výroba dopravních prostředků"
         },
         "model": "databazeci.subdomain",
         "pk": 21
@@ -170,7 +170,7 @@
     {
         "fields": {
             "domain": 3,
-            "subdomain": "Mobility as a service (MAAS)\n"
+            "subdomain": "Mobility as a service (MAAS)"
         },
         "model": "databazeci.subdomain",
         "pk": 22
@@ -178,7 +178,7 @@
     {
         "fields": {
             "domain": 3,
-            "subdomain": "Chytr\u00e1 logistika a v\u00fdroba\n"
+            "subdomain": "Chytrá logistika a výroba"
         },
         "model": "databazeci.subdomain",
         "pk": 23
@@ -186,7 +186,7 @@
     {
         "fields": {
             "domain": 4,
-            "subdomain": "AI\n"
+            "subdomain": "AI"
         },
         "model": "databazeci.subdomain",
         "pk": 24
@@ -194,7 +194,7 @@
     {
         "fields": {
             "domain": 4,
-            "subdomain": "Big Data\n"
+            "subdomain": "Big Data"
         },
         "model": "databazeci.subdomain",
         "pk": 25
@@ -202,7 +202,7 @@
     {
         "fields": {
             "domain": 4,
-            "subdomain": "Blockchain\n"
+            "subdomain": "Blockchain"
         },
         "model": "databazeci.subdomain",
         "pk": 26
@@ -210,7 +210,7 @@
     {
         "fields": {
             "domain": 4,
-            "subdomain": "Digit\u00e1ln\u00ed propojen\u00ed\n"
+            "subdomain": "Digitální propojení"
         },
         "model": "databazeci.subdomain",
         "pk": 27
@@ -218,7 +218,7 @@
     {
         "fields": {
             "domain": 4,
-            "subdomain": "IoT\n"
+            "subdomain": "IoT"
         },
         "model": "databazeci.subdomain",
         "pk": 28
@@ -226,7 +226,7 @@
     {
         "fields": {
             "domain": 4,
-            "subdomain": "Machine Learning\n"
+            "subdomain": "Machine Learning"
         },
         "model": "databazeci.subdomain",
         "pk": 29
@@ -234,7 +234,7 @@
     {
         "fields": {
             "domain": 4,
-            "subdomain": "V\u00fdvoj SW a HW\n"
+            "subdomain": "Vývoj SW a HW"
         },
         "model": "databazeci.subdomain",
         "pk": 30
@@ -242,7 +242,7 @@
     {
         "fields": {
             "domain": 4,
-            "subdomain": "S\u00ed\u0165ov\u00e9 zabezpe\u010den\u00ed\n"
+            "subdomain": "Síťové zabezpečení"
         },
         "model": "databazeci.subdomain",
         "pk": 31
@@ -250,7 +250,7 @@
     {
         "fields": {
             "domain": 4,
-            "subdomain": "Zabezpe\u010den\u00ed dat a cloudov\u00fdch slu\u017eeb\n"
+            "subdomain": "Zabezpečení dat a cloudových služeb"
         },
         "model": "databazeci.subdomain",
         "pk": 32
@@ -258,7 +258,7 @@
     {
         "fields": {
             "domain": 4,
-            "subdomain": "V\u00fdroba spot\u0159ebn\u00ed elektroniky a po\u010d\u00edta\u010d\u016f\n"
+            "subdomain": "Výroba spotřební elektroniky a počítačů"
         },
         "model": "databazeci.subdomain",
         "pk": 33
@@ -266,7 +266,7 @@
     {
         "fields": {
             "domain": 5,
-            "subdomain": "Leteck\u00e9 komponenty a p\u0159\u00edstroje (avionika)\n"
+            "subdomain": "Letecké komponenty a přístroje (avionika)"
         },
         "model": "databazeci.subdomain",
         "pk": 34
@@ -274,7 +274,7 @@
     {
         "fields": {
             "domain": 5,
-            "subdomain": "V\u00fdvoj a v\u00fdroba letadel\n"
+            "subdomain": "Vývoj a výroba letadel"
         },
         "model": "databazeci.subdomain",
         "pk": 35
@@ -282,7 +282,7 @@
     {
         "fields": {
             "domain": 5,
-            "subdomain": "UAV/UAS (Unmanned Aerial Vehicle / Unmanned Aircraft Systems)\n"
+            "subdomain": "UAV/UAS (Unmanned Aerial Vehicle / Unmanned Aircraft Systems)"
         },
         "model": "databazeci.subdomain",
         "pk": 36
@@ -290,7 +290,7 @@
     {
         "fields": {
             "domain": 5,
-            "subdomain": "Urban Air Mobility (UAM)\n"
+            "subdomain": "Urban Air Mobility (UAM)"
         },
         "model": "databazeci.subdomain",
         "pk": 37
@@ -298,7 +298,7 @@
     {
         "fields": {
             "domain": 5,
-            "subdomain": "V\u00fdroba motor\u016f/pomocn\u00fdch jednotek\n"
+            "subdomain": "Výroba motorů/pomocných jednotek"
         },
         "model": "databazeci.subdomain",
         "pk": 38
@@ -306,7 +306,7 @@
     {
         "fields": {
             "domain": 5,
-            "subdomain": "Vybaven\u00ed leti\u0161\u0165\n"
+            "subdomain": "Vybavení letišť"
         },
         "model": "databazeci.subdomain",
         "pk": 39
@@ -314,7 +314,7 @@
     {
         "fields": {
             "domain": 5,
-            "subdomain": "VaV v oblasti Defence\n"
+            "subdomain": "VaV v oblasti Defence"
         },
         "model": "databazeci.subdomain",
         "pk": 40
@@ -322,7 +322,7 @@
     {
         "fields": {
             "domain": 5,
-            "subdomain": "Radarov\u00e1 technika\n"
+            "subdomain": "Radarová technika"
         },
         "model": "databazeci.subdomain",
         "pk": 41
@@ -330,7 +330,7 @@
     {
         "fields": {
             "domain": 5,
-            "subdomain": "5G s\u00edt\u011b\n"
+            "subdomain": "5G sítě"
         },
         "model": "databazeci.subdomain",
         "pk": 42
@@ -338,7 +338,7 @@
     {
         "fields": {
             "domain": 6,
-            "subdomain": "V\u00fdvoj software pro gaming\n"
+            "subdomain": "Vývoj software pro gaming"
         },
         "model": "databazeci.subdomain",
         "pk": 43
@@ -346,7 +346,7 @@
     {
         "fields": {
             "domain": 6,
-            "subdomain": "Virtu\u00e1ln\u00ed a roz\u0161\u00ed\u0159en\u00e1 realita\n"
+            "subdomain": "Virtuální a rozšířená realita"
         },
         "model": "databazeci.subdomain",
         "pk": 44
@@ -354,7 +354,7 @@
     {
         "fields": {
             "domain": 6,
-            "subdomain": "Pr\u016fmyslov\u00fd design\n"
+            "subdomain": "Průmyslový design"
         },
         "model": "databazeci.subdomain",
         "pk": 45
@@ -362,7 +362,7 @@
     {
         "fields": {
             "domain": 6,
-            "subdomain": "Smart cities a ve\u0159ejn\u00fd prostor\n"
+            "subdomain": "Smart cities a veřejný prostor"
         },
         "model": "databazeci.subdomain",
         "pk": 46
@@ -370,7 +370,7 @@
     {
         "fields": {
             "domain": 6,
-            "subdomain": "Architektura\n"
+            "subdomain": "Architektura"
         },
         "model": "databazeci.subdomain",
         "pk": 47
@@ -378,7 +378,7 @@
     {
         "fields": {
             "domain": 6,
-            "subdomain": "Kulturn\u011b kreativn\u00ed a sportovn\u00ed v\u00fdrobky\n"
+            "subdomain": "Kulturně kreativní a sportovní výrobky"
         },
         "model": "databazeci.subdomain",
         "pk": 48
@@ -386,7 +386,7 @@
     {
         "fields": {
             "domain": 6,
-            "subdomain": "Vizualizace a sv\u011bteln\u00fd design\n"
+            "subdomain": "Vizualizace a světelný design"
         },
         "model": "databazeci.subdomain",
         "pk": 49
@@ -394,7 +394,7 @@
     {
         "fields": {
             "domain": 7,
-            "subdomain": "Baterie a obnoviteln\u00e9 energetick\u00e9 zdroje\n"
+            "subdomain": "Baterie a obnovitelné energetické zdroje"
         },
         "model": "databazeci.subdomain",
         "pk": 50
@@ -402,7 +402,7 @@
     {
         "fields": {
             "domain": 7,
-            "subdomain": "V\u00fdroba elektrick\u00fdch za\u0159\u00edzen\u00ed\n"
+            "subdomain": "Výroba elektrických zařízení"
         },
         "model": "databazeci.subdomain",
         "pk": 51
@@ -410,7 +410,7 @@
     {
         "fields": {
             "domain": 7,
-            "subdomain": "Inteligentn\u00ed distribuovan\u00e9 energetick\u00e9 syst\u00e9my\n"
+            "subdomain": "Inteligentní distribuované energetické systémy"
         },
         "model": "databazeci.subdomain",
         "pk": 52
@@ -418,7 +418,7 @@
     {
         "fields": {
             "domain": 7,
-            "subdomain": "Udr\u017eiteln\u00e9 technologie v pr\u016fmyslu\n"
+            "subdomain": "Udržitelné technologie v průmyslu"
         },
         "model": "databazeci.subdomain",
         "pk": 53
@@ -426,7 +426,7 @@
     {
         "fields": {
             "domain": 7,
-            "subdomain": "Technologick\u00e9 sn\u00ed\u017een\u00ed zne\u010di\u0161t\u011bn\u00ed\n"
+            "subdomain": "Technologické snížení znečištění"
         },
         "model": "databazeci.subdomain",
         "pk": 54
@@ -434,7 +434,7 @@
     {
         "fields": {
             "domain": 7,
-            "subdomain": "Odleh\u010den\u00e9 materi\u00e1ly\n"
+            "subdomain": "Odlehčené materiály"
         },
         "model": "databazeci.subdomain",
         "pk": 55
@@ -442,7 +442,7 @@
     {
         "fields": {
             "domain": 7,
-            "subdomain": "Pr\u016fmyslov\u00e1 chemie\n"
+            "subdomain": "Průmyslová chemie"
         },
         "model": "databazeci.subdomain",
         "pk": 56
@@ -450,7 +450,7 @@
     {
         "fields": {
             "domain": 8,
-            "subdomain": "Dru\u017eice, sondy a kosmick\u00e9 lod\u011b a jejich subsyst\u00e9my\n"
+            "subdomain": "Družice, sondy a kosmické lodě a jejich subsystémy"
         },
         "model": "databazeci.subdomain",
         "pk": 57
@@ -458,7 +458,7 @@
     {
         "fields": {
             "domain": 8,
-            "subdomain": "Nosn\u00e9 rakety a jejich subsyst\u00e9my\n"
+            "subdomain": "Nosné rakety a jejich subsystémy"
         },
         "model": "databazeci.subdomain",
         "pk": 58
@@ -466,7 +466,7 @@
     {
         "fields": {
             "domain": 8,
-            "subdomain": "Palubn\u00ed software\n"
+            "subdomain": "Palubní software"
         },
         "model": "databazeci.subdomain",
         "pk": 59
@@ -474,7 +474,7 @@
     {
         "fields": {
             "domain": 8,
-            "subdomain": "Simulace a testov\u00e1n\u00ed\n"
+            "subdomain": "Simulace a testování"
         },
         "model": "databazeci.subdomain",
         "pk": 60
@@ -482,7 +482,7 @@
     {
         "fields": {
             "domain": 8,
-            "subdomain": "Kosmick\u00e1 v\u011bda, v\u00fdzkum vesm\u00edru a sledov\u00e1n\u00ed stavu kosmick\u00e9ho prostoru\n"
+            "subdomain": "Kosmická věda, výzkum vesmíru a sledování stavu kosmického prostoru"
         },
         "model": "databazeci.subdomain",
         "pk": 61
@@ -490,7 +490,7 @@
     {
         "fields": {
             "domain": 8,
-            "subdomain": "Pozorov\u00e1n\u00ed Zem\u011b\n"
+            "subdomain": "Pozorování Země"
         },
         "model": "databazeci.subdomain",
         "pk": 62
@@ -498,7 +498,7 @@
     {
         "fields": {
             "domain": 8,
-            "subdomain": "Dru\u017eicov\u00e1 navigace a telekomunikace\n"
+            "subdomain": "Družicová navigace a telekomunikace"
         },
         "model": "databazeci.subdomain",
         "pk": 63
@@ -506,7 +506,7 @@
     {
         "fields": {
             "domain": 8,
-            "subdomain": "Kosmick\u00e9 technologie a materi\u00e1ly (certifikovan\u00e9 pro vyu\u017eit\u00ed)\n"
+            "subdomain": "Kosmické technologie a materiály (certifikované pro využití)"
         },
         "model": "databazeci.subdomain",
         "pk": 64
@@ -514,7 +514,7 @@
     {
         "fields": {
             "domain": 9,
-            "subdomain": "Oprav\u00e1renstv\u00ed\n"
+            "subdomain": "Opravárenství"
         },
         "model": "databazeci.subdomain",
         "pk": 65
@@ -522,7 +522,7 @@
     {
         "fields": {
             "domain": 9,
-            "subdomain": "Sd\u00edlen\u00e9 slu\u017eby\n"
+            "subdomain": "Sdílené služby"
         },
         "model": "databazeci.subdomain",
         "pk": 66
@@ -530,7 +530,7 @@
     {
         "fields": {
             "domain": 10,
-            "subdomain": "Potravin\u00e1\u0159sk\u00fd pr\u016fmysl\n"
+            "subdomain": "Potravinářský průmysl"
         },
         "model": "databazeci.subdomain",
         "pk": 67
@@ -538,7 +538,7 @@
     {
         "fields": {
             "domain": 10,
-            "subdomain": "Tab\u00e1kov\u00fd pr\u016fmysl\n"
+            "subdomain": "Tabákový průmysl"
         },
         "model": "databazeci.subdomain",
         "pk": 68
@@ -546,7 +546,7 @@
     {
         "fields": {
             "domain": 10,
-            "subdomain": "Textiln\u00ed a ko\u017eed\u011bln\u00fd pr\u016fmysl\n"
+            "subdomain": "Textilní a kožedělný průmysl"
         },
         "model": "databazeci.subdomain",
         "pk": 69
@@ -554,7 +554,7 @@
     {
         "fields": {
             "domain": 10,
-            "subdomain": "D\u0159evozpracuj\u00edc\u00ed a pap\u00edrensk\u00fd pr\u016fmysl\n"
+            "subdomain": "Dřevozpracující a papírenský průmysl"
         },
         "model": "databazeci.subdomain",
         "pk": 70
@@ -562,7 +562,7 @@
     {
         "fields": {
             "domain": 10,
-            "subdomain": "Tisk a rozmno\u017eov\u00e1n\u00ed nahran\u00fdch nosi\u010d\u016f\n"
+            "subdomain": "Tisk a rozmnožování nahraných nosičů"
         },
         "model": "databazeci.subdomain",
         "pk": 71
@@ -570,7 +570,7 @@
     {
         "fields": {
             "domain": 10,
-            "subdomain": "V\u00fdroba koksu a rafinovan\u00fdch ropn\u00fdch produkt\u016f\n"
+            "subdomain": "Výroba koksu a rafinovaných ropných produktů"
         },
         "model": "databazeci.subdomain",
         "pk": 72
@@ -578,7 +578,7 @@
     {
         "fields": {
             "domain": 10,
-            "subdomain": "V\u00fdroba ostatn\u00edch nekovov\u00fdch miner\u00e1ln\u00edch v\u00fdrobk\u016f\n"
+            "subdomain": "Výroba ostatních nekovových minerálních výrobků"
         },
         "model": "databazeci.subdomain",
         "pk": 73
@@ -586,7 +586,7 @@
     {
         "fields": {
             "domain": 10,
-            "subdomain": "V\u00fdroba n\u00e1bytku\n"
+            "subdomain": "Výroba nábytku"
         },
         "model": "databazeci.subdomain",
         "pk": 74

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, Subject, Keyword, Nace, Ket, BusinessArea, Turnover, Employees, Domain, Subdomain, Department, SectorModule, Sector, LegalForm, Certificate
+from .models import Contact, Subject, Keyword, Nace, Ket, BusinessArea, Turnover, Employees, Domain, Subdomain, Department, Module, LegalForm, Certificate
 from django.utils.translation import gettext_lazy as _
 
 class CertificateFilter(admin.SimpleListFilter):
@@ -49,14 +49,11 @@ class SubjectAdmin(admin.ModelAdmin):
     raw_id_fields = ("address", "nace", "legal_form")
     search_fields = ("name", "ico", "legal_form")
     list_filter = ("domain", "subdomain", "ket", "nace", CertificateFilter)
-    list_display = ("name", "ico", "contacts", "department", "sectors")
+    list_display = ("name", "ico", "contacts", "department")
     filter_horizontal = ("domain", "subdomain", "module", "business_area", "contact", "keywords", "certificates")
 
     def contacts(self, subj):
         return ", ".join(( str(s) for s in subj.contact.all()))
-
-    def sectors(self, subj):
-        return ", ".join(set( str(s.sector) for s in subj.module.all()))
 
     fieldsets = (
         (None, {
@@ -84,8 +81,7 @@ admin.site.register(Subject, SubjectAdmin)
 admin.site.register(Keyword)
 admin.site.register(Nace)
 admin.site.register(Ket)
-admin.site.register(SectorModule)
-admin.site.register(Sector)
+admin.site.register(Module)
 admin.site.register(Turnover)
 admin.site.register(Employees)
 admin.site.register(BusinessArea)
