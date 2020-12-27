@@ -4,7 +4,7 @@ LABEL vendor="CzechInvest"
 
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y locales python3 \
         gdal-bin python3-gdal libgdal-dev libsqlite3-mod-spatialite \
-        openssl lsb-release apt-utils wget \
+        openssl openssh-server lsb-release apt-utils wget \
         python3-pip && rm -rf /var/lib/apt/lists/* \
         && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 
@@ -32,7 +32,7 @@ ADD . /var/ciis/
 RUN echo $WEBSITE_HOSTNAME
 RUN echo $DBUSER
 
-EXPOSE 9000
+EXPOSE 9000 2222
 #EXPOSE 443
 
 CMD  gunicorn -b 0.0.0.0:9000 --error-logfile /var/ciis/logs/error.log ciis.wsgi
