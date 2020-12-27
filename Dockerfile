@@ -12,6 +12,9 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y locale
 
 COPY sshd_config /etc/ssh/
 
+COPY init.sh /usr/local/bin/
+RUN chmod u+x /usr/local/bin/init.sh
+
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 
@@ -36,5 +39,6 @@ ADD . /var/ciis/
 EXPOSE 9000 2222
 #EXPOSE 443
 
-CMD ./init.sh
-#CMD bash
+#CMD init.sh
+#ENTRYPOINT ["init.sh"]
+CMD bash
