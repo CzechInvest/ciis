@@ -30,9 +30,6 @@ RUN mkdir -p /var/ciis/logs
 
 ADD . /var/ciis/
 
-RUN echo $WEBSITE_HOSTNAME
-RUN echo $DBUSER
-
 EXPOSE 9000 2222
 #EXPOSE 443
 
