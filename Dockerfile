@@ -40,5 +40,5 @@ EXPOSE 9000 2222
 #EXPOSE 443
 
 #CMD init.sh
-#ENTRYPOINT ["init.sh"]
-CMD bash
+ENTRYPOINT ["init.sh"]
+#CMD bash
