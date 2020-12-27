@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 LABEL vendor="CzechInvest"
 
-ENV SSH_PASSWD "root:An0quaweemsAj%"
+ENV SSH_PASSWD "root:Docker!"
 
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y locales python3 \
         gdal-bin python3-gdal libgdal-dev libsqlite3-mod-spatialite \
