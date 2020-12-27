@@ -10,6 +10,8 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y locale
         && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias \
         en_US.UTF-8 && echo "$SSH_PASSWD" | chpasswd
 
+COPY sshd_config /etc/ssh/
+
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 
