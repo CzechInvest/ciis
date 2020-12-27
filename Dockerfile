@@ -36,5 +36,5 @@ ADD . /var/ciis/
 EXPOSE 9000 2222
 #EXPOSE 443
 
-CMD  gunicorn -b 0.0.0.0:9000 --error-logfile /var/ciis/logs/error.log ciis.wsgi
+CMD ./init.sh
 #CMD bash
