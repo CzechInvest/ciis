@@ -9,6 +9,7 @@ ENV DB_HOST ""
 ENV DB_USER ""
 ENV MS_CLIENT_ID ""
 ENV MS_CLIENT_SECRET ""
+ENV DJ_SECRET_KEY ""
 
 
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y locales python3 \
