@@ -12,13 +12,13 @@ ENV MS_CLIENT_SECRET ""
 
 
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y locales python3 \
-        gdal-bin python3-gdal libgdal-dev libsqlite3-mod-spatialite \
+        curl gdal-bin python3-gdal libgdal-dev libsqlite3-mod-spatialite \
         openssl openssh-server lsb-release apt-utils wget \
         python3-pip && rm -rf /var/lib/apt/lists/* \
         && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias \
         en_US.UTF-8 && echo "$SSH_PASSWD" | chpasswd
 
-RUN curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
 COPY sshd_config /etc/ssh/
 
