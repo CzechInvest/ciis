@@ -24,3 +24,6 @@ django-debug-toolbar
 sparql-client
 django-cors-headers
 django-dbbackup
+azure-identity
+azure-keyvault-secrets
+

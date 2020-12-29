@@ -1,9 +1,18 @@
 import os
 from settings.base import *
+from azure.keyvault.secrets import SecretClient
+from azure.identity import DefaultAzureCredential
+
+# https://docs.microsoft.com/cs-cz/azure/key-vault/secrets/quick-create-python
+keyVaultName = os.environ["KEY_VAULT_NAME"]
+KVUri = f"https://{keyVaultName}.vault.azure.net"
+
+credential = DefaultAzureCredential()
+client = SecretClient(vault_url=KVUri, credential=credential)
+
+SECRET_KEY = client.get_secret("DJ-SECRET-KEY")
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-SECRET_KEY = os.environ["SECRET_KEY"]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
