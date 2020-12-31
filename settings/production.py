@@ -15,9 +15,9 @@ SECRET_KEY = os.environ["DJ_SECRET_KEY"]
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-ALLOWED_HOSTS=[os.environ['WEBSITE_HOSTNAME'], "ciis.czechinvest.org"]
+ALLOWED_HOSTS=["localhost", os.environ['WEBSITE_HOSTNAME'], "ciis.czechinvest.org"]
 
 DEBUG = True
 
