@@ -47,8 +47,12 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-    - task: AzureWebAppContainer@1
+    - task: AzureRmWebAppDeployment@4
       inputs:
-        appName: $(WebAppName)
-        azureSubscription: '6714dbc1-1276-4932-9bc6-fdd85ddb89cf'
-        imageName: $(containerRegistry)/$(imageRepository):$(tag)
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'ciis-azure-service-connection'
+        appType: 'webAppContainer'
+        WebAppName: 'ciis-testing'
+        DockerNamespace: 'ciishub.azurecr.io'
+        DockerRepository: 'ciis'
+        DockerImageTag: 'latest'
