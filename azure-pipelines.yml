@@ -15,14 +15,15 @@ variables:
   containerRegistry: 'ciishub.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
-  
+  webRepository: 'web'
+
   # Agent VM image name
-  vmImageName: 'ubuntu-20.04'
+  vmImageName: 'ubuntu-latest'
 
 stages:
 - stage: Build
   displayName: Build and push stage
-  jobs:  
+  jobs:
   - job: Build
     displayName: Build
     pool:
@@ -36,4 +37,20 @@ stages:
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          $(tag)
+          [ $(tag), "testing" ]
+- stage: 'Deploy'
+  displayName: "Deploy the container"
+  dependsOn: Build
+  jobs:
+  - job: "Deploy"
+    displayName: "Deploy job"
+    pool:
+      vmImage: $(vmImageName)
+    variables:
+    - group: Release
+    steps:
+    - task: AzureWebAppContainer@1
+      inputs:
+        appName: $(WebAppName)
+        azureSubscription: 'Microsoft Azure Enterprise NEW'
+        imageName: $(RegistryName)/$(webRepository):$(build.buildId)
