@@ -52,5 +52,5 @@ stages:
     - task: AzureWebAppContainer@1
       inputs:
         appName: $(WebAppName)
-        azureSubscription: 'CzechInvest-ciis-ciis-6714dbc1-1276-4932-9bc6-fdd85ddb89cf'
+        azureSubscription: '6714dbc1-1276-4932-9bc6-fdd85ddb89cf'
         imageName: $(RegistryName)/$(webRepository):$(build.buildId)
