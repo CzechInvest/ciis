@@ -47,10 +47,10 @@ stages:
     pool:
       vmImage: $(vmImageName)
     variables:
-    - group: Release
+    - group: ciis
     steps:
     - task: AzureWebAppContainer@1
       inputs:
         appName: $(WebAppName)
-        azureSubscription: '6714dbc1-1276-4932-9bc6-fdd85ddb89cf'
+        azureSubscription: 'Microsoft Azure Enterprise NEW'
         imageName: $(RegistryName)/$(webRepository):$(build.buildId)
