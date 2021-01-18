@@ -15,10 +15,10 @@ variables:
   containerRegistry: 'ciishub.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
-  webRepository: 'web'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
+  WebAppName: 'ciis-testing'
 
 stages:
 - stage: Build
@@ -53,4 +53,4 @@ stages:
       inputs:
         appName: $(WebAppName)
         azureSubscription: '6714dbc1-1276-4932-9bc6-fdd85ddb89cf'
-        imageName: $(RegistryName)/$(webRepository):$(build.buildId)
+        imageName: $(containerRegistry)/$(imageRepository):$(tag)
