@@ -46,8 +46,6 @@ stages:
     displayName: "Deploy job"
     pool:
       vmImage: $(vmImageName)
-    variables:
-    - group: 'ciis'
     steps:
     - task: AzureWebAppContainer@1
       inputs:
