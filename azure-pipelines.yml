@@ -37,7 +37,7 @@ stages:
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          [ $(tag), "testing" ]
+          $(tag)
 - stage: 'Deploy'
   displayName: "Deploy the container"
   dependsOn: Build
