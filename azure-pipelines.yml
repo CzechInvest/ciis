@@ -55,4 +55,4 @@ stages:
         WebAppName: 'ciis-testing'
         DockerNamespace: 'ciishub.azurecr.io'
         DockerRepository: 'ciis'
-        DockerImageTag: 'latest'
+        DockerImageTag: $(tag)
