@@ -27,3 +27,4 @@ django-dbbackup
 azure-identity
 azure-keyvault-secrets
 whitenoise
+pyjwt==1.7.1
