@@ -39,7 +39,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-          $(resources.pipeline.ciis.sourceBranch)
+          $(Build.SourceBranchName)
 - stage: 'Deploy'
   displayName: "Deploy the container"
   dependsOn: Build
