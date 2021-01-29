@@ -4,6 +4,7 @@
 
 trigger:
 - testing
+- master
 
 resources:
 - repo: self
@@ -38,7 +39,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-          testing
+          $(resources.pipeline.ciis.sourceBranch)
 - stage: 'Deploy'
   displayName: "Deploy the container"
   dependsOn: Build
