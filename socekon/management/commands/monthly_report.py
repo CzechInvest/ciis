@@ -231,9 +231,12 @@ class Command(BaseCommand):
 
 
     def import_lau1(self, data, population,  year, month, day):
+
+        date = self.get_date(year, month, day)
+        HumanResourcesLau1.objects.filter(date=date).delete()
+
         for lau1_name in data:
             lau1 = Lau1.objects.get(name=lau1_name)
-            date = Date.objects.get(date="{}-{}-{}".format(year, month, day))
             inhabitans = population[lau1_name]
             productive_inhabitans = data[lau1_name]["productive_inhabitans"]
             unemployed = data[lau1_name]["unemployed"]
@@ -257,9 +260,12 @@ class Command(BaseCommand):
                 self.stdout.write(self.style.SUCCESS('Successfully imported {}'.format(lau1.name)))
 
     def import_nuts3(self, data, wages, population,  year, month, day):
+
+        date = self.get_date(year, month, day)
+        HumanResourcesNuts3.objects.filter(date=date).delete()
+
         for nuts3_name in data:
             nuts3 = Nuts3.objects.get(name=nuts3_name)
-            date = Date.objects.get(date="{}-{}-{}".format(year, month, day))
             nuts3_wages = wages[nuts3_name]
             inhabitans = population[nuts3_name]
             productive_inhabitans = data[nuts3_name]["productive_inhabitans"]
@@ -285,6 +291,37 @@ class Command(BaseCommand):
                     applications_per_vacancy=applications_per_vacancy
                 )
                 self.stdout.write(self.style.SUCCESS('Successfully imported {}'.format(nuts3.name)))
+
+
+    def get_date(self, year, month, day):
+        dates = Date.objects.filter(date="{}-{}-{}".format(year, month, day))
+        if not dates:
+            eur, usd = self.get_rate(year, month, day)
+            date = Date.objects.create(
+                    date="{}-{}-{}".format(year, month, day),
+                    czk_euro = eur,
+                    czk_usd = usd)
+            date.save()
+        else:
+            date = dates[0]
+
+        return date
+
+    def get_rate(self, year, month, day):
+
+        url = "https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/denni_kurz.txt?date={d:02d}.{m:02d}.{y}".format(
+                d=int(day), m=int(month), y=year)
+
+        response = requests.get(url)
+        table = response.text
+        for line in table.split("\n")[1:]:
+            data = line.split("|")
+            if data[0] == "USA":
+                usd = float(data[4].replace(",", "."))
+            if data[0] == "EMU":
+                euro = float(data[4].replace(",", "."))
+
+        return euro, usd
 
 
     def import_data(self, data, wages_nuts3, population_lau1, population_nuts3, year,
