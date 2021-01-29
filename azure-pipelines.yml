@@ -16,6 +16,7 @@ variables:
   containerRegistry: 'ciishub.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
+  branch: '$(Build.SourceBranchName)'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -57,4 +58,4 @@ stages:
         WebAppName: 'ciis-testing'
         DockerNamespace: 'ciishub.azurecr.io'
         DockerRepository: 'ciis'
-        DockerImageTag: $(tag)
+        DockerImageTag: $(branch)
