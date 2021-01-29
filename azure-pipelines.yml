@@ -38,6 +38,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+          testing
 - stage: 'Deploy'
   displayName: "Deploy the container"
   dependsOn: Build
