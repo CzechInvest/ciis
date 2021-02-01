@@ -8,7 +8,7 @@ from django_filters import rest_framework as filters
 import calendar
 
 class Nuts3Pagination(pagination.PageNumberPagination):
-    page_size = 13
+    page_size = 14
 
 class Lau1Pagination(pagination.PageNumberPagination):
     page_size = 77
