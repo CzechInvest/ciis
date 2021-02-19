@@ -5,30 +5,37 @@ import json
 # Create your models here.
 
 class Address(models.Model):
-    
+
     class Meta:
         ordering = ['adm']
         indexes = [
-            models.Index(fields=['adm', 'street', 'city', 'zipcode', 'coordinates']),
+            models.Index(fields=['adm', 'street', 'orientation_number', 'city', 'zipcode', 'coordinates']),
         ]
     adm = models.IntegerField(
+            db_index=True,
             help_text='Kód ADM',
             primary_key=True)
     street = models.CharField(
+            db_index=True,
             max_length = 200,
             help_text = "Ulice")
     house_number = models.CharField(
+            db_index=True,
             max_length = 20,
             default=None,
             null=True,
             help_text = "Domovní číslo")
     orientation_number = models.CharField(
+            db_index=True,
             max_length = 20,
             default=None,
             null=True,
             help_text = "Orientační číslo")
-    city = models.ForeignKey("City", on_delete=models.CASCADE)
+    city = models.ForeignKey("City",
+            db_index=True,
+            on_delete=models.CASCADE)
     zipcode = models.CharField(
+            db_index=True,
             max_length = 200,
             help_text = "PSČ")
 
@@ -70,7 +77,8 @@ class City(models.Model):
     code = models.IntegerField(
             unique=True,
             primary_key=True)
-    name = models.CharField(
+    name = models.CharField( 
+            db_index=True,
             max_length = 200,
             help_text = "Obec")
 
