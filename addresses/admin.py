@@ -11,7 +11,6 @@ class AddressPaginator(Paginator):
     @cached_property
     def count(self):
         try:
-            print("paginator ####")
             return self.object_list.count()
         except (AttributeError, TypeError):
             return len(self.object_list)
