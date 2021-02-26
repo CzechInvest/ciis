@@ -52,7 +52,7 @@ class SubjectAdmin(DynamicRawIDMixin, admin.ModelAdmin):
     search_fields = ("name", "ico", "legal_form")
     list_filter = ("domain", "subdomain", "ket", "nace", CertificateFilter)
     list_display = ("name", "ico", "contacts", "department")
-    filter_horizontal = ("domain", "subdomain", "module", "business_area", "contact", "keywords", "certificates")
+    filter_horizontal = ("domain", "subdomain", "module", "business_area", "contact", "keywords", "certificates", "ket")
 
     def contacts(self, subj):
         return ", ".join(( str(s) for s in subj.contact.all()))
