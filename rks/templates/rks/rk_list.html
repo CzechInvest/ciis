@@ -1,0 +1,16 @@
+{% extends "cigeo/cigeo_base.html" %}
+{% load django_bootstrap_breadcrumbs %}
+{% block data %}
+  {{ block.super }}
+  OBJECT_NAME = "rks/";
+{% endblock %}
+{% block title %}CzechInvest Information System - CIIS | RKs {% endblock %}
+
+{% block heading %}
+<h1>CIIS - Regionální kanceláře</h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumb "Home" "/" %}
+    {% breadcrumb "Regionální kanceláře" "rks" %}
+{% endblock %}

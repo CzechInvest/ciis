@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     #'circular_economy.apps.CircularEconomyConfig',
     'ai.apps.AiConfig',
     'dotacni_matice.apps.DotacniMaticeConfig',
+    'rks.apps.RksConfig',
     #'entrepreneurial_property.apps.EntrepreneurialPropertyConfig',
     'nested_admin',
     'crispy_forms',

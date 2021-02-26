@@ -56,6 +56,7 @@ urlpatterns = [
     url('^whoiswho/', include('whoiswho.urls')),
     url('^cigeo/', include('cigeo.urls')),
     url('^socekon/', include('socekon.urls')),
+    url('^rks/', include('rks.urls')),
     url(r'^api/', include(router.urls), name="api"),
     #url(r'^api/socekon/', include(socekon.api_urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace="cigeo")),
