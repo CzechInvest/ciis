@@ -73,9 +73,6 @@ class SubjectAdmin(DynamicRawIDMixin, admin.ModelAdmin):
         ('SUP', {
             'fields': ('year_founded', 'technology_readiness', "module",)
     }),
-        ('REK', {
-            'fields': []
-    }),
     )
 
 admin.site.register(Contact, ContactAdmin)
