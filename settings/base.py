@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'django_bootstrap_breadcrumbs',
     'corsheaders',
     'dbbackup',
+    'dynamic_raw_id',
     #'rest_pandas',
 ]
 

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Contact, Subject, Keyword, Nace, Ket, BusinessArea, Turnover, Employees, Domain, Subdomain, Department, Module, LegalForm, Certificate
 from django.utils.translation import gettext_lazy as _
+from dynamic_raw_id.admin import DynamicRawIDMixin
 
 class CertificateFilter(admin.SimpleListFilter):
     title = _('Certificates')
@@ -44,9 +45,10 @@ class ContactAdmin(admin.ModelAdmin):
 class LegalFormAdmin(admin.ModelAdmin):
     list_display = ("form_id", "name")
 
-class SubjectAdmin(admin.ModelAdmin):
+class SubjectAdmin(DynamicRawIDMixin, admin.ModelAdmin):
 
-    raw_id_fields = ("address", "nace", "legal_form")
+
+    dynamic_raw_id_fields = ("address", "nace", "legal_form")
     search_fields = ("name", "ico", "legal_form")
     list_filter = ("domain", "subdomain", "ket", "nace", CertificateFilter)
     list_display = ("name", "ico", "contacts", "department")
