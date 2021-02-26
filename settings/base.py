@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'suppliers.apps.SuppliersConfig',
     'socekon.apps.SocekonConfig',
     'brownfields.apps.BrownfieldsConfig',
-    'circular_economy.apps.CircularEconomyConfig',
+    #'circular_economy.apps.CircularEconomyConfig',
     'ai.apps.AiConfig',
     'dotacni_matice.apps.DotacniMaticeConfig',
     #'entrepreneurial_property.apps.EntrepreneurialPropertyConfig',

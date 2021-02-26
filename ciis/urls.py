@@ -22,7 +22,7 @@ import django.views.static
 from .views import IndexView
 from cigeo import views as cviews
 from addresses import views as aviews
-from circular_economy import views as ceviews
+#from circular_economy import views as ceviews
 from ai import views as aiviews
 from vtp import views as vtpviews
 
