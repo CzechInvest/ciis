@@ -65,13 +65,13 @@ class SubjectAdmin(DynamicRawIDMixin, admin.ModelAdmin):
             'profile', "product_service", 'note')
         }),
         ('RIN', {
-            'fields': ('turnover', 'employees', )
+            'fields': ('turnover', 'employees',  "certificates")
     }),
         ('INO', {
             'fields': ('nace', 'ket')
     }),
         ('SUP', {
-            'fields': ('year_founded', 'technology_readiness', "module", "certificates")
+            'fields': ('year_founded', 'technology_readiness', "module",)
     }),
         ('REK', {
             'fields': []
