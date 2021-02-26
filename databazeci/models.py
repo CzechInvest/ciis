@@ -84,6 +84,7 @@ class Contact(models.Model):
     email = models.CharField(max_length=256)
     voicephone = models.CharField(max_length=256, blank=True, null=True)
     department = models.ManyToManyField("Department")
+    note = models.TextField(blank=True, null=True)
 
     def __str__(self):
         if self.name and self.surname:
